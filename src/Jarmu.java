@@ -1,5 +1,5 @@
 
-public abstract class Jarmu extends Jarat {
+public abstract class Jarmu  {
 	
 	
 	private boolean csuklos;
@@ -10,11 +10,9 @@ public abstract class Jarmu extends Jarat {
 	private int rokkantHelyekSzama;
 	private boolean javitasSzukseges;
 	private String uzemanyagTipus;
-	public Jarmu(int vonalSzam, String vonalBetu, String vonalTipus, double vonalHossz, String indulasiIdo,
-			boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
-			boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,
-			String uzemanyagTipus) {
-		super(vonalSzam, vonalBetu, vonalTipus, vonalHossz, indulasiIdo);
+	public Jarmu(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
+				boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,String uzemanyagTipus) {
+		
 		this.csuklos = csuklos;
 		this.alacsonyPadlos = alacsonyPadlos;
 		this.uzemeltetesiKoltseg = uzemeltetesiKoltseg;

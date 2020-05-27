@@ -1,9 +1,9 @@
 
-public class Jarat extends Vonal {
+public class Jarat {
 	private String indulasiIdo;
 	
-	public Jarat(int vonalSzam, String vonalBetu, String vonalTipus, double vonalHossz, String indulasiIdo) {
-		super(vonalSzam, vonalBetu, vonalTipus, vonalHossz);
+	public Jarat(String indulasiIdo) {
+		
 		this.indulasiIdo=indulasiIdo;
 	}
 
