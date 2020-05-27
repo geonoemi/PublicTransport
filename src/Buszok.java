@@ -8,13 +8,14 @@ public class Buszok extends Jarmu implements Fosszilis, Akadalymentesitett {
 
 	private String rendszam;
 	private static boolean akadalymentesitett=false;
+	private static boolean javitasKell=false;
+	
 	public Buszok(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
 			boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,
 			String uzemanyagTipus) {
 		super(csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
 				javitasSzukseges, uzemanyagTipus);
-		this.rendszam = rendszam;	
-		
+				
 	}
 	public static void beolvas(String fajlnev){ //throws FileNotFoundException, IOException
 	try {
@@ -57,6 +58,13 @@ public class Buszok extends Jarmu implements Fosszilis, Akadalymentesitett {
 				akadalymentesitett=true;
 			}
 			if(akadalymentesitett) System.out.println(vonalSzam[i]);
+			
+			if(javitasSzukseges[i].equals("1")) {
+				javitasKell=true;
+			}
+			if(javitasKell) System.out.println("Ez a busz nem biztonságos hosszútávon, kérjük vigye szervizbe!");
+			
+			
 			i++;
 		}
 		buffer.close();
