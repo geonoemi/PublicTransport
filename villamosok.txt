@@ -1,0 +1,8 @@
+vonal száma, betûjele, csuklós, alacsonypadlós, üzemeltetési költség/km, ülõhelyek száma, bicikliszállítási lehetõség, rokkanthelyek száma, javítás szükséges, üzemanyag típus
+
+2, ,ODA,0,1,190,55,1,0,1,elektromos áram
+2, ,VISSZA,0,1,190,55,1,0,1,elektromos áram
+3,F,A,ODA,0,1,170,50,1,1,1,elektromos áram
+3,F,A,VISSZA,0,1,170,50,1,1,1,elektromos áram
+4, ,ODA,0,1,180,55,1,0,1,elektromos áram
+4, ,VISSZA,0,1,180,55,1,0,1,elektromos áram
