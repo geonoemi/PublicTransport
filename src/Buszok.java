@@ -3,16 +3,18 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Buszok extends Jarmu implements Fosszilis {
+public class Buszok extends Jarmu implements Fosszilis, Akadalymentesitett {
 
 
 	private String rendszam;
+	private static boolean akadalymentesitett=false;
 	public Buszok(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
 			boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,
 			String uzemanyagTipus) {
 		super(csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
 				javitasSzukseges, uzemanyagTipus);
-		this.rendszam = rendszam;		
+		this.rendszam = rendszam;	
+		
 	}
 	public static void beolvas(String fajlnev){ //throws FileNotFoundException, IOException
 	try {
@@ -50,9 +52,11 @@ public class Buszok extends Jarmu implements Fosszilis {
 				javitasSzukseges[i]=parts[9];
 				uzemanyagTipus[i]=parts[10];
 				
-			System.out.println(uzemanyagTipus[i]);
-			
-			
+			//System.out.println(uzemanyagTipus[i]);
+			if(alacsonyPadlos[i].equals("1") && Integer.parseInt(rokkantHelyekSzama[i])>=1) {
+				akadalymentesitett=true;
+			}
+			if(akadalymentesitett) System.out.println(vonalSzam[i]);
 			i++;
 		}
 		buffer.close();
