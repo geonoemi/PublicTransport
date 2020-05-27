@@ -1,5 +1,3 @@
-vonal száma, betûjele, csuklós, alacsonypadlós, üzemeltetési költség/km, ülõhelyek száma, bicikliszállítási lehetõség, rokkanthelyek száma, javítás szükséges, üzemanyag típus
-
 70, ,ODA,1,0,203.95,50,0,0,1,benzin
 70, ,VISSZA1,,0,203.95,50,0,0,1,benzin
 71,A,ODA,0,1,180,45,1,2,0,gázolaj
