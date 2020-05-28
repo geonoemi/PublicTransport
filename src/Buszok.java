@@ -17,6 +17,7 @@ public class Buszok extends Jarmu implements Fosszilis {
 				
 	}
 	
+
 	public static void main(String[] args) {
 	
 		beolvas("buszok.txt");

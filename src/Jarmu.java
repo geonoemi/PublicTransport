@@ -2,8 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
-public abstract class Jarmu  {
+public  class Jarmu  {
 	
 	
 	private boolean csuklos;
@@ -14,9 +15,11 @@ public abstract class Jarmu  {
 	private int rokkantHelyekSzama;
 	private boolean javitasSzukseges;
 	private String uzemanyagTipus;
+	private static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
 	
 	private static boolean akadalymentesitett=false;
 	private static boolean javitasKell=false;
+	
 	
 	public Jarmu(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
 				boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,String uzemanyagTipus) {
@@ -68,11 +71,14 @@ public abstract class Jarmu  {
 					javitasSzukseges[i]=parts[9];
 					uzemanyagTipus[i]=parts[10];
 					
-				//System.out.println(uzemanyagTipus[i]);
+			Jarmu jarmuvek=new Jarmu(csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
+				 bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
 				if(alacsonyPadlos[i].equals("1") && Integer.parseInt(rokkantHelyekSzama[i])>=1) {
 					akadalymentesitett=true;
+					System.out.println(vonalSzam[i] +vonalBetu[i]+ " jármû akadálymentesített");
+					akadalymentes.add();
 				}
-				//if(akadalymentesitett) System.out.println(vonalSzam[i]);
+			
 				
 				if(javitasSzukseges[i].equals("1")) {
 					javitasKell=true;
