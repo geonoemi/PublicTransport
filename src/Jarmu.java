@@ -15,7 +15,7 @@ public  class Jarmu  {
 	private int rokkantHelyekSzama;
 	private boolean javitasSzukseges;
 	private String uzemanyagTipus;
-	//private static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
+	private static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
 	
 	private static boolean akadalymentesitett=false;
 	private static boolean javitasKell=false;
@@ -64,27 +64,28 @@ public  class Jarmu  {
 					csuklos[i]=Boolean.parseBoolean(parts[2]);
 					irany[i]=parts[3];
 					alacsonyPadlos[i]=Boolean.parseBoolean(parts[4]);
-					uzemeltetesiKoltseg[i]=Integer.parseInt(parts[5]);
+					uzemeltetesiKoltseg[i]=Double.parseDouble(parts[5]);
 					uloHelyekSzama[i]=Integer.parseInt(parts[6]);
 					bicikliSzallitasiLehetoseg[i]=Boolean.parseBoolean(parts[7]);
 					rokkantHelyekSzama[i]=Integer.parseInt(parts[8]);
 					javitasSzukseges[i]=Boolean.parseBoolean(parts[9]);
 					uzemanyagTipus[i]=parts[10];
 					
-		//	Jarmu jarmuvek=new Jarmu(csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
-		//		 bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
-				if(alacsonyPadlos[i]==true && rokkantHelyekSzama[i]>=1) {
-					akadalymentesitett=true;
-					System.out.println(vonalSzam[i] +vonalBetu[i]+ " jármû akadálymentesített");
-			//		akadalymentes.add();
-				}
+					Jarmu jarmu=new Jarmu(csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
+											bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
+					if(alacsonyPadlos[i]==true && rokkantHelyekSzama[i]>=1) {
+						akadalymentesitett=true;
+						System.out.println(vonalSzam[i] +vonalBetu[i]+ " jármû akadálymentesített");
+						//System.out.println(jarmu);
+						//akadalymentes.add(jarmu);
+					}
 			
 				
-				if(javitasSzukseges[i]==true) {
-					javitasKell=true;
-					System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
-				}
-			
+					if(javitasSzukseges[i]==true) {
+						javitasKell=true;
+						//System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
+					}
+					System.out.println(jarmu);
 				
 				i++;
 			}
@@ -98,5 +99,5 @@ public  class Jarmu  {
 		}
 	
 	
-	
+	}	
 }
