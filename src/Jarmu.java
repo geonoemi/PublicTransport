@@ -76,7 +76,7 @@ public abstract class Jarmu  {
 				
 				if(javitasSzukseges[i].equals("1")) {
 					javitasKell=true;
-					System.out.println(vonalSzam[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
+					System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
 				}
 			
 				

@@ -17,5 +17,9 @@ public class Villamosok extends Jarmu implements Elektromos{
 		return true;
 	}
 
-	
+	public static void main(String[] args) {
+		
+		beolvas("villamosok.txt");
+		
+	}	
 }

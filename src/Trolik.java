@@ -17,5 +17,9 @@ public class Trolik extends Jarmu implements Elektromos {
 		
 		return true;
 	}
-
+	public static void main(String[] args) {
+		
+		beolvas("trolik.txt");
+		
+	}	
 }

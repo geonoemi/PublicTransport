@@ -1,4 +1,3 @@
-név, x,y
 Európa-liget,46.273561,20.147113
 Anna-kút,46.256150,20.147643
 Személyi pályaudvar,46.239802,20.142629
