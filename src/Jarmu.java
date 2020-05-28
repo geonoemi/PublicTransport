@@ -15,7 +15,7 @@ public  class Jarmu  {
 	private int rokkantHelyekSzama;
 	private boolean javitasSzukseges;
 	private String uzemanyagTipus;
-	private static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
+	//private static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
 	
 	private static boolean akadalymentesitett=false;
 	private static boolean javitasKell=false;
@@ -47,40 +47,40 @@ public  class Jarmu  {
 				
 					String parts[] = sor.split(",");
 				
-					String[]vonalSzam=new String[sor.length()];
+					int[]vonalSzam=new int[sor.length()];
 					String[]vonalBetu=new String[sor.length()];
 					String[]irany=new String[sor.length()];
-					String[]csuklos=new String[sor.length()];
-					String[]alacsonyPadlos=new String[sor.length()];
-					String[]uzemeltetesiKoltseg=new String[sor.length()];
-					String[]uloHelyekSzama=new String[sor.length()];
-					String[]bicikliSzallitasiLehetoseg=new String[sor.length()];
-					String[]rokkantHelyekSzama=new String[sor.length()];
-					String[]javitasSzukseges=new String[sor.length()];
+					boolean[]csuklos=new boolean[sor.length()];
+					boolean[]alacsonyPadlos=new boolean[sor.length()];
+					double[]uzemeltetesiKoltseg=new double[sor.length()];
+					int[]uloHelyekSzama=new int[sor.length()];
+					boolean[]bicikliSzallitasiLehetoseg=new boolean[sor.length()];
+					int[]rokkantHelyekSzama=new int[sor.length()];
+					boolean[]javitasSzukseges=new boolean[sor.length()];
 					String[]uzemanyagTipus=new String[sor.length()];
 					
-					vonalSzam[i]=parts[0];
+					vonalSzam[i]=Integer.parseInt(parts[0]);
 					vonalBetu[i]=parts[1];
-					csuklos[i]=parts[2];
+					csuklos[i]=Boolean.parseBoolean(parts[2]);
 					irany[i]=parts[3];
-					alacsonyPadlos[i]=parts[4];
-					uzemeltetesiKoltseg[i]=parts[5];
-					uloHelyekSzama[i]=parts[6];
-					bicikliSzallitasiLehetoseg[i]=parts[7];
-					rokkantHelyekSzama[i]=parts[8];
-					javitasSzukseges[i]=parts[9];
+					alacsonyPadlos[i]=Boolean.parseBoolean(parts[4]);
+					uzemeltetesiKoltseg[i]=Integer.parseInt(parts[5]);
+					uloHelyekSzama[i]=Integer.parseInt(parts[6]);
+					bicikliSzallitasiLehetoseg[i]=Boolean.parseBoolean(parts[7]);
+					rokkantHelyekSzama[i]=Integer.parseInt(parts[8]);
+					javitasSzukseges[i]=Boolean.parseBoolean(parts[9]);
 					uzemanyagTipus[i]=parts[10];
 					
-			Jarmu jarmuvek=new Jarmu(csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
-				 bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
-				if(alacsonyPadlos[i].equals("1") && Integer.parseInt(rokkantHelyekSzama[i])>=1) {
+		//	Jarmu jarmuvek=new Jarmu(csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
+		//		 bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
+				if(alacsonyPadlos[i]==true && rokkantHelyekSzama[i]>=1) {
 					akadalymentesitett=true;
 					System.out.println(vonalSzam[i] +vonalBetu[i]+ " jármû akadálymentesített");
-					akadalymentes.add();
+			//		akadalymentes.add();
 				}
 			
 				
-				if(javitasSzukseges[i].equals("1")) {
+				if(javitasSzukseges[i]==true) {
 					javitasKell=true;
 					System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
 				}
@@ -96,7 +96,7 @@ public  class Jarmu  {
 		}catch(IOException e) {
 			System.out.println("e.getMessage()");
 		}
-	}
+	
 	
 	
 }
