@@ -20,8 +20,9 @@ public  class Jarmu  {
 	protected static ArrayList<Jarmu> jarmuvek=new ArrayList<>();
 	protected static ArrayList<Akadalymentesitett> akadalymentesjarmuvek = new ArrayList<>();
 	protected static ArrayList<Jarmu> toService = new ArrayList<>();
-
-	
+	protected static ArrayList<Jarmu> biciklisjarmuvek=new ArrayList<>();
+	protected static ArrayList<Jarmu> fosszilisjarmuvek=new ArrayList<>();
+	protected static ArrayList<Jarmu> elektromosjarmuvek=new ArrayList<>();
 	protected static boolean akadalymentesitett=false;
 	protected static boolean javitasKell=false;
 	
@@ -82,8 +83,17 @@ public  class Jarmu  {
 						
 					if(javitasSzukseges[i]) {
 						toService.add(jarmu);
-						//System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
-					}			
+						System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
+					}	
+					
+					if(bicikliSzallitasiLehetoseg[i]) {
+						biciklisjarmuvek.add(jarmu);
+					}
+					if(uzemanyagTipus[i].contentEquals("benzin") || uzemanyagTipus[i].contentEquals("gázolaj")) {
+						fosszilisjarmuvek.add(jarmu);
+					}else {
+						elektromosjarmuvek.add(jarmu);
+					}
 				i++;
 			}
 			buffer.close();
