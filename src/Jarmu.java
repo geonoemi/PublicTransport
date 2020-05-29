@@ -18,7 +18,7 @@ public  class Jarmu  {
 	protected boolean javitasSzukseges;
 	protected String uzemanyagTipus;
 	protected static ArrayList<Jarmu> jarmuvek=new ArrayList<>();
-	protected static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
+	protected static ArrayList<Akadalymentesitett> akadalymentesjarmuvek = new ArrayList<>();
 	protected static ArrayList<Jarmu> toService = new ArrayList<>();
 
 	
@@ -74,8 +74,10 @@ public  class Jarmu  {
 											bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
 					jarmuvek.add(jarmu);
 					
+					Jarmu akadalymentes=new Akadalymentesitett(vonalSzam[i], vonalBetu[i], irany[i], csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
+											bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
 					if(alacsonyPadlos[i] && rokkantHelyekSzama[i]>=1) {
-					//	akadalymentes.add((Akadalymentesitett) jarmu);
+						akadalymentesjarmuvek.add((Akadalymentesitett) akadalymentes);
 					}
 						
 					if(javitasSzukseges[i]) {
