@@ -6,47 +6,42 @@ import java.util.ArrayList;
 
 public  class Jarmu  {
 	
+	protected int vonalSzam;
+	protected String vonalBetu;
+	protected String irany;
+	protected boolean csuklos;
+	protected boolean alacsonyPadlos;
+	protected double uzemeltetesiKoltseg;
+	protected int uloHelyekSzama;
+	protected boolean bicikliSzallitasiLehetoseg;
+	protected int rokkantHelyekSzama;
+	protected boolean javitasSzukseges;
+	protected String uzemanyagTipus;
+	protected static ArrayList<Jarmu> jarmuvek=new ArrayList<>();
+	protected static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
+	protected static ArrayList<Jarmu> toService = new ArrayList<>();
+
 	
-	private boolean csuklos;
-	private boolean alacsonyPadlos;
-	private double uzemeltetesiKoltseg;
-	private int uloHelyekSzama;
-	private boolean bicikliSzallitasiLehetoseg;
-	private int rokkantHelyekSzama;
-	private boolean javitasSzukseges;
-	private String uzemanyagTipus;
-	private static ArrayList<Akadalymentesitett> akadalymentes = new ArrayList<>();
-	
-	private static boolean akadalymentesitett=false;
-	private static boolean javitasKell=false;
+	protected static boolean akadalymentesitett=false;
+	protected static boolean javitasKell=false;
 	
 	
-	public Jarmu(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
+	public Jarmu(int vonalSzam, String vonalBetu, String irany, boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
 				boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,String uzemanyagTipus) {
-		
-		this.csuklos = csuklos;
-		this.alacsonyPadlos = alacsonyPadlos;
-		this.uzemeltetesiKoltseg = uzemeltetesiKoltseg;
-		this.uloHelyekSzama = uloHelyekSzama;
-		this.bicikliSzallitasiLehetoseg = bicikliSzallitasiLehetoseg;
-		this.rokkantHelyekSzama = rokkantHelyekSzama;
-		this.javitasSzukseges = javitasSzukseges;
-		this.uzemanyagTipus = uzemanyagTipus;
 	}
 	
 	
-	public static void beolvas(String fajlnev){ //throws FileNotFoundException, IOException
+	public static void beolvas(String fajlnev){ 
 		try {
 			
-			FileReader olvaso=new FileReader(fajlnev);
-			BufferedReader buffer=new BufferedReader(olvaso);
+			FileReader reader=new FileReader(fajlnev);
+			BufferedReader buffer=new BufferedReader(reader);
 			String sor=null;
 			int i=0;
 			
 			while((sor=buffer.readLine())!=null) {
 				
 					String parts[] = sor.split(",");
-				
 					int[]vonalSzam=new int[sor.length()];
 					String[]vonalBetu=new String[sor.length()];
 					String[]irany=new String[sor.length()];
@@ -61,8 +56,8 @@ public  class Jarmu  {
 					
 					vonalSzam[i]=Integer.parseInt(parts[0]);
 					vonalBetu[i]=parts[1];
-					csuklos[i]=Boolean.parseBoolean(parts[2]);
-					irany[i]=parts[3];
+					irany[i]=parts[2];
+					csuklos[i]=Boolean.valueOf(parts[3]);
 					alacsonyPadlos[i]=Boolean.parseBoolean(parts[4]);
 					uzemeltetesiKoltseg[i]=Double.parseDouble(parts[5]);
 					uloHelyekSzama[i]=Integer.parseInt(parts[6]);
@@ -71,33 +66,40 @@ public  class Jarmu  {
 					javitasSzukseges[i]=Boolean.parseBoolean(parts[9]);
 					uzemanyagTipus[i]=parts[10];
 					
-					Jarmu jarmu=new Jarmu(csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
+					/*System.out.println(vonalSzam[i]+" "+vonalBetu[i]+" "+irany[i]+" "+csuklos[i]+" "+ alacsonyPadlos[i]+" "+  uzemeltetesiKoltseg[i]
+										+" "+uloHelyekSzama[i]+" "+	bicikliSzallitasiLehetoseg[i]+" "+rokkantHelyekSzama[i]
+										+" "+javitasSzukseges[i]+" "+uzemanyagTipus[i]);
+					*/
+					Jarmu jarmu=new Jarmu(vonalSzam[i], vonalBetu[i], irany[i], csuklos[i], alacsonyPadlos[i],  uzemeltetesiKoltseg[i],  uloHelyekSzama[i],
 											bicikliSzallitasiLehetoseg[i],  rokkantHelyekSzama[i],  javitasSzukseges[i], uzemanyagTipus[i]);
-					if(alacsonyPadlos[i]==true && rokkantHelyekSzama[i]>=1) {
-						akadalymentesitett=true;
-						System.out.println(vonalSzam[i] +vonalBetu[i]+ " jármû akadálymentesített");
-						//System.out.println(jarmu);
-						//akadalymentes.add(jarmu);
+					jarmuvek.add(jarmu);
+					
+					if(alacsonyPadlos[i] && rokkantHelyekSzama[i]>=1) {
+					//	akadalymentes.add((Akadalymentesitett) jarmu);
 					}
-			
-				
-					if(javitasSzukseges[i]==true) {
-						javitasKell=true;
+						
+					if(javitasSzukseges[i]) {
+						toService.add(jarmu);
 						//System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
-					}
-					System.out.println(jarmu);
-				
+					}			
 				i++;
 			}
 			buffer.close();
-		
+			
+			for(Jarmu j: jarmuvek) {
+				System.out.println(j.toString());
+			}
 			
 		}catch(FileNotFoundException e) {
 			System.out.println("A fájl nem található.");
 		}catch(IOException e) {
 			System.out.println("e.getMessage()");
-		}
-	
-	
-	}	
+		}		
+	}
+	public String toString() {
+		return vonalSzam+" "+vonalBetu+" "+irany+" "+csuklos+" "+ alacsonyPadlos+" "+  uzemeltetesiKoltseg
+				+" "+uloHelyekSzama+" "+	bicikliSzallitasiLehetoseg+" "+rokkantHelyekSzama
+				+" "+javitasSzukseges+" "+uzemanyagTipus;
+	}
+
 }

@@ -6,21 +6,21 @@ import java.io.IOException;
 public class Buszok extends Jarmu implements Fosszilis {
 
 
-	private String rendszam;
+	//private String rendszam;
 	
 	
-	public Buszok(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
+	public Buszok(int vonalSzam, String vonalBetu, String irany,boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
 			boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,
 			String uzemanyagTipus) {
-		super(csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
+		super( vonalSzam,  vonalBetu,  irany,csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
 				javitasSzukseges, uzemanyagTipus);
 				
 	}
 	
-
 	public static void main(String[] args) {
 	
 		beolvas("buszok.txt");
 		
-	}	
+	}
+
 }

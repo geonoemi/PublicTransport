@@ -2,12 +2,11 @@
 public class Trolik extends Jarmu implements Elektromos {
 
 	
-	public Trolik(boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
+	public Trolik(int vonalSzam, String vonalBetu, String  irany,boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
 			boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,
 			String uzemanyagTipus) {
-		super(csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
+		super(vonalSzam,  vonalBetu,  irany,csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
 				javitasSzukseges, uzemanyagTipus);
-		// TODO Auto-generated constructor stub
 	}
 
 	
