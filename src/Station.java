@@ -8,7 +8,7 @@ public class Station {
 	private String x;
 	private String y;
 	private String stationName;
-	private boolean hasPantograph;
+	boolean hasPantograph;
 	private static ArrayList<Station> stations=new ArrayList<>();
 	
 	public Station(String stationName,String x, String y,boolean hasPantograph) {
@@ -45,9 +45,11 @@ public class Station {
 				i++;
 			}
 			buffer.close();
+			
 			for(Station s: stations) {
 				System.out.println("stations: "+" "+s.toString());
 			}
+			
 		}catch(FileNotFoundException e) {
 			System.out.println("File not found.");
 		}catch(IOException e) {
@@ -57,10 +59,16 @@ public class Station {
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasPantograph;
 	}
+	public boolean canRunAlongHere(boolean hasPantograph) {
+		if (hasPantograph) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	public static void main(String[] args) {
 		
 		readIn("allomasok.txt");
-		
 		
 	}
 }

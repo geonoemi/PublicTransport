@@ -64,13 +64,8 @@ public class Vehicle {
 						needToRepair[i]=Boolean.parseBoolean(parts[9]);
 						typeOfFuel[i]=parts[10];
 						
-						/*System.out.println(vonalSzam[i]+" "+vonalBetu[i]+" "+irany[i]+" "+csuklos[i]+" "+ alacsonyPadlos[i]+" "+  uzemeltetesiKoltseg[i]
-											+" "+uloHelyekSzama[i]+" "+	bicikliSzallitasiLehetoseg[i]+" "+rokkantHelyekSzama[i]
-											+" "+javitasSzukseges[i]+" "+uzemanyagTipus[i]);
-						*/
 						Vehicle vehicle=new Vehicle(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i]);
-						
 						vehicles.add(vehicle);
 						
 						Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
@@ -82,12 +77,12 @@ public class Vehicle {
 							
 						if(needToRepair[i]) {
 							toService.add(vehicle);
-						//	System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
 						}	
 						
 						if(bicycleTransportOpp[i]) {
 							bicycleVehicles.add(vehicle);
 						}
+						
 						if(typeOfFuel[i].contentEquals("benzin") || typeOfFuel[i].contentEquals("gázolaj")) {
 							fossilVehicles.add(vehicle);
 						}else {
@@ -97,24 +92,24 @@ public class Vehicle {
 				}
 				buffer.close();
 				
-				for(Vehicle j: vehicles) {
-					System.out.println("jármûvek: "+j+" "+j.toString());
+				for(Vehicle v: vehicles) {
+					System.out.println("jármûvek: "+v.toString());
 				}
-				for(Vehicle j: wheelChairAccessibleVehicles) {
-					System.out.println("akadálymentesjarmuvek: "+j+" "+j.toString());
+			/*	for(Vehicle v: wheelChairAccessibleVehicles) {
+					System.out.println("akadálymentesjarmuvek: "+v.toString());
 				}
-				for(Vehicle j: toService) {
-					System.out.println("javítandó jármûvek: "+j+" "+j.toString());
+				for(Vehicle v: toService) {
+					System.out.println("javítandó jármûvek: "+v.toString());
 				}
-				for(Vehicle j: bicycleVehicles) {
-					System.out.println("kerékpárt szállító jármûvek: "+j+" "+j.toString());
+				for(Vehicle v: bicycleVehicles) {
+					System.out.println("kerékpárt szállító jármûvek: "+v.toString());
 				}
-				for(Vehicle j: fossilVehicles) {
-					System.out.println("benzinnel/gázolajjal mûködõ jármûvek: "+j+" "+j.toString());
+				for(Vehicle v: fossilVehicles) {
+					System.out.println("benzinnel/gázolajjal mûködõ jármûvek: "+v.toString());
 				}
-				for(Vehicle j: electricVehicles) {
-					System.out.println("elektromos árammal mûködõ jármûvek: "+j+" "+j.toString());
-				}
+				for(Vehicle v: electricVehicles) {
+					System.out.println("elektromos árammal mûködõ jármûvek: "+v.toString());
+				}*/
 				
 				
 			}catch(FileNotFoundException e) {

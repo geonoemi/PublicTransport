@@ -11,13 +11,15 @@ public class Trolley extends Vehicle implements Electric {
 		
 
 		@Override
-		public boolean canRunAlongHere(boolean hasPantograph) {
-			
-			return true;
+		public boolean canRunAlongHere(Station station) {
+			if (station.hasPantograph) {
+				return true;
+			}else {
+				return false;
+			}
 		}
 		public static void main(String[] args) {
 			
 			readIn("trolik.txt");
-			
 		}	
 	}

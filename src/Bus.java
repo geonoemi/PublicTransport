@@ -15,6 +15,7 @@ public class Bus extends Vehicle implements Fossil {
 					 bicycleTransportOpp,  numOfDisabledPlaces,  needToRepair, typeOfFuel); 
 					
 		}
+	
 		
 		public static void main(String[] args) {
 		

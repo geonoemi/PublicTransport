@@ -1,5 +1,5 @@
 
 public interface Electric {
 	
-	boolean canRunAlongHere(boolean hasPantograph);
+	boolean canRunAlongHere(Station station);
 }
