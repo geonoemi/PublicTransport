@@ -2,11 +2,10 @@
 public class Villamosok extends Jarmu implements Elektromos{
 
 	
-	public Villamosok(int vonalSzam, String vonalBetu, String  irany,boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
-			boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,
-			String uzemanyagTipus) {
-		super(vonalSzam,  vonalBetu,  irany,csuklos, alacsonyPadlos, uzemeltetesiKoltseg, uloHelyekSzama, bicikliSzallitasiLehetoseg, rokkantHelyekSzama,
-				javitasSzukseges, uzemanyagTipus);
+	public Villamosok(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel) {
+		super( lineNum,  lineLetter,  way,  articulated,  lowFloor,  operationCost,  numOfSeats,
+				 bicycleTransportOpp,  numOfDisabledPlaces,  needToRepair, typeOfFuel); 
 		
 	}
 

@@ -6,29 +6,31 @@ import java.util.ArrayList;
 
 public  class Jarmu  {
 	
-	protected int vonalSzam;
-	protected String vonalBetu;
-	protected String irany;
-	protected boolean csuklos;
-	protected boolean alacsonyPadlos;
-	protected double uzemeltetesiKoltseg;
-	protected int uloHelyekSzama;
-	protected boolean bicikliSzallitasiLehetoseg;
-	protected int rokkantHelyekSzama;
-	protected boolean javitasSzukseges;
-	protected String uzemanyagTipus;
-	protected static ArrayList<Jarmu> jarmuvek=new ArrayList<>();
-	protected static ArrayList<Akadalymentesitett> akadalymentesjarmuvek = new ArrayList<>();
+	protected int lineNum;
+	protected String lineLetter;
+	protected String way;
+	protected boolean articulated;
+	protected boolean lowFloor;
+	protected double operatingCost;
+	protected int numOfSeats;
+	protected boolean bicycleTransportOpp;
+	protected int numOfDisabledPlaces;
+	protected boolean needToRepair;
+	protected String typeOfFuel;
+	protected static ArrayList<Jarmu> vehicles=new ArrayList<>();
+	protected static ArrayList<WheelchairAccessible> wheelchairAccessibleVehicles = new ArrayList<>();
 	protected static ArrayList<Jarmu> toService = new ArrayList<>();
 	protected static ArrayList<Jarmu> biciklisjarmuvek=new ArrayList<>();
 	protected static ArrayList<Jarmu> fosszilisjarmuvek=new ArrayList<>();
 	protected static ArrayList<Jarmu> elektromosjarmuvek=new ArrayList<>();
+	
+	
 	protected static boolean akadalymentesitett=false;
 	protected static boolean javitasKell=false;
 	
 	
-	public Jarmu(int vonalSzam, String vonalBetu, String irany, boolean csuklos, boolean alacsonyPadlos, double uzemeltetesiKoltseg, int uloHelyekSzama,
-				boolean bicikliSzallitasiLehetoseg, int rokkantHelyekSzama, boolean javitasSzukseges,String uzemanyagTipus) {
+	public Jarmu(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+				boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel) {
 	}
 	
 	
@@ -37,23 +39,23 @@ public  class Jarmu  {
 			
 			FileReader reader=new FileReader(fajlnev);
 			BufferedReader buffer=new BufferedReader(reader);
-			String sor=null;
+			String queue=null;
 			int i=0;
 			
-			while((sor=buffer.readLine())!=null) {
+			while((queue=buffer.readLine())!=null) {
 				
-					String parts[] = sor.split(",");
-					int[]vonalSzam=new int[sor.length()];
-					String[]vonalBetu=new String[sor.length()];
-					String[]irany=new String[sor.length()];
-					boolean[]csuklos=new boolean[sor.length()];
-					boolean[]alacsonyPadlos=new boolean[sor.length()];
-					double[]uzemeltetesiKoltseg=new double[sor.length()];
-					int[]uloHelyekSzama=new int[sor.length()];
-					boolean[]bicikliSzallitasiLehetoseg=new boolean[sor.length()];
-					int[]rokkantHelyekSzama=new int[sor.length()];
-					boolean[]javitasSzukseges=new boolean[sor.length()];
-					String[]uzemanyagTipus=new String[sor.length()];
+					String parts[] = queue.split(",");
+					int[]lineNum=new int[queue.length()];
+					String[]lineLetter=new String[queue.length()];
+					String[]way=new String[queue.length()];
+					boolean[]articulated=new boolean[queue.length()];
+					boolean[]lowFloor=new boolean[queue.length()];
+					double[]operationCost=new double[queue.length()];
+					int[]numOfSeats=new int[queue.length()];
+					boolean[]bicycleTransportOpp=new boolean[queue.length()];
+					int[]numOfDisabledPlaces=new int[queue.length()];
+					boolean[]needToRepair=new boolean[queue.length()];
+					String[]typeOfFuel=new String[queue.length()];
 					
 					vonalSzam[i]=Integer.parseInt(parts[0]);
 					vonalBetu[i]=parts[1];
@@ -83,7 +85,7 @@ public  class Jarmu  {
 						
 					if(javitasSzukseges[i]) {
 						toService.add(jarmu);
-						System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
+					//	System.out.println(vonalSzam[i]+vonalBetu[i] +" Ez a jármû nem biztonságos hosszútávon, kérjük vigye szervizbe!");
 					}	
 					
 					if(bicikliSzallitasiLehetoseg[i]) {
@@ -99,8 +101,26 @@ public  class Jarmu  {
 			buffer.close();
 			
 			for(Jarmu j: jarmuvek) {
-				System.out.println(j.toString());
+				System.out.println("jármûvek: "+j+" "+j.toString());
 			}
+			for(Jarmu j: akadalymentesjarmuvek) {
+				System.out.println("akadálymentesjarmuvek: "+j+" "+j.toString());
+			}
+			for(Jarmu j: toService) {
+				System.out.println("javítandó jármûvek: "+j+" "+j.toString());
+			}
+			for(Jarmu j: toService) {
+				System.out.println("javítandó jármûvek: "+j+" "+j.toString());
+			}for(Jarmu j: biciklisjarmuvek) {
+				System.out.println("kerékpárt szállító jármûvek: "+j+" "+j.toString());
+			}
+			for(Jarmu j: fosszilisjarmuvek) {
+				System.out.println("benzinnel/gázolajjal mûködõ jármûvek: "+j+" "+j.toString());
+			}
+			for(Jarmu j: elektromosjarmuvek) {
+				System.out.println("elektromos árammal mûködõ jármûvek: "+j+" "+j.toString());
+			}
+			
 			
 		}catch(FileNotFoundException e) {
 			System.out.println("A fájl nem található.");
