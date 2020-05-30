@@ -9,7 +9,7 @@ public class Station {
 	private String y;
 	private String stationName;
 	boolean hasCable;
-	//boolean hasPantograph;
+	boolean hasPantograph;
 	private static ArrayList<Station> stations=new ArrayList<>();
 	
 	public Station(String stationName,String x, String y,boolean hasCable) {
@@ -62,17 +62,19 @@ public class Station {
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
-	public boolean canRunAlongHere(boolean hasPantograph) {
+	public static boolean canRunAlongHere(boolean hasPantograph) {
 		if (hasPantograph) {
+			System.out.println("This vehicle can run along here.");
 			return true;
 		}else {
+			System.out.println("This vehicle cannot run along here");
 			return false;
 		}
 	}
 	public static void main(String[] args) {
 		
 		readIn("allomasok.txt");
-		
+		canRunAlongHere(false);
 	}
 }
 

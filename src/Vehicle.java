@@ -31,7 +31,7 @@ public class Vehicle {
 		
 		
 		public Vehicle(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
-					boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
+						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
 		}
 		
 		public static void readIn(String fileName){ 
@@ -71,27 +71,29 @@ public class Vehicle {
 						typeOfFuel[i]=parts[10];
 						hasWheel[i]=Boolean.parseBoolean(parts[11]);
 						
+						
 					//	System.out.print(lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
 					//			 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
 					//	System.out.println();
 						
+					
 						Vehicle vehicle=new Vehicle(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						vehicles.add(vehicle);
 						
-				/*		if(typeOfFuel[i].equals("elektromos áram") && hasWheel[i]) {
+				/*		if(typeOfFuel[i].equals("electrical energy") && hasWheel[i]) {
 							Vehicle trolley=new Trolley(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 							trolleys.add((Trolley) trolley);
 						}
 						
-						if(typeOfFuel[i].equals("elektromos áram") && !hasWheel[i]) {
+						if(typeOfFuel[i].equals("electrical energy") && !hasWheel[i]) {
 							Vehicle tram=new Tram(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 							trams.add((Tram) tram);
 						}
 						
-						if(typeOfFuel[i].contentEquals("benzin") || typeOfFuel[i].contentEquals("gázolaj") && hasWheel[i]) {
+						if(typeOfFuel[i].contentEquals("petrol") || typeOfFuel[i].contentEquals("diesel oil") && hasWheel[i]) {
 							Vehicle bus=new Bus(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 							buses.add((Bus) bus);
@@ -111,7 +113,7 @@ public class Vehicle {
 							bicycleVehicles.add(vehicle);
 						}
 						
-						if(typeOfFuel[i].contentEquals("benzin") || typeOfFuel[i].contentEquals("gázolaj")) {
+						if(typeOfFuel[i].contentEquals("petrol") || typeOfFuel[i].contentEquals("diesel oil")) {
 							fossilVehicles.add(vehicle);
 						}else {
 							electricVehicles.add(vehicle);
@@ -121,21 +123,21 @@ public class Vehicle {
 				}
 				buffer.close();
 				
+				
 				for(Vehicle v: vehicles) {
 					
-					if(v.typeOfFuel.equals("elektromos áram") && v.hasWheel) {
+					if(v.typeOfFuel.equals("electrical energy") && v.hasWheel) {
 							trolleys.add((Trolley) v);
 							System.out.println("vehicles: "+trolleys+" "+v.toString());
 					}
-					else if(v.typeOfFuel.equals("elektromos áram") && !v.hasWheel) {
+					else if(v.typeOfFuel.equals("electrical energy") && !v.hasWheel) {
 							trams.add((Tram) v);
 							System.out.println("vehicles: "+trams+" "+v.toString());
 					}
-					else if(v.typeOfFuel.equals("benzin") || v.typeOfFuel.equals("gázolaj") && v.hasWheel) {
+					else if(v.typeOfFuel.equals("petrol") || v.typeOfFuel.equals("diesel oil") && v.hasWheel) {
 							buses.add((Bus) v);
 							System.out.println("vehicles: "+buses+" "+v.toString());
-					}
-					
+					}	
 				}
 				
 		/*		for(Vehicle v: wheelChairAccessibleVehicles) {
