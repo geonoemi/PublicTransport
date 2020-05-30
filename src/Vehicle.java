@@ -17,7 +17,11 @@ public class Vehicle {
 		protected int numOfDisabledPlaces;
 		protected boolean needToRepair;
 		protected String typeOfFuel;
+		protected boolean hasWheel;
+		
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
+		protected static ArrayList<Trolley> trolleys=new ArrayList<>();
+		protected static ArrayList<Tram> trams=new ArrayList<>();
 		protected static ArrayList<WheelChairAccessible> wheelChairAccessibleVehicles = new ArrayList<>();
 		protected static ArrayList<Vehicle> toService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
@@ -26,7 +30,7 @@ public class Vehicle {
 		
 		
 		public Vehicle(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
-					boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel) {
+					boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
 		}
 		
 		public static void readIn(String fileName){ 
@@ -51,6 +55,7 @@ public class Vehicle {
 						int[]numOfDisabledPlaces=new int[queue.length()];
 						boolean[]needToRepair=new boolean[queue.length()];
 						String[]typeOfFuel=new String[queue.length()];
+						boolean[]hasWheel=new boolean[queue.length()];
 						
 						lineNum[i]=Integer.parseInt(parts[0]);
 						lineLetter[i]=parts[1];
@@ -63,20 +68,30 @@ public class Vehicle {
 						numOfDisabledPlaces[i]=Integer.parseInt(parts[8]);
 						needToRepair[i]=Boolean.parseBoolean(parts[9]);
 						typeOfFuel[i]=parts[10];
+						hasWheel[i]=Boolean.parseBoolean(parts[11]);
 						
 						System.out.print(lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
-								 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]);
+								 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
 						System.out.println();
 						
 						Vehicle vehicle=new Vehicle(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
-								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i]);
+								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						vehicles.add(vehicle);
 						
-						/*	Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
-								operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i]);
+						if(typeOfFuel[i].equals("elektromos áram") && hasWheel[i]) {
+							Trolley trolley=new Trolley(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+							trolleys.add(trolley);
+						}
+						if(typeOfFuel[i].equals("elektromos áram") && !hasWheel[i]) {
+							trams.add((Tram) vehicle);
+						}
+						
+						//	Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
+						//		operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						
 						if(lowFloor[i] && numOfDisabledPlaces[i]>=1) {
-							wheelChairAccessibleVehicles.add((WheelChairAccessible) wheelchairAccessibleVehicle);
+							wheelChairAccessibleVehicles.add((WheelChairAccessible) vehicle);
 						}
 							
 						if(needToRepair[i]) {
@@ -91,7 +106,7 @@ public class Vehicle {
 							fossilVehicles.add(vehicle);
 						}else {
 							electricVehicles.add(vehicle);
-						}*/
+						}
 					i++;
 				}
 				buffer.close();
@@ -125,7 +140,7 @@ public class Vehicle {
 		public String toString() {
 			return lineNum+" "+lineLetter+" "+way+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
-					+" "+needToRepair+" "+typeOfFuel;
+					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
 		}
 
 	}
