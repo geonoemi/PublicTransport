@@ -9,7 +9,6 @@ public class Trolley extends Vehicle implements Electric {
 					 bicycleTransportOpp,  numOfDisabledPlaces,  needToRepair, typeOfFuel, hasWheel); 
 		}
 
-		
 
 		@Override
 		public boolean canRunAlongHere(Station station) {
@@ -23,5 +22,9 @@ public class Trolley extends Vehicle implements Electric {
 		public static void main(String[] args) {
 			
 			readIn("trolik.txt");
+
+			if(vehicles.getClass().equals(Trolley.class)) {
+				System.out.println("Ez egy troli");
+			}
 		}	
 	}

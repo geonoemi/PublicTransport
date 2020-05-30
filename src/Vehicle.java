@@ -19,9 +19,10 @@ public class Vehicle {
 		protected String typeOfFuel;
 		protected boolean hasWheel;
 		
-		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
+		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
 		protected static ArrayList<Trolley> trolleys=new ArrayList<>();
 		protected static ArrayList<Tram> trams=new ArrayList<>();
+		protected static ArrayList<Bus> buses=new ArrayList<>();
 		protected static ArrayList<WheelChairAccessible> wheelChairAccessibleVehicles = new ArrayList<>();
 		protected static ArrayList<Vehicle> toService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
@@ -70,31 +71,36 @@ public class Vehicle {
 						typeOfFuel[i]=parts[10];
 						hasWheel[i]=Boolean.parseBoolean(parts[11]);
 						
-						System.out.print(lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
-								 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
-						System.out.println();
+					//	System.out.print(lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
+					//			 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
+					//	System.out.println();
 						
 						Vehicle vehicle=new Vehicle(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						vehicles.add(vehicle);
 						
-						if(typeOfFuel[i].equals("elektromos áram") && hasWheel[i]) {
-							Trolley trolley=new Trolley(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+				/*		if(typeOfFuel[i].equals("elektromos áram") && hasWheel[i]) {
+							Vehicle trolley=new Trolley(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
-							trolleys.add(trolley);
+							trolleys.add((Trolley) trolley);
 						}
+						
 						if(typeOfFuel[i].equals("elektromos áram") && !hasWheel[i]) {
-							Tram tram=new Tram(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+							Vehicle tram=new Tram(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
-							
-							trams.add(tram);
+							trams.add((Tram) tram);
 						}
 						
-					/*		Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
-								operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
-						
+						if(typeOfFuel[i].contentEquals("benzin") || typeOfFuel[i].contentEquals("gázolaj") && hasWheel[i]) {
+							Vehicle bus=new Bus(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+							buses.add((Bus) bus);
+						}
+											
 						if(lowFloor[i] && numOfDisabledPlaces[i]>=1) {
-							wheelChairAccessibleVehicles.add((WheelChairAccessible) vehicle);
+							Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
+									operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+							wheelChairAccessibleVehicles.add((WheelChairAccessible) wheelchairAccessibleVehicle);
 						}
 							
 						if(needToRepair[i]) {
@@ -109,15 +115,30 @@ public class Vehicle {
 							fossilVehicles.add(vehicle);
 						}else {
 							electricVehicles.add(vehicle);
-						}*/
+						}  */
+						
 					i++;
 				}
 				buffer.close();
 				
 				for(Vehicle v: vehicles) {
-					System.out.println("vehicles: "+v.toString());
+					
+					if(v.typeOfFuel.equals("elektromos áram") && v.hasWheel) {
+							trolleys.add((Trolley) v);
+							System.out.println("vehicles: "+trolleys+" "+v.toString());
+					}
+					else if(v.typeOfFuel.equals("elektromos áram") && !v.hasWheel) {
+							trams.add((Tram) v);
+							System.out.println("vehicles: "+trams+" "+v.toString());
+					}
+					else if(v.typeOfFuel.equals("benzin") || v.typeOfFuel.equals("gázolaj") && v.hasWheel) {
+							buses.add((Bus) v);
+							System.out.println("vehicles: "+buses+" "+v.toString());
+					}
+					
 				}
-			/*	for(Vehicle v: wheelChairAccessibleVehicles) {
+				
+		/*		for(Vehicle v: wheelChairAccessibleVehicles) {
 					System.out.println("akadálymentesjarmuvek: "+v.toString());
 				}
 				for(Vehicle v: toService) {
@@ -131,8 +152,8 @@ public class Vehicle {
 				}
 				for(Vehicle v: electricVehicles) {
 					System.out.println("elektromos árammal mûködõ jármûvek: "+v.toString());
-				}*/
-				
+				}
+			*/	
 				
 			}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
