@@ -1,6 +1,7 @@
 
 public class Trolley extends Vehicle implements Electric {
-
+		
+		private boolean hasWheel=true;
 		
 		public Trolley(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 				boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel) {
@@ -12,12 +13,13 @@ public class Trolley extends Vehicle implements Electric {
 
 		@Override
 		public boolean canRunAlongHere(Station station) {
-			if (station.hasPantograph) {
+			
+			if (station.hasCable) {
 				return true;
 			}else {
 				return false;
 			}
-		}
+		}		
 		public static void main(String[] args) {
 			
 			readIn("trolik.txt");

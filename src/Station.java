@@ -8,15 +8,18 @@ public class Station {
 	private String x;
 	private String y;
 	private String stationName;
-	boolean hasPantograph;
+	boolean hasCable;
+	//boolean hasPantograph;
 	private static ArrayList<Station> stations=new ArrayList<>();
 	
-	public Station(String stationName,String x, String y,boolean hasPantograph) {
+	public Station(String stationName,String x, String y,boolean hasCable) {
 		
 		this.x = x;
 		this.y = y;
 		this.stationName = stationName;
-		this.hasPantograph= hasPantograph;
+		this.hasCable=hasCable;
+		//this.hasPantograph= hasPantograph;
+		
 	}
 	public static void readIn(String fileName){ 
 		try {
@@ -32,14 +35,14 @@ public class Station {
 				String stationName[]=new String[queue.length()];
 				String x[]=new String[queue.length()];
 				String y[]=new String[queue.length()];
-				boolean hasPantograph[]=new boolean[queue.length()];
+				boolean hasCable[]=new boolean[queue.length()];
 				
 				stationName[i]=parts[0];
 				x[i]=parts[1];
 				y[i]=parts[2];
-				hasPantograph[i]=Boolean.parseBoolean(parts[3]);
+				hasCable[i]=Boolean.parseBoolean(parts[3]);
 				
-				Station station=new Station(stationName[i],x[i],y[i],hasPantograph[i]);
+				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
 				
 				i++;
@@ -57,7 +60,7 @@ public class Station {
 		}		
 	}
 	public String toString() {
-		return stationName+" "+x+" "+y+" "+hasPantograph;
+		return stationName+" "+x+" "+y+" "+hasCable;
 	}
 	public boolean canRunAlongHere(boolean hasPantograph) {
 		if (hasPantograph) {

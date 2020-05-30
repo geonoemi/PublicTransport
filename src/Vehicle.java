@@ -64,12 +64,16 @@ public class Vehicle {
 						needToRepair[i]=Boolean.parseBoolean(parts[9]);
 						typeOfFuel[i]=parts[10];
 						
+						System.out.print(lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
+								 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]);
+						System.out.println();
+						
 						Vehicle vehicle=new Vehicle(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i]);
 						vehicles.add(vehicle);
 						
-						Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
-								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i]);
+						/*	Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
+								operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i]);
 						
 						if(lowFloor[i] && numOfDisabledPlaces[i]>=1) {
 							wheelChairAccessibleVehicles.add((WheelChairAccessible) wheelchairAccessibleVehicle);
@@ -87,13 +91,13 @@ public class Vehicle {
 							fossilVehicles.add(vehicle);
 						}else {
 							electricVehicles.add(vehicle);
-						}
+						}*/
 					i++;
 				}
 				buffer.close();
 				
 				for(Vehicle v: vehicles) {
-					System.out.println("jármûvek: "+v.toString());
+					System.out.println("vehicles: "+v.toString());
 				}
 			/*	for(Vehicle v: wheelChairAccessibleVehicles) {
 					System.out.println("akadálymentesjarmuvek: "+v.toString());
