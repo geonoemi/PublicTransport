@@ -1,6 +1,6 @@
-2, ,ODA,false,true,190,55,true,0,true,elektromos áram
-2, ,VISSZA,false,true,190,55,true,0,true,elektromos áram
-3,F,ODA,false,true,170,50,true,1,false,elektromos áram
-3,F,VISSZA,false,true,170,50,true,1,false,elektromos áram
-4, ,ODA,false,true,180,55,true,0,false,elektromos áram
-4, ,VISSZA,false,true,180,55,true,0,false,elektromos áram
+2, ,ODA,false,true,190,55,true,0,true,elektromos áram,false
+2, ,VISSZA,false,true,190,55,true,0,true,elektromos áram,false
+3,F,ODA,false,true,170,50,true,1,false,elektromos áram,false
+3,F,VISSZA,false,true,170,50,true,1,false,elektromos áram,false
+4, ,ODA,false,true,180,55,true,0,false,elektromos áram,false
+4, ,VISSZA,false,true,180,55,true,0,false,elektromos áram,false

@@ -1,6 +1,6 @@
-70, ,ODA,true,false,203.95,50,false,1,true,benzin
-70, ,VISSZA,true,false,203.95,50,false,1,true,benzin
-71,A,ODA,false,true,180,45,true,2,false,gázolaj
-71,A,VISSZA,false,true,180,45,true,2,false,gázolaj
-90,H,ODA,true,false,200,50,false,0,true,benzin
-90,H,VISSZA,true,false,200,50,false,0,true,benzin
+70, ,ODA,true,false,203.95,50,false,1,true,benzin,true
+70, ,VISSZA,true,false,203.95,50,false,1,true,benzin,true
+71,A,ODA,false,true,180,45,true,2,false,gázolaj,true
+71,A,VISSZA,false,true,180,45,true,2,false,gázolaj,true
+90,H,ODA,true,false,200,50,false,0,true,benzin,true
+90,H,VISSZA,true,false,200,50,false,0,true,benzin,true

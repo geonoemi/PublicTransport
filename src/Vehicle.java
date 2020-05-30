@@ -84,11 +84,14 @@ public class Vehicle {
 							trolleys.add(trolley);
 						}
 						if(typeOfFuel[i].equals("elektromos áram") && !hasWheel[i]) {
-							trams.add((Tram) vehicle);
+							Tram tram=new Tram(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+									bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+							
+							trams.add(tram);
 						}
 						
-						//	Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
-						//		operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+					/*		Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],
+								operationCost[i],  numOfSeats[i],bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						
 						if(lowFloor[i] && numOfDisabledPlaces[i]>=1) {
 							wheelChairAccessibleVehicles.add((WheelChairAccessible) vehicle);
@@ -106,7 +109,7 @@ public class Vehicle {
 							fossilVehicles.add(vehicle);
 						}else {
 							electricVehicles.add(vehicle);
-						}
+						}*/
 					i++;
 				}
 				buffer.close();
