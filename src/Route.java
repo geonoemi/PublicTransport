@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Route extends Vehicle{
 //járat
@@ -44,13 +45,11 @@ public class Route extends Vehicle{
 	//static DayType dt=DayType.NONWORKINGDAY;
 	
 		
-	// getsOff metódus várja a naptípust és egy jármû objektumot, ha a naptípus munkanap, akkor megnézi a jármû számát, betûjét és irányát, ennek megfelelõen hívja meg az adott vonalhoz tartozó indulási idõket tartalmazó txt fájlt
 	public static  void getsoff(DayType dt, int lineNum, String lineLetter, String way ) {
 		
 		if(dt==DayType.WORKINGDAY){
-	    	//olvassa be a munkanapos indulási idõket tartalmazó file-t
-	    //	for(Vehicle v:vehicles) {
-	    		if(lineNum==2 && way.equals("FORTH")) { //minden vonal mindkét irányára
+	    	
+	    		if(lineNum==2 && way.equals("FORTH")) { 
 	    			readIn("working day departure times for 2 FORTH.txt");
 				 }
 	    		else if(lineNum==2 && way.equals("BACK")) { 
@@ -68,7 +67,6 @@ public class Route extends Vehicle{
 	    		else if(lineNum==4 && way.equals("BACK")) { 
 	    			readIn("working day departure times for 4 BACK.txt");
 				 }
-	    	//}
 	    }
 		
 		else if(dt==DayType.NONWORKINGDAY){
@@ -117,14 +115,35 @@ public class Route extends Vehicle{
 		    }	
 		
 	}
+	
+	public static void getARoute() {
+		
+		Scanner scInt=new Scanner(System.in);
+		System.out.println("Which vehicle do you want to travel with? Please enter the number, letter, and direction of the vehicle.\nNumber: ");
+		int num=scInt.nextInt();
+		
+		
+		Scanner scStr1=new Scanner(System.in);
+		System.out.println("Letter: ");
+		String letter=scStr1.nextLine();
+		
+		
+		Scanner scStr2=new Scanner(System.in);
+		System.out.println("Way (BACK/FORTH) : ");
+		String way=scStr2.nextLine();
+	
+		
+		getsoff(DayType.NONWORKINGDAY, num, letter, "FORTH"); 
+	}
+	
 		public static void main(String[] args) {
 			//readIn("non_working day departure times for 2 FORTH.txt");
 
 			//for (DayType dt : DayType.values()) {
 			  //  System.out.println("ENUM: "+ dt);
+		getARoute();
 		
-		
-				  getsoff(DayType.NONWORKINGDAY, 2, " ", "FORTH" ); 
+				  
 			  
 			  
 			    
