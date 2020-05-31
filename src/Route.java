@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Route extends Vehicle{
 //járat
 
-	private static String []departureTimes;
+	private static String [] departureTimes;
 		
 		public Route(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 						double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
@@ -50,14 +50,29 @@ public class Route extends Vehicle{
 
 			//for (DayType dt : DayType.values()) {
 			  //  System.out.println("ENUM: "+ dt);
-			    if(	dt==DayType.WORKINGDAY){
-			    	System.out.println("It's a working day! ");
+			    if(dt==DayType.WORKINGDAY){
 			    	//olvassa be a munkanapos indulási idõket tartalmazó file-t
 			    	for(Vehicle v:vehicles) {
-			    		//if(v.lineNum==2 && v.way.contentEquals("ODA")) { //mindenvonal mindkét irányára
-			    //			readIn("working day departure times for 2 ODA.txt");
+			    		if(v.lineNum==2 && v.way.contentEquals("ODA")) { //minden vonal mindkét irányára
+			    			readIn("working day departure times for 2 ODA.txt");
+						 }
+			    		else if(v.lineNum==2 && v.way.contentEquals("VISSZA")) { 
+			    			readIn("working day departure times for 2 VISSZA.txt");
+						 }
+			    		else if(v.lineNum==3 && v.lineLetter.contentEquals("F") && v.way.contentEquals("ODA")) { 
+			    			readIn("working day departure times for 3F ODA.txt");
+						 }
+			    		else if(v.lineNum==3 && v.lineLetter.contentEquals("F") && v.way.contentEquals("VISSZA")) {
+			    			readIn("working day departure times for 3F VISSZA.txt");
+						 }
+			    		else if(v.lineNum==4 && v.way.contentEquals("ODA")) {
+			    			readIn("working day departure times for 4 ODA.txt");
+						 }
+			    		else if(v.lineNum==4 && v.way.contentEquals("VISSZA")) { 
+			    			readIn("working day departure times for 4 VISSZA.txt");
 						 }
 			    	}
+			    }
 			/*    }else if(dt==DayType.NONWORKINGDAY) { System.out.println("It's a non-working day! ");
 			    }else if(dt==DayType.DAYOFF) { System.out.println("It's a DAYOFF! ");
 			    }else if(dt==DayType.WORKINGDAYSDURINGSCHOOLYEAR) {	System.out.println("It's a WORKING DAY DURING SCHOOL YEAR! ");
@@ -67,9 +82,52 @@ public class Route extends Vehicle{
 			    }else if(dt==DayType.DAILYEXCEPTHOLIDAY) { System.out.println("It's a DAILYEXCEPTHOLIDAY! ");
 			    }else if(dt==DayType.DAILYEXCEPTONPUBLICHOLIDAYS) {	System.out.println("It's a DAILYEXCEPTONPUBLICHOLIDAYS! ");
 			    }   */            
-			}
-		
-		}
-	
-//	}
+			   
+			   else if(dt==DayType.NONWORKINGDAY){
+			    	for(Vehicle v:vehicles) {
+			    		if(v.lineNum==2 && v.way.contentEquals("ODA")) { 
+			    			readIn("non_working day departure times for 2 ODA.txt");
+						 }
+			    		else if(v.lineNum==2 && v.way.contentEquals("VISSZA")) { 
+			    			readIn("non_working day departure times for 2 VISSZA.txt");
+						 }
+			    		else if(v.lineNum==3 && v.lineLetter.contentEquals("F") && v.way.contentEquals("ODA")) { 
+			    			readIn("non_working day departure times for 3F ODA.txt");
+						 }
+			    		else if(v.lineNum==3 && v.lineLetter.contentEquals("F") && v.way.contentEquals("VISSZA")) { 
+			    			readIn("non_working day departure times for 3F VISSZA.txt");
+						 }
+			    		else if(v.lineNum==4 && v.way.contentEquals("ODA")) { 
+			    			readIn("non_working day departure times for 4 ODA.txt");
+						 }
+			    		else if(v.lineNum==4 && v.way.contentEquals("VISSZA")) {
+			    			readIn("non_working day departure times for 4 VISSZA.txt");
+						 }
+			    	}
+			 }
+			    
+			    if(dt==DayType.DAYOFF){
+			    	for(Vehicle v:vehicles) {
+			    		if(v.lineNum==2 && v.way.contentEquals("ODA")) { //minden vonal mindkét irányára
+			    			readIn("day off departure times for 2 ODA.txt");
+						 }
+			    		else if(v.lineNum==2 && v.way.contentEquals("VISSZA")) { 
+			    			readIn("day off departure times for 2 VISSZA.txt");
+						 }
+			    		else if(v.lineNum==3 && v.lineLetter.contentEquals("F") && v.way.contentEquals("ODA")) { 
+			    			readIn("day off departure times for 3F ODA.txt");
+						 }
+			    		else if(v.lineNum==3 && v.lineLetter.contentEquals("F") && v.way.contentEquals("VISSZA")) {
+			    			readIn("day off departure times for 3F VISSZA.txt");
+						 }
+			    		else if(v.lineNum==4 && v.way.contentEquals("ODA")) {
+			    			readIn("day off departure times for 4 ODA.txt");
+						 }
+			    		else if(v.lineNum==4 && v.way.contentEquals("VISSZA")) { 
+			    			readIn("day off departure times for 4 VISSZA.txt");
+						 }
+			    	}
+			    }
+	}
 
+}
