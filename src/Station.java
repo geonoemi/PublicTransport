@@ -59,9 +59,11 @@ public class Station {
 			System.out.println("e.getMessage()");
 		}		
 	}
+
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
+	
 	public static boolean canRunAlongHere(boolean hasPantograph) {
 		if (hasPantograph) {
 			System.out.println("This vehicle can run along here.");
@@ -71,6 +73,7 @@ public class Station {
 			return false;
 		}
 	}
+	
 	public static void main(String[] args) {
 		
 		readIn("allomasok.txt");

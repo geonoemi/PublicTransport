@@ -5,11 +5,11 @@ public class WheelChairAccessible  extends Vehicle{
 			double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 			boolean needToRepair, String typeOfFuel, boolean hasWheel) {
 		
-		super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+			super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 				numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 		
 	}
-
+	
 	
 		
 	}

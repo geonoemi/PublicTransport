@@ -17,8 +17,6 @@ public class Route extends Vehicle{
 
 		
 		public static DayType dayTypes;
-		//if vonalszam[i]==valami && vonalBetu.equals("valami") && dayTypes
-	//ide kell egy fájlbeolvasó az indulási idõkrõl
 		
 		public static void readIn(String fileName){ 
 			try {

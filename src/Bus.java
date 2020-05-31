@@ -20,7 +20,29 @@ public class Bus extends Vehicle implements Fossil {
 		public static void main(String[] args) {
 		
 			readIn("buszok.txt");
-			
+			for(Vehicle v: vehicles) {
+				if(v.getClass().equals(Bus.class)) {
+					System.out.println("This is a bus.");
+				}
+				if(v.lowFloor && v.numOfDisabledPlaces>=1) {
+					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(v.lineNum, v.lineLetter, v.way, v.articulated, v.lowFloor,
+						//	v.operationCost,  v.numOfSeats, v.bicycleTransportOpp, v.numOfDisabledPlaces, v. needToRepair, v.typeOfFuel, v.hasWheel);
+					wheelChairAccessibleVehicles.add((WheelChairAccessible) v);
+				}
+					
+				if(v.needToRepair) {
+					toService.add(v);
+				}	
+				
+				if(v.bicycleTransportOpp) {
+					bicycleVehicles.add(v);
+				}
+				if(v.typeOfFuel.contentEquals("petrol") || v.typeOfFuel.contentEquals("diesel oil")) {
+					fossilVehicles.add(v);
+				}else {
+					electricVehicles.add(v);
+				} 
+			}
 		}
 
 	}
