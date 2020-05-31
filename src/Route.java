@@ -45,7 +45,7 @@ public class Route extends Vehicle{
 	//static DayType dt=DayType.NONWORKINGDAY;
 	
 		
-	public static  void getsoff(DayType dt, int lineNum, String lineLetter, String way ) {
+	public static  void getsoff(int lineNum, String lineLetter, String way, DayType dt ) {
 		
 		if(dt==DayType.WORKINGDAY){
 	    	
@@ -119,9 +119,9 @@ public class Route extends Vehicle{
 	public static void getARoute() {
 		
 		Scanner scInt=new Scanner(System.in);
-		System.out.println("Which vehicle do you want to travel with? Please enter the number, letter, and direction of the vehicle.\nNumber: ");
+		System.out.println("Which vehicle do you want to travel with? Please enter the number, letter, direction of the vehicle and the day type.\nNumber: ");
 		int num=scInt.nextInt();
-		
+	//	scInt.close();
 		
 		Scanner scStr1=new Scanner(System.in);
 		System.out.println("Letter: ");
@@ -132,8 +132,13 @@ public class Route extends Vehicle{
 		System.out.println("Way (BACK/FORTH) : ");
 		String way=scStr2.nextLine();
 	
+		Scanner dtp=new Scanner(System.in);
+		System.out.println("Choose from the following daytypes:WORKINGDAY,NONWORKINGDAY,DAYOFF,WORKINGDAYSDURINGSCHOOLYEAR,SUMMERBREAKWORKINGDAYS,ONPUBLICHOLIDAYS,DURINGSCHOOLHOLIDAYS,DAILYEXCEPTHOLIDAY,DAILYEXCEPTONPUBLICHOLIDAYS ");
 		
-		getsoff(DayType.NONWORKINGDAY, num, letter, "FORTH"); 
+	    String dayType = dtp.nextLine();
+	    DayType dayTypes  = DayType.valueOf(dayType);
+	    
+		getsoff(num, letter, way, dayTypes); 
 	}
 	
 		public static void main(String[] args) {
