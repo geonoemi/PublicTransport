@@ -129,11 +129,16 @@ public class Route extends Vehicle{
 		String letter=scStr1.nextLine();
 				
 		Scanner scStr2=new Scanner(System.in);
-		System.out.println("Way (BACK=1 FORTH=2) : ");
+		System.out.println("Way (FORTH=1 BACK=2) : ");
 		int way=scStr2.nextInt();
 	
 		Scanner dtp=new Scanner(System.in);
-		System.out.println("Choose from the following daytypes:WORKINGDAY,NONWORKINGDAY,DAYOFF,WORKINGDAYSDURINGSCHOOLYEAR,SUMMERBREAKWORKINGDAYS,ONPUBLICHOLIDAYS,DURINGSCHOOLHOLIDAYS,DAILYEXCEPTHOLIDAY,DAILYEXCEPTONPUBLICHOLIDAYS ");
+	//	System.out.println("Choose from the following daytypes:WORKINGDAY,NONWORKINGDAY,DAYOFF,WORKINGDAYSDURINGSCHOOLYEAR,SUMMERBREAKWORKINGDAYS,ONPUBLICHOLIDAYS,DURINGSCHOOLHOLIDAYS,DAILYEXCEPTHOLIDAY,DAILYEXCEPTONPUBLICHOLIDAYS ");
+	
+		System.out.println("Choose from the following daytypes: ");
+		for (DayType dt : DayType.values())
+		    System.out.printf("\t%s\n", dt);
+		
 		DayType dayTypes  = DayType.valueOf(dtp.nextLine());//String to enum
 	    
 		getsoff(typeOfVehicle, num, letter, way, dayTypes); 
