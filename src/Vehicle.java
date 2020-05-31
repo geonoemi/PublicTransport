@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 	import java.util.ArrayList;
 	
 public class Vehicle {
-	
+		protected String typeOfVehicle;
 		protected int lineNum;
 		protected String lineLetter;
 		protected String way;
@@ -30,7 +30,7 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 		
 		
-		public Vehicle(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+		public Vehicle(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
 		}
 		
@@ -45,6 +45,7 @@ public class Vehicle {
 				while((queue=buffer.readLine())!=null) {
 					
 						String parts[] = queue.split(",");
+						String typeOfVehicle[]=new String[queue.length()];
 						int[]lineNum=new int[queue.length()];
 						String[]lineLetter=new String[queue.length()];
 						String[]way=new String[queue.length()];
@@ -58,24 +59,25 @@ public class Vehicle {
 						String[]typeOfFuel=new String[queue.length()];
 						boolean[]hasWheel=new boolean[queue.length()];
 						
-						lineNum[i]=Integer.parseInt(parts[0]);
-						lineLetter[i]=parts[1];
-						way[i]=parts[2];
-						articulated[i]=Boolean.valueOf(parts[3]);
-						lowFloor[i]=Boolean.parseBoolean(parts[4]);
-						operationCost[i]=Double.parseDouble(parts[5]);
-						numOfSeats[i]=Integer.parseInt(parts[6]);
-						bicycleTransportOpp[i]=Boolean.parseBoolean(parts[7]);
-						numOfDisabledPlaces[i]=Integer.parseInt(parts[8]);
-						needToRepair[i]=Boolean.parseBoolean(parts[9]);
-						typeOfFuel[i]=parts[10];
-						hasWheel[i]=Boolean.parseBoolean(parts[11]);
+						typeOfVehicle[i]=parts[0];
+						lineNum[i]=Integer.parseInt(parts[1]);
+						lineLetter[i]=parts[2];
+						way[i]=parts[3];
+						articulated[i]=Boolean.valueOf(parts[4]);
+						lowFloor[i]=Boolean.parseBoolean(parts[5]);
+						operationCost[i]=Double.parseDouble(parts[6]);
+						numOfSeats[i]=Integer.parseInt(parts[7]);
+						bicycleTransportOpp[i]=Boolean.parseBoolean(parts[8]);
+						numOfDisabledPlaces[i]=Integer.parseInt(parts[9]);
+						needToRepair[i]=Boolean.parseBoolean(parts[10]);
+						typeOfFuel[i]=parts[11];
+						hasWheel[i]=Boolean.parseBoolean(parts[12]);
 										
 					//	System.out.print(lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
 					//			 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
 					//	System.out.println();
 										
-						Vehicle vehicle=new Vehicle(lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+						Vehicle vehicle=new Vehicle(typeOfVehicle[i], lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						vehicles.add(vehicle);
 						

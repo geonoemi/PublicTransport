@@ -9,11 +9,11 @@ public class Bus extends Vehicle implements Fossil {
 		//private String plateNum;
 		
 		
-		public Bus(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
-				boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
-			super( lineNum,  lineLetter,  way,  articulated,  lowFloor,  operationCost,  numOfSeats,
-					 bicycleTransportOpp,  numOfDisabledPlaces,  needToRepair, typeOfFuel, hasWheel); 
-					
+		public Bus(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
+					double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
+					boolean needToRepair, String typeOfFuel, boolean hasWheel) {
+			super(typeOfVehicle, lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+					numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 		}
 	
 		

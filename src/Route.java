@@ -9,10 +9,10 @@ public class Route extends Vehicle{
 
 	private static String [] departureTimes;
 		
-		public Route(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
+		public Route(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 						double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 						boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-				super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+				super(typeOfVehicle, lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 						numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 				}
 
@@ -45,114 +45,106 @@ public class Route extends Vehicle{
 	//static DayType dt=DayType.NONWORKINGDAY;
 	
 		
-	public static  void getsoff(int lineNum, String lineLetter, String way, DayType dt ) {
+	public static  void getsoff(int typeOfVehicle, int lineNum, String lineLetter, int way, DayType dt ) {
 		
+		System.out.println("This route gets off at the following times: ");
 		if(dt==DayType.WORKINGDAY){
 	    	
-	    		if(lineNum==2 && way.equals("FORTH")) { 
+	    		if(lineNum==2 && way==1) { 
 	    			readIn("working day departure times for 2 FORTH.txt");
 				 }
-	    		else if(lineNum==2 && way.equals("BACK")) { 
+	    		else if(lineNum==2 && way==2) { 
 	    			readIn("working day departure times for 2 BACK.txt");
 				 }
-	    		else if(lineNum==3 && lineLetter.equals("F") && way.equals("FORTH")) { 
+	    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
 	    			readIn("working day departure times for 3F FORTH.txt");
 				 }
-	    		else if(lineNum==3 && lineLetter.equals("F") && way.equals("BACK")) {
+	    		else if(lineNum==3 && lineLetter.equals("F") && way==2) {
 	    			readIn("working day departure times for 3F BACK.txt");
 				 }
-	    		else if(lineNum==4 && way.equals("FORTH")) {
+	    		else if(lineNum==4 && way==1) {
 	    			readIn("working day departure times for 4 FORTH.txt");
 				 }
-	    		else if(lineNum==4 && way.equals("BACK")) { 
+	    		else if(lineNum==4 && way==2) { 
 	    			readIn("working day departure times for 4 BACK.txt");
 				 }
 	    }
 		
 		else if(dt==DayType.NONWORKINGDAY){
 	    	//for(Vehicle v:vehicles) {
-	    		if(lineNum==2 && way.equals("FORTH")) { 
+	    		if(lineNum==2 && way==1) { 
 	    			readIn("non_working day departure times for 2 FORTH.txt");
 				 }
-	    		else if(lineNum==2 && way.equals("BACK")) { 
+	    		else if(lineNum==2 && way==2) { 
 	    			readIn("non_working day departure times for 2 BACK.txt");
 				 }
-	    		else if(lineNum==3 && lineLetter.equals("F") && way.equals("FORTH")) { 
+	    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
 	    			readIn("non_working day departure times for 3F FORTH.txt");
 				 }
-	    		else if(lineNum==3 && lineLetter.equals("F") && way.equals("BACK")) { 
+	    		else if(lineNum==3 && lineLetter.equals("F") && way==2) { 
 	    			readIn("non_working day departure times for 3F BACK.txt");
 				 }
-	    		else if(lineNum==4 && way.equals("FORTH")) { 
+	    		else if(lineNum==4 && way==1) { 
 	    			readIn("non_working day departure times for 4 FORTH.txt");
 				 }
-	    		else if(lineNum==4 && way.equals("BACK")) {
+	    		else if(lineNum==4 && way==2) {
 	    			readIn("non_working day departure times for 4 BACK.txt");
 				 }
-	    	//}
-	 }
+		}
 		   else if(dt==DayType.DAYOFF){
-			//   for(Vehicle v:vehicles) {
-		    		if(lineNum==2 && way.equals("FORTH")) { //minden vonal mindkét irányára
+		    		if(lineNum==2 && way==1) { //minden vonal mindkét irányára
 		    			readIn("day off departure times for 2 FORTH.txt");
 					 }
-		    		else if(lineNum==2 && way.equals("BACK")) { 
+		    		else if(lineNum==2 && way==2) { 
 		    			readIn("day off departure times for 2 BACK.txt");
 					 }
-		    		else if(lineNum==3 && lineLetter.equals("F") && way.equals("FORTH")) { 
+		    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
 		    			readIn("day off departure times for 3F FORTH.txt");
 					 }
-		    		else if(lineNum==3 && lineLetter.equals("F") && way.equals("BACK")) {
+		    		else if(lineNum==3 && lineLetter.equals("F") && way==2) {
 		    			readIn("day off departure times for 3F BACK.txt");
 					 }
-		    		else if(lineNum==4 && way.equals("FORTH")) {
+		    		else if(lineNum==4 && way==1) {
 		    			readIn("day off departure times for 4 FORTH.txt");
 					 }
-		    		else if(lineNum==4 && way.equals("BACK")) { 
+		    		else if(lineNum==4 && way==2) { 
 		    			readIn("day off departure times for 4 BACK.txt");
 					 }
-			  // }
 		    }	
-		
 	}
 	
 	public static void getARoute() {
 		
-		Scanner scInt=new Scanner(System.in);
-		System.out.println("Which vehicle do you want to travel with? Please enter the number, letter, direction of the vehicle and the day type.\nNumber: ");
-		int num=scInt.nextInt();
-	//	scInt.close();
+		Scanner type=new Scanner(System.in);
+		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
+		int typeOfVehicle=type.nextInt();
 		
+		
+		Scanner scInt=new Scanner(System.in);
+		System.out.println("Which vehicle do you want to travel with? Please enter the number, letter, direction of the vehicle and the type of the day.\nNumber: ");
+		int num=scInt.nextInt();
+			
 		Scanner scStr1=new Scanner(System.in);
 		System.out.println("Letter: ");
 		String letter=scStr1.nextLine();
-		
-		
+				
 		Scanner scStr2=new Scanner(System.in);
-		System.out.println("Way (BACK/FORTH) : ");
-		String way=scStr2.nextLine();
+		System.out.println("Way (BACK=1 FORTH=2) : ");
+		int way=scStr2.nextInt();
 	
 		Scanner dtp=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes:WORKINGDAY,NONWORKINGDAY,DAYOFF,WORKINGDAYSDURINGSCHOOLYEAR,SUMMERBREAKWORKINGDAYS,ONPUBLICHOLIDAYS,DURINGSCHOOLHOLIDAYS,DAILYEXCEPTHOLIDAY,DAILYEXCEPTONPUBLICHOLIDAYS ");
-		
-	    String dayType = dtp.nextLine();
-	    DayType dayTypes  = DayType.valueOf(dayType);
+		DayType dayTypes  = DayType.valueOf(dtp.nextLine());//String to enum
 	    
-		getsoff(num, letter, way, dayTypes); 
+		getsoff(typeOfVehicle, num, letter, way, dayTypes); 
+		scInt.close();
+		scStr1.close();
+		scStr2.close();
+		dtp.close();
 	}
 	
-		public static void main(String[] args) {
-			//readIn("non_working day departure times for 2 FORTH.txt");
-
-			//for (DayType dt : DayType.values()) {
-			  //  System.out.println("ENUM: "+ dt);
-		getARoute();
-		
-				  
-			  
-			  
-			    
-			
+	public static void main(String[] args) {
+			getARoute();
 	}
-
+		
 }
