@@ -1,6 +1,0 @@
-8, ,ODA,false,true,190,55,true,0,false,electrical energy,true
-8, ,VISSZA,false,1,190,55,true,0,false,electrical energy,true
-10, ,ODA,false,true,170,50,true,1,true,electrical energy,true
-10, ,VISSZA,false,true,170,50,true,1,true,electrical energy,true
-19, ,ODA,false,true,180,55,true,0,false,electrical energy,true
-19, ,VISSZA,false,true,180,55,true,0,false,electrical energy,true

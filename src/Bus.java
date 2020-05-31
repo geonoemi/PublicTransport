@@ -19,7 +19,7 @@ public class Bus extends Vehicle implements Fossil {
 		
 		public static void main(String[] args) {
 		
-			readIn("buszok.txt");
+			readIn("buses.txt");
 			for(Vehicle v: vehicles) {
 				if(v.getClass().equals(Bus.class)) {
 					System.out.println("This is a bus.");

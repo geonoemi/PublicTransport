@@ -1,0 +1,6 @@
+70, ,FORTH,true,false,203.95,50,false,1,true,petrol,true
+70, ,BACK,true,false,203.95,50,false,1,true,petrol,true
+71,A,FORTH,false,true,180,45,true,2,false,diesel oil,true
+71,A,BACK,false,true,180,45,true,2,false,diesel oil,true
+90,H,FORTH,true,false,200,50,false,0,true,petrol,true
+90,H,BACK,true,false,200,50,false,0,true,petrol,true

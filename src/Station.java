@@ -76,7 +76,7 @@ public class Station {
 	
 	public static void main(String[] args) {
 		
-		readIn("allomasok.txt");
+		readIn("stations.txt");
 		canRunAlongHere(false);
 	}
 }

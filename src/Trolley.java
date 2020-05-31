@@ -23,7 +23,7 @@ public class Trolley extends Vehicle implements Electric {
 		
 		public static void main(String[] args) {
 			
-			readIn("trolik.txt");
+			readIn("trolleys.txt");
 			for(Vehicle v: vehicles) {
 				if(v.getClass().equals(Trolley.class)) {
 					System.out.println("This is a trolley.");

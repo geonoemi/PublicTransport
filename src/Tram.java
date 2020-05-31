@@ -21,7 +21,7 @@ public class Tram extends Vehicle implements Electric{
 
 	public static void main(String[] args) {
 		
-		readIn("villamosok.txt");
+		readIn("trams.txt");
 		for(Vehicle v: vehicles) {
 			if(v.getClass().equals(Tram.class)) {
 				System.out.println("This is a tram.");
