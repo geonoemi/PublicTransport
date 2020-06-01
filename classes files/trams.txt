@@ -1,6 +1,6 @@
-tram,2, ,ODA,false,true,190,55,true,0,true,electrical energy,false
-tram,2, ,VISSZA,false,true,190,55,true,0,true,electrical energy,false
-tram,3,F,ODA,false,true,170,50,true,1,false,electrical energy,false
-tram,3,F,VISSZA,false,true,170,50,true,1,false,electrical energy,false
-tram,4, ,ODA,false,true,180,55,true,0,false,electrical energy,false
-tram,4, ,VISSZA,false,true,180,55,true,0,false,electrical energy,false
+tram,2, ,FORTH,false,true,190,55,true,0,true,electrical energy,false
+tram,2, ,BACK,false,true,190,55,true,0,true,electrical energy,false
+tram,3,F,FORTH,false,true,170,50,true,1,false,electrical energy,false
+tram,3,F,BACK,false,true,170,50,true,1,false,electrical energy,false
+tram,4, ,FORTH,false,true,180,55,true,0,false,electrical energy,false
+tram,4, ,BACK,false,true,180,55,true,0,false,electrical energy,false

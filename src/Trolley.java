@@ -42,6 +42,5 @@ public class Trolley extends Vehicle implements Electric {
 					bicycleVehicles.add(v);
 				}
 			}
-			
 		}	
 	}

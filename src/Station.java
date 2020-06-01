@@ -6,8 +6,8 @@ import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Locale;
-
 
 public class Station {
 	private String x;
@@ -24,33 +24,28 @@ public class Station {
 		this.y = y;
 		this.stationName = stationName;
 		this.hasCable=hasCable;
-		
 		//this.hasPantograph= hasPantograph;
-		
 	}
 	public static void readIn(String fileName){ 
 		try {
 			
 			FileReader reader=new FileReader(fileName);
 			BufferedReader buffer=new BufferedReader(reader);
-			String queue=null;
+			String line=null;
 			int i=0;
 			
-			while((queue=buffer.readLine())!=null) {
+			while((line=buffer.readLine())!=null) {
 				
-				String parts[] = queue.split(",");
+				String parts[] = line.split(",");
 				
-				String[] stationName=new String[queue.length()];
+				String[] stationName=new String[line.length()];
 				stationName[i]=parts[0];
 				stationNames.add(stationName[i]);
 				
-				//System.out.println(stationNames[i]);
+				String x[]=new String[line.length()];
+				String y[]=new String[line.length()];
+				boolean hasCable[]=new boolean[line.length()];
 				
-				String x[]=new String[queue.length()];
-				String y[]=new String[queue.length()];
-				boolean hasCable[]=new boolean[queue.length()];
-				
-			
 				x[i]=parts[1];
 				y[i]=parts[2];
 				hasCable[i]=Boolean.parseBoolean(parts[3]);
@@ -58,21 +53,16 @@ public class Station {
 				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
 			
-				i++;
-					
+				i++;				
 			}
-		/*	Collections.sort(stationNames);
-			for(String s: stationNames) {
-				
-				System.out.println(s);
-			}*/
 			buffer.close();
-			
-			
+				
 		}catch(FileNotFoundException e) {
 			System.out.println("File not found.");
 		}catch(IOException e) {
 			System.out.println("e.getMessage()");
+		}catch (InputMismatchException exception) {
+			System.out.println("Not appropriate input type.");
 		}		
 	}
 	public static void sortStationNames(Collator collator, ArrayList <String> stationNames) {
@@ -90,13 +80,7 @@ public class Station {
 			System.out.println(stationNames.get(i));
 		}	
 	}
-/*	public static void readSortedStations(){
 
-		for(String s: stationNames) {
-				Collections.sort(stationNames);
-				System.out.println(s);
-			}
-	}*/
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
@@ -111,7 +95,6 @@ public class Station {
 		}
 	}
 	
-
 	public static void main(String[] args) {
 
 		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
