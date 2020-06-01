@@ -2,7 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.Collator;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Route extends Vehicle{
@@ -118,8 +120,13 @@ public class Route extends Vehicle{
 		
 		Scanner stat=new Scanner(System.in);
 		System.out.println("Choose station: ");
+		Collator hu = Collator.getInstance(new Locale("hu","HU"));
+		Station.sortStationNames(hu,Station.stationNames);
 		
-		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		for(int i=0;i<Station.stationNames.size();i++) {
+			System.out.println(Station.stationNames.get(i));
+		}	
+		//Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		String station=stat.nextLine();
 		
 		/*for(String s: Station.stationNames) {

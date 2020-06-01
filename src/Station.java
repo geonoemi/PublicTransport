@@ -2,9 +2,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Locale;
 
 
 public class Station {
@@ -59,11 +61,11 @@ public class Station {
 				i++;
 					
 			}
-			Collections.sort(stationNames);
+		/*	Collections.sort(stationNames);
 			for(String s: stationNames) {
 				
 				System.out.println(s);
-			}
+			}*/
 			buffer.close();
 			
 			
@@ -72,17 +74,26 @@ public class Station {
 		}catch(IOException e) {
 			System.out.println("e.getMessage()");
 		}		
-		
-		
 	}
-
-	public static void sortedStations(){
+	public static void sortStationNames(Collator collator, ArrayList <String> stationNames) {
+	    String tmp;
+	    for (int i = 0; i < stationNames.size(); i++) {
+	        for (int j = i + 1; j < stationNames.size(); j++) { 
+	            if (collator.compare(stationNames.get(i), stationNames.get(j)) > 0) {
+	              tmp = stationNames.get(i);
+	              stationNames.set(i,stationNames.get(j));
+	              stationNames.set(j,tmp);
+	            }
+	        }
+	    }
+	}
+/*	public static void readSortedStations(){
 
 		for(String s: stationNames) {
 				Collections.sort(stationNames);
 				System.out.println(s);
 			}
-	}
+	}*/
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
@@ -99,14 +110,14 @@ public class Station {
 	
 
 	public static void main(String[] args) {
-	/*	for(String s:stationNames) {
-		System.out.println(s);
-		}*/
+
 		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
-		//sortedStations();
-		
-		//Arrays.sort(stationNames);
-			//	Arrays.sort(names);
+		Collator hu = Collator.getInstance(new Locale("hu","HU"));
+		sortStationNames(hu,stationNames);
+		for(int i=0;i<stationNames.size();i++) {
+			System.out.println(stationNames.get(i));
+		}	
+		//readSortedStations();
 	//	canRunAlongHere(false);
 	}
 }
