@@ -123,12 +123,12 @@ public class Route extends Vehicle{
 		String station=stat.nextLine();
 		
 		/*for(String s: Station.stationNames) {
-			while(!stat.nextLine().equals(s)) {
+			while(stat.nextLine().equals(s)) {
 				System.out.println("Choose station: ");
 				Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 			}
 			if(stat.nextLine().equals(s)){
-				String station=stat.nextLine();
+				 station=stat.nextLine();
 			}
 		}*/
 		

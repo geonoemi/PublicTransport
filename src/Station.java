@@ -14,7 +14,7 @@ public class Station {
 	boolean hasCable;
 	boolean hasPantograph;
 	private static ArrayList<Station> stations=new ArrayList<>();
-	private static ArrayList<String> stationNames=new ArrayList<>();
+	static ArrayList<String> stationNames=new ArrayList<>();
 	
 	public Station(String stationName,String x, String y,boolean hasCable) {
 		
@@ -79,8 +79,8 @@ public class Station {
 	public static void sortedStations(){
 
 		for(String s: stationNames) {
-			//	Arrays.sort(stationNames);
-			//	System.out.println(s);
+				Collections.sort(stationNames);
+				System.out.println(s);
 			}
 	}
 	public String toString() {
@@ -99,7 +99,9 @@ public class Station {
 	
 
 	public static void main(String[] args) {
-		
+	/*	for(String s:stationNames) {
+		System.out.println(s);
+		}*/
 		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		//sortedStations();
 		
