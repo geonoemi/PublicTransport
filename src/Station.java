@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 
 public class Station {
@@ -13,7 +14,7 @@ public class Station {
 	boolean hasCable;
 	boolean hasPantograph;
 	private static ArrayList<Station> stations=new ArrayList<>();
-	static 	String []stationNames=new String[16];
+	private static ArrayList<String> stationNames=new ArrayList<>();
 	
 	public Station(String stationName,String x, String y,boolean hasCable) {
 		
@@ -37,8 +38,9 @@ public class Station {
 				
 				String parts[] = queue.split(",");
 				
-			//	stationNames=new String[queue.length()];
-				stationNames[i]=parts[0];
+				String[] stationName=new String[queue.length()];
+				stationName[i]=parts[0];
+				stationNames.add(stationName[i]);
 				
 				//System.out.println(stationNames[i]);
 				
@@ -51,13 +53,13 @@ public class Station {
 				y[i]=parts[2];
 				hasCable[i]=Boolean.parseBoolean(parts[3]);
 				
-				Station station=new Station(stationNames[i],x[i],y[i],hasCable[i]);
+				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
 			
 				i++;
 					
 			}
-			Arrays.sort(stationNames);
+			Collections.sort(stationNames);
 			for(String s: stationNames) {
 				
 				System.out.println(s);

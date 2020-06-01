@@ -120,10 +120,9 @@ public class Route extends Vehicle{
 		System.out.println("Choose station: ");
 		
 		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
-		//Arrays.sort(Station.stationNames);
+		String station=stat.nextLine();
 		
-		
-		for(String s: Station.stationNames) {
+		/*for(String s: Station.stationNames) {
 			while(!stat.nextLine().equals(s)) {
 				System.out.println("Choose station: ");
 				Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
@@ -131,7 +130,7 @@ public class Route extends Vehicle{
 			if(stat.nextLine().equals(s)){
 				String station=stat.nextLine();
 			}
-		}
+		}*/
 		
 		Scanner type=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
