@@ -120,13 +120,14 @@ public class Route extends Vehicle{
 		
 		Scanner stat=new Scanner(System.in);
 		System.out.println("Choose station: ");
+		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
 		
-		for(int i=0;i<Station.stationNames.size();i++) {
-			System.out.println(Station.stationNames.get(i));
-		}	
-		//Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+	//	for(int i=0;i<Station.stationNames.size();i++) {
+	//		System.out.println(Station.stationNames.get(i));
+	//	}	
+		
 		String station=stat.nextLine();
 		
 		/*for(String s: Station.stationNames) {

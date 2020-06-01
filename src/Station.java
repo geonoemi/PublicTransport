@@ -86,6 +86,9 @@ public class Station {
 	            }
 	        }
 	    }
+	    for(int i=0;i<stationNames.size();i++) {
+			System.out.println(stationNames.get(i));
+		}	
 	}
 /*	public static void readSortedStations(){
 
@@ -114,9 +117,7 @@ public class Station {
 		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
-		for(int i=0;i<stationNames.size();i++) {
-			System.out.println(stationNames.get(i));
-		}	
+		
 		//readSortedStations();
 	//	canRunAlongHere(false);
 	}
