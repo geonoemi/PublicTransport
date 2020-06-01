@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class Station {
 	private String x;
@@ -11,6 +13,7 @@ public class Station {
 	boolean hasCable;
 	boolean hasPantograph;
 	private static ArrayList<Station> stations=new ArrayList<>();
+	static 	String []stationNames=new String[16];
 	
 	public Station(String stationName,String x, String y,boolean hasCable) {
 		
@@ -18,6 +21,7 @@ public class Station {
 		this.y = y;
 		this.stationName = stationName;
 		this.hasCable=hasCable;
+		
 		//this.hasPantograph= hasPantograph;
 		
 	}
@@ -32,34 +36,51 @@ public class Station {
 			while((queue=buffer.readLine())!=null) {
 				
 				String parts[] = queue.split(",");
-				String stationName[]=new String[queue.length()];
+				
+			//	stationNames=new String[queue.length()];
+				stationNames[i]=parts[0];
+				
+				//System.out.println(stationNames[i]);
+				
 				String x[]=new String[queue.length()];
 				String y[]=new String[queue.length()];
 				boolean hasCable[]=new boolean[queue.length()];
 				
-				stationName[i]=parts[0];
+			
 				x[i]=parts[1];
 				y[i]=parts[2];
 				hasCable[i]=Boolean.parseBoolean(parts[3]);
 				
-				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
+				Station station=new Station(stationNames[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
-				
+			
 				i++;
+					
+			}
+			Arrays.sort(stationNames);
+			for(String s: stationNames) {
+				
+				System.out.println(s);
 			}
 			buffer.close();
 			
-			for(Station s: stations) {
-				System.out.println("stations: "+" "+s.toString());
-			}
 			
 		}catch(FileNotFoundException e) {
 			System.out.println("File not found.");
 		}catch(IOException e) {
 			System.out.println("e.getMessage()");
 		}		
+		
+		
 	}
 
+	public static void sortedStations(){
+
+		for(String s: stationNames) {
+			//	Arrays.sort(stationNames);
+			//	System.out.println(s);
+			}
+	}
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
@@ -74,10 +95,15 @@ public class Station {
 		}
 	}
 	
+
 	public static void main(String[] args) {
 		
-		readIn("stations.txt");
-		canRunAlongHere(false);
+		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		//sortedStations();
+		
+		//Arrays.sort(stationNames);
+			//	Arrays.sort(names);
+	//	canRunAlongHere(false);
 	}
 }
 

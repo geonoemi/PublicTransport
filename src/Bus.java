@@ -9,17 +9,17 @@ public class Bus extends Vehicle implements Fossil {
 		//private String plateNum;
 		
 		
-		public Bus(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
+		public Bus(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 					double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 					boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-			super(typeOfVehicle, lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+			super( lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 					numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 		}
 	
 		
 		public static void main(String[] args) {
 		
-			readIn("buses.txt");
+			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\buses.txt");
 			for(Vehicle v: vehicles) {
 				if(v.getClass().equals(Bus.class)) {
 					System.out.println("This is a bus.");

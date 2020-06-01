@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Route extends Vehicle{
@@ -9,10 +10,10 @@ public class Route extends Vehicle{
 
 	private static String [] departureTimes;
 		
-		public Route(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
+		public Route( int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 						double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 						boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-				super(typeOfVehicle, lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+				super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 						numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 				}
 
@@ -51,7 +52,7 @@ public class Route extends Vehicle{
 		if(dt==DayType.WORKINGDAY){
 	    	
 	    		if(lineNum==2 && way==1) { 
-	    			readIn("working day departure times for 2 FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\working day departure times for 2 FORTH.txt");
 				 }
 	    		else if(lineNum==2 && way==2) { 
 	    			readIn("working day departure times for 2 BACK.txt");
@@ -115,6 +116,23 @@ public class Route extends Vehicle{
 	
 	public static void getARoute() {
 		
+		Scanner stat=new Scanner(System.in);
+		System.out.println("Choose station: ");
+		
+		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		//Arrays.sort(Station.stationNames);
+		
+		
+		for(String s: Station.stationNames) {
+			while(!stat.nextLine().equals(s)) {
+				System.out.println("Choose station: ");
+				Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+			}
+			if(stat.nextLine().equals(s)){
+				String station=stat.nextLine();
+			}
+		}
+		
 		Scanner type=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
 		int typeOfVehicle=type.nextInt();
@@ -133,15 +151,14 @@ public class Route extends Vehicle{
 		int way=scStr2.nextInt();
 	
 		Scanner dtp=new Scanner(System.in);
-	//	System.out.println("Choose from the following daytypes:WORKINGDAY,NONWORKINGDAY,DAYOFF,WORKINGDAYSDURINGSCHOOLYEAR,SUMMERBREAKWORKINGDAYS,ONPUBLICHOLIDAYS,DURINGSCHOOLHOLIDAYS,DAILYEXCEPTHOLIDAY,DAILYEXCEPTONPUBLICHOLIDAYS ");
-	
 		System.out.println("Choose from the following daytypes: ");
 		for (DayType dt : DayType.values())
-		    System.out.printf("\t%s\n", dt);
-		
+	    System.out.printf("\t%s\n", dt);  
 		DayType dayTypes  = DayType.valueOf(dtp.nextLine());//String to enum
 	    
 		getsoff(typeOfVehicle, num, letter, way, dayTypes); 
+		stat.close();
+		type.close();
 		scInt.close();
 		scStr1.close();
 		scStr2.close();
@@ -149,7 +166,8 @@ public class Route extends Vehicle{
 	}
 	
 	public static void main(String[] args) {
-			getARoute();
+		
+		getARoute();
 	}
 		
 }

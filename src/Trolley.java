@@ -3,10 +3,10 @@ public class Trolley extends Vehicle implements Electric {
 		
 		private boolean hasWheel=true;
 		
-		public Trolley(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
+		public Trolley(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 						double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 						boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-				super(typeOfVehicle, lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+				super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 						numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 		}
 
@@ -23,7 +23,7 @@ public class Trolley extends Vehicle implements Electric {
 		
 		public static void main(String[] args) {
 			
-			readIn("trolleys.txt");
+			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\trolleys.txt");
 			for(Vehicle v: vehicles) {
 				if(v.getClass().equals(Trolley.class)) {
 					System.out.println("This is a trolley.");

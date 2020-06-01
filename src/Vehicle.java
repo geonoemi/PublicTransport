@@ -30,7 +30,7 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 		
 		
-		public Vehicle(String typeOfVehicle, int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+		public Vehicle( int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
 		}
 		
@@ -77,7 +77,7 @@ public class Vehicle {
 					//			 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
 					//	System.out.println();
 										
-						Vehicle vehicle=new Vehicle(typeOfVehicle[i], lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
+						Vehicle vehicle=new Vehicle( lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
 								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						vehicles.add(vehicle);
 						
