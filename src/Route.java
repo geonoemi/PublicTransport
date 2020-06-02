@@ -126,8 +126,8 @@ public class Route extends Vehicle{
 	public static void main(String[] args) {
 		
 		getARoute();
-		vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
-		vehicles(vehicles);	//itt sem
+		//vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
+		//vehicles(vehicles);	//itt sem
 		
 		//printStation(Station.stationNames);
 		

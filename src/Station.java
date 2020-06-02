@@ -53,7 +53,7 @@ public class Station {
 				
 				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
-				System.out.println(station);
+			//	System.out.println(station);
 				
 				i++;				
 			}
