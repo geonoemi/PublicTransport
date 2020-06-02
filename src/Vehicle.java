@@ -78,8 +78,10 @@ public class Vehicle {
 						hasWheel[i]=Boolean.parseBoolean(parts[12]);
 									
 						
-						Vehicle vehicle=new Vehicle( lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
-						bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+						Vehicle vehicle=new Vehicle( lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  
+								operationCost[i],  numOfSeats[i], bicycleTransportOpp[i],  numOfDisabledPlaces[i], 
+								needToRepair[i], typeOfFuel[i], hasWheel[i]);
+						
 						vehicles.add(vehicle);	
 						System.out.println(vehicle);	
 						
@@ -87,9 +89,10 @@ public class Vehicle {
 											
 					/*	System.out.print(typeOfVehicle[i]+" "+lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
 						 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
-							System.out.println();		*/				
+						System.out.println();		*/				
 					i++;
 				}
+				
 				buffer.close();
 								
 				for(Vehicle v: vehicles) {

@@ -114,10 +114,10 @@ public class Station {
 	
 	public static void main(String[] args) {
 
-		//readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
-		printStations(stations); //nem írja ki
+		printStations(stations); 
 	//	canRunAlongHere(false);
 	}
 }

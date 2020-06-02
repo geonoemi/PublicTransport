@@ -98,26 +98,26 @@ public class Route extends Vehicle{
 	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 4 BACK.txt");
 				 }
 		}
-		   else if(dt==DayType.DAYOFF){
+		else if(dt==DayType.DAYOFF){
 			   
-		    		if(lineNum==2 && way==1) { //minden vonal mindkét irányára
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 2 FORTH.txt");
-					 }
-		    		else if(lineNum==2 && way==2) { 
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 2 BACK.txt");
-					 }
-		    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 3F FORTH.txt");
-					 }
-		    		else if(lineNum==3 && lineLetter.equals("F") && way==2) {
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 3F BACK.txt");
-					 }
-		    		else if(lineNum==4 && way==1) {
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 4 FORTH.txt");
-					 }
-		    		else if(lineNum==4 && way==2) { 
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 4 BACK.txt");
-					 }
+		    	if(lineNum==2 && way==1) { //minden vonal mindkét irányára
+		    		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 2 FORTH.txt");
+				}
+		    	else if(lineNum==2 && way==2) { 
+		    		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 2 BACK.txt");
+				}
+		    	else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
+		    		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 3F FORTH.txt");
+				}
+		    	else if(lineNum==3 && lineLetter.equals("F") && way==2) {
+		    		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 3F BACK.txt");
+		    	}
+		    	else if(lineNum==4 && way==1) {
+		    		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 4 FORTH.txt");
+		    	}
+		    	else if(lineNum==4 && way==2) { 
+		    		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 4 BACK.txt");
+				}
 		    }	
 	}
 	
@@ -126,6 +126,7 @@ public class Route extends Vehicle{
 		Scanner stat=new Scanner(System.in);
 		System.out.println("Choose station: ");
 		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
 		String station=stat.nextLine();
@@ -152,8 +153,9 @@ public class Route extends Vehicle{
 			else if (typeOfVehicle==3) { //trolik számát írja ki
 				for(Vehicle trolleys:trolleys) {
 					System.out.println(trolleys.lineNum+" "+trolleys.lineLetter);
-					}
+				}
 			}
+			
 		int num=scInt.nextInt();
 			
 		Scanner scStr1=new Scanner(System.in);
@@ -166,8 +168,11 @@ public class Route extends Vehicle{
 	
 		Scanner dtp=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes: ");
-		for (DayType dt : DayType.values())
-	    System.out.printf("\t%s\n", dt);  
+		
+		for (DayType dt : DayType.values()) {
+			System.out.printf("\t%s\n", dt);  
+		}
+		
 		DayType dayTypes  = DayType.valueOf(dtp.nextLine());//String to enum
 	    
 		getsoff(typeOfVehicle, num, letter, way, dayTypes); 
@@ -187,11 +192,16 @@ public class Route extends Vehicle{
 		}	
 	}
 	
+	public  String toString() {
+		
+		return super.toString();	
+	}
+		
 	public static void main(String[] args) {
 		
 		getARoute();
 		vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
-		vehicles(vehicles);
+		vehicles(vehicles);	//itt sem
 		
 		//printStation(Station.stationNames);
 		
