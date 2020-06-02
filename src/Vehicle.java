@@ -120,7 +120,7 @@ public class Vehicle {
 		public static void vehicles(ArrayList <Vehicle> vehicles) {
 			
 			for(int i=0;i<vehicles.size();i++) {
-			//	System.out.println(vehicles.get(i));
+				System.out.println(vehicles.get(i));
 			}	
 		}
 
@@ -141,7 +141,7 @@ public class Vehicle {
 
 			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\vehicles.txt");
 			vehicleTypes(vehicleTypes);
-			//vehicles(vehicles);
+			vehicles(vehicles);
 		}	
 	}
 

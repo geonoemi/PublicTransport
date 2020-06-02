@@ -38,7 +38,8 @@ public class Route extends Vehicle{
 					System.out.println(departureTimes[i]);
 					i++;
 					
-				}buffer.close();
+				}
+				buffer.close();
 				
 			}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
@@ -53,67 +54,69 @@ public class Route extends Vehicle{
 	public static  void getsoff(int typeOfVehicle, int lineNum, String lineLetter, int way, DayType dt ) {
 		
 		System.out.println("This route gets off at the following times from departure station: ");
+		
 		if(dt==DayType.WORKINGDAY){
-	    	
+	    	//utánajárni, hogy a fájlok között iteráljon és azt olvassa be, aminek a címében megtalálhatók a vonalszám,vonalbetû, irány értékek
 	    		if(lineNum==2 && way==1) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day departure times for 2 FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\workingday\\working day departure times for 2 FORTH.txt");
 				 }
 	    		else if(lineNum==2 && way==2) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day departure times for 2 BACK.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\workingday\\working day departure times for 2 BACK.txt");
 				 }
 	    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day departure times for 3F FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day\\working day departure times for 3F FORTH.txt");
 				 }
 	    		else if(lineNum==3 && lineLetter.equals("F") && way==2) {
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day departure times for 3F BACK.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day\\working day departure times for 3F BACK.txt");
 				 }
 	    		else if(lineNum==4 && way==1) {
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day departure times for 4 FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day\\working day departure times for 4 FORTH.txt");
 				 }
 	    		else if(lineNum==4 && way==2) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day departure times for 4 BACK.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\working day\\working day departure times for 4 BACK.txt");
 				 }
 	    }
 		
 		else if(dt==DayType.NONWORKINGDAY){
-	    	//for(Vehicle v:vehicles) {
+	    	
 	    		if(lineNum==2 && way==1) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\non_working day departure times for 2 FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 2 FORTH.txt");
 				 }
 	    		else if(lineNum==2 && way==2) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\non_working day departure times for 2 BACK.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 2 BACK.txt");
 				 }
 	    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\non_working day departure times for 3F FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 3F FORTH.txt");
 				 }
 	    		else if(lineNum==3 && lineLetter.equals("F") && way==2) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\non_working day departure times for 3F BACK.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 3F BACK.txt");
 				 }
 	    		else if(lineNum==4 && way==1) { 
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\non_working day departure times for 4 FORTH.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 4 FORTH.txt");
 				 }
 	    		else if(lineNum==4 && way==2) {
-	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\non_working day departure times for 4 BACK.txt");
+	    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\nonworking day\\non_working day departure times for 4 BACK.txt");
 				 }
 		}
 		   else if(dt==DayType.DAYOFF){
+			   
 		    		if(lineNum==2 && way==1) { //minden vonal mindkét irányára
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\day off departure times for 2 FORTH.txt");
+		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 2 FORTH.txt");
 					 }
 		    		else if(lineNum==2 && way==2) { 
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\day off departure times for 2 BACK.txt");
+		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 2 BACK.txt");
 					 }
 		    		else if(lineNum==3 && lineLetter.equals("F") && way==1) { 
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\day off departure times for 3F FORTH.txt");
+		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 3F FORTH.txt");
 					 }
 		    		else if(lineNum==3 && lineLetter.equals("F") && way==2) {
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\day off departure times for 3F BACK.txt");
+		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 3F BACK.txt");
 					 }
 		    		else if(lineNum==4 && way==1) {
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\day off departure times for 4 FORTH.txt");
+		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 4 FORTH.txt");
 					 }
 		    		else if(lineNum==4 && way==2) { 
-		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\day off departure times for 4 BACK.txt");
+		    			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\departure times\\dayoff\\day off departure times for 4 BACK.txt");
 					 }
 		    }	
 	}
@@ -126,16 +129,11 @@ public class Route extends Vehicle{
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
 		String station=stat.nextLine();
-		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner
-
-		//itt amit választ, annak a jármûtípusnak a tulajdonságaiból lehessen válogatni a következõ kérdésekben
-		//hívjon meg egy metódust, ami csak erre vonatkozik
+		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
 		Scanner type=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-		
-		//itt amit választ, annak a jármûtípusnak a tulajdonságaiból lehessen válogatni a következõ kérdésekben
-		//hívjon meg egy metódust, ami csak erre vonatkozik
+		//itt amit választ, annak a jármûtípusnak a számát, betûjét adja fel választási lehetõségnek
 		int typeOfVehicle=type.nextInt();
 		
 		Scanner scInt=new Scanner(System.in);
@@ -181,15 +179,19 @@ public class Route extends Vehicle{
 		scStr2.close();
 		dtp.close();
 	}
+	
 	public static void printStation(ArrayList <String> stationNames) {
+		
 		for(int i=0;i<stationNames.size();i++) {
 			System.out.println(stationNames.get(i));
 		}	
 	}
+	
 	public static void main(String[] args) {
+		
 		getARoute();
-		//vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el ?
-		//vehicles(vehicles);
+		vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
+		vehicles(vehicles);
 		
 		//printStation(Station.stationNames);
 		

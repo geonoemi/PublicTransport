@@ -30,7 +30,7 @@ public class Trolley extends Vehicle implements Electric {
 				}
 				if(v.lowFloor && v.numOfDisabledPlaces>=1) {
 					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(v.lineNum, v.lineLetter, v.way, v.articulated, v.lowFloor,
-						//	v.operationCost,  v.numOfSeats, v.bicycleTransportOpp, v.numOfDisabledPlaces, v. needToRepair, v.typeOfFuel, v.hasWheel);
+					//	v.operationCost,  v.numOfSeats, v.bicycleTransportOpp, v.numOfDisabledPlaces, v. needToRepair, v.typeOfFuel, v.hasWheel);
 					wheelChairAccessibleVehicles.add((WheelChairAccessible) v);
 				}
 					

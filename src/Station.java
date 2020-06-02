@@ -15,7 +15,7 @@ public class Station {
 	private String stationName;
 	boolean hasCable;
 	boolean hasPantograph;
-	private static ArrayList<Station> stations=new ArrayList<>();
+	static ArrayList<Station> stations=new ArrayList<>();
 	static ArrayList<String> stationNames=new ArrayList<>();
 	
 	public Station(String stationName,String x, String y,boolean hasCable) {
@@ -26,7 +26,9 @@ public class Station {
 		this.hasCable=hasCable;
 		//this.hasPantograph= hasPantograph;
 	}
+	
 	public static void readIn(String fileName){ 
+		
 		try {
 			
 			FileReader reader=new FileReader(fileName);
@@ -65,8 +67,18 @@ public class Station {
 			System.out.println("Not appropriate input type.");
 		}		
 	}
+	
+	public static void printStations(ArrayList<Station> stations) {
+		
+		for (Station st:stations) {
+			System.out.println(st);
+		}
+	}
+	
 	public static void sortStationNames(Collator collator, ArrayList <String> stationNames) {
+		
 	    String tmp;
+	    
 	    for (int i = 0; i < stationNames.size(); i++) {
 	        for (int j = i + 1; j < stationNames.size(); j++) { 
 	            if (collator.compare(stationNames.get(i), stationNames.get(j)) > 0) {
@@ -76,16 +88,16 @@ public class Station {
 	            }
 	        }
 	    }
+	    
 	    for(int i=0;i<stationNames.size();i++) {
 			System.out.println(stationNames.get(i));
 		}	
 	}
 
-	public String toString() {
-		return stationName+" "+x+" "+y+" "+hasCable;
-	}
+
 	
 	public static boolean canRunAlongHere(boolean hasPantograph) {
+		
 		if (hasPantograph) {
 			System.out.println("This vehicle can run along here.");
 			return true;
@@ -95,12 +107,17 @@ public class Station {
 		}
 	}
 	
+	public String toString() {
+		
+		return stationName+" "+x+" "+y+" "+hasCable;
+	}
+	
 	public static void main(String[] args) {
 
-		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		//readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
-		
+		printStations(stations); //nem írja ki
 	//	canRunAlongHere(false);
 	}
 }

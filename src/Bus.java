@@ -5,9 +5,7 @@
 
 public class Bus extends Vehicle implements Fossil {
 
-
-		//private String plateNum;
-		
+		private String plateNum;
 		
 		public Bus(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 					double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
@@ -20,13 +18,14 @@ public class Bus extends Vehicle implements Fossil {
 		public static void main(String[] args) {
 		
 			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\buses.txt");
+			
 			for(Vehicle v: vehicles) {
 				if(v.getClass().equals(Bus.class)) {
 					System.out.println("This is a bus.");
 				}
 				if(v.lowFloor && v.numOfDisabledPlaces>=1) {
 					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(v.lineNum, v.lineLetter, v.way, v.articulated, v.lowFloor,
-						//	v.operationCost,  v.numOfSeats, v.bicycleTransportOpp, v.numOfDisabledPlaces, v. needToRepair, v.typeOfFuel, v.hasWheel);
+					//	v.operationCost,  v.numOfSeats, v.bicycleTransportOpp, v.numOfDisabledPlaces, v. needToRepair, v.typeOfFuel, v.hasWheel);
 					wheelChairAccessibleVehicles.add((WheelChairAccessible) v);
 				}
 					
