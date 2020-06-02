@@ -12,7 +12,7 @@ import java.util.Locale;
 public class Station {
 	private String x;
 	private String y;
-	private String stationName;
+	String stationName;
 	boolean hasCable;
 	boolean hasPantograph;
 	static ArrayList<Station> stations=new ArrayList<>();
