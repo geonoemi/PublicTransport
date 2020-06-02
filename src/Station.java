@@ -14,7 +14,6 @@ public class Station {
 	private String y;
 	String stationName;
 	boolean hasCable;
-	boolean hasPantograph;
 	static ArrayList<Station> stations=new ArrayList<>();
 	static ArrayList<String> stationNames=new ArrayList<>();
 	
@@ -24,7 +23,7 @@ public class Station {
 		this.y = y;
 		this.stationName = stationName;
 		this.hasCable=hasCable;
-		//this.hasPantograph= hasPantograph;
+		
 	}
 	
 	public static void readIn(String fileName){ 
@@ -54,17 +53,19 @@ public class Station {
 				
 				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
-			
+				System.out.println(station);
+				
 				i++;				
 			}
+			
 			buffer.close();
 				
 		}catch(FileNotFoundException e) {
-			System.out.println("File not found.");
+				System.out.println("File not found.");
 		}catch(IOException e) {
-			System.out.println("e.getMessage()");
+				System.out.println("e.getMessage()");
 		}catch (InputMismatchException exception) {
-			System.out.println("Not appropriate input type.");
+				System.out.println("Not appropriate input type.");
 		}		
 	}
 	
@@ -101,6 +102,7 @@ public class Station {
 		if (hasPantograph) {
 			System.out.println("This vehicle can run along here.");
 			return true;
+			
 		}else {
 			System.out.println("This vehicle cannot run along here");
 			return false;
@@ -115,10 +117,12 @@ public class Station {
 	public static void main(String[] args) {
 
 		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
+		
 		printStations(stations); 
-	//	canRunAlongHere(false);
+		canRunAlongHere(false);
 	}
 }
 
