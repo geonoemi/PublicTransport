@@ -20,6 +20,7 @@ public class Vehicle {
 		protected String typeOfFuel;
 		protected boolean hasWheel;
 		
+		
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
 		protected static ArrayList<String> vehicleTypes=new ArrayList<>();
 		protected static ArrayList<Trolley> trolleys=new ArrayList<>();
@@ -63,9 +64,6 @@ public class Vehicle {
 						boolean[]hasWheel=new boolean[line.length()];
 						
 						typeOfVehicle[i]=parts[0];
-						vehicleTypes.add(typeOfVehicle[i]);		
-						//System.out.println(vehicleTypes.get(i));
-						
 						lineNum[i]=Integer.parseInt(parts[1]);
 						lineLetter[i]=parts[2];
 						way[i]=parts[3];
@@ -78,11 +76,15 @@ public class Vehicle {
 						needToRepair[i]=Boolean.parseBoolean(parts[10]);
 						typeOfFuel[i]=parts[11];
 						hasWheel[i]=Boolean.parseBoolean(parts[12]);
-										
+									
+						
 						Vehicle vehicle=new Vehicle( lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  operationCost[i],  numOfSeats[i],
-								bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
+						bicycleTransportOpp[i],  numOfDisabledPlaces[i],  needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						vehicles.add(vehicle);	
-						System.out.println(vehicles.get(i));						
+						System.out.println(vehicle);	
+						
+						vehicleTypes.add(typeOfVehicle[i]);
+											
 					/*	System.out.print(typeOfVehicle[i]+" "+lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
 						 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
 							System.out.println();		*/				
@@ -90,7 +92,7 @@ public class Vehicle {
 				}
 				buffer.close();
 								
-			/*	for(Vehicle v: vehicles) {
+				for(Vehicle v: vehicles) {
 					
 					if(v.typeOfFuel.equals("electrical energy") && v.hasWheel) {
 							trolleys.add((Trolley) v);
@@ -104,7 +106,7 @@ public class Vehicle {
 							buses.add((Bus) v);
 							System.out.println("buses: "+v.toString());
 					}	
-				}*/
+				}
 				
 			}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
@@ -118,7 +120,7 @@ public class Vehicle {
 		public static void vehicles(ArrayList <Vehicle> vehicles) {
 			
 			for(int i=0;i<vehicles.size();i++) {
-				System.out.println(vehicles.get(i));
+			//	System.out.println(vehicles.get(i));
 			}	
 		}
 
@@ -129,7 +131,7 @@ public class Vehicle {
 			}	
 		}
 		
-		public String toString() {
+		public  String toString() {
 			
 			return typeOfVehicle+" "+lineNum+" "+lineLetter+" "+way+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
@@ -138,7 +140,7 @@ public class Vehicle {
 		public static void main(String[] args) {
 
 			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\vehicles.txt");
-			//vehicleTypes(vehicleTypes);
+			vehicleTypes(vehicleTypes);
 			//vehicles(vehicles);
 		}	
 	}

@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.Collator;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Locale;
@@ -18,9 +19,8 @@ public class Route extends Vehicle{
 						boolean needToRepair, String typeOfFuel, boolean hasWheel) {
 				super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 						numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
-				}
+		}
 
-		
 		public static DayType dayTypes;
 		
 		public static void readIn(String fileName){ 
@@ -28,13 +28,13 @@ public class Route extends Vehicle{
 				
 				FileReader reader=new FileReader(fileName);
 				BufferedReader buffer=new BufferedReader(reader);
-				String queue=null;
+				String line=null;
 				int i=0;
 				
-				while((queue=buffer.readLine())!=null) {
+				while((line=buffer.readLine())!=null) {
 					
-					departureTimes=new String[queue.length()];
-					departureTimes[i]=queue;
+					departureTimes=new String[line.length()];
+					departureTimes[i]=line;
 					System.out.println(departureTimes[i]);
 					i++;
 					
@@ -49,8 +49,7 @@ public class Route extends Vehicle{
 			}
 	}	
 	//static DayType dt=DayType.NONWORKINGDAY;
-	
-		
+
 	public static  void getsoff(int typeOfVehicle, int lineNum, String lineLetter, int way, DayType dt ) {
 		
 		System.out.println("This route gets off at the following times from departure station: ");
@@ -120,36 +119,47 @@ public class Route extends Vehicle{
 	}
 	
 	public static void getARoute() {
-		
+
 		Scanner stat=new Scanner(System.in);
 		System.out.println("Choose station: ");
 		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
 		String station=stat.nextLine();
-	
-		/*for(String s: Station.stationNames) {
-			while(stat.nextLine().equals(s)) {
-				System.out.println("Choose station: ");
-				Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
-			}
-			if(stat.nextLine().equals(s)){
-				 station=stat.nextLine();
-			}
-		}*/
-		
+		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner
+
+		//itt amit választ, annak a jármûtípusnak a tulajdonságaiból lehessen válogatni a következõ kérdésekben
+		//hívjon meg egy metódust, ami csak erre vonatkozik
+			
 		Scanner type=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-	//	for(Vehicle.vehicles.)
+		
+		//itt amit választ, annak a jármûtípusnak a tulajdonságaiból lehessen válogatni a következõ kérdésekben
+		//hívjon meg egy metódust, ami csak erre vonatkozik
 		int typeOfVehicle=type.nextInt();
 		
-		
 		Scanner scInt=new Scanner(System.in);
-		System.out.println("Which vehicle do you want to travel with? Please enter the number, letter, direction of the vehicle and the type of the day.\nNumber: ");
+		System.out.println("Which vehicle do you want to travel with? Please choose the number, letter, direction of the vehicle and the type of the day.\nNumber: \nLetter:  ");
+		
+			if (typeOfVehicle==1) { //buszok számát írja ki
+				for(Vehicle buses:buses) {
+					System.out.println(buses.lineNum+" "+buses.lineLetter);
+				}
+			}
+			else if (typeOfVehicle==2) { //villamosok számát írja ki
+				for(Vehicle trams:trams) {
+					System.out.println(trams.lineNum+" "+trams.lineLetter);
+				}
+			}
+			else if (typeOfVehicle==3) { //trolik számát írja ki
+				for(Vehicle trolleys:trolleys) {
+					System.out.println(trolleys.lineNum+" "+trolleys.lineLetter);
+					}
+			}
 		int num=scInt.nextInt();
 			
 		Scanner scStr1=new Scanner(System.in);
-		System.out.println("Letter: ");
+		//System.out.println("Letter: ");
 		String letter=scStr1.nextLine();
 				
 		Scanner scStr2=new Scanner(System.in);
@@ -163,6 +173,7 @@ public class Route extends Vehicle{
 		DayType dayTypes  = DayType.valueOf(dtp.nextLine());//String to enum
 	    
 		getsoff(typeOfVehicle, num, letter, way, dayTypes); 
+		
 		stat.close();
 		type.close();
 		scInt.close();
@@ -170,10 +181,18 @@ public class Route extends Vehicle{
 		scStr2.close();
 		dtp.close();
 	}
-	
+	public static void printStation(ArrayList <String> stationNames) {
+		for(int i=0;i<stationNames.size();i++) {
+			System.out.println(stationNames.get(i));
+		}	
+	}
 	public static void main(String[] args) {
-		
 		getARoute();
+		//vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el ?
+		//vehicles(vehicles);
+		
+		//printStation(Station.stationNames);
+		
 	}
 		
 }

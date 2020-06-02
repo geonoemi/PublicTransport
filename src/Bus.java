@@ -37,7 +37,8 @@ public class Bus extends Vehicle implements Fossil {
 				if(v.bicycleTransportOpp) {
 					bicycleVehicles.add(v);
 				}
-				if(v.typeOfFuel.contentEquals("petrol") || v.typeOfFuel.contentEquals("diesel oil")) {
+				
+				if(v.typeOfFuel.equals("petrol") || v.typeOfFuel.equals("diesel oil")) {
 					fossilVehicles.add(v);
 				}else {
 					electricVehicles.add(v);

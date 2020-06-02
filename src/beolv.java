@@ -13,12 +13,18 @@ public class beolv {
 	        }
 	    }
 	}
+	public static void printVehicles(ArrayList <String> vehicleTypes) {
+		for (String vt: Vehicle.vehicleTypes) {
+			System.out.println(vt);
+		}
+	}
 	public static void main(String[] args) {
 		
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
-		sortStationNames(hu,Station.stationNames);
+	//	sortStationNames(hu,Station.stationNames);
 		for(int i=0;i<Station.stationNames.size();i++) {
-			System.out.println(Station.stationNames.get(i));
+			//System.out.println(Station.stationNames.get(i));
 		}	
+		printVehicles(Vehicle.vehicleTypes);
 	}
 }
