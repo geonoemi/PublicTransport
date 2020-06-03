@@ -72,16 +72,19 @@ public class Route extends Vehicle{
 		System.out.println("Which vehicle do you want to travel with? Please choose the number, letter, direction of the vehicle and the type of the day.\nNumber: \nLetter:  ");
 		
 			if (typeOfVehicle==1) { //buszok számát írja ki
+				
 				for(Vehicle buses:buses) {
 					System.out.println(buses.lineNum+" "+buses.lineLetter);
 				}
 			}
 			else if (typeOfVehicle==2) { //villamosok számát írja ki
+				
 				for(Vehicle trams:trams) {
 					System.out.println(trams.lineNum+" "+trams.lineLetter);
 				}
 			}
 			else if (typeOfVehicle==3) { //trolik számát írja ki
+				
 				for(Vehicle trolleys:trolleys) {
 					System.out.println(trolleys.lineNum+" "+trolleys.lineLetter);
 				}

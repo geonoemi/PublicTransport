@@ -121,8 +121,8 @@ public class Station {
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
 		
-		printStations(stations); 
-		canRunAlongHere(false);
+		//printStations(stations); 
+		//canRunAlongHere(false);
 	}
 }
 
