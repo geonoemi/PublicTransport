@@ -11,13 +11,8 @@ public class Tram extends Vehicle implements Electric{
 
 	@Override
 	public boolean canRunAlongHere(Station station) {
-		
-		if (station.hasCable) {
-			return true;
-		}else {
-			return false;
-		}
-	}		
+		return station.hasCable();
+	}
 
 	public static void main(String[] args) {
 		

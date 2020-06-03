@@ -119,11 +119,13 @@ public class Route extends Vehicle{
 		dtp.close();
 	}
 	
-	public static void printStation(ArrayList <String> stationNames) {
+
 		
-		for(int i=0;i<stationNames.size();i++) {
-			System.out.println(stationNames.get(i));
-		}	
+	public static void printStations(ArrayList<String> stationNames) {
+		
+		for (String name : stationNames) {
+			System.out.println(name);
+		}
 	}
 		
 	public static void main(String[] args) {

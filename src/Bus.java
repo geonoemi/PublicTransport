@@ -5,7 +5,7 @@
 
 public class Bus extends Vehicle implements Fossil {
 
-		private String plateNum;
+		private String plateNumber;
 		
 		public Bus(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 					double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
@@ -19,28 +19,28 @@ public class Bus extends Vehicle implements Fossil {
 		
 			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\buses.txt");
 			
-			for(Vehicle v: vehicles) {
-				if(v.getClass().equals(Bus.class)) {
+			for(Vehicle vehicle: vehicles) {
+				if(vehicle.getClass().equals(Bus.class)) {
 					System.out.println("This is a bus.");
 				}
-				if(v.lowFloor && v.numOfDisabledPlaces>=1) {
-					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(v.lineNum, v.lineLetter, v.way, v.articulated, v.lowFloor,
-					//	v.operationCost,  v.numOfSeats, v.bicycleTransportOpp, v.numOfDisabledPlaces, v. needToRepair, v.typeOfFuel, v.hasWheel);
-					wheelChairAccessibleVehicles.add((WheelChairAccessible) v);
+				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
+					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum, vehicle.lineLetter, vehicle.way, vehicle.articulated, vehicle.lowFloor,
+					//	vehicle.operationCost,  vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces, vehicle. needToRepair, vehicle.typeOfFuel, vehicle.hasWheel);
+					wheelChairAccessibleVehicles.add((WheelChairAccessible) vehicle); // TODO: may cause ClassCastEx.
 				}
 					
-				if(v.needToRepair) {
-					toService.add(v);
-				}	
-				
-				if(v.bicycleTransportOpp) {
-					bicycleVehicles.add(v);
+				if(vehicle.needToRepair) {
+					toService.add(vehicle);
 				}
 				
-				if(v.typeOfFuel.equals("petrol") || v.typeOfFuel.equals("diesel oil")) {
-					fossilVehicles.add(v);
+				if(vehicle.bicycleTransportOpp) {
+					bicycleVehicles.add(vehicle);
+				}
+				
+				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil")) {
+					fossilVehicles.add(vehicle);
 				}else {
-					electricVehicles.add(v);
+					electricVehicles.add(vehicle);
 				} 
 			}
 		}

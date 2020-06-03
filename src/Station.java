@@ -8,28 +8,31 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Locale;
-
 public class Station {
 	private String x;
 	private String y;
 	String stationName;
-	boolean hasCable;
+	private boolean hasCable;
 	static ArrayList<Station> stations=new ArrayList<>();
 	static ArrayList<String> stationNames=new ArrayList<>();
-	
+
 	public Station(String stationName,String x, String y,boolean hasCable) {
 		
 		this.x = x;
 		this.y = y;
 		this.stationName = stationName;
 		this.hasCable=hasCable;
-		
+
 	}
-	
-	public static void readIn(String fileName){ 
-		
+
+	public boolean hasCable() {
+		return hasCable;
+	}
+
+	public static void readIn(String fileName){
+
 		try {
-			
+
 			FileReader reader=new FileReader(fileName);
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
@@ -50,7 +53,6 @@ public class Station {
 				x[i]=parts[1];
 				y[i]=parts[2];
 				hasCable[i]=Boolean.parseBoolean(parts[3]);
-				
 				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
 			//	System.out.println(station);
@@ -89,42 +91,35 @@ public class Station {
 	            }
 	        }
 	    }
-	    
+
 	    for(int i=0;i<stationNames.size();i++) {
 			System.out.println(stationNames.get(i));
-		}	
-	}
-
-
-	
-	public static boolean canRunAlongHere(boolean hasPantograph) {
-		
-		if (hasPantograph) {
-			System.out.println("This vehicle can run along here.");
-			return true;
-			
-		}else {
-			System.out.println("This vehicle cannot run along here");
-			return false;
+			// TODO: duplicated in beolv.java ->
+			// TODO: Single Responsibility Principle: one method should do one task
+			// TODO: Separation of concern: presentation and business logic should separated
 		}
 	}
-	
+	public static void canRunAlongHere(boolean hasPantograph) {
+
+		if (hasPantograph) {
+				System.out.println("This vehicle can run along here.");
+			//return true;
+			}else {
+				System.out.println("This vehicle cannot run along here");
+			}			
+	}
 	public String toString() {
-		
+							
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
-	
+						
 	public static void main(String[] args) {
+			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+							
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames(hu,stationNames);
 
-		readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
-		
-		Collator hu = Collator.getInstance(new Locale("hu","HU"));
-		sortStationNames(hu,stationNames);
-		
-		//printStations(stations); 
-		//canRunAlongHere(false);
+			printStations(stations); 
+			canRunAlongHere(false); // TODO: method returns true or false, but return value not used, just displaying
 	}
 }
-
-
-

@@ -13,7 +13,7 @@ public class DepartureTimes extends Route {
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
 		
-		if(dt==DayType.WORKINGDAY){
+		if(dt==DayType.WORKING_DAY){
 	    	//utánajárni, hogy a fájlok között iteráljon és azt olvassa be, aminek a címében megtalálhatók a vonalszám, vonalbetû, irány értékek
 	    		
 				if(stationName.equals("Személyi pályaudvar")) {
@@ -230,7 +230,7 @@ public class DepartureTimes extends Route {
 	    		}
 		}
 		
-		else if(dt==DayType.NONWORKINGDAY){
+		else if(dt==DayType.NON_WORKING_DAY){
 	    	
 			if(stationName.equals("Személyi pályaudvar")) {
 				
@@ -447,7 +447,7 @@ public class DepartureTimes extends Route {
 		}
 		
 	
-		else if(dt==DayType.DAYOFF){
+		else if(dt==DayType.DAY_OFF){
 			
 			if(stationName.equals("Személyi pályaudvar")) {
 				

@@ -120,18 +120,18 @@ public class Vehicle {
 			}		
 		}
 		
-		public static void vehicles(ArrayList <Vehicle> vehicles) {
+		public static void printVehicles(ArrayList<Vehicle> vehicles) {
 			
-			for(int i=0;i<vehicles.size();i++) {
-				System.out.println(vehicles.get(i));
-			}	
+			for (Vehicle vehicle : vehicles) {
+				System.out.println(vehicle);
+			}
 		}
 
-		public static void vehicleTypes(ArrayList <String> vehicleTypes) {
+		public static void printVehicleTypes(ArrayList<String> vehicleTypes) {
 			
-			for(int i=0;i<vehicleTypes.size();i++) {
-				System.out.println(vehicleTypes.get(i));
-			}	
+			for (String vehicleName : vehicleTypes) {
+				System.out.println(vehicleName);
+			}
 		}
 		
 		public  String toString() {
@@ -143,8 +143,8 @@ public class Vehicle {
 		public static void main(String[] args) {
 
 			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\vehicles.txt");
-			vehicleTypes(vehicleTypes);
-			vehicles(vehicles);
+			printVehicleTypes(vehicleTypes);
+			printVehicles(vehicles);
 		}	
 	}
 
