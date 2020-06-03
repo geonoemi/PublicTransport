@@ -53,7 +53,15 @@ public class Route extends Vehicle{
 
 	
 	public static void getARoute() {
-
+		//Bence tipp: app induláskor mindent beolvasni és majd adatszerkezeten iterálni, nem file-on
+		//in-memory kollekcióknak utánaolvasni
+		//menetrend class
+		//tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmazv
+		//Menetrend class és ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
+		//mi megy a stackbe,mi a heapbe?
+		//relativepath-nak utánajárni
+		
+		
 		Scanner stat=new Scanner(System.in);
 		System.out.println("Choose station: ");
 		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");

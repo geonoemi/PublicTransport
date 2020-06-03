@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.util.InputMismatchException;
 	
 public class Vehicle {
+	//TODO make it abstract
 		protected String typeOfVehicle;
 		protected int lineNum;
 		protected String lineLetter;
@@ -23,18 +24,33 @@ public class Vehicle {
 		
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
 		protected static ArrayList<String> vehicleTypes=new ArrayList<>();
-		protected static ArrayList<Trolley> trolleys=new ArrayList<>();
-		protected static ArrayList<Tram> trams=new ArrayList<>();
-		protected static ArrayList<Bus> buses=new ArrayList<>();
-		protected static ArrayList<WheelChairAccessible> wheelChairAccessibleVehicles = new ArrayList<>();
+		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
+		protected static ArrayList<Vehicle> trams=new ArrayList<>();
+		protected static ArrayList<Vehicle> buses=new ArrayList<>();
+		protected static ArrayList<Vehicle> wheelChairAccessibleVehicles = new ArrayList<>();
 		protected static ArrayList<Vehicle> toService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> fossilVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 		
 		
-		public Vehicle( int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+		public Vehicle(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
+		
+		this.typeOfVehicle=typeOfVehicle;
+		this.lineNum=lineNum;
+		this.lineLetter=lineLetter;
+		this.way=way;
+		this.articulated=articulated;
+		this.lowFloor=lowFloor;
+		this.operationCost=operationCost;
+		this.numOfSeats=numOfSeats;
+		this.bicycleTransportOpp=bicycleTransportOpp;
+		this.numOfDisabledPlaces=numOfDisabledPlaces;
+		this.needToRepair=needToRepair;
+		this.typeOfFuel=typeOfFuel;
+		this.hasWheel=hasWheel;
+		
 		}
 		
 		public static void readIn(String fileName){ 
@@ -62,7 +78,8 @@ public class Vehicle {
 						boolean[]needToRepair=new boolean[line.length()];
 						String[]typeOfFuel=new String[line.length()];
 						boolean[]hasWheel=new boolean[line.length()];
-						
+				//Bence ezt hogy máshogycsinálná?
+				//Attilával félreértettük egymást?
 						typeOfVehicle[i]=parts[0];
 						lineNum[i]=Integer.parseInt(parts[1]);
 						lineLetter[i]=parts[2];
@@ -83,7 +100,7 @@ public class Vehicle {
 								needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						
 						vehicles.add(vehicle);	
-						System.out.println(vehicle);	
+						//System.out.println(vehicle);	
 						
 						vehicleTypes.add(typeOfVehicle[i]);
 											
@@ -95,19 +112,19 @@ public class Vehicle {
 				
 				buffer.close();
 								
-				for(Vehicle v: vehicles) {
+				for(Vehicle vehicle: vehicles) {
 					
-					if(v.typeOfFuel.equals("electrical energy") && v.hasWheel) {
-							trolleys.add((Trolley) v);
-							System.out.println("trolleys: "+v.toString());
+						if(vehicle.typeOfFuel.equals("electrical energy") && vehicle.hasWheel) {
+							trolleys.add(vehicle);
+							System.out.println("trolleys: "+vehicle.toString());
 					}
-					else if(v.typeOfFuel.equals("electrical energy") && !v.hasWheel) {
-							trams.add((Tram) v);
-							System.out.println("trams: "+v.toString());
+						else if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
+							trams.add(vehicle);
+							System.out.println("trams: "+vehicle.toString());
 					}
-					else if(v.typeOfFuel.equals("petrol") || v.typeOfFuel.equals("diesel oil") && v.hasWheel) {
-							buses.add((Bus) v);
-							System.out.println("buses: "+v.toString());
+					else if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
+							buses.add( vehicle);
+							System.out.println("buses: "+vehicle.toString());
 					}	
 				}
 				
@@ -136,15 +153,15 @@ public class Vehicle {
 		
 		public  String toString() {
 			
-			return typeOfVehicle+" "+lineNum+" "+lineLetter+" "+way+" "+articulated+" "+ lowFloor+" "+  operationCost
+			return lineNum+" "+lineLetter+" "+way+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
 		}
 		public static void main(String[] args) {
 
 			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\vehicles.txt");
-			printVehicleTypes(vehicleTypes);
-			printVehicles(vehicles);
+			//printVehicleTypes(vehicleTypes);
+			//printVehicles(vehicles);
 		}	
 	}
 
