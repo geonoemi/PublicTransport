@@ -79,7 +79,6 @@ public class Vehicle {
 						String[]typeOfFuel=new String[line.length()];
 						boolean[]hasWheel=new boolean[line.length()];
 				//Bence ezt hogy máshogycsinálná?
-				//Attilával félreértettük egymást?
 						typeOfVehicle[i]=parts[0];
 						lineNum[i]=Integer.parseInt(parts[1]);
 						lineLetter[i]=parts[2];
@@ -159,7 +158,7 @@ public class Vehicle {
 		}
 		public static void main(String[] args) {
 
-			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\vehicles.txt");
+			readIn("classes files\\vehicles.txt");
 			//printVehicleTypes(vehicleTypes);
 			//printVehicles(vehicles);
 		}	

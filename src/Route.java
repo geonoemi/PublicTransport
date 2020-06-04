@@ -64,7 +64,7 @@ public class Route extends Vehicle{
 		
 		Scanner stat=new Scanner(System.in);
 		System.out.println("Choose station: ");
-		Station.readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\stations.txt");
+		Station.readIn("classes files\\stations.txt");
 		
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
@@ -73,7 +73,7 @@ public class Route extends Vehicle{
 			
 		Scanner type=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-		//itt amit választ, annak a jármûtípusnak a számát, betûjét adja fel választási lehetõségnek
+		//itt amit választ, annak a jármûtípusnak a számát, betûjét adja fel választási lehetõségnek, vagy nem...
 		int typeOfVehicle=type.nextInt();
 		
 		Scanner scInt=new Scanner(System.in);

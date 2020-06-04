@@ -17,7 +17,7 @@ public class Bus extends Vehicle implements Fossil {
 		
 		public static void main(String[] args) {
 		
-			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\buses.txt");
+			readIn("classes files\\buses.txt");
 			
 			for(Vehicle vehicle: vehicles) {
 				if(vehicle.getClass().equals(Bus.class)) {

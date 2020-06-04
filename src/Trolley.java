@@ -18,7 +18,7 @@ public class Trolley extends Vehicle implements Electric {
 		
 		public static void main(String[] args) {
 			
-			readIn("C:\\Users\\geono\\eclipse-workspace\\Tomegkozlekedes\\classes files\\trolleys.txt");
+			readIn("classes files\\trolleys.txt");
 			for(Vehicle vehicle: vehicles) {
 				
 				if(vehicle.getClass().equals(Trolley.class)) {
@@ -27,7 +27,7 @@ public class Trolley extends Vehicle implements Electric {
 				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
 					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum, vehicle.lineLetter, vehicle.way, vehicle.articulated, vehicle.lowFloor,
 					//	vehicle.operationCost,  vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces, vehicle. needToRepair, vehicle.typeOfFuel, vehicle.hasWheel);
-					wheelChairAccessibleVehicles.add((WheelChairAccessible) vehicle);
+					wheelChairAccessibleVehicles.add(vehicle);
 				}
 					
 				if(vehicle.needToRepair) {
