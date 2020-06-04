@@ -1,6 +1,9 @@
 
 public class DepartureTimes extends Route {
+	
 
+	
+	
 	public DepartureTimes(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 			double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 			boolean needToRepair, String typeOfFuel, boolean hasWheel) {

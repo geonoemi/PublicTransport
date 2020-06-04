@@ -60,6 +60,7 @@ public class Route extends Vehicle{
 		//Menetrend class és ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
 		//mi megy a stackbe,mi a heapbe?
 		//relativepath-nak utánajárni
+		//git ignore
 		
 		
 		Scanner stat=new Scanner(System.in);
