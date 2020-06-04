@@ -9,27 +9,33 @@ import java.util.List;
 
 public class DirectoryTry {
 	
-	   public static List<File> readInDirectory(String directoryName) {
+	public static ArrayList<String>fileNames=new ArrayList<>();
+	
+	public static List<File> readInDepartureTimes(String directoryName) {
+		   
 	        File directory = new File(directoryName);
 
 	        List<File> resultList = new ArrayList<File>();
 
-	        // get all the files from a directory
 	        File[] fileList = directory.listFiles();
 	        resultList.addAll(Arrays.asList(fileList));
 	        
 	        for (File file : fileList) {
+	        	
 	            if (file.isFile()) {
+	       //     	fileNames.add(file);//regexp
 	                System.out.println(file);
-	            } else if (file.isDirectory()) {
-	                resultList.addAll(readInDirectory(file.getAbsolutePath()));
+	            } 
+	            else if (file.isDirectory()) {
+	                resultList.addAll(readInDepartureTimes(file.getAbsolutePath()));
 	            }
 	        }
 	        return resultList;
 	    } 
+	   
 	 public static void main(String[] args) {
 		 
-		 readInDirectory("departure times");
+		   readInDepartureTimes("departure times");
 	        	        
 	 }
 }

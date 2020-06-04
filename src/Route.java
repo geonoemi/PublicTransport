@@ -63,21 +63,21 @@ public class Route extends Vehicle{
 		//git ignore
 		
 		
-		Scanner stat=new Scanner(System.in);
+		Scanner scStation=new Scanner(System.in);
 		System.out.println("Choose station: ");
 		Station.readIn("classes files\\stations.txt");
 		
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
-		String station=stat.nextLine();
+		String station=scStation.nextLine();
 		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
-		Scanner type=new Scanner(System.in);
+		Scanner scTypeOfVehicle=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
 		//itt amit választ, annak a jármûtípusnak a számát, betûjét adja fel választási lehetõségnek, vagy nem...
-		int typeOfVehicle=type.nextInt();
+		int typeOfVehicle=scTypeOfVehicle.nextInt();
 		
-		Scanner scInt=new Scanner(System.in);
+		Scanner scNum=new Scanner(System.in);
 		System.out.println("Which vehicle do you want to travel with? Please choose the number, letter, direction of the vehicle and the type of the day.\nNumber: \nLetter:  ");
 		
 			if (typeOfVehicle==1) { //buszok számát írja ki
@@ -99,41 +99,41 @@ public class Route extends Vehicle{
 				}
 			}
 			
-		int num=scInt.nextInt();
+		int num=scNum.nextInt();
 			
-		Scanner scStr1=new Scanner(System.in);
+		Scanner scLetter=new Scanner(System.in);
 		//System.out.println("Letter: ");
-		String letter=scStr1.nextLine();
+		String letter=scLetter.nextLine();
 				
-		Scanner scStr2=new Scanner(System.in);
+		Scanner scWay=new Scanner(System.in);
 		System.out.println("Way (FORTH=1 BACK=2) : ");
-		int way=scStr2.nextInt();
+		int way=scWay.nextInt();
 	
-		Scanner dtp=new Scanner(System.in);
+		Scanner scDaytype=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes: ");
 		
-		for (DayType dt : DayType.values()) {
-			System.out.printf("\t%s\n", dt);  
+		for (DayType dayTypes : DayType.values()) {
+			System.out.printf("\t%s\n", dayTypes);  
 		}
-		
-		DayType dayTypes  = DayType.valueOf(dtp.nextLine());//String to enum
+		//regexp-pel olvashatóbbá
+		DayType dayTypes  = DayType.valueOf(scDaytype.nextLine());//String to enum
 	    
 		DepartureTimes.getsoff(station, typeOfVehicle, num, letter, way, dayTypes); 
 		
-		stat.close();
-		type.close();
-		scInt.close();
-		scStr1.close();
-		scStr2.close();
-		dtp.close();
+		scStation.close();
+		scTypeOfVehicle.close();
+		scNum.close();
+		scLetter.close();
+		scWay.close();
+		scDaytype.close();
 	}
 	
 
 		
 	public static void printStations(ArrayList<String> stationNames) {
 		
-		for (String name : stationNames) {
-			System.out.println(name);
+		for (String stationName : stationNames) {
+			System.out.println(stationName);
 		}
 	}
 

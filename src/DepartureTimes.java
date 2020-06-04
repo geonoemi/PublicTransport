@@ -6,17 +6,17 @@ public class DepartureTimes extends Route {
 	
 	public DepartureTimes(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
 			double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
-			boolean needToRepair, String typeOfFuel, boolean hasWheel) {
+			boolean needayTypesoRepair, String typeOfFuel, boolean hasWheel) {
 		super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
-				numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
+				numOfDisabledPlaces, needayTypesoRepair, typeOfFuel, hasWheel);
 	}
 
 
-	public static  void getsoff(String stationName, int typeOfVehicle, int lineNum, String lineLetter, int way, DayType dt ) {
+	public static  void getsoff(String stationName, int typeOfVehicle, int lineNum, String lineLetter, int way, DayType dayTypes ) {
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
 		
-		if(dt==DayType.WORKING_DAY){
+		if(dayTypes==DayType.WORKING_DAY){
 	    	//utánajárni, hogy a fájlok között iteráljon és azt olvassa be, aminek a címében megtalálhatók a vonalszám, vonalbetû, irány értékek
 	    		
 				if(stationName.equals("Személyi pályaudvar")) {
@@ -233,7 +233,7 @@ public class DepartureTimes extends Route {
 	    		}
 		}
 		
-		else if(dt==DayType.NON_WORKING_DAY){
+		else if(dayTypes==DayType.NON_WORKING_DAY){
 	    	
 			if(stationName.equals("Személyi pályaudvar")) {
 				
@@ -450,7 +450,7 @@ public class DepartureTimes extends Route {
 		}
 		
 	
-		else if(dt==DayType.DAY_OFF){
+		else if(dayTypes==DayType.DAY_OFF){
 			
 			if(stationName.equals("Személyi pályaudvar")) {
 				
