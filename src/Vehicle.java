@@ -156,11 +156,6 @@ public class Vehicle {
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
 		}
-		public static void main(String[] args) {
-
-			readIn("classes files\\vehicles.txt");
-			//printVehicleTypes(vehicleTypes);
-			//printVehicles(vehicles);
-		}	
+	
 	}
 

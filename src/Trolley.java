@@ -14,29 +14,4 @@ public class Trolley extends Vehicle implements Electric {
 		public boolean canRunAlongHere(Station station) {
 			return station.hasCable();
 		}
-	
-		
-		public static void main(String[] args) {
-			
-			readIn("classes files\\trolleys.txt");
-			for(Vehicle vehicle: vehicles) {
-				
-				if(vehicle.getClass().equals(Trolley.class)) {
-					System.out.println("This is a trolley.");
-				}
-				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
-					//Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum, vehicle.lineLetter, vehicle.way, vehicle.articulated, vehicle.lowFloor,
-					//	vehicle.operationCost,  vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces, vehicle. needToRepair, vehicle.typeOfFuel, vehicle.hasWheel);
-					wheelChairAccessibleVehicles.add(vehicle);
-				}
-					
-				if(vehicle.needToRepair) {
-					toService.add(vehicle);
-				}	
-				
-				if(vehicle.bicycleTransportOpp) {
-					bicycleVehicles.add(vehicle);
-				}
-			}
-		}	
-	}
+}

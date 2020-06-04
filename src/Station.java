@@ -99,6 +99,7 @@ public class Station {
 			// TODO: Separation of concern: presentation and business logic should separated
 		}
 	}
+	
 	public static void canRunAlongHere(boolean hasPantograph) {
 
 		if (hasPantograph) {
@@ -108,18 +109,9 @@ public class Station {
 				System.out.println("This vehicle cannot run along here");
 			}			
 	}
+	
 	public String toString() {
 							
 		return stationName+" "+x+" "+y+" "+hasCable;
-	}
-						
-	public static void main(String[] args) {
-			readIn("classes files\\stations.txt");
-							
-			Collator hu = Collator.getInstance(new Locale("hu","HU"));
-			sortStationNames(hu,stationNames);
-
-			printStations(stations); 
-			canRunAlongHere(false); // TODO: method returns true or false, but return value not used, just displaying
 	}
 }

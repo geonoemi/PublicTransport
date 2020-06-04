@@ -135,15 +135,6 @@ public class Route extends Vehicle{
 			System.out.println(name);
 		}
 	}
-		
-	public static void main(String[] args) {
-		
-		getARoute();
-		//vehicleTypes(vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
-		//vehicles(vehicles);	//itt sem
-		
-		//printStation(Station.stationNames);
-		
-	}
+
 		
 }
