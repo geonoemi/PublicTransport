@@ -98,7 +98,7 @@ public class Run {
 		
 		
 		
-		
+		DirectoryTry.readInDirectory("departure times");
 		
 	}
 }
