@@ -5,11 +5,16 @@ public class Run {
 
 	public static void main(String[] args) {
 
-		//Vehicle.readIn("classes files\\vehicles.txt");
+		Vehicle.readIn("classes files\\vehicles.txt");
 		//Vehicle.printVehicleTypes(vehicleTypes);
-		//Vehicle.printVehicles(vehicles);
+		//Vehicle.printVehicles(Vehicle.vehicles);
 				
+		
+		/*for(Vehicle vehicles: Vehicle.vehicles) {
+			System.out.println(trolleys.toString());
+		}*/
 		Route.getARoute();
+		
 		//Route.printVehicleTypes(Route.vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
 		//Route.printVehicles(Route.vehicles);	//itt sem
 		

@@ -110,22 +110,7 @@ public class Vehicle {
 				}
 				
 				buffer.close();
-								
-				for(Vehicle vehicle: vehicles) {
-					
-						if(vehicle.typeOfFuel.equals("electrical energy") && vehicle.hasWheel) {
-							trolleys.add(vehicle);
-							System.out.println("trolleys: "+vehicle.toString());
-					}
-						else if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
-							trams.add(vehicle);
-							System.out.println("trams: "+vehicle.toString());
-					}
-					else if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
-							buses.add( vehicle);
-							System.out.println("buses: "+vehicle.toString());
-					}	
-				}
+				
 				
 			}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
@@ -150,6 +135,47 @@ public class Vehicle {
 			}
 		}
 		
+		public static void fillArrayLists() {
+			
+			for(Vehicle vehicle: vehicles) {
+				
+				if(vehicle.typeOfFuel.equals("electrical energy") && vehicle.hasWheel) {
+					trolleys.add(vehicle);
+				}
+			}
+		
+			for(Vehicle vehicle: vehicles) {	
+				
+				if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
+					trams.add(vehicle);
+				}
+			}
+					
+			for(Vehicle vehicle: vehicles) {
+				
+				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
+					buses.add( vehicle);
+				}	
+			}
+		}
+		
+		public static void printBuses(ArrayList<Vehicle> buses) {
+			fillArrayLists();
+				for(Vehicle bus:buses) {
+					System.out.println(bus.lineNum+bus.lineLetter);
+				}
+		}
+		public static void printTrams() {
+				for(Vehicle trams:trams) {
+					System.out.println(trams.lineNum+trams.lineLetter);
+				}
+		}
+		public static void printTrolleys() {
+				for(Vehicle trolleys:trolleys) {
+					System.out.println(trolleys.lineNum+trolleys.lineLetter);
+				}
+			
+		}
 		public  String toString() {
 			
 			return lineNum+" "+lineLetter+" "+way+" "+articulated+" "+ lowFloor+" "+  operationCost
@@ -157,5 +183,13 @@ public class Vehicle {
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
 		}
 	
-	}
+	 static void main(String[] args) {
 
+			Vehicle.readIn("classes files\\vehicles.txt");
+			//Vehicle.printVehicleTypes(vehicleTypes);
+			//printVehicles(vehicles);
+			//fillArrayLists();	
+			
+			printBuses(buses);
+	}
+}

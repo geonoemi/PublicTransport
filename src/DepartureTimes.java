@@ -25,7 +25,7 @@ public class DepartureTimes extends Route {
         }
     } 
 	
-	public static  void getsoff(String stationName, int typeOfVehicle, int lineNum, String lineLetter, String way, String dayType ) {
+	public static void getsoff(String userChoice) {
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
 		readInDepartureTimes("departure times");

@@ -79,31 +79,25 @@ public class Route extends Vehicle{
 		int typeOfVehicle=scTypeOfVehicle.nextInt();
 		
 		Scanner scNum=new Scanner(System.in);
-		System.out.println("Which vehicle do you want to travel with? Please choose the number, letter, direction of the vehicle and the type of the day.\nNumber: \nLetter:  ");
 		
-			if (typeOfVehicle==1) { //buszok számát írja ki
-				
-				for(Vehicle buses:buses) {
-					System.out.println(buses.lineNum+" "+buses.lineLetter);
-				}
-			}
-			else if (typeOfVehicle==2) { //villamosok számát írja ki
-				
-				for(Vehicle trams:trams) {
-					System.out.println(trams.lineNum+" "+trams.lineLetter);
-				}
-			}
-			else if (typeOfVehicle==3) { //trolik számát írja ki
-				
-				for(Vehicle trolleys:trolleys) {
-					System.out.println(trolleys.lineNum+" "+trolleys.lineLetter);
-				}
-			}
+		Vehicle.fillArrayLists();
+		
+		if (typeOfVehicle==1) { //buszok számát írja ki
+			System.out.println("Choose from the following buses:");
+			printBuses(buses);
+		}
+		else if (typeOfVehicle==2) { //villamosok számát írja ki
+			System.out.println("Choose from the following trams:");
+			printTrams();
+		}
+		else if (typeOfVehicle==3) { //trolik számát írja ki	
+			System.out.println("Choose from the following trolleys:");			
+			printTrolleys();
+		}	
 			
 		int num=scNum.nextInt();
 			
 		Scanner scLetter=new Scanner(System.in);
-		//System.out.println("Letter: ");
 		String letter=scLetter.nextLine().toLowerCase();
 				
 		Scanner scWay=new Scanner(System.in);
@@ -122,11 +116,14 @@ public class Route extends Vehicle{
 			System.out.printf( "\t%s\n", dayType.toString().replaceAll("(?<=[A-Z])\\_", " ").toLowerCase());
 		}
 		
-		String dayType  = scDayType.nextLine();  //.toString().replaceAll("(?<=[A-Z])\\_", " ")
+		String dayType  = scDayType.nextLine(); 
 		
-	    
-		userChoice =dayType+" "+station +" "+num+ " "+letter+" "+way ;
-		DepartureTimes.getsoff(station, typeOfVehicle, num, letter, way, dayType); 
+	    if(letter==null) {
+	    	userChoice =dayType+" "+station +" "+num+way ;
+	    }else {
+	    	userChoice=dayType+" "+station +" "+num+" "+letter+" "+way ;
+	    }
+		DepartureTimes.getsoff(userChoice); 
 		
 		scStation.close();
 		scTypeOfVehicle.close();
