@@ -119,6 +119,7 @@ public class Route extends Vehicle{
 		System.out.println("Choose from the following daytypes: ");
 		
 		for (DayType dayType : DayType.values()) {
+			//rexexp _ to " "
 			System.out.printf("\t%s\n", dayType);  
 		}
 		
