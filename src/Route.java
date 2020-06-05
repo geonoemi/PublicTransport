@@ -94,7 +94,7 @@ public class Route extends Vehicle{
 			printTrolleys();
 		}	
 			
-		String lineNumAndLetter=scNumAndLetter.nextLine();
+		String lineNumAndLetter=scNumAndLetter.nextLine().toLowerCase();
 	
 		Scanner scWay=new Scanner(System.in);
 		System.out.println("Way (FORTH=1 BACK=2) : ");
