@@ -13,7 +13,7 @@ public class beolv {
 		Station.readIn("classes files\\stations.txt");
 		
 		 for( i=0, j=0; i<Station.stationNames.size();i++, j++) {
-			  
+			//megoldani minden járatra  
 			  try( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk
 					
 					FileWriter writer1 = new FileWriter("departure times\\working day "+Station.stationNames.get(i) +" 3f back.txt");
@@ -34,7 +34,7 @@ public class beolv {
 				System.out.println(e.getMessage());
 			}
 		}
-		 i++;
+		i++;
 		j++;
 	}
 	public static void main(String[]args) {

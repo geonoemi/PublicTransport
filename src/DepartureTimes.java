@@ -6,13 +6,16 @@ import java.util.List;
 public class DepartureTimes extends Route {
 	
 	
-	public DepartureTimes(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
-			double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
-			boolean needayTypesoRepair, String typeOfFuel, boolean hasWheel) {
-		super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
-				numOfDisabledPlaces, needayTypesoRepair, typeOfFuel, hasWheel);
-	}
 	
+	
+	public DepartureTimes(String lineNum,  boolean articulated, boolean lowFloor,
+			double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
+			boolean needToRepair, String typeOfFuel, boolean hasWheel) {
+		super(lineNum,  articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces,
+				needToRepair, typeOfFuel, hasWheel);
+		
+	}
+
 	public static void readInDepartureTimes(String directoryName) {
 		   
         File directory = new File(directoryName);

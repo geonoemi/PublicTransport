@@ -2,11 +2,13 @@
 public class Tram extends Vehicle implements Electric{
 
 	
-	public Tram( int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
-				double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
-				boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-			super( lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
-				numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
+	
+
+	public Tram(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
+			boolean hasWheel) {
+		super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
+				typeOfFuel, hasWheel);
 	}
 
 	@Override

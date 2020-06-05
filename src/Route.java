@@ -15,16 +15,17 @@ public class Route extends Vehicle{
 
 	private static String [] departureTimes;
 		
-		public Route( int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
+		public Route( String lineNum,  boolean articulated, boolean lowFloor,
 						double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 						boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-				super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
+				super(lineNum,  articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 						numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
 		}
 
 		public static DayType dayTypes;
 		
 		public static void readIn(String fileName){ 
+			
 			try {
 				
 				FileReader reader=new FileReader(fileName);

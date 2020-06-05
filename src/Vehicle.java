@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 public class Vehicle {
 	//TODO make it abstract
 		protected String typeOfVehicle;
-		protected int lineNum;
+		protected String lineNum;
 		protected String lineLetter;
 		protected String way;
 		protected boolean articulated;
@@ -34,7 +34,7 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 		
 		
-		public Vehicle(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+		public Vehicle(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
 		
 		this.typeOfVehicle=typeOfVehicle;
@@ -66,9 +66,9 @@ public class Vehicle {
 					
 						String parts[] = line.split(",");
 						String typeOfVehicle[]=new String[line.length()];
-						int[]lineNum=new int[line.length()];
+						String[]lineNum=new String[line.length()];
 						String[]lineLetter=new String[line.length()];
-						String[]way=new String[line.length()];
+						//String[]way=new String[line.length()];
 						boolean[]articulated=new boolean[line.length()];
 						boolean[]lowFloor=new boolean[line.length()];
 						double[]operationCost=new double[line.length()];
@@ -80,21 +80,21 @@ public class Vehicle {
 						boolean[]hasWheel=new boolean[line.length()];
 				//Bence ezt hogy máshogycsinálná?
 						typeOfVehicle[i]=parts[0];
-						lineNum[i]=Integer.parseInt(parts[1]);
-						lineLetter[i]=parts[2];
-						way[i]=parts[3];
-						articulated[i]=Boolean.valueOf(parts[4]);
-						lowFloor[i]=Boolean.parseBoolean(parts[5]);
-						operationCost[i]=Double.parseDouble(parts[6]);
-						numOfSeats[i]=Integer.parseInt(parts[7]);
-						bicycleTransportOpp[i]=Boolean.parseBoolean(parts[8]);
-						numOfDisabledPlaces[i]=Integer.parseInt(parts[9]);
-						needToRepair[i]=Boolean.parseBoolean(parts[10]);
-						typeOfFuel[i]=parts[11];
-						hasWheel[i]=Boolean.parseBoolean(parts[12]);
+						lineNum[i]=parts[1];
+						//lineLetter[i]=parts[2];
+						//way[i]=parts[3];
+						articulated[i]=Boolean.valueOf(parts[3]);
+						lowFloor[i]=Boolean.parseBoolean(parts[4]);
+						operationCost[i]=Double.parseDouble(parts[5]);
+						numOfSeats[i]=Integer.parseInt(parts[6]);
+						bicycleTransportOpp[i]=Boolean.parseBoolean(parts[7]);
+						numOfDisabledPlaces[i]=Integer.parseInt(parts[8]);
+						needToRepair[i]=Boolean.parseBoolean(parts[9]);
+						typeOfFuel[i]=parts[10];
+						hasWheel[i]=Boolean.parseBoolean(parts[11]);
 									
 						
-						Vehicle vehicle=new Vehicle( lineNum[i], lineLetter[i], way[i], articulated[i], lowFloor[i],  
+						Vehicle vehicle=new Vehicle( lineNum[i], articulated[i], lowFloor[i],  
 								operationCost[i],  numOfSeats[i], bicycleTransportOpp[i],  numOfDisabledPlaces[i], 
 								needToRepair[i], typeOfFuel[i], hasWheel[i]);
 						
@@ -161,17 +161,17 @@ public class Vehicle {
 		
 		public static void printBuses() {
 			for(Vehicle bus:buses) {
-				System.out.println(bus.lineNum+bus.lineLetter);
+				System.out.println(bus.lineNum);
 			}
 		}
 		public static void printTrams() {
 			for(Vehicle trams:trams) {
-				System.out.println(trams.lineNum+trams.lineLetter);
+				System.out.println(trams.lineNum);
 			}
 		}
 		public static void printTrolleys() {
 			for(Vehicle trolleys:trolleys) {
-				System.out.println(trolleys.lineNum+trolleys.lineLetter);
+				System.out.println(trolleys.lineNum);
 				}
 		}
 		public  String toString() {
