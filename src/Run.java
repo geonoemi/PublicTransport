@@ -5,8 +5,8 @@ public class Run {
 
 	public static void main(String[] args) {
 
-		Vehicle.readIn("classes files\\vehicles.txt");
-		Vehicle.printLineNums();
+	//	Vehicle.readIn("classes files\\vehicles.txt");
+		//Vehicle.printLineNums();
 	//	Station.readIn("classes files\\stations.txt");
 		//Station.printStations(Station.stationNames);
 		
@@ -108,6 +108,6 @@ public class Run {
 		
 		
 		//DirectoryTry.readInDepartureTimes("departure times");
-		System.out.println(Route.userChoice);
+		//System.out.println(Route.userChoice);
 	}
 }

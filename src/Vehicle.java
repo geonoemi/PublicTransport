@@ -80,10 +80,11 @@ public class Vehicle {
 						boolean[]needToRepair=new boolean[line.length()];
 						String[]typeOfFuel=new String[line.length()];
 						boolean[]hasWheel=new boolean[line.length()];
-				//Bence ezt hogy máshogycsinálná?
+
 						typeOfVehicle[i]=parts[0];
 						lineNum[i]=parts[1];
 						lineNums.add(lineNum[i]);
+						//System.out.println(lineNums.get(i));
 						//lineLetter[i]=parts[2];
 						//way[i]=parts[3];
 						articulated[i]=Boolean.valueOf(parts[3]);
@@ -183,7 +184,7 @@ public class Vehicle {
 		}
 		public  String toString() {
 			
-			return lineNum+" "+lineLetter+" "+way+" "+articulated+" "+ lowFloor+" "+  operationCost
+			return lineNum+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
 		}
