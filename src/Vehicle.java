@@ -24,6 +24,8 @@ public class Vehicle {
 		
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
 		protected static ArrayList<String> vehicleTypes=new ArrayList<>();
+		protected static ArrayList<String> lineNums=new ArrayList<>();
+
 		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
 		protected static ArrayList<Vehicle> trams=new ArrayList<>();
 		protected static ArrayList<Vehicle> buses=new ArrayList<>();
@@ -81,6 +83,7 @@ public class Vehicle {
 				//Bence ezt hogy máshogycsinálná?
 						typeOfVehicle[i]=parts[0];
 						lineNum[i]=parts[1];
+						lineNums.add(lineNum[i]);
 						//lineLetter[i]=parts[2];
 						//way[i]=parts[3];
 						articulated[i]=Boolean.valueOf(parts[3]);
@@ -158,7 +161,11 @@ public class Vehicle {
 				}	
 			}
 		}
-		
+		public static void printLineNums() {
+			for(String lineNum:lineNums) {
+				System.out.println(lineNum);
+			}
+		}
 		public static void printBuses() {
 			for(Vehicle bus:buses) {
 				System.out.println(bus.lineNum);
@@ -183,11 +190,11 @@ public class Vehicle {
 	
 	 static void main(String[] args) {
 
-			Vehicle.readIn("classes files\\vehicles.txt");
+		 //	readIn("classes files\\vehicles.txt");
 			//Vehicle.printVehicleTypes(vehicleTypes);
 			//printVehicles(vehicles);
 			//fillArrayLists();	
-			
+			//printLineNums();
 			//printBuses(buses);
 	}
 }

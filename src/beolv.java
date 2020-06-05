@@ -11,6 +11,7 @@ public class beolv {
 		int i;
 		int j;
 		Station.readIn("classes files\\stations.txt");
+		Vehicle.readIn("classes fiiles\\vehicles.txt");
 		
 		 for( i=0, j=0; i<Station.stationNames.size();i++, j++) {
 			//megoldani minden járatra  
@@ -18,7 +19,7 @@ public class beolv {
 					
 					FileWriter writer1 = new FileWriter("departure times\\working day "+Station.stationNames.get(i) +" 3f back.txt");
 				
-					  FileWriter writer2 = new FileWriter("departure times\\working day "+Station.stationNames.get(j) +" 3f forth.txt")){
+					FileWriter writer2 = new FileWriter("departure times\\working day "+Station.stationNames.get(j) +" 3f forth.txt")){
 				  
 						writer1.write("06:00\n");
 						writer1.write("07:00\n");
