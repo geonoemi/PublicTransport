@@ -8,14 +8,17 @@ public class beolv {
 	
 
 	public static void fileWriting() {
+		
 		int i;
 		int j;
-		int l;
+		
 		Station.readIn("classes files\\stations.txt");
 		Vehicle.readIn("classes files\\vehicles.txt");
+		
 		for(j=0;j<Vehicle.lineNums.size();j++) {
+			
 			 for( i=0; i<Station.stationNames.size();i++) {
-				//megoldani minden járatra  
+				
 				  try( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk
 						
 						FileWriter writer1 = new FileWriter("departure times\\working day "+Station.stationNames.get(i)+" " +Vehicle.lineNums.get(j)+" back.txt");
@@ -30,17 +33,15 @@ public class beolv {
 							writer2.write("07:10\n");
 							writer2.write("08:10\n");
 		
-					
-			
 				}catch(IOException e) {
 					System.out.println(e.getMessage());
 				}
 			}
 			i++;
-			
 		}
 		j++;
 	}
+	
 	public static void main(String[]args) {
 		fileWriting();
 		

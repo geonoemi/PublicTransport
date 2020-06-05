@@ -5,7 +5,9 @@ public class Run {
 
 	public static void main(String[] args) {
 
-	//	Vehicle.readIn("classes files\\vehicles.txt");
+		Vehicle.readIn("classes files\\vehicles.txt");
+		Route.getARoute();
+		
 		//Vehicle.printLineNums();
 	//	Station.readIn("classes files\\stations.txt");
 		//Station.printStations(Station.stationNames);
@@ -17,7 +19,6 @@ public class Run {
 		/*for(Vehicle vehicles: Vehicle.vehicles) {
 			System.out.println(trolleys.toString());
 		}*/
-		//Route.getARoute();
 		
 		//Route.printVehicleTypes(Route.vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
 		//Route.printVehicles(Route.vehicles);	//itt sem

@@ -7,10 +7,8 @@ import java.util.InputMismatchException;
 	
 public class Vehicle {
 	//TODO make it abstract
-		protected String typeOfVehicle;
+		
 		protected String lineNum;
-		protected String lineLetter;
-		protected String way;
 		protected boolean articulated;
 		protected boolean lowFloor;
 		protected double operationCost;
@@ -21,11 +19,18 @@ public class Vehicle {
 		protected String typeOfFuel;
 		protected boolean hasWheel;
 		
-		
-		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
-		protected static ArrayList<String> vehicleTypes=new ArrayList<>();
 		protected static ArrayList<String> lineNums=new ArrayList<>();
+		protected static ArrayList<Boolean> isArticulate=new ArrayList<>();
+		protected static ArrayList<Boolean> isLowFloor =new ArrayList<>();
+		protected static ArrayList<Double> operationCosts=new ArrayList<>();
+		protected static ArrayList<Integer> numberOfSeats =new ArrayList<>();
+		protected static ArrayList<Boolean> hasBicycleTransportOpp =new ArrayList<>();
+		protected static ArrayList<Integer> disabledPlaces =new ArrayList<>();
+		protected static ArrayList<Boolean> needsToRepair =new ArrayList<>();
+		protected static ArrayList<String> fuelTypes =new ArrayList<>();
+		protected static ArrayList<Boolean> hasWheels =new ArrayList<>();
 
+		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
 		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
 		protected static ArrayList<Vehicle> trams=new ArrayList<>();
 		protected static ArrayList<Vehicle> buses=new ArrayList<>();
@@ -36,22 +41,22 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 		
 		
+		
+		
 		public Vehicle(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
 		
-		this.typeOfVehicle=typeOfVehicle;
-		this.lineNum=lineNum;
-		this.lineLetter=lineLetter;
-		this.way=way;
-		this.articulated=articulated;
-		this.lowFloor=lowFloor;
-		this.operationCost=operationCost;
-		this.numOfSeats=numOfSeats;
-		this.bicycleTransportOpp=bicycleTransportOpp;
-		this.numOfDisabledPlaces=numOfDisabledPlaces;
-		this.needToRepair=needToRepair;
-		this.typeOfFuel=typeOfFuel;
-		this.hasWheel=hasWheel;
+
+			this.lineNum=lineNum;
+			this.articulated=articulated;
+			this.lowFloor=lowFloor;
+			this.operationCost=operationCost;
+			this.numOfSeats=numOfSeats;
+			this.bicycleTransportOpp=bicycleTransportOpp;
+			this.numOfDisabledPlaces=numOfDisabledPlaces;
+			this.needToRepair=needToRepair;
+			this.typeOfFuel=typeOfFuel;
+			this.hasWheel=hasWheel;
 		
 		}
 		
@@ -67,49 +72,24 @@ public class Vehicle {
 				while((line=buffer.readLine())!=null) {
 					
 						String parts[] = line.split(",");
-						String typeOfVehicle[]=new String[line.length()];
-						String[]lineNum=new String[line.length()];
-						String[]lineLetter=new String[line.length()];
-						//String[]way=new String[line.length()];
-						boolean[]articulated=new boolean[line.length()];
-						boolean[]lowFloor=new boolean[line.length()];
-						double[]operationCost=new double[line.length()];
-						int[]numOfSeats=new int[line.length()];
-						boolean[]bicycleTransportOpp=new boolean[line.length()];
-						int[]numOfDisabledPlaces=new int[line.length()];
-						boolean[]needToRepair=new boolean[line.length()];
-						String[]typeOfFuel=new String[line.length()];
-						boolean[]hasWheel=new boolean[line.length()];
-
-						typeOfVehicle[i]=parts[0];
-						lineNum[i]=parts[1];
-						lineNums.add(lineNum[i]);
-						//System.out.println(lineNums.get(i));
-						//lineLetter[i]=parts[2];
-						//way[i]=parts[3];
-						articulated[i]=Boolean.valueOf(parts[3]);
-						lowFloor[i]=Boolean.parseBoolean(parts[4]);
-						operationCost[i]=Double.parseDouble(parts[5]);
-						numOfSeats[i]=Integer.parseInt(parts[6]);
-						bicycleTransportOpp[i]=Boolean.parseBoolean(parts[7]);
-						numOfDisabledPlaces[i]=Integer.parseInt(parts[8]);
-						needToRepair[i]=Boolean.parseBoolean(parts[9]);
-						typeOfFuel[i]=parts[10];
-						hasWheel[i]=Boolean.parseBoolean(parts[11]);
-									
+						lineNums.add(parts[0]);
+						isArticulate.add(Boolean.valueOf(parts[1]));
+						isLowFloor.add(Boolean.parseBoolean(parts[2]));
+						operationCosts.add(Double.parseDouble(parts[3]));
+						numberOfSeats.add(Integer.parseInt(parts[4]));
+						hasBicycleTransportOpp.add(Boolean.parseBoolean(parts[5]));
+						disabledPlaces.add(Integer.parseInt(parts[6]));
+						needsToRepair.add(Boolean.parseBoolean(parts[7]));
+						fuelTypes.add(parts[8]);
+						hasWheels.add(Boolean.parseBoolean(parts[9]));
+										
+						Vehicle vehicle=new Vehicle( lineNums.get(i), isArticulate.get(i), isLowFloor.get(i),  
+								operationCosts.get(i),  numberOfSeats.get(i), hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 
+								needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i));
 						
-						Vehicle vehicle=new Vehicle( lineNum[i], articulated[i], lowFloor[i],  
-								operationCost[i],  numOfSeats[i], bicycleTransportOpp[i],  numOfDisabledPlaces[i], 
-								needToRepair[i], typeOfFuel[i], hasWheel[i]);
-						
-						vehicles.add(vehicle);	
-						//System.out.println(vehicle);	
-						
-						vehicleTypes.add(typeOfVehicle[i]);
-											
-					/*	System.out.print(typeOfVehicle[i]+" "+lineNum[i] + " "+lineLetter[i]+ " "+ way[i]+  " "+articulated[i]+ " "+lowFloor[i]+  " "+operationCost[i]+ 
-						 " "+numOfSeats[i]+ " "+bicycleTransportOpp[i]+  " "+numOfDisabledPlaces[i]+ " "+needToRepair[i]+ " "+typeOfFuel[i]+" "+hasWheel[i]);
-						System.out.println();		*/				
+						vehicles.add(vehicle);				
+						lineNums.add(lineNums.get(i));
+												
 					i++;
 				}
 				
@@ -162,40 +142,35 @@ public class Vehicle {
 				}	
 			}
 		}
+		
 		public static void printLineNums() {
 			for(String lineNum:lineNums) {
 				System.out.println(lineNum);
 			}
 		}
+		
 		public static void printBuses() {
 			for(Vehicle bus:buses) {
 				System.out.println(bus.lineNum);
 			}
 		}
+		
 		public static void printTrams() {
 			for(Vehicle trams:trams) {
 				System.out.println(trams.lineNum);
 			}
 		}
+		
 		public static void printTrolleys() {
 			for(Vehicle trolleys:trolleys) {
 				System.out.println(trolleys.lineNum);
 				}
 		}
+		
 		public  String toString() {
 			
 			return lineNum+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
 		}
-	
-	 static void main(String[] args) {
-
-		 //	readIn("classes files\\vehicles.txt");
-			//Vehicle.printVehicleTypes(vehicleTypes);
-			//printVehicles(vehicles);
-			//fillArrayLists();	
-			//printLineNums();
-			//printBuses(buses);
-	}
 }
