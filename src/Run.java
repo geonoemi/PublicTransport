@@ -99,6 +99,6 @@ public class Run {
 		
 		
 		//DirectoryTry.readInDepartureTimes("departure times");
-		System.out.println(Route.choice);
+		//System.out.println(Route.choice);
 	}
 }

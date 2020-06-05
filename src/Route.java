@@ -118,14 +118,14 @@ public class Route extends Vehicle{
 		Scanner scDaytype=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes: ");
 		
-		for (DayType dayTypes : DayType.values()) {
-			System.out.printf("\t%s\n", dayTypes);  
+		for (DayType dayType : DayType.values()) {
+			System.out.printf("\t%s\n", dayType);  
 		}
-		//regexp-pel olvashatóbbá
-		DayType dayTypes  = DayType.valueOf(scDaytype.nextLine());//String to enum
+		
+		String dayType  = scDaytype.nextLine().toString();//String to enum
 	    
-		choice =station +" "+num+ " "+letter+" "+way ;
-		DepartureTimes.getsoff(station, typeOfVehicle, num, letter, way, dayTypes); 
+		choice =dayType+" "+station +" "+num+ " "+letter+" "+way ;
+		DepartureTimes.getsoff(station, typeOfVehicle, num, letter, way, dayType); 
 		
 		scStation.close();
 		scTypeOfVehicle.close();
@@ -135,8 +135,6 @@ public class Route extends Vehicle{
 		scDaytype.close();
 	}
 	
-
-		
 	public static void printStations(ArrayList<String> stationNames) {
 		
 		for (String stationName : stationNames) {

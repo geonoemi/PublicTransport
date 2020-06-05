@@ -13,36 +13,22 @@ public class DepartureTimes extends Route {
 				numOfDisabledPlaces, needayTypesoRepair, typeOfFuel, hasWheel);
 	}
 	
-/*	public static ArrayList<String>fileNames=new ArrayList<>();
-		
-		public static List<File> readInDepartureTimes(String directoryName) {
-			   
-		        File directory = new File(directoryName);
-	
-		        List<File> resultList = new ArrayList<File>();
-	
-		        File[] fileList = directory.listFiles();
-		        resultList.addAll(Arrays.asList(fileList));
-		        
-		        for (File file : fileList) {
-		        	
-		            if (file.isFile()) {
-		       //     	fileNames.add(file);//regexp
-		                System.out.println(file);
-		            } 
-		            else if (file.isDirectory()) {
-		                resultList.addAll(readInDepartureTimes(file.getAbsolutePath()));
-		            }
-		        }
-		        return resultList;
-	  } 
-		*/
-	
+	public static void readInDepartureTimes(String directoryName) {
+		   
+        File directory = new File(directoryName);
+        ArrayList<String> departureTimesList = new ArrayList<String>(Arrays.asList(directory.list()));
 
-	public static  void getsoff(String stationName, int typeOfVehicle, int lineNum, String lineLetter, String way, DayType dayTypes ) {
+        for(String list: departureTimesList) {
+        	if(list.contains("2 FORTH")) {
+        	Route.readIn("departure times\\"+list);
+        	}
+        }
+    } 
+	
+	public static  void getsoff(String stationName, int typeOfVehicle, int lineNum, String lineLetter, String way, String dayType ) {
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
-		beolv.readInDepartureTimes("departure times");
+		readInDepartureTimes("departure times");
 		
 	/*	if(dayTypes==DayType.WORKING_DAY){
 	    	//utánajárni, hogy a fájlok között iteráljon és azt olvassa be, aminek a címében megtalálhatók a vonalszám, vonalbetû, irány értékek
