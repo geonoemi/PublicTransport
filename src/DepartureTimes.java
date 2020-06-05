@@ -1,7 +1,9 @@
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DepartureTimes extends Route {
-	
-
 	
 	
 	public DepartureTimes(int lineNum, String lineLetter, String way, boolean articulated, boolean lowFloor,
@@ -10,7 +12,32 @@ public class DepartureTimes extends Route {
 		super(lineNum, lineLetter, way, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
 				numOfDisabledPlaces, needayTypesoRepair, typeOfFuel, hasWheel);
 	}
-
+	
+	public static ArrayList<String>fileNames=new ArrayList<>();
+		
+		public static List<File> readInDepartureTimes(String directoryName) {
+			   
+		        File directory = new File(directoryName);
+	
+		        List<File> resultList = new ArrayList<File>();
+	
+		        File[] fileList = directory.listFiles();
+		        resultList.addAll(Arrays.asList(fileList));
+		        
+		        for (File file : fileList) {
+		        	
+		            if (file.isFile()) {
+		       //     	fileNames.add(file);//regexp
+		                System.out.println(file);
+		            } 
+		            else if (file.isDirectory()) {
+		                resultList.addAll(readInDepartureTimes(file.getAbsolutePath()));
+		            }
+		        }
+		        return resultList;
+	  } 
+		
+	
 
 	public static  void getsoff(String stationName, int typeOfVehicle, int lineNum, String lineLetter, int way, DayType dayTypes ) {
 		

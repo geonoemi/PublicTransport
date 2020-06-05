@@ -7,35 +7,35 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DirectoryTry {
+public class DirectoryTry{
 	
-	public static ArrayList<String>fileNames=new ArrayList<>();
+	//public static ArrayList<String>fileNames=new ArrayList<>();
 	
 	public static List<File> readInDepartureTimes(String directoryName) {
 		   
 	        File directory = new File(directoryName);
 
-	        List<File> resultList = new ArrayList<File>();
+	        List<File> departureTimeList = new ArrayList<File>();
 
 	        File[] fileList = directory.listFiles();
-	        resultList.addAll(Arrays.asList(fileList));
+	        departureTimeList.addAll(Arrays.asList(fileList));
 	        
 	        for (File file : fileList) {
 	        	
 	            if (file.isFile()) {
-	       //     	fileNames.add(file);//regexp
 	                System.out.println(file);
 	            } 
 	            else if (file.isDirectory()) {
-	                resultList.addAll(readInDepartureTimes(file.getAbsolutePath()));
+	            	departureTimeList.addAll(readInDepartureTimes(file.getAbsolutePath()));
 	            }
 	        }
-	        return resultList;
+	     
+	        return departureTimeList;
 	    } 
 	   
 	 public static void main(String[] args) {
 		 
 		   readInDepartureTimes("departure times");
-	        	        
+		          	        
 	 }
 }
