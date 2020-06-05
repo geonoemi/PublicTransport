@@ -71,9 +71,9 @@ public class Station {
 		}		
 	}
 	
-	public static void printStations(ArrayList<Station> stations) {
+	public static void printStations(ArrayList<String> stationNames) {
 		
-		for (Station st:stations) {
+		for (String st:stationNames) {
 			System.out.println(st);
 		}
 	}
