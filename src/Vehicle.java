@@ -159,22 +159,20 @@ public class Vehicle {
 			}
 		}
 		
-		public static void printBuses(ArrayList<Vehicle> buses) {
-			fillArrayLists();
-				for(Vehicle bus:buses) {
-					System.out.println(bus.lineNum+bus.lineLetter);
-				}
+		public static void printBuses() {
+			for(Vehicle bus:buses) {
+				System.out.println(bus.lineNum+bus.lineLetter);
+			}
 		}
 		public static void printTrams() {
-				for(Vehicle trams:trams) {
-					System.out.println(trams.lineNum+trams.lineLetter);
-				}
+			for(Vehicle trams:trams) {
+				System.out.println(trams.lineNum+trams.lineLetter);
+			}
 		}
 		public static void printTrolleys() {
-				for(Vehicle trolleys:trolleys) {
-					System.out.println(trolleys.lineNum+trolleys.lineLetter);
+			for(Vehicle trolleys:trolleys) {
+				System.out.println(trolleys.lineNum+trolleys.lineLetter);
 				}
-			
 		}
 		public  String toString() {
 			
@@ -190,6 +188,6 @@ public class Vehicle {
 			//printVehicles(vehicles);
 			//fillArrayLists();	
 			
-			printBuses(buses);
+			//printBuses(buses);
 	}
 }

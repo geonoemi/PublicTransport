@@ -75,16 +75,15 @@ public class Route extends Vehicle{
 			
 		Scanner scTypeOfVehicle=new Scanner(System.in);
 		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-		//itt amit választ, annak a jármûtípusnak a számát, betûjét adja fel választási lehetõségnek, vagy nem...
 		int typeOfVehicle=scTypeOfVehicle.nextInt();
 		
-		Scanner scNum=new Scanner(System.in);
+		Scanner scNumAndLetter=new Scanner(System.in);
 		
 		Vehicle.fillArrayLists();
 		
 		if (typeOfVehicle==1) { //buszok számát írja ki
 			System.out.println("Choose from the following buses:");
-			printBuses(buses);
+			printBuses();
 		}
 		else if (typeOfVehicle==2) { //villamosok számát írja ki
 			System.out.println("Choose from the following trams:");
@@ -95,11 +94,8 @@ public class Route extends Vehicle{
 			printTrolleys();
 		}	
 			
-		int num=scNum.nextInt();
-			
-		Scanner scLetter=new Scanner(System.in);
-		String letter=scLetter.nextLine().toLowerCase();
-				
+		String lineNumAndLetter=scNumAndLetter.nextLine();
+	
 		Scanner scWay=new Scanner(System.in);
 		System.out.println("Way (FORTH=1 BACK=2) : ");
 		String way=" ";
@@ -118,17 +114,14 @@ public class Route extends Vehicle{
 		
 		String dayType  = scDayType.nextLine(); 
 		
-	    if(letter==null) {
-	    	userChoice =dayType+" "+station +" "+num+way ;
-	    }else {
-	    	userChoice=dayType+" "+station +" "+num+" "+letter+" "+way ;
-	    }
+	   
+	    	userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
+	   
 		DepartureTimes.getsoff(userChoice); 
 		
 		scStation.close();
 		scTypeOfVehicle.close();
-		scNum.close();
-		scLetter.close();
+		scNumAndLetter.close();
 		scWay.close();
 		scDayType.close();
 	}
