@@ -9,7 +9,7 @@ public class Run {
 		//Vehicle.printVehicleTypes(vehicleTypes);
 		//Vehicle.printVehicles(vehicles);
 				
-		//Route.getARoute();
+		Route.getARoute();
 		//Route.printVehicleTypes(Route.vehicleTypes); //szülõ public static metódusát a gyermek nem éri el 
 		//Route.printVehicles(Route.vehicles);	//itt sem
 		
@@ -98,7 +98,7 @@ public class Run {
 		
 		
 		
-		DirectoryTry.readInDepartureTimes("departure times");
-		
+		//DirectoryTry.readInDepartureTimes("departure times");
+		System.out.println(Route.choice);
 	}
 }

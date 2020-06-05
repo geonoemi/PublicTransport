@@ -10,7 +10,7 @@ public class beolv {
 
         for(String list: departureTimesList) {
         	if(list.contains("2 FORTH")) {
-        	System.out.println(list);
+        	Route.readIn("departure times\\"+list);
         	}
         }
     } 

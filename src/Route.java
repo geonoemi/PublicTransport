@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class Route extends Vehicle{
 //járat
+	public static String choice;
 
 	private static String [] departureTimes;
 		
@@ -107,7 +108,12 @@ public class Route extends Vehicle{
 				
 		Scanner scWay=new Scanner(System.in);
 		System.out.println("Way (FORTH=1 BACK=2) : ");
-		int way=scWay.nextInt();
+		String way=" ";
+		if(scWay.nextInt()==1) {
+			way="FORTH";
+		}else {
+			way="BACK";
+		}
 	
 		Scanner scDaytype=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes: ");
@@ -118,6 +124,7 @@ public class Route extends Vehicle{
 		//regexp-pel olvashatóbbá
 		DayType dayTypes  = DayType.valueOf(scDaytype.nextLine());//String to enum
 	    
+		choice =station +" "+num+ " "+letter+" "+way ;
 		DepartureTimes.getsoff(station, typeOfVehicle, num, letter, way, dayTypes); 
 		
 		scStation.close();
