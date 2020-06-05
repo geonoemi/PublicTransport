@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Route extends Vehicle{
 //járat
-	public static String choice;
+	public static String userChoice;
 
 	private static String [] departureTimes;
 		
@@ -104,28 +104,28 @@ public class Route extends Vehicle{
 			
 		Scanner scLetter=new Scanner(System.in);
 		//System.out.println("Letter: ");
-		String letter=scLetter.nextLine();
+		String letter=scLetter.nextLine().toLowerCase();
 				
 		Scanner scWay=new Scanner(System.in);
 		System.out.println("Way (FORTH=1 BACK=2) : ");
 		String way=" ";
 		if(scWay.nextInt()==1) {
-			way="FORTH";
+			way="forth";
 		}else {
-			way="BACK";
+			way="back";
 		}
 	
-		Scanner scDaytype=new Scanner(System.in);
+		Scanner scDayType=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes: ");
 		
 		for (DayType dayType : DayType.values()) {
-			//rexexp _ to " "
-			System.out.printf("\t%s\n", dayType);  
+			System.out.printf( "\t%s\n", dayType.toString().replaceAll("(?<=[A-Z])\\_", " ").toLowerCase());
 		}
 		
-		String dayType  = scDaytype.nextLine().toString();//String to enum
+		String dayType  = scDayType.nextLine();  //.toString().replaceAll("(?<=[A-Z])\\_", " ")
+		
 	    
-		choice =dayType+" "+station +" "+num+ " "+letter+" "+way ;
+		userChoice =dayType+" "+station +" "+num+ " "+letter+" "+way ;
 		DepartureTimes.getsoff(station, typeOfVehicle, num, letter, way, dayType); 
 		
 		scStation.close();
@@ -133,7 +133,7 @@ public class Route extends Vehicle{
 		scNum.close();
 		scLetter.close();
 		scWay.close();
-		scDaytype.close();
+		scDayType.close();
 	}
 	
 	public static void printStations(ArrayList<String> stationNames) {

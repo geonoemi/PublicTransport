@@ -19,7 +19,7 @@ public class DepartureTimes extends Route {
         ArrayList<String> departureTimesList = new ArrayList<String>(Arrays.asList(directory.list()));
 
         for(String list: departureTimesList) {
-        	if(list.equals(choice+".txt")) {
+        	if(list.equals(userChoice+".txt")) {
         	Route.readIn("departure times\\"+list);
         	}
         }
