@@ -58,14 +58,12 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 	public static void getARoute() {
 		//Bence tipp: app induláskor mindent beolvasni és majd adatszerkezeten iterálni, nem file-on
 		//in-memory kollekcióknak utánaolvasni
-		//menetrend class
-		//tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmazv
-		//Menetrend class és ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
+		//menetrend class:tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmaz ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
 		//mi megy a stackbe,mi a heapbe?
-		//relativepath-nak utánajárni
-		//git ignore
+		//git ignore?
 		
-		
+		Vehicle.readIn("classes files\\vehicles.txt");
+
 		Scanner scStation=new Scanner(System.in);
 		System.out.println("Choose station: ");
 		Station.readIn("classes files\\stations.txt");

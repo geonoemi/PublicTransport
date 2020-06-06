@@ -94,7 +94,7 @@ public class Station {
 
 	    for(int i=0;i<stationNames.size();i++) {
 			System.out.println(stationNames.get(i));
-			// TODO: duplicated in beolv.java ->
+			
 			// TODO: Single Responsibility Principle: one method should do one task
 			// TODO: Separation of concern: presentation and business logic should separated
 		}
