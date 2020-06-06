@@ -18,6 +18,7 @@ public class Vehicle {
 		protected boolean needToRepair;
 		protected String typeOfFuel;
 		protected boolean hasWheel;
+		protected String typeOfVehicle;
 		
 		protected static ArrayList<String> lineNums=new ArrayList<>();
 		protected static ArrayList<Boolean> isArticulate=new ArrayList<>();
@@ -29,6 +30,8 @@ public class Vehicle {
 		protected static ArrayList<Boolean> needsToRepair =new ArrayList<>();
 		protected static ArrayList<String> fuelTypes =new ArrayList<>();
 		protected static ArrayList<Boolean> hasWheels =new ArrayList<>();
+		protected static ArrayList<String> typeOfVehicles =new ArrayList<>();
+
 
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
 		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
@@ -44,7 +47,8 @@ public class Vehicle {
 		
 		
 		public Vehicle(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
-						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel, boolean hasWheel) {
+						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel,
+						boolean hasWheel, String typeOfVehicle) {
 		
 
 			this.lineNum=lineNum;
@@ -57,6 +61,7 @@ public class Vehicle {
 			this.needToRepair=needToRepair;
 			this.typeOfFuel=typeOfFuel;
 			this.hasWheel=hasWheel;
+			this.typeOfVehicle=typeOfVehicle;
 		
 		}
 		
@@ -72,7 +77,9 @@ public class Vehicle {
 				while((line=buffer.readLine())!=null) {
 					
 						String parts[] = line.split(",");
+						
 						lineNums.add(parts[0]);
+						
 						isArticulate.add(Boolean.valueOf(parts[1]));
 						isLowFloor.add(Boolean.parseBoolean(parts[2]));
 						operationCosts.add(Double.parseDouble(parts[3]));
@@ -82,13 +89,15 @@ public class Vehicle {
 						needsToRepair.add(Boolean.parseBoolean(parts[7]));
 						fuelTypes.add(parts[8]);
 						hasWheels.add(Boolean.parseBoolean(parts[9]));
+						typeOfVehicles.add(parts[10]);
 										
 						Vehicle vehicle=new Vehicle( lineNums.get(i), isArticulate.get(i), isLowFloor.get(i),  
 								operationCosts.get(i),  numberOfSeats.get(i), hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 
-								needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i));
+								needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
 						
 						vehicles.add(vehicle);				
-						lineNums.add(lineNums.get(i));
+						//lineNums.add(lineNums.get(i));
+						//System.out.println(lineNums.get(i));
 												
 					i++;
 				}
@@ -171,6 +180,13 @@ public class Vehicle {
 			
 			return lineNum+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
-					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel;
+					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
 		}
+	/*	public static void main(String[] args) {
+
+			Vehicle.readIn("classes files\\vehicles.txt");
+			fillArrayLists();
+			printVehicles(vehicles);
+			Vehicle.printBuses();
+		}*/
 }

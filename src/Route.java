@@ -10,17 +10,18 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Route extends Vehicle{
+public Route(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
+			boolean hasWheel, String typeOfVehicle) {
+		super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
+				typeOfFuel, hasWheel, typeOfVehicle);
+	}
+
 //járat
 	public static String userChoice;
 
 	private static String [] departureTimes;
 		
-		public Route( String lineNum,  boolean articulated, boolean lowFloor,
-						double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
-						boolean needToRepair, String typeOfFuel, boolean hasWheel) {
-				super(lineNum,  articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp,
-						numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel);
-		}
 
 		public static DayType dayTypes;
 		
@@ -125,6 +126,13 @@ public class Route extends Vehicle{
 		scNumAndLetter.close();
 		scWay.close();
 		scDayType.close();
+	}
+	
+	public static void getsoff(String userChoice) {
+		
+		System.out.println("This route gets off at the following times from the chosen station: ");
+		DepartureTimes.readInDepartureTimes("departure times");
+		
 	}
 	
 	public static void printStations(ArrayList<String> stationNames) {

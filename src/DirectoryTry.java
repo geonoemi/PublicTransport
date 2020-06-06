@@ -31,7 +31,7 @@ public class DirectoryTry{
 	        }
 	     
 	        return departureTimeList;
-	    } 
+	 } 
 	   
 	 public static void main(String[] args) {
 		 

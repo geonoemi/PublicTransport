@@ -1,9 +1,9 @@
-2,false,true,190,55,true,0,true,electrical energy,false
-3F,false,true,170,50,true,1,false,electrical energy,false
-4,false,true,180,55,true,0,false,electrical energy,false
-8,false,true,190,55,true,0,false,electrical energy,true
-10,false,true,170,50,true,1,true,electrical energy,true
-19,false,true,180,55,true,0,false,electrical energy,true
-70,true,false,203.95,50,false,1,true,petrol,true
-71,false,true,180,45,true,2,false,diesel oil,true
-90H,true,false,200,50,false,0,true,petrol,true
+2,false,true,190,55,true,0,true,electrical energy,false,tram
+3F,false,true,170,50,true,1,false,electrical energy,false,tram
+4,false,true,180,55,true,0,false,electrical energy,false,tram
+8,false,true,190,55,true,0,false,electrical energy,true,trolley
+10,false,true,170,50,true,1,true,electrical energy,true,trolley
+19,false,true,180,55,true,0,false,electrical energy,true,trolley
+70,true,false,203.95,50,false,1,true,petrol,true,bus
+71,false,true,180,45,true,2,false,diesel oil,true,bus
+90H,true,false,200,50,false,0,true,petrol,true,bus
