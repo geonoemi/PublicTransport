@@ -72,9 +72,12 @@ public class Station {
 	}
 	
 	public static void printStations(ArrayList<String> stationNames) {
+
+		Collator hu = Collator.getInstance(new Locale("hu","HU"));
+		Station.sortStationNames(hu,Station.stationNames);
 		
-		for (String st:stationNames) {
-			System.out.println(st);
+		for (String stations:stationNames) {
+			System.out.println(stations);
 		}
 	}
 	
@@ -92,12 +95,12 @@ public class Station {
 	        }
 	    }
 
-	    for(int i=0;i<stationNames.size();i++) {
-			System.out.println(stationNames.get(i));
+	 //   for(int i=0;i<stationNames.size();i++) {
+		//	System.out.println(stationNames.get(i));
 			
 			// TODO: Single Responsibility Principle: one method should do one task
 			// TODO: Separation of concern: presentation and business logic should separated
-		}
+		//}
 	}
 	
 	public static void canRunAlongHere(boolean hasPantograph) {

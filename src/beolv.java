@@ -11,7 +11,7 @@ public class beolv {
 		//menetrend class:tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmaz ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
 		//mi megy a stackbe,mi a heapbe?
 		//git ignore?
-		int i=0;
+		
 		Vehicle.readIn("classes files\\vehicles.txt");
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
@@ -19,19 +19,24 @@ public class beolv {
 			System.out.println("Choose station: ");
 			Station.readIn("classes files\\stations.txt");
 			
-			Collator hu = Collator.getInstance(new Locale("hu","HU"));
-			Station.sortStationNames(hu,Station.stationNames);
+			//Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			//Station.sortStationNames(hu,Station.stationNames);
+			Station.printStations(Station.stationNames);
 			station=scanStation.nextLine();
 		}while(!Station.stationNames.contains(station));
 				
 		
 		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
-		Scanner scTypeOfVehicle=new Scanner(System.in);
-		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-		int typeOfVehicle=scTypeOfVehicle.nextInt();
+		Scanner scanTypeOfVehicle=new Scanner(System.in);
+		int typeOfVehicle;
+		do{
+			System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
+			typeOfVehicle=scanTypeOfVehicle.nextInt();
+		}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) );
 		
-		Scanner scNumAndLetter=new Scanner(System.in);
+		
+		Scanner scanNumAndLetter=new Scanner(System.in);
 		
 		Vehicle.fillArrayLists();
 		
@@ -48,25 +53,25 @@ public class beolv {
 			Vehicle.printTrolleys();
 		}	
 			
-		String lineNumAndLetter=scNumAndLetter.nextLine().toLowerCase();
+		String lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 	
-		Scanner scWay=new Scanner(System.in);
+		Scanner scanWay=new Scanner(System.in);
 		System.out.println("Way (FORTH=1 BACK=2) : ");
 		String way=" ";
-		if(scWay.nextInt()==1) {
+		if(scanWay.nextInt()==1) {
 			way="forth";
 		}else {
 			way="back";
 		}
 	
-		Scanner scDayType=new Scanner(System.in);
+		Scanner scanDayType=new Scanner(System.in);
 		System.out.println("Choose from the following daytypes: ");
 		
 		for (DayType dayType : DayType.values()) {
 			System.out.printf( "\t%s\n", dayType.toString().replaceAll("(?<=[A-Z])\\_", " ").toLowerCase());
 		}
 		
-		String dayType  = scDayType.nextLine(); 
+		String dayType  = scanDayType.nextLine(); 
 		
 	   
 	    Route.userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
@@ -74,10 +79,10 @@ public class beolv {
 		DepartureTimes.getsoff(Route.userChoice); 
 		
 		scanStation.close();
-		scTypeOfVehicle.close();
-		scNumAndLetter.close();
-		scWay.close();
-		scDayType.close();
+		scanTypeOfVehicle.close();
+		scanNumAndLetter.close();
+		scanWay.close();
+		scanDayType.close();
 	}
 	
 	public static void getsoff(String userChoice) {
