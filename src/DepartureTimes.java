@@ -5,6 +5,8 @@ import java.util.List;
 
 public class DepartureTimes extends Route {
 	
+	public static DayType dayTypes;
+	public static ArrayList<String> dayTypeList =new ArrayList<>();
 	
 	public DepartureTimes(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
@@ -13,6 +15,19 @@ public class DepartureTimes extends Route {
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
+	public static void fillDayTypeList() {
+		for (DayType dayTypes : DayType.values()) {
+			dayTypeList.add(dayTypes.toString().replaceAll("(?<=[A-Z])\\_", " ").toLowerCase());
+		}
+	}
+	
+	public static void printDayTypeList(ArrayList<String> dayTypeList) {
+		fillDayTypeList();
+		for(String dayType : dayTypeList) {
+			System.out.println(dayType);
+		}
+	}
+	
 	public static void readInDepartureTimes(String directoryName) {
 		   
         File directory = new File(directoryName);
@@ -25,4 +40,9 @@ public class DepartureTimes extends Route {
         	}
         }
     } 
+	public static void main(String[] args) {
+
+		Vehicle.readIn("classes files\\vehicles.txt");
+		printDayTypeList(dayTypeList);
+	}
 }

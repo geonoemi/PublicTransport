@@ -1,4 +1,5 @@
 import java.text.Collator;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class Run {
@@ -8,7 +9,9 @@ public class Run {
 		Vehicle.readIn("classes files\\vehicles.txt");
 		//Vehicle.fillArrayLists();
 		//Vehicle.printBuses();
-		Route.getARoute();
+		//Route.getARoute();
+		
+		//Route.printDayTypeList(Route.dayTypeList);
 		
 		//Vehicle.printLineNums();
 	//	Station.readIn("classes files\\stations.txt");

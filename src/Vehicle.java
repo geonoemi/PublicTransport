@@ -79,7 +79,6 @@ public class Vehicle {
 						String parts[] = line.split(",");
 						
 						lineNums.add(parts[0]);
-						
 						isArticulate.add(Boolean.valueOf(parts[1]));
 						isLowFloor.add(Boolean.parseBoolean(parts[2]));
 						operationCosts.add(Double.parseDouble(parts[3]));
@@ -96,14 +95,11 @@ public class Vehicle {
 								needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
 						
 						vehicles.add(vehicle);				
-						//lineNums.add(lineNums.get(i));
-						//System.out.println(lineNums.get(i));
-												
+						
 					i++;
 				}
 				
 				buffer.close();
-				
 				
 			}catch(FileNotFoundException e) {
 				System.out.println("File not found.");

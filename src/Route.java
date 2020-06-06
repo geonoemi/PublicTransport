@@ -19,11 +19,10 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 
 //járat
 	public static String userChoice;
-
 	private static String [] departureTimes;
 		
 
-		public static DayType dayTypes;
+		
 		
 		public static void readIn(String fileName){ 
 			
@@ -53,6 +52,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 			}
 	}	
 	//static DayType dt=DayType.NONWORKINGDAY;
+
 
 	
 	public static void getARoute() {
@@ -117,7 +117,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 		String dayType  = scDayType.nextLine(); 
 		
 	   
-	    	userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
+	    userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
 	   
 		DepartureTimes.getsoff(userChoice); 
 		
@@ -141,6 +141,6 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 			System.out.println(stationName);
 		}
 	}
-
+	
 		
 }
