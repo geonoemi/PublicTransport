@@ -92,12 +92,11 @@ public class Vehicle {
 						hasWheels.add(Boolean.parseBoolean(parts[9]));
 						typeOfVehicles.add(parts[10]);
 										
-						Vehicle vehicle=new Vehicle( lineNums.get(i), isArticulate.get(i), isLowFloor.get(i),  
-								operationCosts.get(i),  numberOfSeats.get(i), hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 
-								needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
-						
+						Vehicle vehicle=new Vehicle(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
+													hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), 
+													hasWheels.get(i), typeOfVehicles.get(i));
 						vehicles.add(vehicle);				
-						
+				
 					i++;
 				}
 				
@@ -112,38 +111,70 @@ public class Vehicle {
 			}		
 		}
 		
-/*		public static void printVehicles(ArrayList<Vehicle> vehicles) {
+		public static void fillWheelChairAccessibleVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
-				System.out.println(vehicle);
+				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
+				 	
+					Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum,  vehicle.articulated, vehicle.lowFloor,
+				 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
+				 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
+
+							wheelChairAccessibleVehicles.add((Vehicle) wheelchairAccessibleVehicle);
+				}
+			}
+		}
+		
+		public static void fillNeedToRepairVehicles() {
+				
+				for (Vehicle vehicle : vehicles) {
+					if(vehicle.needToRepair) {
+						toService.add(vehicle);
+					}	
+				}
+		}	
+		
+		public static void fillBicycleVehicles() {
+			
+			for (Vehicle vehicle : vehicles) {
+				if(vehicle.bicycleTransportOpp) {
+						bicycleVehicles.add(vehicle);
+				}
+			}
+		}
+		
+		public static void fillFossilVehicles() {
+			
+			for (Vehicle vehicle : vehicles) {
+				if(vehicle.typeOfFuel.equals("benzin") || vehicle.typeOfFuel.equals("gÃ¡zolaj")) {
+					fossilVehicles.add(vehicle);
+				}
+			}
+		}
+		
+		public static void fillElectricVehicles() {
+			
+			for (Vehicle vehicle : vehicles) {
+				if(vehicle.typeOfFuel.equals("electric energy")){
+					electricVehicles.add(vehicle);
+				}
 			}
 		}
 
-		public static void printVehicleTypes(ArrayList<String> vehicleTypes) {
-			
-			for (String vehicleName : vehicleTypes) {
-				System.out.println(vehicleName);
-			}
-		}*/
 		
-		public static void fillVehicles() { //used in Route.getARoute() - feltölti a különbözõ jármûveket tartalmazó tömblistákat
+		
+		public static void fillVehicles() { //used in Route.getARoute() - feltÃ¶lti a kÃ¼lÃ¶nbÃ¶zÅ‘ jÃ¡rmÅ±veket tartalmazÃ³ tÃ¶mblistÃ¡kat
 			
 			for(Vehicle vehicle: vehicles) {
 				
 				if(vehicle.typeOfFuel.equals("electrical energy") && vehicle.hasWheel) {
 					trolleys.add(vehicle);
 				}
-			}
-		
-			for(Vehicle vehicle: vehicles) {	
-				
+
 				if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
 					trams.add(vehicle);
 				}
-			}
-					
-			for(Vehicle vehicle: vehicles) {
-				
+			
 				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
 					buses.add( vehicle);
 				}	

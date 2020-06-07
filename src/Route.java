@@ -121,7 +121,7 @@ public class Route extends Vehicle{
 		System.out.println("Not appropriate input type.");
 	}*/
 	}
-	public static void getsoff(String userChoice) {
+	public static void getsoff(String userChoice) { //used in getARoute()
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
 		DepartureTimes.readInDepartureTimes("departure times");

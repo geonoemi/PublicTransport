@@ -16,7 +16,6 @@ public class DayTypes {
 	public static String during_school_holidays;
 	public static String daily_except_holiday;
 	public static String daily_except_on_public_holidays;
-	//fájlból?
 	
 	public static ArrayList<String>dayTypes=new ArrayList<>();
 	
