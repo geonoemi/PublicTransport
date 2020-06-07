@@ -19,12 +19,10 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 
 //járat
 	public static String userChoice;
-	private static String [] departureTimes;
-		
+	public static ArrayList<String>departureTimes=new ArrayList<>();
+ 
 
-		
-		
-		public static void readIn(String fileName){ 
+	public static void readIn(String fileName){ 
 			
 			try {
 				
@@ -35,9 +33,9 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 				
 				while((line=buffer.readLine())!=null) {
 					
-					departureTimes=new String[line.length()];
-					departureTimes[i]=line;
-					System.out.println(departureTimes[i]);
+					departureTimes.add(line);
+					System.out.println(departureTimes.get(i));
+					
 					i++;
 					
 				}
@@ -51,10 +49,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 				System.out.println("Not appropriate input type.");
 			}
 	}	
-	//static DayType dt=DayType.NONWORKINGDAY;
 
-
-	
 	public static void getARoute() {
 		//Bence tipp: app induláskor mindent beolvasni és majd adatszerkezeten iterálni, nem file-on
 		//in-memory kollekcióknak utánaolvasni
@@ -62,7 +57,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 		//mi megy a stackbe,mi a heapbe?
 		//git ignore?
 		
-Vehicle.readIn("classes files\\vehicles.txt");
+		Vehicle.readIn("classes files\\vehicles.txt"); //Vehicle példányokat tömblistába
 		
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
@@ -70,6 +65,7 @@ Vehicle.readIn("classes files\\vehicles.txt");
 				System.out.println("Choose station: ");
 				Station.printStations(Station.stationNames);
 				station=scanStation.nextLine();
+				
 			}while(!Station.stationNames.contains(station));		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
 			
@@ -79,11 +75,12 @@ Vehicle.readIn("classes files\\vehicles.txt");
 			do{
 				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
 				typeOfVehicle=scanTypeOfVehicle.nextInt();
+				
 			}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) );
 		
 		
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		Vehicle.fillArrayLists();
+		Vehicle.fillArrayLists(); //jármûtípusok tömbistáinak feltöltése
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
@@ -119,7 +116,7 @@ Vehicle.readIn("classes files\\vehicles.txt");
 			System.out.println("Way (FORTH = 1 BACK = 2) : ");
 				if(scanWay.nextInt()==1) {
 					way="forth";
-				}else {//if(scanWay.nextInt()==2) 
+				}else {				//if(scanWay.nextInt()==2) 
 					way="back";
 				}
 	//	}while(scanWay.nextInt()!=1 || scanWay.nextInt()!=2);
@@ -129,15 +126,14 @@ Vehicle.readIn("classes files\\vehicles.txt");
 		
 		do{
 				System.out.println("Choose from the following daytypes: ");
-				DayTypes.printdayTypes();
+				DayTypes.printdayTypes();		//dayTypes tömblista kiíratása
 				dayType  = scanDayType.nextLine(); 
 				
 		}while(!(DayTypes.dayTypes.contains(dayType)));
 		
-		
-	    Route.userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
+		userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
 	   
-		DepartureTimes.getsoff(Route.userChoice); 
+		getsoff(userChoice); //kiírja az indulási idõket
 		
 		scanStation.close();
 		scanTypeOfVehicle.close();
@@ -151,14 +147,5 @@ Vehicle.readIn("classes files\\vehicles.txt");
 		System.out.println("This route gets off at the following times from the chosen station: ");
 		DepartureTimes.readInDepartureTimes("departure times");
 		
-	}
-	
-	public static void printStations(ArrayList<String> stationNames) {
-		
-		for (String stationName : stationNames) {
-			System.out.println(stationName);
-		}
-	}
-	
-		
+	}		
 }

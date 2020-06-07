@@ -124,7 +124,7 @@ public class Vehicle {
 			}
 		}
 		
-		public static void fillArrayLists() {
+		public static void fillArrayLists() { //feltölti a különbözõ jármûveket tartalmazó tömblistákat
 			
 			for(Vehicle vehicle: vehicles) {
 				
@@ -149,6 +149,7 @@ public class Vehicle {
 		}
 		
 		public static void printLineNums() {
+			
 			for(String lineNum:lineNums) {
 				System.out.println(lineNum);
 			}

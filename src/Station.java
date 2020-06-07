@@ -53,9 +53,9 @@ public class Station {
 				x[i]=parts[1];
 				y[i]=parts[2];
 				hasCable[i]=Boolean.parseBoolean(parts[3]);
+				
 				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
 				stations.add(station);
-			//	System.out.println(station);
 				
 				i++;				
 			}
@@ -72,9 +72,10 @@ public class Station {
 	}
 	
 	public static void printStations(ArrayList<String> stationNames) {
+		
 		readIn("classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
-		Station.sortStationNames(hu,Station.stationNames);
+		sortStationNames(hu,Station.stationNames);
 		
 		for (String stations:stationNames) {
 			System.out.println(stations);
@@ -86,11 +87,14 @@ public class Station {
 	    String tmp;
 	    
 	    for (int i = 0; i < stationNames.size(); i++) {
+	    	
 	        for (int j = i + 1; j < stationNames.size(); j++) { 
+	        	
 	            if (collator.compare(stationNames.get(i), stationNames.get(j)) > 0) {
-	              tmp = stationNames.get(i);
-	              stationNames.set(i,stationNames.get(j));
-	              stationNames.set(j,tmp);
+	            	
+		              tmp = stationNames.get(i);
+		              stationNames.set(i,stationNames.get(j));
+		              stationNames.set(j,tmp);
 	            }
 	        }
 	    }

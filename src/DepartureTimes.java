@@ -12,8 +12,6 @@ public class DepartureTimes extends Route {
 		super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
-
-
 	
 	public static void readInDepartureTimes(String directoryName) {
 		   
@@ -27,8 +25,9 @@ public class DepartureTimes extends Route {
         	}
         }
     } 
-	public static void main(String[] args) {
+	
+/*	public static void main(String[] args) {
 
 		Vehicle.readIn("classes files\\vehicles.txt");
-	}
+	}*/
 }

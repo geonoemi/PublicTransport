@@ -6,8 +6,8 @@ public class Run {
 
 	public static void main(String[] args) {
 
-		//Route.getARoute();
-		FileWriting.fileWriting();
+		Route.getARoute();
+		//FileWriting.fileWriting();
 		//Vehicle.readIn("classes files\\vehicles.txt");
 		//Vehicle.fillArrayLists();
 		//Vehicle.printBuses();
