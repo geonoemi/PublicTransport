@@ -42,7 +42,7 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> trams=new ArrayList<>();
 		protected static ArrayList<Vehicle> buses=new ArrayList<>();
 		protected static ArrayList<Vehicle> wheelChairAccessibleVehicles = new ArrayList<>();
-		protected static ArrayList<Vehicle> toService = new ArrayList<>();
+		protected static ArrayList<Vehicle> needsService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> fossilVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
@@ -127,41 +127,71 @@ public class Vehicle {
 		
 		public static void fillNeedToRepairVehicles() {
 				
-				for (Vehicle vehicle : vehicles) {
-					if(vehicle.needToRepair) {
-						toService.add(vehicle);
-					}	
-				}
+			for (Vehicle vehicle : vehicles) {
+				if(vehicle.needToRepair) {
+					needsService.add(vehicle);
+				}	
+			}
 		}	
+		
+		public static void printNeedToRepair() {
+			
+			fillNeedToRepairVehicles();
+			for( Vehicle repair:needsService) {
+				System.out.println(repair);
+			}
+		}
 		
 		public static void fillBicycleVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
+				
 				if(vehicle.bicycleTransportOpp) {
-						bicycleVehicles.add(vehicle);
+					bicycleVehicles.add(vehicle);
 				}
+			}
+		}
+		
+		public static void printBicycleVehicles() {
+			
+			fillBicycleVehicles();
+			for( Vehicle bicycle:bicycleVehicles) {
+				System.out.println(bicycle);
 			}
 		}
 		
 		public static void fillFossilVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
-				if(vehicle.typeOfFuel.equals("benzin") || vehicle.typeOfFuel.equals("gázolaj")) {
+				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil")) {
 					fossilVehicles.add(vehicle);
 				}
 			}
 		}
 		
+		public static void printFossilVehicles() {
+			
+			fillFossilVehicles();
+			for( Vehicle fossil:fossilVehicles) {
+				System.out.println(fossil);
+			}
+		}
 		public static void fillElectricVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
-				if(vehicle.typeOfFuel.equals("electric energy")){
+				if(vehicle.typeOfFuel.equals("electrical energy")){
 					electricVehicles.add(vehicle);
 				}
 			}
 		}
 
-		
+		public static void printElectricVehicles() {
+			
+			fillElectricVehicles();
+			for( Vehicle electric:electricVehicles) {
+				System.out.println(electric);
+			}
+		}
 		
 		public static void fillVehicles() { //used in Route.getARoute() - feltölti a különböző járműveket tartalmazó tömblistákat
 			
@@ -234,5 +264,11 @@ public class Vehicle {
 			return lineNum+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
+		}
+		public static void main(String[] args) {
+			
+			Vehicle.readIn("classes files\\vehicles.txt");
+			fillVehicles();
+			Vehicle.printNeedToRepair();
 		}
 }
