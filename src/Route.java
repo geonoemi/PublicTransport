@@ -86,16 +86,17 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); //!scanTypeOfVehicle.hasNextInt()
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		Vehicle.fillArrayLists(); //jármûtípusok tömbistáinak feltöltése
+		Vehicle.fillVehicles(); //jármûtípusok tömbistáinak feltöltése
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
+			
 				do {
 					System.out.println("Choose from the following buses:");
-					Vehicle.printBuses();
+					Vehicle.printBusLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(Vehicle.lineNums.contains(lineNumAndLetter))); //külön minden jármû lineNum-jaira listát!
+				}while(!(busesLineNums.contains(lineNumAndLetter))); //külön minden jármû lineNum-jaira listát!
 			}
 			
 			else if (typeOfVehicle==2) { 

@@ -75,7 +75,7 @@ public class Station {
 		stationNames.clear(); //tüneti kezelés...
 		readIn("classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
-		sortStationNames(hu,Station.stationNames);
+		sortStationNames(hu,stationNames);
 		
 		for (String stations:stationNames) {
 			System.out.println(stations);

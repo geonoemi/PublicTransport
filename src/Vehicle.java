@@ -128,7 +128,7 @@ public class Vehicle {
 			}
 		}*/
 		
-		public static void fillArrayLists() { //used in Route.getARoute() - feltölti a különbözõ jármûveket tartalmazó tömblistákat
+		public static void fillVehicles() { //used in Route.getARoute() - feltölti a különbözõ jármûveket tartalmazó tömblistákat
 			
 			for(Vehicle vehicle: vehicles) {
 				
@@ -153,13 +153,14 @@ public class Vehicle {
 		}
 		
 		public static void fillBusLineNums() { //ArrayList<Vehicle> buses
-			fillArrayLists();
+			//fillVehicles();
 			for(Vehicle buses:buses) {
 				busesLineNums.add(buses.lineNum);
 			}
 		}
 		
 		public static void printBusLineNums() {
+			busesLineNums.clear();
 			fillBusLineNums();
 			for(String ln: busesLineNums) {
 				System.out.println(ln);
@@ -167,7 +168,7 @@ public class Vehicle {
 		}
 		
 		public static void fillTramLineNums() { //ArrayList<Vehicle> buses
-			fillArrayLists();
+			//fillVehicles();
 			for(Vehicle tram:trams) {
 				tramsLineNums.add(tram.lineNum);
 			}
@@ -181,7 +182,7 @@ public class Vehicle {
 		}
 		
 		public static void fillTrolleyLineNums() { //ArrayList<Vehicle> buses
-			fillArrayLists();
+			//fillVehicles();
 			for(Vehicle trolley:trolleys) {
 				trolleysLineNums.add(trolley.lineNum);
 			}
@@ -203,7 +204,7 @@ public class Vehicle {
 		
 		public static void printBuses() { //used in Route.getARoute()
 			for(Vehicle bus:buses) {
-				System.out.println(bus);
+				System.out.println(bus.lineNum);
 			}
 		}
 		
@@ -230,7 +231,7 @@ public class Vehicle {
 			Vehicle.readIn("classes files\\vehicles.txt");
 		//	printLineNums();
 			
-			printTrolleyLineNums();
+			//printBusLineNums();
 			
 		}
 }

@@ -42,7 +42,7 @@ public class beolv {
 		
 		
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		Vehicle.fillArrayLists();
+		Vehicle.fillVehicles();
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
