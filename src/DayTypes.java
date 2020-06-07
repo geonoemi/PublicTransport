@@ -48,7 +48,8 @@ public class DayTypes {
 	}
 	
 	public static void printdayTypes() {
-
+		
+		dayTypes.clear();//tüneti kezelés
 		readIn("classes files\\day types.txt");
 		
 		for (String dtp: dayTypes) {

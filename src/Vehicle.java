@@ -110,7 +110,7 @@ public class Vehicle {
 			}		
 		}
 		
-		public static void printVehicles(ArrayList<Vehicle> vehicles) {
+/*		public static void printVehicles(ArrayList<Vehicle> vehicles) {
 			
 			for (Vehicle vehicle : vehicles) {
 				System.out.println(vehicle);
@@ -122,9 +122,9 @@ public class Vehicle {
 			for (String vehicleName : vehicleTypes) {
 				System.out.println(vehicleName);
 			}
-		}
+		}*/
 		
-		public static void fillArrayLists() { //feltölti a különbözõ jármûveket tartalmazó tömblistákat
+		public static void fillArrayLists() { //used in Route.getARoute() - feltölti a különbözõ jármûveket tartalmazó tömblistákat
 			
 			for(Vehicle vehicle: vehicles) {
 				
@@ -155,22 +155,22 @@ public class Vehicle {
 			}
 		}
 		
-		public static void printBuses() {
+		public static void printBuses() { //used in Route.getARoute()
 			for(Vehicle bus:buses) {
 				System.out.println(bus.lineNum);
 			}
 		}
 		
-		public static void printTrams() {
+		public static void printTrams() {//used in Route.getARoute()
 			for(Vehicle trams:trams) {
 				System.out.println(trams.lineNum);
 			}
 		}
 		
-		public static void printTrolleys() {
+		public static void printTrolleys() {//used in Route.getARoute()
 			for(Vehicle trolleys:trolleys) {
 				System.out.println(trolleys.lineNum);
-				}
+			}
 		}
 		
 		public  String toString() {

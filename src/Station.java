@@ -71,8 +71,8 @@ public class Station {
 		}		
 	}
 	
-	public static void printStations(ArrayList<String> stationNames) {
-		
+	public static void printStations(ArrayList<String> stationNames) { //used in Route.getARoute()
+		stationNames.clear(); //tüneti kezelés...
 		readIn("classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,Station.stationNames);
@@ -82,7 +82,7 @@ public class Station {
 		}
 	}
 	
-	public static void sortStationNames(Collator collator, ArrayList <String> stationNames) {
+	public static void sortStationNames(Collator collator, ArrayList <String> stationNames) { //used in Station.printStations(ArrayList<String> stationNames)
 		
 	    String tmp;
 	    
@@ -98,14 +98,14 @@ public class Station {
 	            }
 	        }
 	    }
-
+	}
 	 //   for(int i=0;i<stationNames.size();i++) {
 		//	System.out.println(stationNames.get(i));
 			
 			// TODO: Single Responsibility Principle: one method should do one task
 			// TODO: Separation of concern: presentation and business logic should separated
 		//}
-	}
+	
 	
 	public static void canRunAlongHere(boolean hasPantograph) {
 

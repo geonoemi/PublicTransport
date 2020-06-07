@@ -10,6 +10,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Route extends Vehicle{
+	
 public Route(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
 			boolean hasWheel, String typeOfVehicle) {
