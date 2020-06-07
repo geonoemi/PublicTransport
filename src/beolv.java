@@ -6,6 +6,7 @@ import java.util.*;
 public class beolv {
 	//trying class
 	public static ArrayList<String> dtplist=new ArrayList<>();
+	
 	public static void getARoute() {
 		//Bence tipp: app induláskor mindent beolvasni és majd adatszerkezeten iterálni, nem file-on
 		//in-memory kollekcióknak utánaolvasni
@@ -24,13 +25,20 @@ public class beolv {
 			}while(!Station.stationNames.contains(station));		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
 			
-		Scanner scanTypeOfVehicle=new Scanner(System.in);
-		int typeOfVehicle;
-		
-			do{
-				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-				typeOfVehicle=scanTypeOfVehicle.nextInt();
-			}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) );
+			Scanner scanTypeOfVehicle=new Scanner(System.in);
+			int typeOfVehicle;
+			System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
+			
+				do{
+					
+					while(!scanTypeOfVehicle.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
+			            System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 ! ");
+			            scanTypeOfVehicle.next(); 
+			            continue;
+			        }
+					typeOfVehicle=scanTypeOfVehicle.nextInt(); //inputmismatchexception!
+					
+				}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); //!scanTypeOfVehicle.hasNextInt()
 		
 		
 		Scanner scanNumAndLetter=new Scanner(System.in);

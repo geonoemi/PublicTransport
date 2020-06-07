@@ -21,6 +21,8 @@ public class Vehicle {
 		protected String typeOfVehicle;
 		
 		protected static ArrayList<String> lineNums=new ArrayList<>();
+		protected static ArrayList<String> busesLineNums=new ArrayList<>();
+
 		protected static ArrayList<Boolean> isArticulate=new ArrayList<>();
 		protected static ArrayList<Boolean> isLowFloor =new ArrayList<>();
 		protected static ArrayList<Double> operationCosts=new ArrayList<>();
@@ -148,6 +150,19 @@ public class Vehicle {
 			}
 		}
 		
+		public static void fillBusLineNums() { //ArrayList<Vehicle> buses
+			for(Vehicle buses:buses) {
+				busesLineNums.add(buses.lineNum);
+			}
+		}
+		
+		public static void printBusLineNums() {
+			fillBusLineNums();
+			for(String ln: busesLineNums) {
+				System.out.println(ln);
+			}
+		}
+		
 		public static void printLineNums() {
 			
 			for(String lineNum:lineNums) {
@@ -157,7 +172,7 @@ public class Vehicle {
 		
 		public static void printBuses() { //used in Route.getARoute()
 			for(Vehicle bus:buses) {
-				System.out.println(bus.lineNum);
+				System.out.println(bus);
 			}
 		}
 		
@@ -179,11 +194,12 @@ public class Vehicle {
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
 		}
-	/*	public static void main(String[] args) {
+		public static void main(String[] args) {
 
 			Vehicle.readIn("classes files\\vehicles.txt");
+		//	printLineNums();
 			fillArrayLists();
-			printVehicles(vehicles);
-			Vehicle.printBuses();
-		}*/
+			printBusLineNums();
+			
+		}
 }

@@ -5,10 +5,12 @@ import java.util.Locale;
 public class Run {
 
 	public static void main(String[] args) {
+		
+		//Vehicle.readIn("classes files\\vehicles.txt");
 
 		Route.getARoute();
+		//Vehicle.printBusesLineNums();
 		//FileWriting.fileWriting();
-		//Vehicle.readIn("classes files\\vehicles.txt");
 		//Vehicle.fillArrayLists();
 		//Vehicle.printBuses();
 		
