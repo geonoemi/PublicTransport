@@ -5,6 +5,7 @@ import java.text.Collator;
 import java.util.*;
 public class beolv {
 	//trying class
+	public static ArrayList<String> dtplist=new ArrayList<>();
 	public static void getARoute() {
 		//Bence tipp: app induláskor mindent beolvasni és majd adatszerkezeten iterálni, nem file-on
 		//in-memory kollekcióknak utánaolvasni
@@ -13,67 +14,78 @@ public class beolv {
 		//git ignore?
 		
 		Vehicle.readIn("classes files\\vehicles.txt");
+		
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
-		do {
-			System.out.println("Choose station: ");
-			Station.readIn("classes files\\stations.txt");
+			do {
+				System.out.println("Choose station: ");
+				Station.printStations(Station.stationNames);
+				station=scanStation.nextLine();
+			}while(!Station.stationNames.contains(station));		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
-			//Collator hu = Collator.getInstance(new Locale("hu","HU"));
-			//Station.sortStationNames(hu,Station.stationNames);
-			Station.printStations(Station.stationNames);
-			station=scanStation.nextLine();
-		}while(!Station.stationNames.contains(station));
-				
-		
-		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
 		int typeOfVehicle;
-		do{
-			System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-			typeOfVehicle=scanTypeOfVehicle.nextInt();
-		}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) );
+		
+			do{
+				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
+				typeOfVehicle=scanTypeOfVehicle.nextInt();
+			}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) );
 		
 		
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		
 		Vehicle.fillArrayLists();
+		String lineNumAndLetter="";
 		
-		if (typeOfVehicle==1) { //buszok számát írja ki
-			System.out.println("Choose from the following buses:");
-			Vehicle.printBuses();
-		}
-		else if (typeOfVehicle==2) { //villamosok számát írja ki
-			System.out.println("Choose from the following trams:");
-			Vehicle.printTrams();
-		}
-		else if (typeOfVehicle==3) { //trolik számát írja ki	
-			System.out.println("Choose from the following trolleys:");			
-			Vehicle.printTrolleys();
-		}	
+			if (typeOfVehicle==1) { 
+				do {
+					System.out.println("Choose from the following buses:");
+					Vehicle.printBuses();
+					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+					
+				}while(!(Vehicle.lineNums.contains(lineNumAndLetter))); //külön minden jármû lineNum-jaira listát!
+			}
 			
-		String lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
-	
+			else if (typeOfVehicle==2) { 
+				do {					
+					System.out.println("Choose from the following trams:");
+					Vehicle.printTrams();
+					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+					
+				}while(!(Vehicle.lineNums.contains(lineNumAndLetter)));
+			}
+			
+			else if (typeOfVehicle==3) { 	
+				do {					
+					System.out.println("Choose from the following trolleys:");			
+					Vehicle.printTrolleys();
+					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+					
+				}while(!(Vehicle.lineNums.contains(lineNumAndLetter)));
+			}
+			
 		Scanner scanWay=new Scanner(System.in);
-		System.out.println("Way (FORTH=1 BACK=2) : ");
-		String way=" ";
-		if(scanWay.nextInt()==1) {
-			way="forth";
-		}else {
-			way="back";
-		}
+		String way="";
+	//	do {
+			System.out.println("Way (FORTH = 1 BACK = 2) : ");
+				if(scanWay.nextInt()==1) {
+					way="forth";
+				}else {//if(scanWay.nextInt()==2) 
+					way="back";
+				}
+	//	}while(scanWay.nextInt()!=1 || scanWay.nextInt()!=2);
 	
 		Scanner scanDayType=new Scanner(System.in);
-		System.out.println("Choose from the following daytypes: ");
+		String dayType=" ";
 		
-		for (DayType dayType : DayType.values()) {
-			System.out.printf( "\t%s\n", dayType.toString().replaceAll("(?<=[A-Z])\\_", " ").toLowerCase());
-		}
+		do{
+				System.out.println("Choose from the following daytypes: ");
+				DayTypes.printdayTypes();
+				dayType  = scanDayType.nextLine(); 
+				
+		}while(!(DayTypes.dayTypes.contains(dayType)));
 		
-		String dayType  = scanDayType.nextLine(); 
 		
-	   
 	    Route.userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
 	   
 		DepartureTimes.getsoff(Route.userChoice); 

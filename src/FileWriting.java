@@ -13,9 +13,9 @@ public class FileWriting {
 		
 		Station.readIn("classes files\\stations.txt");
 		Vehicle.readIn("classes files\\vehicles.txt");
-		DepartureTimes.fillDayTypeList();
+		DayTypes.readIn("classes files\\day types.txt");
 		
-		for(i=0;i<DepartureTimes.dayTypeList.size();i++) {
+		for(i=0;i<DayTypes.dayTypes.size();i++) {
 				
 			for( j=0; j<Station.stationNames.size();j++) {
 					
@@ -23,9 +23,9 @@ public class FileWriting {
 						
 					try( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk
 								
-						FileWriter writer1 = new FileWriter("departure times\\"+DepartureTimes.dayTypeList.get(i)+" "+Station.stationNames.get(j)+" " +Vehicle.lineNums.get(k)+" back.txt");
+						FileWriter writer1 = new FileWriter("departure times\\"+DayTypes.dayTypes.get(i)+" "+Station.stationNames.get(j)+" " +Vehicle.lineNums.get(k)+" back.txt");
 								
-						FileWriter writer2 = new FileWriter("departure times\\"+DepartureTimes.dayTypeList.get(i)+" "+Station.stationNames.get(j)+" "+Vehicle.lineNums.get(k)+" forth.txt")){
+						FileWriter writer2 = new FileWriter("departure times\\"+DayTypes.dayTypes.get(i)+" "+Station.stationNames.get(j)+" "+Vehicle.lineNums.get(k)+" forth.txt")){
 							  
 									writer1.write("06:00\n");
 									writer1.write("07:00\n");

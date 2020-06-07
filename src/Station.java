@@ -72,7 +72,7 @@ public class Station {
 	}
 	
 	public static void printStations(ArrayList<String> stationNames) {
-
+		readIn("classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		Station.sortStationNames(hu,Station.stationNames);
 		
