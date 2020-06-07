@@ -22,6 +22,8 @@ public class Vehicle {
 		
 		protected static ArrayList<String> lineNums=new ArrayList<>();
 		protected static ArrayList<String> busesLineNums=new ArrayList<>();
+		protected static ArrayList<String> tramsLineNums=new ArrayList<>();
+		protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
 
 		protected static ArrayList<Boolean> isArticulate=new ArrayList<>();
 		protected static ArrayList<Boolean> isLowFloor =new ArrayList<>();
@@ -151,6 +153,7 @@ public class Vehicle {
 		}
 		
 		public static void fillBusLineNums() { //ArrayList<Vehicle> buses
+			fillArrayLists();
 			for(Vehicle buses:buses) {
 				busesLineNums.add(buses.lineNum);
 			}
@@ -159,6 +162,34 @@ public class Vehicle {
 		public static void printBusLineNums() {
 			fillBusLineNums();
 			for(String ln: busesLineNums) {
+				System.out.println(ln);
+			}
+		}
+		
+		public static void fillTramLineNums() { //ArrayList<Vehicle> buses
+			fillArrayLists();
+			for(Vehicle tram:trams) {
+				tramsLineNums.add(tram.lineNum);
+			}
+		}
+		
+		public static void printTramLineNums() {
+			fillTramLineNums();
+			for(String ln: tramsLineNums) {
+				System.out.println(ln);
+			}
+		}
+		
+		public static void fillTrolleyLineNums() { //ArrayList<Vehicle> buses
+			fillArrayLists();
+			for(Vehicle trolley:trolleys) {
+				trolleysLineNums.add(trolley.lineNum);
+			}
+		}
+		
+		public static void printTrolleyLineNums() {
+			fillTrolleyLineNums();
+			for(String ln: trolleysLineNums) {
 				System.out.println(ln);
 			}
 		}
@@ -198,8 +229,8 @@ public class Vehicle {
 
 			Vehicle.readIn("classes files\\vehicles.txt");
 		//	printLineNums();
-			fillArrayLists();
-			printBusLineNums();
+			
+			printTrolleyLineNums();
 			
 		}
 }
