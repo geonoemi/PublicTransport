@@ -102,19 +102,19 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 			else if (typeOfVehicle==2) { 
 				do {					
 					System.out.println("Choose from the following trams:");
-					Vehicle.printTrams();
+					Vehicle.printTramLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(Vehicle.lineNums.contains(lineNumAndLetter)));
+				}while(!(tramsLineNums.contains(lineNumAndLetter)));
 			}
 			
 			else if (typeOfVehicle==3) { 	
 				do {					
 					System.out.println("Choose from the following trolleys:");			
-					Vehicle.printTrolleys();
+					Vehicle.printTrolleyLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(Vehicle.lineNums.contains(lineNumAndLetter)));
+				}while(!(Vehicle.trolleysLineNums.contains(lineNumAndLetter)));
 			}
 			
 		Scanner scanWay=new Scanner(System.in);

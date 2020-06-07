@@ -175,6 +175,7 @@ public class Vehicle {
 		}
 		
 		public static void printTramLineNums() {
+			tramsLineNums.clear();
 			fillTramLineNums();
 			for(String ln: tramsLineNums) {
 				System.out.println(ln);
@@ -189,6 +190,7 @@ public class Vehicle {
 		}
 		
 		public static void printTrolleyLineNums() {
+			trolleysLineNums.clear();
 			fillTrolleyLineNums();
 			for(String ln: trolleysLineNums) {
 				System.out.println(ln);
@@ -230,8 +232,9 @@ public class Vehicle {
 
 			Vehicle.readIn("classes files\\vehicles.txt");
 		//	printLineNums();
-			
-			//printBusLineNums();
+			fillVehicles();
+			fillTramLineNums();
+			printTramLineNums();
 			
 		}
 }
