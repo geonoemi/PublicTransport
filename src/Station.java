@@ -98,14 +98,7 @@ public class Station {
 	            }
 	        }
 	    }
-	}
-	 //   for(int i=0;i<stationNames.size();i++) {
-		//	System.out.println(stationNames.get(i));
-			
-			// TODO: Single Responsibility Principle: one method should do one task
-			// TODO: Separation of concern: presentation and business logic should separated
-		//}
-	
+	}			// TODO: Separation of concern: presentation and business logic should separate	
 	
 	public static void canRunAlongHere(boolean hasPantograph) {
 
@@ -118,7 +111,6 @@ public class Station {
 	}
 	
 	public String toString() {
-							
 		return stationName+" "+x+" "+y+" "+hasCable;
 	}
 }

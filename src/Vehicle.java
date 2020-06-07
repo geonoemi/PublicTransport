@@ -37,7 +37,7 @@ public class Vehicle {
 		protected static ArrayList<String> typeOfVehicles =new ArrayList<>();
 
 
-		protected static ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
+		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
 		protected static ArrayList<Vehicle> trams=new ArrayList<>();
 		protected static ArrayList<Vehicle> buses=new ArrayList<>();
@@ -46,8 +46,6 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> fossilVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
-		
-		
 		
 		
 		public Vehicle(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
@@ -152,14 +150,15 @@ public class Vehicle {
 			}
 		}
 		
-		public static void fillBusLineNums() { //ArrayList<Vehicle> buses
+		public static void fillBusLineNums() { //used in printBusLineNums()
 			//fillVehicles();
 			for(Vehicle buses:buses) {
 				busesLineNums.add(buses.lineNum);
 			}
 		}
 		
-		public static void printBusLineNums() {
+		public static void printBusLineNums() { //used in Route.getARoute
+			
 			busesLineNums.clear();
 			fillBusLineNums();
 			for(String ln: busesLineNums) {
@@ -167,14 +166,15 @@ public class Vehicle {
 			}
 		}
 		
-		public static void fillTramLineNums() { //ArrayList<Vehicle> buses
+		public static void fillTramLineNums() { //used in printTramLineNums()
 			//fillVehicles();
 			for(Vehicle tram:trams) {
 				tramsLineNums.add(tram.lineNum);
 			}
 		}
 		
-		public static void printTramLineNums() {
+		public static void printTramLineNums() { //used in Route.getARoute()
+			
 			tramsLineNums.clear();
 			fillTramLineNums();
 			for(String ln: tramsLineNums) {
@@ -182,59 +182,26 @@ public class Vehicle {
 			}
 		}
 		
-		public static void fillTrolleyLineNums() { //ArrayList<Vehicle> buses
+		public static void fillTrolleyLineNums() { //used in printTrolleyNums
 			//fillVehicles();
 			for(Vehicle trolley:trolleys) {
 				trolleysLineNums.add(trolley.lineNum);
 			}
 		}
 		
-		public static void printTrolleyLineNums() {
+		public static void printTrolleyLineNums() { //used in Route.getARoute()
+			
 			trolleysLineNums.clear();
 			fillTrolleyLineNums();
 			for(String ln: trolleysLineNums) {
 				System.out.println(ln);
 			}
-		}
-		
-		public static void printLineNums() {
-			
-			for(String lineNum:lineNums) {
-				System.out.println(lineNum);
-			}
-		}
-		
-		public static void printBuses() { //used in Route.getARoute()
-			for(Vehicle bus:buses) {
-				System.out.println(bus.lineNum);
-			}
-		}
-		
-		public static void printTrams() {//used in Route.getARoute()
-			for(Vehicle trams:trams) {
-				System.out.println(trams.lineNum);
-			}
-		}
-		
-		public static void printTrolleys() {//used in Route.getARoute()
-			for(Vehicle trolleys:trolleys) {
-				System.out.println(trolleys.lineNum);
-			}
-		}
-		
+		}		
+	
 		public  String toString() {
 			
 			return lineNum+" "+articulated+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
-		}
-		public static void main(String[] args) {
-
-			Vehicle.readIn("classes files\\vehicles.txt");
-		//	printLineNums();
-			fillVehicles();
-			fillTramLineNums();
-			printTramLineNums();
-			
 		}
 }

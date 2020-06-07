@@ -47,18 +47,13 @@ public class DayTypes {
 		}		
 	}
 	
-	public static void printdayTypes() {
+	public static void printdayTypes() { //used in Route.getARoute()
 		
 		dayTypes.clear();//tüneti kezelés
 		readIn("classes files\\day types.txt");
 		
-		for (String dtp: dayTypes) {
-			System.out.printf( "\t%s\n",dtp);
+		for (String daytypes: dayTypes) {
+			System.out.printf( "\t%s\n",daytypes);
 		}
 	}
-	
-/*	public static void main(String[]args) {
-		
-		printdayTypes();
-	}*/
 }

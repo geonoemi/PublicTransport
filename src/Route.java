@@ -10,55 +10,24 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Route extends Vehicle{
+
+	protected static String userChoice;
 	
-public Route(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+	public Route(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
 			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
 			boolean hasWheel, String typeOfVehicle) {
 		super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
-//járat
-	public static String userChoice;
-	public static ArrayList<String>departureTimes=new ArrayList<>();
- 
-
-	public static void readIn(String fileName){ 
-			
-			try {
-				
-				FileReader reader=new FileReader(fileName);
-				BufferedReader buffer=new BufferedReader(reader);
-				String line=null;
-				int i=0;
-				
-				while((line=buffer.readLine())!=null) {
-					
-					departureTimes.add(line);
-					System.out.println(departureTimes.get(i));
-					
-					i++;
-					
-				}
-				buffer.close();
-				
-			}catch(FileNotFoundException e) {
-				System.out.println("File not found.");
-			}catch(IOException e) {
-				System.out.println("e.getMessage()");
-			}catch (InputMismatchException exception) {
-				System.out.println("Not appropriate input type.");
-			}
-	}	
-
+	
 	public static void getARoute() {
-		//Bence tipp: app induláskor mindent beolvasni és majd adatszerkezeten iterálni, nem file-on
 		//in-memory kollekcióknak utánaolvasni
 		//menetrend class:tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmaz ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
 		//mi megy a stackbe,mi a heapbe?
 		//git ignore?
-//	try {	
-		Vehicle.readIn("classes files\\vehicles.txt"); //Vehicle példányokat tömblistába
+
+		Vehicle.readIn("classes files\\vehicles.txt"); //ArrayLists from Vehicles
 		
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
@@ -67,7 +36,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 				Station.printStations(Station.stationNames);
 				station=scanStation.nextLine();
 				
-			}while(!Station.stationNames.contains(station));		//stat.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
+			}while(!Station.stationNames.contains(station));		//station.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
 			
 			
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
@@ -81,12 +50,12 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 		            scanTypeOfVehicle.next(); 
 		            continue;
 		        }
-				typeOfVehicle=scanTypeOfVehicle.nextInt(); //inputmismatchexception!
+				typeOfVehicle=scanTypeOfVehicle.nextInt(); 
 				
-			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); //!scanTypeOfVehicle.hasNextInt()
+			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		Vehicle.fillVehicles(); //jármûtípusok tömbistáinak feltöltése
+		Vehicle.fillVehicles(); //ArrayLists from Vehicle types
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
@@ -96,7 +65,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 					Vehicle.printBusLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(busesLineNums.contains(lineNumAndLetter))); //külön minden jármû lineNum-jaira listát!
+				}while(!(Vehicle.busesLineNums.contains(lineNumAndLetter))); 
 			}
 			
 			else if (typeOfVehicle==2) { 
@@ -105,7 +74,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 					Vehicle.printTramLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(tramsLineNums.contains(lineNumAndLetter)));
+				}while(!(Vehicle.tramsLineNums.contains(lineNumAndLetter)));
 			}
 			
 			else if (typeOfVehicle==3) { 	
@@ -133,14 +102,14 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 		
 		do{
 				System.out.println("Choose from the following daytypes: ");
-				DayTypes.printdayTypes();		//dayTypes tömblista kiíratása
+				DayTypes.printdayTypes();		
 				dayType  = scanDayType.nextLine(); 
 				
 		}while(!(DayTypes.dayTypes.contains(dayType)));
 		
 		userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
 	   
-		getsoff(userChoice); //kiírja az indulási idõket
+		getsoff(userChoice); //prints deparure Times
 		
 		scanStation.close();
 		scanTypeOfVehicle.close();
