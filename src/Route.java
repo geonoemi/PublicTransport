@@ -57,7 +57,7 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 		//menetrend class:tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmaz ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
 		//mi megy a stackbe,mi a heapbe?
 		//git ignore?
-		
+//	try {	
 		Vehicle.readIn("classes files\\vehicles.txt"); //Vehicle példányokat tömblistába
 		
 		Scanner scanStation=new Scanner(System.in);
@@ -72,14 +72,19 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 			
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
 		int typeOfVehicle;
+		System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
 		
 			do{
-				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-				typeOfVehicle=scanTypeOfVehicle.nextInt();
 				
-			}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) );
-		
-		
+				while(!scanTypeOfVehicle.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
+		            System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 ! ");
+		            scanTypeOfVehicle.next(); 
+		            continue;
+		        }
+				typeOfVehicle=scanTypeOfVehicle.nextInt(); //inputmismatchexception!
+				
+			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); //!scanTypeOfVehicle.hasNextInt()
+			
 		Scanner scanNumAndLetter=new Scanner(System.in);
 		Vehicle.fillArrayLists(); //jármûtípusok tömbistáinak feltöltése
 		String lineNumAndLetter="";
@@ -141,8 +146,11 @@ public Route(String lineNum, boolean articulated, boolean lowFloor, double opera
 		scanNumAndLetter.close();
 		scanWay.close();
 		scanDayType.close();
-	}
 	
+	/*}catch (InputMismatchException exception) {
+		System.out.println("Not appropriate input type.");
+	}*/
+	}
 	public static void getsoff(String userChoice) {
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
