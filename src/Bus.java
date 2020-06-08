@@ -2,6 +2,7 @@
 	import java.io.FileNotFoundException;
 	import java.io.FileReader;
 	import java.io.IOException;
+import java.util.ArrayList;
 
 public class Bus extends Vehicle implements Fossil {
 
@@ -11,14 +12,18 @@ public class Bus extends Vehicle implements Fossil {
 		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
+		protected static ArrayList<Bus> buses=new ArrayList<>();
 
+		
 		private String plateNumber;
 		
 		public static void fillBus(){
+			Vehicle.readIn("classes files\\vehicles.txt");
+
 			for(Vehicle vehicle: vehicles) {
 				
 				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
-					buses.add(vehicle);
+					buses.add((Bus) vehicle);
 				}
 			}
 		}	
@@ -45,6 +50,7 @@ public class Bus extends Vehicle implements Fossil {
 				System.out.println(linenum);
 			}
 		}
+	
 }
 
 

@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 
 public class Trolley extends Vehicle implements Electric {
 		
+	protected static ArrayList<Trolley> trolleys=new ArrayList<>();
 		
 		public Trolley(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
 				boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
@@ -21,7 +23,7 @@ public class Trolley extends Vehicle implements Electric {
 			for(Vehicle vehicle: vehicles) {
 				
 				if(vehicle.typeOfFuel.equals("electrical energy") && vehicle.hasWheel) {
-					trolleys.add(vehicle);
+					trolleys.add((Trolley) vehicle);
 				}
 			}
 		}	
@@ -48,5 +50,11 @@ public class Trolley extends Vehicle implements Electric {
 				System.out.println(linenum);
 			}
 		}		
+		public static void main(String[] args) {
+			Vehicle.readIn("classes files\\vehicles.txt");
+			fillTrolleyLineNums();
+
+			printTrolley();	
+		}
 	
 }

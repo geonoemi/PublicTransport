@@ -39,9 +39,9 @@ public class Vehicle {
 		protected static ArrayList<String> tramsLineNums=new ArrayList<>();
 		protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
 
-		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
-		protected static ArrayList<Vehicle> trams=new ArrayList<>();
-		protected static ArrayList<Vehicle> buses=new ArrayList<>();
+	
+		
+		
 		protected static ArrayList<Vehicle> wheelChairAccessibleVehicles = new ArrayList<>();
 		protected static ArrayList<Vehicle> needsService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
