@@ -10,7 +10,7 @@ public class Fossil extends Vehicle{
 	}
 
 	protected static ArrayList<Fossil> fossilVehicles=new ArrayList<>();
-	public static void fillFossilVehicles() {
+/*	public static void fillFossilVehicles() {
 		
 		for (Vehicle vehicle : Vehicle.vehicles) {
 			
@@ -33,5 +33,5 @@ public class Fossil extends Vehicle{
 			System.out.println(fossil);
 		}
 	}
-	
+	*/
 }

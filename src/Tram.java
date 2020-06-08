@@ -63,17 +63,6 @@ public class Tram extends Vehicle {
 	
 	public static void fillTram(){
 		
-		for(Vehicle vehicle: vehicles) {
-			
-			if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
-				
-				Tram tram=new Tram(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
-			 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
-			 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
-
-				trams.add((Tram) tram);
-			}
-		}
 	}	
 	
 	public static void printTram() {

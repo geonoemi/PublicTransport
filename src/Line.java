@@ -1,25 +1,19 @@
 
 public class Line {
 	
-	private int number;
-	private String letter;
+	private int numberLetter;
 	private String type;
 	private double length;
 
-	public Line(int number, String letter, String type, double length) {
+	public Line(int numberLetter, String type, double length) {
 
-		this.number = number;
-		this.letter = letter;
+		this.numberLetter = numberLetter;
 		this.type = type;
 		this.length = length;
 	}
 
-	public int getNumber() {
-		return number;
-	}
-
-	public String getLetter() {
-		return letter;
+	public int getNumberLetter() {
+		return numberLetter;
 	}
 
 	public String getType() {
@@ -32,7 +26,7 @@ public class Line {
 
 	@Override
 	public String toString() {
-		return number + " " + letter + " " + type + " " + length;
+		return numberLetter + " " + type + " " + length;
 	}
 
 }

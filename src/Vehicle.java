@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.util.InputMismatchException;
 	
 public abstract class Vehicle {
-	//TODO make it abstract
 		
 		protected String lineNum;
 		protected boolean articulate;
@@ -31,18 +30,13 @@ public abstract class Vehicle {
 		protected static ArrayList<String> fuelTypes =new ArrayList<>();
 		protected static ArrayList<Boolean> hasWheels =new ArrayList<>();
 		protected static ArrayList<String> typeOfVehicles =new ArrayList<>();
-
-		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
-			
+		
 		protected static ArrayList<Vehicle> needsService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
-		
-		
 		
 		public Vehicle(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel,
 						boolean hasWheel, String typeOfVehicle) {
-		
 
 			this.lineNum=lineNum;
 			this.articulate=articulate;
