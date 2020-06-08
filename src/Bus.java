@@ -4,7 +4,7 @@
 	import java.io.IOException;
 import java.util.ArrayList;
 
-public class Bus extends Vehicle implements Fossil {
+public class Bus extends Vehicle {
 
 		public Bus(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
 			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,

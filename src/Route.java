@@ -9,7 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Route extends Vehicle implements Fossil, Electric{
+public class Route extends Vehicle {
 
 	protected static String userChoice;
 	
@@ -129,11 +129,4 @@ public class Route extends Vehicle implements Fossil, Electric{
 		DepartureTimes.readInDepartureTimes("departure times");
 		
 	}
-
-
-	@Override
-	public boolean canRunAlongHere(Station station) {
-		// TODO Auto-generated method stub
-		return false;
-	}		
 }

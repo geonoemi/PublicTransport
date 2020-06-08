@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Tram extends Vehicle implements Electric{
+public class Tram extends Vehicle {
 
 	protected static ArrayList<Tram> trams=new ArrayList<>();
 	protected static ArrayList<String> tramsLineNums=new ArrayList<>();
@@ -10,11 +10,6 @@ public class Tram extends Vehicle implements Electric{
 			boolean hasWheel, String typeOfVehicle) {
 		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
-	}
-
-	@Override
-	public boolean canRunAlongHere(Station station) {
-		return station.hasCable();
 	}
 	
 	public static void fillTram(){

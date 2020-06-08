@@ -21,7 +21,6 @@ public class Vehicle {
 		protected String typeOfVehicle;
 		
 		protected static ArrayList<String> lineNums=new ArrayList<>();
-	
 		protected static ArrayList<Boolean> isArticulate=new ArrayList<>();
 		protected static ArrayList<Boolean> isLowFloor =new ArrayList<>();
 		protected static ArrayList<Double> operationCosts=new ArrayList<>();
@@ -34,19 +33,10 @@ public class Vehicle {
 		protected static ArrayList<String> typeOfVehicles =new ArrayList<>();
 
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
-	//TODO: move to children
-		
-		
-	
-
-	
-		
-		
-		
+			
 		protected static ArrayList<Vehicle> needsService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
-		protected static ArrayList<Vehicle> fossilVehicles=new ArrayList<>();
-		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
+		
 		
 		
 		public Vehicle(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
@@ -111,30 +101,7 @@ public class Vehicle {
 				System.out.println("Not appropriate input type.");
 			}		
 		}
-		
-/*		public static void fillWheelChairAccessibleVehicles() {//TODO: move to child class
-			
-			for (Vehicle vehicle : vehicles) {
-				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
-				 	
-					Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
-				 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
-				 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
-
-							wheelChairAccessibleVehicles.add((Vehicle) wheelchairAccessibleVehicle);
-				}
-			}
-		}
-	
-		public static void printWheelChairAccessibleVehicles() {
-			
-			fillWheelChairAccessibleVehicles();
-			for(Vehicle wheelChairAccessibleVehicles:wheelChairAccessibleVehicles) {
-				System.out.println(wheelChairAccessibleVehicles);
-			}
-			
-		}
-*/		
+				
 		public static void fillNeedToRepairVehicles() {
 				
 			for (Vehicle vehicle : vehicles) {
@@ -169,27 +136,7 @@ public class Vehicle {
 				System.out.println(bicycle);
 			}
 		}
-		
-	
-	/*	public static void fillVehicles() { //used in Route.getARoute() - feltölti a különböző járműveket tartalmazó tömblistákat
-			
-			for(Vehicle vehicle: vehicles) {
-				
-				if(vehicle.typeOfFuel.equals("electrical energy") && vehicle.hasWheel) {
-					trolleys.add(vehicle);
-				}
 
-				if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
-					trams.add(vehicle);
-				}
-			
-				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
-					buses.add( vehicle);
-				}	
-			}
-		}
-		*/
-		
 		public  String toString() {
 			
 			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost

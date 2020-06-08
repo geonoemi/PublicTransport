@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Trolley extends Vehicle implements Electric {	
+public class Trolley extends Vehicle  {	
 	
 	private boolean hasWheel=true;
 	protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
@@ -14,13 +14,6 @@ public class Trolley extends Vehicle implements Electric {
 					typeOfFuel, hasWheel, typeOfVehicle);
 		}
 
-	
-
-		@Override
-		public boolean canRunAlongHere(Station station) {
-			return station.hasCable();
-		}
-		
 		public static void fillTrolley(){
 			
 			for(Vehicle vehicle: vehicles) {
