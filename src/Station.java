@@ -51,7 +51,7 @@ public class Station {
 				y.add(parts[2]);
 				
 				cables.add(Boolean.parseBoolean(parts[3]));
-				Station station=new Station(stationNames.get(i),x.get(i),y.get(i),cables.get(i));
+				Station station=new Station(stationNames.get(i), x.get(i), y.get(i), cables.get(i));
 				stations.add(station);
 				
 				i++;				

@@ -21,10 +21,7 @@ public class Vehicle {
 		protected String typeOfVehicle;
 		
 		protected static ArrayList<String> lineNums=new ArrayList<>();
-		protected static ArrayList<String> busesLineNums=new ArrayList<>();
-		protected static ArrayList<String> tramsLineNums=new ArrayList<>();
-		protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
-
+	
 		protected static ArrayList<Boolean> isArticulate=new ArrayList<>();
 		protected static ArrayList<Boolean> isLowFloor =new ArrayList<>();
 		protected static ArrayList<Double> operationCosts=new ArrayList<>();
@@ -36,8 +33,12 @@ public class Vehicle {
 		protected static ArrayList<Boolean> hasWheels =new ArrayList<>();
 		protected static ArrayList<String> typeOfVehicles =new ArrayList<>();
 
-
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
+	//TODO: move to children
+		protected static ArrayList<String> busesLineNums=new ArrayList<>();
+		protected static ArrayList<String> tramsLineNums=new ArrayList<>();
+		protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
+
 		protected static ArrayList<Vehicle> trolleys=new ArrayList<>();
 		protected static ArrayList<Vehicle> trams=new ArrayList<>();
 		protected static ArrayList<Vehicle> buses=new ArrayList<>();
@@ -123,6 +124,15 @@ public class Vehicle {
 							wheelChairAccessibleVehicles.add((Vehicle) wheelchairAccessibleVehicle);
 				}
 			}
+		}
+	
+		public static void printWheelChairAccessibleVehicles() {
+			
+			fillWheelChairAccessibleVehicles();
+			for(Vehicle wheelChairAccessibleVehicles:wheelChairAccessibleVehicles) {
+				System.out.println(wheelChairAccessibleVehicles);
+			}
+			
 		}
 		
 		public static void fillNeedToRepairVehicles() {
@@ -213,8 +223,8 @@ public class Vehicle {
 		
 		public static void fillBusLineNums() { //used in printBusLineNums()
 			//fillVehicles();
-			for(Vehicle buses:buses) {
-				busesLineNums.add(buses.lineNum);
+			for(Vehicle bus:buses) {
+				busesLineNums.add(bus.lineNum);
 			}
 		}
 		
@@ -222,8 +232,8 @@ public class Vehicle {
 			
 			busesLineNums.clear();
 			fillBusLineNums();
-			for(String ln: busesLineNums) {
-				System.out.println(ln);
+			for(String linenum: busesLineNums) {
+				System.out.println(linenum);
 			}
 		}
 		
@@ -238,8 +248,8 @@ public class Vehicle {
 			
 			tramsLineNums.clear();
 			fillTramLineNums();
-			for(String ln: tramsLineNums) {
-				System.out.println(ln);
+			for(String linenum: tramsLineNums) {
+				System.out.println(linenum);
 			}
 		}
 		
@@ -254,8 +264,8 @@ public class Vehicle {
 			
 			trolleysLineNums.clear();
 			fillTrolleyLineNums();
-			for(String ln: trolleysLineNums) {
-				System.out.println(ln);
+			for(String linenum: trolleysLineNums) {
+				System.out.println(linenum);
 			}
 		}		
 	
@@ -264,11 +274,11 @@ public class Vehicle {
 			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
-		}
-		public static void main(String[] args) {
-			
+		}	
+		
+		public static void main (String[]args) {
 			Vehicle.readIn("classes files\\vehicles.txt");
-			fillVehicles();
-			Vehicle.printNeedToRepair();
+
+			printWheelChairAccessibleVehicles();
 		}
 }

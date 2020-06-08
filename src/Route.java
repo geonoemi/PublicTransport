@@ -102,7 +102,7 @@ public class Route extends Vehicle{
 		
 		do{
 				System.out.println("Choose from the following daytypes: ");
-				DayTypes.printdayTypes();		
+				DayTypes.printDayTypes();		
 				dayType  = scanDayType.nextLine(); 
 				
 		}while(!(DayTypes.dayTypes.contains(dayType)));

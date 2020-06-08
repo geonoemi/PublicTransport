@@ -52,10 +52,10 @@ public class DepartureTimes extends Route {
         File directory = new File(directoryName);
         ArrayList<String> departureTimesList = new ArrayList<String>(Arrays.asList(directory.list()));
     
-        for(String list: departureTimesList) {
+        for(String departureTimes: departureTimesList) {
         	
-        	if(list.equals(Route.userChoice+".txt")) {
-        		readIn("departure times\\"+list);
+        	if(departureTimes.equals(Route.userChoice+".txt")) {
+        		readIn("departure times\\"+departureTimes);
         	}
         }
     } 

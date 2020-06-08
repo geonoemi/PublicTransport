@@ -46,7 +46,7 @@ public class DayTypes {
 		}		
 	}
 	
-	public static void printdayTypes() { //used in Route.getARoute()
+	public static void printDayTypes() { //used in Route.getARoute()
 		
 		dayTypes.clear();//tüneti kezelés
 		readIn("classes files\\day types.txt");
