@@ -171,7 +171,7 @@ public class Vehicle {
 		}
 		
 	
-		public static void fillVehicles() { //used in Route.getARoute() - feltölti a különböző járműveket tartalmazó tömblistákat
+	/*	public static void fillVehicles() { //used in Route.getARoute() - feltölti a különböző járműveket tartalmazó tömblistákat
 			
 			for(Vehicle vehicle: vehicles) {
 				
@@ -188,55 +188,8 @@ public class Vehicle {
 				}	
 			}
 		}
+		*/
 		
-		public static void fillBusLineNums() { //used in printBusLineNums()
-			//fillVehicles();
-			for(Vehicle bus:buses) {
-				busesLineNums.add(bus.lineNum);
-			}
-		}
-		
-		public static void printBusLineNums() { //used in Route.getARoute
-			
-			busesLineNums.clear();
-			fillBusLineNums();
-			for(String linenum: busesLineNums) {
-				System.out.println(linenum);
-			}
-		}
-		
-		public static void fillTramLineNums() { //used in printTramLineNums()
-			//fillVehicles();
-			for(Vehicle tram:trams) {
-				tramsLineNums.add(tram.lineNum);
-			}
-		}
-		
-		public static void printTramLineNums() { //used in Route.getARoute()
-			
-			tramsLineNums.clear();
-			fillTramLineNums();
-			for(String linenum: tramsLineNums) {
-				System.out.println(linenum);
-			}
-		}
-		
-		public static void fillTrolleyLineNums() { //used in printTrolleyNums
-			//fillVehicles();
-			for(Vehicle trolley:trolleys) {
-				trolleysLineNums.add(trolley.lineNum);
-			}
-		}
-		
-		public static void printTrolleyLineNums() { //used in Route.getARoute()
-			
-			trolleysLineNums.clear();
-			fillTrolleyLineNums();
-			for(String linenum: trolleysLineNums) {
-				System.out.println(linenum);
-			}
-		}		
-	
 		public  String toString() {
 			
 			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost

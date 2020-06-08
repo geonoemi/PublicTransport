@@ -22,15 +22,28 @@ public class Bus extends Vehicle implements Fossil {
 				}
 			}
 		}	
+		
 		public static void printBus() {
 			fillBus();
 			for(Vehicle bus:buses) {
 				System.out.println(bus);
 			}
 		}
-		public static void main (String[]args) {
-			Vehicle.readIn("classes files\\vehicles.txt");
-			//printBus();
+		
+		public static void fillBusLineNums() { //used in printBusLineNums()
+			//fillVehicles();
+			for(Vehicle bus:buses) {
+				busesLineNums.add(bus.lineNum);
+			}
+		}
+		
+		public static void printBusLineNums() { //used in Route.getARoute
+			
+			busesLineNums.clear();
+			fillBusLineNums();
+			for(String linenum: busesLineNums) {
+				System.out.println(linenum);
+			}
 		}
 }
 

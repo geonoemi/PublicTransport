@@ -15,6 +15,7 @@ public class Trolley extends Vehicle implements Electric {
 		public boolean canRunAlongHere(Station station) {
 			return station.hasCable();
 		}
+		
 		public static void fillTrolley(){
 			
 			for(Vehicle vehicle: vehicles) {
@@ -32,8 +33,20 @@ public class Trolley extends Vehicle implements Electric {
 			}
 		}
 		
-		public static void main (String[]args) {
-			Vehicle.readIn("classes files\\vehicles.txt");
-			printTrolley();
+		public static void fillTrolleyLineNums() { //used in printTrolleyNums
+			//fillVehicles();
+			for(Vehicle trolley:trolleys) {
+				trolleysLineNums.add(trolley.lineNum);
+			}
 		}
+		
+		public static void printTrolleyLineNums() { //used in Route.getARoute()
+			
+			trolleysLineNums.clear();
+			fillTrolleyLineNums();
+			for(String linenum: trolleysLineNums) {
+				System.out.println(linenum);
+			}
+		}		
+	
 }

@@ -59,30 +59,30 @@ public class Route extends Vehicle implements Fossil, Electric, WheelChair{
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
-			//fillBuses();
+				Bus.fillBus();
 				do {
 					System.out.println("Choose from the following buses:");
-					Vehicle.printBusLineNums();
+					Bus.printBusLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
 				}while(!(Vehicle.busesLineNums.contains(lineNumAndLetter))); 
 			}
 			
 			else if (typeOfVehicle==2) { 
-				//fillTrams();
+				Tram.fillTram();
 				do {					
 					System.out.println("Choose from the following trams:");
-					Vehicle.printTramLineNums();
+					Tram.printTramLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(Vehicle.tramsLineNums.contains(lineNumAndLetter)));
+				}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
 			}
 			
 			else if (typeOfVehicle==3) { 	
-			//	fillTrolleys();
+				Trolley.fillTrolley();
 				do {					
 					System.out.println("Choose from the following trolleys:");			
-					Vehicle.printTrolleyLineNums();
+					Trolley.printTrolleyLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
 				}while(!(Vehicle.trolleysLineNums.contains(lineNumAndLetter)));

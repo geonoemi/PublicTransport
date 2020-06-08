@@ -32,10 +32,22 @@ public class Tram extends Vehicle implements Electric{
 		}
 	}
 	
-	public static void main (String[]args) {
-		Vehicle.readIn("classes files\\vehicles.txt");
-		printTram();
+	public static void fillTramLineNums() { //used in printTramLineNums()
+		//fillVehicles();
+		for(Vehicle tram:trams) {
+			tramsLineNums.add(tram.lineNum);
+		}
 	}
+	
+	public static void printTramLineNums() { //used in Route.getARoute()
+		
+		tramsLineNums.clear();
+		fillTramLineNums();
+		for(String linenum: tramsLineNums) {
+			System.out.println(linenum);
+		}
+	}
+	
 }
 
 
