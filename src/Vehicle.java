@@ -170,7 +170,7 @@ public class Vehicle {
 			}
 		}
 		
-		public static void fillFossilVehicles() {
+	/*	public static void fillFossilVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
 				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil")) {
@@ -186,6 +186,7 @@ public class Vehicle {
 				System.out.println(fossil);
 			}
 		}
+		*/
 		public static void fillElectricVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
