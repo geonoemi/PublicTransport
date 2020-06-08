@@ -12,7 +12,10 @@ public class FileWriting {
 		int k;
 		
 		Station.readIn("classes files\\stations.txt");
-		Vehicle.readIn("classes files\\vehicles.txt");
+		Bus.readIn("classes files\\buses.txt");
+		Tram.readIn("classes files\\trams.txt");
+		Trolley.readIn("classes files\\trolleys.txt");
+
 		DayTypes.readIn("classes files\\day types.txt");
 		
 		for(i=0;i<DayTypes.dayTypes.size();i++) {
@@ -23,17 +26,17 @@ public class FileWriting {
 						
 					try( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk
 								
-						FileWriter writer1 = new FileWriter("departure times\\"+DayTypes.dayTypes.get(i)+" "+Station.stationNames.get(j)+" " +Vehicle.lineNums.get(k)+" back.txt");
+						FileWriter forth = new FileWriter("departure times\\"+DayTypes.dayTypes.get(i)+" "+Station.stationNames.get(j)+" " +Vehicle.lineNums.get(k)+" forth.txt");
 								
-						FileWriter writer2 = new FileWriter("departure times\\"+DayTypes.dayTypes.get(i)+" "+Station.stationNames.get(j)+" "+Vehicle.lineNums.get(k)+" forth.txt")){
+						FileWriter back = new FileWriter("departure times\\"+DayTypes.dayTypes.get(i)+" "+Station.stationNames.get(j)+" "+Vehicle.lineNums.get(k)+" back.txt")){
 							  
-									writer1.write("06:00\n");
-									writer1.write("07:00\n");
-									writer1.write("08:00\n");
+									forth.write("06:00\n");
+									forth.write("07:00\n");
+									forth.write("08:00\n");
 									
-									writer2.write("06:10\n");
-									writer2.write("07:10\n");
-									writer2.write("08:10\n");
+									back.write("06:10\n");
+									back.write("07:10\n");
+									back.write("08:10\n");
 				
 					}catch(IOException e) {
 						System.out.println(e.getMessage());

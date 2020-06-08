@@ -8,7 +8,7 @@ public class Electric extends Vehicle {
 		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
-	
+	/*
 	//boolean canRunAlongHere(Station station);
 	protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 
@@ -38,8 +38,8 @@ public class Electric extends Vehicle {
 	}
 	public static void main (String[]args) {
 		
-		Vehicle.readIn("classes files\\vehicles.txt");
+		
 		printElectricVehicles();
-	}
+	}*/
 	
 }

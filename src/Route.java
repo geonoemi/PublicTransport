@@ -27,8 +27,7 @@ public class Route extends Vehicle {
 		//mi megy a stackbe,mi a heapbe?
 		//git ignore?
 
-		Vehicle.readIn("classes files\\vehicles.txt"); //ArrayLists from Vehicles
-		
+	
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
 			do {
@@ -55,11 +54,12 @@ public class Route extends Vehicle {
 			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		//Vehicle.fillVehicles(); //ArrayLists from Vehicle types
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
-				Bus.fillBus();
+				Bus.readIn("classes files\\buses.txt"); //ArrayLists from Vehicles
+
+				//Bus.fillBus();
 				do {
 					System.out.println("Choose from the following buses:");
 					Bus.printBusLineNums();
@@ -69,7 +69,8 @@ public class Route extends Vehicle {
 			}
 			
 			else if (typeOfVehicle==2) { 
-				Tram.fillTram();
+				Tram.readIn("classes files\\trams.txt");
+				//Tram.fillTram();
 				do {					
 					System.out.println("Choose from the following trams:");
 					Tram.printTramLineNums();
@@ -79,7 +80,9 @@ public class Route extends Vehicle {
 			}
 			
 			else if (typeOfVehicle==3) { 	
-				Trolley.fillTrolley();
+				Trolley.readIn("classes files\\trolleys.txt");
+				
+				//Trolley.fillTrolley();
 				do {					
 					System.out.println("Choose from the following trolleys:");			
 					Trolley.printTrolleyLineNums();
@@ -92,6 +95,7 @@ public class Route extends Vehicle {
 		String way="";
 	//	do {
 			System.out.println("Way (FORTH = 1 BACK = 2) : ");
+			
 				if(scanWay.nextInt()==1) {
 					way="forth";
 				}else {				//if(scanWay.nextInt()==2) 
@@ -123,6 +127,7 @@ public class Route extends Vehicle {
 		System.out.println("Not appropriate input type.");
 	}*/
 	}
+	
 	public static void getsoff(String userChoice) { //used in getARoute()
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
