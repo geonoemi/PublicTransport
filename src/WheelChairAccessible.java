@@ -9,7 +9,7 @@ public class WheelChairAccessible  extends Vehicle{
 	}
 
 	
-	public static void fillWheelChairAccessibleVehicles() {//TODO: move to child class
+	public static void fillWheelChairAccessibleVehicles() {
 		
 		for (Vehicle vehicle : vehicles) {
 			if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
