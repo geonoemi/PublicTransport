@@ -9,7 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Route extends Vehicle implements Fossil, Electric, WheelChair{
+public class Route extends Vehicle implements Fossil, Electric{
 
 	protected static String userChoice;
 	
@@ -65,7 +65,7 @@ public class Route extends Vehicle implements Fossil, Electric, WheelChair{
 					Bus.printBusLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(Vehicle.busesLineNums.contains(lineNumAndLetter))); 
+				}while(!(Bus.busesLineNums.contains(lineNumAndLetter))); 
 			}
 			
 			else if (typeOfVehicle==2) { 
@@ -85,7 +85,7 @@ public class Route extends Vehicle implements Fossil, Electric, WheelChair{
 					Trolley.printTrolleyLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
-				}while(!(Vehicle.trolleysLineNums.contains(lineNumAndLetter)));
+				}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
 			}
 			
 		Scanner scanWay=new Scanner(System.in);

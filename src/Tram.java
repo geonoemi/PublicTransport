@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class Tram extends Vehicle implements Electric{
 
 	protected static ArrayList<Tram> trams=new ArrayList<>();
-
+	protected static ArrayList<String> tramsLineNums=new ArrayList<>();
+	
 	public Tram(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
 			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
 			boolean hasWheel, String typeOfVehicle) {
@@ -21,7 +22,12 @@ public class Tram extends Vehicle implements Electric{
 		for(Vehicle vehicle: vehicles) {
 			
 			if(vehicle.typeOfFuel.equals("electrical energy") && !vehicle.hasWheel) {
-				trams.add((Tram) vehicle);
+				
+				Tram tram=new Tram(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
+			 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
+			 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
+
+				trams.add((Tram) tram);
 			}
 		}
 	}	
@@ -50,9 +56,9 @@ public class Tram extends Vehicle implements Electric{
 	}
 	public static void main(String[] args) {
 		Vehicle.readIn("classes files\\vehicles.txt");
-		fillTramLineNums();
+		fillTram();
 
-		printTram();	
+		printTramLineNums();	
 	}
 }
 

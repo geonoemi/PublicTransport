@@ -35,14 +35,14 @@ public class Vehicle {
 
 		protected static ArrayList<Vehicle> vehicles=new ArrayList<>();
 	//TODO: move to children
-		protected static ArrayList<String> busesLineNums=new ArrayList<>();
-		protected static ArrayList<String> tramsLineNums=new ArrayList<>();
-		protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
+		
+		
+	
 
 	
 		
 		
-		protected static ArrayList<Vehicle> wheelChairAccessibleVehicles = new ArrayList<>();
+		
 		protected static ArrayList<Vehicle> needsService = new ArrayList<>();
 		protected static ArrayList<Vehicle> bicycleVehicles=new ArrayList<>();
 		protected static ArrayList<Vehicle> fossilVehicles=new ArrayList<>();

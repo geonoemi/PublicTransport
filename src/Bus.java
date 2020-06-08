@@ -13,17 +13,21 @@ public class Bus extends Vehicle implements Fossil {
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
 		protected static ArrayList<Bus> buses=new ArrayList<>();
-
+		protected static ArrayList<String> busesLineNums=new ArrayList<>();
 		
 		private String plateNumber;
 		
 		public static void fillBus(){
-			Vehicle.readIn("classes files\\vehicles.txt");
-
+		//	Vehicle.readIn("classes files\\vehicles.txt");
 			for(Vehicle vehicle: vehicles) {
 				
 				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil") && vehicle.hasWheel) {
-					buses.add((Bus) vehicle);
+					
+					Bus bus=new Bus(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
+				 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
+				 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
+
+					buses.add((Bus) bus);
 				}
 			}
 		}	
@@ -50,7 +54,12 @@ public class Bus extends Vehicle implements Fossil {
 				System.out.println(linenum);
 			}
 		}
-	
+		public static void main (String[]args) {
+			
+			Vehicle.readIn("classes files\\vehicles.txt");
+			fillBus();
+			printBusLineNums();
+		}
 }
 
 
