@@ -112,7 +112,7 @@ public class Vehicle {
 			}		
 		}
 		
-		public static void fillWheelChairAccessibleVehicles() {//TODO: move to child class
+/*		public static void fillWheelChairAccessibleVehicles() {//TODO: move to child class
 			
 			for (Vehicle vehicle : vehicles) {
 				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
@@ -134,7 +134,7 @@ public class Vehicle {
 			}
 			
 		}
-		
+*/		
 		public static void fillNeedToRepairVehicles() {
 				
 			for (Vehicle vehicle : vehicles) {
@@ -279,6 +279,6 @@ public class Vehicle {
 		public static void main (String[]args) {
 			Vehicle.readIn("classes files\\vehicles.txt");
 
-			printWheelChairAccessibleVehicles();
+			//printWheelChairAccessibleVehicles();
 		}
 }
