@@ -170,40 +170,7 @@ public class Vehicle {
 			}
 		}
 		
-	/*	public static void fillFossilVehicles() {
-			
-			for (Vehicle vehicle : vehicles) {
-				if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil")) {
-					fossilVehicles.add(vehicle);
-				}
-			}
-		}
-		
-		public static void printFossilVehicles() {
-			
-			fillFossilVehicles();
-			for( Vehicle fossil:fossilVehicles) {
-				System.out.println(fossil);
-			}
-		}
-		*/
-	/*	public static void fillElectricVehicles() {
-			
-			for (Vehicle vehicle : vehicles) {
-				if(vehicle.typeOfFuel.equals("electrical energy")){
-					electricVehicles.add(vehicle);
-				}
-			}
-		}
-
-		public static void printElectricVehicles() {
-			
-			fillElectricVehicles();
-			for( Vehicle electric:electricVehicles) {
-				System.out.println(electric);
-			}
-		}
-		*/
+	
 		public static void fillVehicles() { //used in Route.getARoute() - feltölti a különböző járműveket tartalmazó tömblistákat
 			
 			for(Vehicle vehicle: vehicles) {

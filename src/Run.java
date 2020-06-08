@@ -16,8 +16,8 @@ public class Run {
 		//Route.printDayTypeList(Route.dayTypeList);
 		
 		//Vehicle.printLineNums();
-		Station.readIn("classes files\\stations.txt");
-		Station.printStations(Station.stationNames);
+	//	Station.readIn("classes files\\stations.txt");
+	//	Station.printStations(Station.stationNames);
 		
 		//Vehicle.printVehicleTypes(vehicleTypes);
 		//Vehicle.printVehicles(Vehicle.vehicles);

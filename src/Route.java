@@ -55,11 +55,11 @@ public class Route extends Vehicle implements Fossil, Electric, WheelChair{
 			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
-		Vehicle.fillVehicles(); //ArrayLists from Vehicle types
+		//Vehicle.fillVehicles(); //ArrayLists from Vehicle types
 		String lineNumAndLetter="";
 		
 			if (typeOfVehicle==1) { 
-			
+			//fillBuses();
 				do {
 					System.out.println("Choose from the following buses:");
 					Vehicle.printBusLineNums();
@@ -69,6 +69,7 @@ public class Route extends Vehicle implements Fossil, Electric, WheelChair{
 			}
 			
 			else if (typeOfVehicle==2) { 
+				//fillTrams();
 				do {					
 					System.out.println("Choose from the following trams:");
 					Vehicle.printTramLineNums();
@@ -78,6 +79,7 @@ public class Route extends Vehicle implements Fossil, Electric, WheelChair{
 			}
 			
 			else if (typeOfVehicle==3) { 	
+			//	fillTrolleys();
 				do {					
 					System.out.println("Choose from the following trolleys:");			
 					Vehicle.printTrolleyLineNums();
