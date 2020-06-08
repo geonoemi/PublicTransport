@@ -17,8 +17,5 @@ public interface Fossil {
 			System.out.println(fossil);
 		}
 	}
-	public static void main (String[]args) {
-		Vehicle.readIn("classes files\\vehicles.txt");
-		printFossilVehicles();
-	}
+	
 }

@@ -187,7 +187,7 @@ public class Vehicle {
 			}
 		}
 		*/
-		public static void fillElectricVehicles() {
+	/*	public static void fillElectricVehicles() {
 			
 			for (Vehicle vehicle : vehicles) {
 				if(vehicle.typeOfFuel.equals("electrical energy")){
@@ -203,7 +203,7 @@ public class Vehicle {
 				System.out.println(electric);
 			}
 		}
-		
+		*/
 		public static void fillVehicles() { //used in Route.getARoute() - feltölti a különböző járműveket tartalmazó tömblistákat
 			
 			for(Vehicle vehicle: vehicles) {
