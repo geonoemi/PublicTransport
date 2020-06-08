@@ -9,7 +9,7 @@ public class Vehicle {
 	//TODO make it abstract
 		
 		protected String lineNum;
-		protected boolean articulated;
+		protected boolean articulate;
 		protected boolean lowFloor;
 		protected double operationCost;
 		protected int numOfSeats;
@@ -48,13 +48,13 @@ public class Vehicle {
 		protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 		
 		
-		public Vehicle(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+		public Vehicle(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
 						boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair,String typeOfFuel,
 						boolean hasWheel, String typeOfVehicle) {
 		
 
 			this.lineNum=lineNum;
-			this.articulated=articulated;
+			this.articulate=articulate;
 			this.lowFloor=lowFloor;
 			this.operationCost=operationCost;
 			this.numOfSeats=numOfSeats;
@@ -111,12 +111,12 @@ public class Vehicle {
 			}		
 		}
 		
-		public static void fillWheelChairAccessibleVehicles() {
+		public static void fillWheelChairAccessibleVehicles() {//TODO: move to child class
 			
 			for (Vehicle vehicle : vehicles) {
 				if(vehicle.lowFloor && vehicle.numOfDisabledPlaces>=1) {
 				 	
-					Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum,  vehicle.articulated, vehicle.lowFloor,
+					Vehicle wheelchairAccessibleVehicle=new WheelChairAccessible(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
 				 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
 				 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
 
@@ -261,7 +261,7 @@ public class Vehicle {
 	
 		public  String toString() {
 			
-			return lineNum+" "+articulated+" "+ lowFloor+" "+  operationCost
+			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost
 					+" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
 		}

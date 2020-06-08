@@ -13,10 +13,10 @@ public class Route extends Vehicle{
 
 	protected static String userChoice;
 	
-	public Route(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
+	public Route(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
 			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
 			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
+		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
 

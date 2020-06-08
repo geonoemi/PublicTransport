@@ -9,17 +9,21 @@ import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Locale;
 public class Station {
-	private String x;
-	private String y;
-	String stationName;
+	private String coordinateX;
+	private String coordinateY;
+	private String stationName;
 	private boolean hasCable;
 	static ArrayList<Station> stations=new ArrayList<>();
 	static ArrayList<String> stationNames=new ArrayList<>();
+	static ArrayList<String> x=new ArrayList<>();
+	static ArrayList<String> y=new ArrayList<>();
+	static ArrayList<Boolean> cables=new ArrayList<>();
 
-	public Station(String stationName,String x, String y,boolean hasCable) {
+
+	public Station(String stationName,String coordinateX, String coordinateY,boolean hasCable) {
 		
-		this.x = x;
-		this.y = y;
+		this.coordinateX = coordinateX;
+		this.coordinateY = coordinateY;
 		this.stationName = stationName;
 		this.hasCable=hasCable;
 
@@ -42,19 +46,12 @@ public class Station {
 				
 				String parts[] = line.split(",");
 				
-				String[] stationName=new String[line.length()];
-				stationName[i]=parts[0];
-				stationNames.add(stationName[i]);
+				stationNames.add(parts[0]);
+				x.add(parts[1]);
+				y.add(parts[2]);
 				
-				String x[]=new String[line.length()];
-				String y[]=new String[line.length()];
-				boolean hasCable[]=new boolean[line.length()];
-				
-				x[i]=parts[1];
-				y[i]=parts[2];
-				hasCable[i]=Boolean.parseBoolean(parts[3]);
-				
-				Station station=new Station(stationName[i],x[i],y[i],hasCable[i]);
+				cables.add(Boolean.parseBoolean(parts[3]));
+				Station station=new Station(stationNames.get(i),x.get(i),y.get(i),cables.get(i));
 				stations.add(station);
 				
 				i++;				
@@ -72,6 +69,7 @@ public class Station {
 	}
 	
 	public static void printStations(ArrayList<String> stationNames) { //used in Route.getARoute()
+		
 		stationNames.clear(); //tüneti kezelés...
 		readIn("classes files\\stations.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
