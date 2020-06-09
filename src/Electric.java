@@ -9,7 +9,7 @@ public class Electric extends Vehicle {
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
 	/*
-	//boolean canRunAlongHere(Station station);
+	boolean canRunAlongHere(Station station);
 	protected static ArrayList<Vehicle> electricVehicles=new ArrayList<>();
 
 	public static void fillElectricVehicles() {

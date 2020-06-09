@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 
 public class Trolley extends Vehicle  {	
 	
-	private boolean hasWheel=true;
+	boolean hasWheel=true;
 	protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
 		
 	protected static ArrayList<Trolley> trolleys=new ArrayList<>();
@@ -64,13 +64,8 @@ public static void readIn(String fileName){
 		}
 		
 		
-		public static void fillTrolley(){
-			
-			
-		}	
-		
 		public static void printTrolley() {
-			fillTrolley();
+			
 			for(Trolley trolley:trolleys) {
 				System.out.println(trolley);
 			}
@@ -92,8 +87,7 @@ public static void readIn(String fileName){
 			}
 		}		
 		public static void main(String[] args) {
-			readIn("classes files\\trolleys.txt");
-			fillTrolley();
+		//	readIn("classes files\\trolleys.txt");();
 
 			//printTrolleyLineNums();	
 		}

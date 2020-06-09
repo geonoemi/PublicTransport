@@ -1,9 +1,16 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 
-public class Line {
+public class Line{
 	
 	private int numberLetter;
 	private String type;
 	private double length;
+	public static ArrayList<String>lineNumberLetter=new ArrayList<>();
 
 	public Line(int numberLetter, String type, double length) {
 
@@ -23,7 +30,34 @@ public class Line {
 	public double getLength() {
 		return length;
 	}
-
+	public static void readIn(String fileName){ 
+		
+		try {
+			
+			FileReader reader=new FileReader("classes files\\vehicles.txt");
+			BufferedReader buffer=new BufferedReader(reader);
+			String line=null;
+			int i=0;
+			
+			while((line=buffer.readLine())!=null) {
+				
+					String parts[] = line.split(",");
+					
+					lineNumberLetter.add(parts[0]);
+				
+				i++;
+			}
+			
+			buffer.close();
+			
+		}catch(FileNotFoundException e) {
+			System.out.println("File not found.");
+		}catch(IOException e) {
+			System.out.println("e.getMessage()");
+		}catch (InputMismatchException exception) {
+			System.out.println("Not appropriate input type.");
+		}		
+	}
 	@Override
 	public String toString() {
 		return numberLetter + " " + type + " " + length;

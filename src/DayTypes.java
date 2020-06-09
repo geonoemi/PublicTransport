@@ -26,7 +26,7 @@ public class DayTypes {
 			FileReader reader=new FileReader(fileName);
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
-			int i=0;
+			int i=1;
 			
 			while((line=buffer.readLine())!=null) {
 					
@@ -52,7 +52,7 @@ public class DayTypes {
 		readIn("classes files\\day types.txt");
 		
 		for (String daytypes: dayTypes) {
-			System.out.printf( "\t%s\n",daytypes);
+			System.out.printf( "\t%s\n", daytypes);
 		}
 	}
 }

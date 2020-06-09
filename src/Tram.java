@@ -61,20 +61,18 @@ public class Tram extends Vehicle {
 		}		
 	}
 	
-	public static void fillTram(){
-		
-	}	
+	
 	
 	public static void printTram() {
-		fillTram();
-		for(Vehicle tram:trams) {
+		
+		for(Tram tram:trams) {
 			System.out.println(tram);
 		}
 	}
 	
 	public static void fillTramLineNums() { //used in printTramLineNums()
 		//fillVehicles();
-		for(Vehicle tram:trams) {
+		for(Tram tram:trams) {
 			tramsLineNums.add(tram.lineNum);
 		}
 	}
@@ -83,13 +81,12 @@ public class Tram extends Vehicle {
 		
 		tramsLineNums.clear();
 		fillTramLineNums();
-		for(String linenum: tramsLineNums) {
-			System.out.println(linenum);
-		}
+			for(String linenum: tramsLineNums) {
+				System.out.println(linenum);
+			}
 	}
 	public static void main(String[] args) {
-		readIn("classes files\\trams.txt");
-		fillTram();
+		//readIn("classes files\\trams.txt");
 
 		//printTramLineNums();	
 	}

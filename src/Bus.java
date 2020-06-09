@@ -65,24 +65,19 @@ public static void readIn(String fileName){
 		}
 		
 		
-		public static void fillBus(){
-		//	Vehicle.readIn("classes files\\vehicles.txt");
-				
-					
-			
-			
+	/*	public static void fillBus(){
 		}	
 		
 		public static void printBus() {
 			fillBus();
-			for(Vehicle bus:buses) {
+			for(Busww bus:buses) {
 				System.out.println(bus);
 			}
 		}
-		
+	*/	
 		public static void fillBusLineNums() { //used in printBusLineNums()
 			//fillVehicles();
-			for(Vehicle bus:buses) {
+			for(Bus bus:buses) {
 				busesLineNums.add(bus.lineNum);
 			}
 		}
@@ -97,8 +92,8 @@ public static void readIn(String fileName){
 		}
 		public static void main (String[]args) {
 			
-			readIn("classes files\\buses.txt");
-			fillBus();
+		//	readIn("classes files\\buses.txt");
+
 			//printBusLineNums();
 		}
 }
