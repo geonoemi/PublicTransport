@@ -43,7 +43,7 @@ public static void readIn(String fileName){
 						fuelTypes.add(parts[8]);
 						hasWheels.add(Boolean.parseBoolean(parts[9]));
 						typeOfVehicles.add(parts[10]);
-										
+		//troli feltöltés hova lett??								
 						Trolley trolley=new Trolley(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
 													hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), 
 													hasWheels.get(i), typeOfVehicles.get(i));

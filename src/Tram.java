@@ -41,7 +41,7 @@ public class Tram extends Vehicle {
 					fuelTypes.add(parts[8]);
 					hasWheels.add(Boolean.parseBoolean(parts[9]));
 					typeOfVehicles.add(parts[10]);
-									
+				//villi feltöltés hova lett?
 					Tram tram=new Tram(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
 												hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), 
 												hasWheels.get(i), typeOfVehicles.get(i));
