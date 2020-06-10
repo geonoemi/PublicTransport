@@ -187,6 +187,8 @@ public class beolv {
 	public static void main(String[]args) {
 		//readIn("stations\\stations for trams\\stations for 2.txt");
 		readInTrams();
+		readInBuses();
+		readInTrolleys();
 	}
 	/*public static void printStations4(ArrayList<String> stationNames4) { //used in Route.getARoute()
 	
