@@ -8,9 +8,9 @@ import java.util.InputMismatchException;
 public class Bus extends Vehicle {
 
 		public Bus(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
+					boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
+					boolean hasWheel, String typeOfVehicle) {
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
 				typeOfFuel, hasWheel, typeOfVehicle);
 	}
 		protected static ArrayList<Bus> buses=new ArrayList<>();

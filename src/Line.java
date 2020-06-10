@@ -34,7 +34,7 @@ public class Line{
 		
 		try {
 			
-			FileReader reader=new FileReader("classes files\\vehicles.txt");
+			FileReader reader=new FileReader(fileName);
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=0;
@@ -58,9 +58,20 @@ public class Line{
 			System.out.println("Not appropriate input type.");
 		}		
 	}
+	public static void printLineNumberLetter() {
+		for (String lineNumberLetter : lineNumberLetter) {
+			System.out.println(lineNumberLetter);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return numberLetter + " " + type + " " + length;
 	}
+	
+/*	public static void main (String[]args) {
+		readIn("classes files\\vehicles.txt");
+		printLineNumberLetter();
+	}*/
 
 }

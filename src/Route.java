@@ -61,6 +61,7 @@ public class Route extends Vehicle {
 
 				//Bus.fillBus();
 				do {
+					
 					System.out.println("Choose from the following buses:");
 					Bus.printBusLineNums();
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();

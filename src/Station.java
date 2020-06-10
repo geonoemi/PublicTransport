@@ -15,6 +15,10 @@ public class Station {
 	private boolean hasCable;
 	static ArrayList<Station> stations=new ArrayList<>();
 	static ArrayList<String> stationNames=new ArrayList<>();
+	static ArrayList<String> stationNames2=new ArrayList<>();
+	static ArrayList<String> stationNames3F=new ArrayList<>();
+	static ArrayList<String> stationNames4=new ArrayList<>();
+
 	static ArrayList<String> x=new ArrayList<>();
 	static ArrayList<String> y=new ArrayList<>();
 	static ArrayList<Boolean> cables=new ArrayList<>();

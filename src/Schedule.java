@@ -7,8 +7,7 @@ public class Schedule {
 	private LocalTime departureTime;
 	private LocalTime arrivalTime;
 	
-	public Schedule(Vehicle vehicle, Station departureStation, Station arrivalStation, LocalTime departureTime,
-			LocalTime arrivalTime) {
+	public Schedule(Vehicle vehicle, Station departureStation, Station arrivalStation, LocalTime departureTime,	LocalTime arrivalTime) {
 	
 		this.vehicle = vehicle;
 		this.departureStation = departureStation;

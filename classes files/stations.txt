@@ -7,10 +7,13 @@ Fonógyári út,46.264005,20.109662,true
 Vitéz utca,46.248486,20.141120,true
 Dugonics-tér,46.250602,20.144552,true
 Kecskés,46.239502,20.117673,true
-Gabonakutató,46.244669,20.157204,false
+Szegedi Ipari Logisztikai Központ,46.286540,20.085751,false
+Rókusi víztorony,46.268600,20.134706,false
 Vértó,46.272090,20.143056,true
 Széchenyi-tér,46.257777,20.131061,false
 Mars-tér,46.258957,20.140791,true
 Füvészkert,46.232890,20.155699,false
 Katalin utca,46.232201,20.190346,false
 Napfényfürdõ,46.249663,20.159695,true
+Klinikák,46.245988,20.147481,true
+Lugas utca,46.267031,20.170985,false
