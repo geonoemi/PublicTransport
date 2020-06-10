@@ -13,9 +13,7 @@ public class FileWriting {
 		
 		//Station.readIn("classes files\\stations.txt");
 		
-		beolv.readIn2("stations\\stations for trams\\stations for 2.txt");
-		beolv.readIn3F("stations\\stations for trams\\stations for 3F.txt");
-		beolv.readIn4("stations\\stations for trams\\stations for 4.txt");
+		beolv.readIn();
 
 		/*Bus.readIn("classes files\\buses.txt");
 		Tram.readIn("classes files\\trams.txt");

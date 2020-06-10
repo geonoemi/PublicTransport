@@ -40,98 +40,41 @@ public class beolv {
 	}*/
 	
 //stations\\stations for trams\\stations for 2.txt
-	public static void readIn2(String fileName){
+	public static void readIn(){
 
 		try {
 
-			FileReader reader=new FileReader(fileName);
-			BufferedReader buffer=new BufferedReader(reader);
-			String line=null;
-			int i=0;
+			FileReader reader2=new FileReader("stations\\stations for trams\\stations for 2.txt");
+			BufferedReader buffer2=new BufferedReader(reader2);
+			String line2=null;
+						
+			while((line2=buffer2.readLine())!=null) {
+				
+				String parts[] = line2.split(",");
+				stationNames2.add(parts[0]);		
+			}
+	
+			FileReader reader3F=new FileReader("stations\\stations for trams\\stations for 3F.txt");
+			BufferedReader buffer3F=new BufferedReader(reader3F);
+			String line3F=null;
 			
-			while((line=buffer.readLine())!=null) {
+			
+			while((line3F=buffer3F.readLine())!=null) {
 				
-				String parts[] = line.split(",");
-				
-				stationNames2.add(parts[0]);
-				x.add(parts[1]);
-				y.add(parts[2]);
-				
-				cables.add(Boolean.parseBoolean(parts[3]));
-				Station station=new Station(stationNames2.get(i), x.get(i), y.get(i), cables.get(i));
-				stations2.add(station);
-				
-				i++;				
+				String parts[] = line3F.split(",");
+				stationNames3F.add(parts[0]);			
 			}
 			
-			buffer.close();
-				
-		}catch(FileNotFoundException e) {
-				System.out.println("File not found.");
-		}catch(IOException e) {
-				System.out.println("e.getMessage()");
-		}catch (InputMismatchException exception) {
-				System.out.println("Not appropriate input type.");
-		}		
-	}
-	
-	
-	public static void printStations2(ArrayList<String> stationNames2) { //used in Route.getARoute()
-		
-		stationNames2.clear(); //tüneti kezelés...
-		readIn2("stations\\stations for trams\\stations for 2.txt");
-		Collator hu = Collator.getInstance(new Locale("hu","HU"));
-		sortStationNames(hu,stationNames2);
-		
-		for (String stations:stationNames2) {
-			System.out.println(stations);
-		}
-	}
-	
-	public static void sortStationNames(Collator collator, ArrayList <String> stationNames2) { //used in Station.printStations(ArrayList<String> stationNames2)
-		
-	    String tmp;
-	    
-	    for (int i = 0; i < stationNames2.size(); i++) {
-	    	
-	        for (int j = i + 1; j < stationNames2.size(); j++) { 
-	        	
-	            if (collator.compare(stationNames2.get(i), stationNames2.get(j)) > 0) {
-	            	
-		              tmp = stationNames2.get(i);
-		              stationNames2.set(i,stationNames2.get(j));
-		              stationNames2.set(j,tmp);
-	            }
-	        }
-	    }
-	}			// TODO: Separation of concern: presentation and business logic should separate	
-	
-	public static void readIn3F(String fileName){
-
-		try {
-
-			FileReader reader=new FileReader(fileName);
-			BufferedReader buffer=new BufferedReader(reader);
-			String line=null;
-			int i=0;
-			
-			while((line=buffer.readLine())!=null) {
-				
-				String parts[] = line.split(",");
-				
-				stationNames3F.add(parts[0]);
-				x.add(parts[1]);
-				y.add(parts[2]);
-				
-				cables.add(Boolean.parseBoolean(parts[3]));
-			//	Station station=new Station(stationNames3F.get(i), x.get(i), y.get(i), cables.get(i));
-				//stations3F.add(station);
-				
-				i++;				
+			FileReader reader4=new FileReader("stations\\stations for trams\\stations for 4.txt");
+			BufferedReader buffer4=new BufferedReader(reader4);
+			String line4=null;
+						
+			while((line4=buffer4.readLine())!=null) {
+					
+				String parts[] = line4.split(",");				
+				stationNames4.add(parts[0]);			
 			}
-			
-			buffer.close();
-				
+	
 		}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
 		}catch(IOException e) {
@@ -142,53 +85,7 @@ public class beolv {
 	}
 	
 
-	public static void printStations3F(ArrayList<String> stationNames3F) { //used in Route.getARoute()
-		
-		stationNames3F.clear(); //tüneti kezelés...
-		readIn3F("stations\\stations for trams\\stations for 3F.txt");
-	
-		for (String stations:stationNames3F) {
-			System.out.println(stations);
-		}
-	}
-	
-	public static void readIn4(String fileName){
-
-		try {
-
-			FileReader reader=new FileReader(fileName);
-			BufferedReader buffer=new BufferedReader(reader);
-			String line=null;
-			int i=0;
-			
-			while((line=buffer.readLine())!=null) {
-				
-				String parts[] = line.split(",");
-				
-				stationNames4.add(parts[0]);
-				x.add(parts[1]);
-				y.add(parts[2]);
-				
-				cables.add(Boolean.parseBoolean(parts[3]));
-			//	Station station=new Station(stationNames4.get(i), x.get(i), y.get(i), cables.get(i));
-				//stations4.add(station);
-				
-				i++;				
-			}
-			
-			buffer.close();
-				
-		}catch(FileNotFoundException e) {
-				System.out.println("File not found.");
-		}catch(IOException e) {
-				System.out.println("e.getMessage()");
-		}catch (InputMismatchException exception) {
-				System.out.println("Not appropriate input type.");
-		}		
-	}
-	
-
-	public static void printStations4(ArrayList<String> stationNames4) { //used in Route.getARoute()
+	/*public static void printStations4(ArrayList<String> stationNames4) { //used in Route.getARoute()
 		
 		stationNames4.clear(); //tüneti kezelés...
 		readIn4("stations\\stations for trams\\stations for 4.txt");
@@ -196,7 +93,7 @@ public class beolv {
 		for (String stations:stationNames4) {
 			System.out.println(stations);
 		}
-	}
+	}*/
 	
 /*	public static void canRunAlongHere(boolean hasPantograph) {
 
@@ -214,7 +111,7 @@ public class beolv {
 	
 	public static void main(String[]args) {
 		//readIn("stations\\stations for trams\\stations for 2.txt");
-		printStations2(stationNames2);
+		readIn();
 	}
 	
 }
