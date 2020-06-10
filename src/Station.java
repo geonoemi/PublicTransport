@@ -4,8 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Locale;
 public class Station {
@@ -40,13 +38,11 @@ public class Station {
 		this.hasCable=hasCable;
 
 	}
-
-/*	public boolean hasCable() {
-		return hasCable;
-	}*/
 	
 	public static void readIn(String fileName){
+		
 		try {
+			
 			FileReader reader=new FileReader(fileName);
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
@@ -105,6 +101,7 @@ public class Station {
 	        }
 	    }
 	}			// TODO: Separation of concern: presentation and business logic should separate
+	
 	public static void readInTrams(){
 
 		try {
@@ -139,7 +136,10 @@ public class Station {
 				String parts[] = line4.split(",");				
 				stationNames4.add(parts[0]);			
 			}
-	
+
+			buffer2.close();
+			buffer3F.close();
+			buffer4.close();
 		}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
 		}catch(IOException e) {
@@ -183,7 +183,9 @@ public class Station {
 				String parts[] = line90H.split(",");
 				stationNames90H.add(parts[0]);		
 			}
-			
+			buffer70.close();
+			buffer71A.close();
+			buffer90H.close();
 		}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
 		}catch(IOException e) {
@@ -226,7 +228,9 @@ public class Station {
 				String parts[] = line19.split(",");
 				stationNames19.add(parts[0]);		
 			}
-			
+			buffer8.close();
+			buffer10.close();
+			buffer19.close();
 		}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
 		}catch(IOException e) {

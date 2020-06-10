@@ -5,6 +5,6 @@ public class Run {
 		
 		
 		Route.getARoute();
-		System.out.println(Route.userChoice);
+		//System.out.println(Route.userChoice);
 	}
 }

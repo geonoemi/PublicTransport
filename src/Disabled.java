@@ -99,16 +99,5 @@ public class Disabled extends Vehicle {
 		printDisabledBuses();
 		printDisabledTrolleys();
 
-		
-	/*	fillDisabledBuses();
-		
-		for(Disabled disabledBuses: disabledBuses ) {
-			System.out.println(disabledBuses);
-		}
-		fillDisabledTrolleys();
-		
-		for(Disabled disabledTrolleys: disabledTrolleys ) {
-			System.out.println(disabledTrolleys);
-		}*/
 	}
 }
