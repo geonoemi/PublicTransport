@@ -114,7 +114,7 @@ public class Route extends Vehicle {
 				
 		}while(!(DayTypes.dayTypes.contains(dayType)));
 		
-		userChoice =dayType+" "+station +" "+lineNumAndLetter+" "+way ;
+		userChoice =lineNumAndLetter+" "+station+" "+dayType+" "+way;
 	   
 		getsoff(userChoice); //prints deparure Times
 		

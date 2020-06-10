@@ -12,22 +12,16 @@ public class FileWriting {
 		int k;
 		
 		//Station.readIn("classes files\\stations.txt");
-		
-		beolv.readInTrams();
-		beolv.readInBuses();
-		beolv.readInTrolleys();
-
-		/*Bus.readIn("classes files\\buses.txt");
-		Tram.readIn("classes files\\trams.txt");
-		Trolley.readIn("classes files\\trolleys.txt");
-*/
 		DayTypes.readIn("classes files\\day types.txt");
-	//trams	
+		Station.readInTrams();
+		Station.readInBuses();
+		Station.readInTrolleys();
+
 		for(i=0;i<DayTypes.dayTypes.size();i++) {
-			for( j=0; j<beolv.stationNames2.size();j++) {
+			for( j=0; j<Station.stationNames2.size();j++) {
 				try( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk
-					FileWriter forth = new FileWriter("departure times\\"+"2F "+beolv.stationNames2.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"2 "+beolv.stationNames2.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"2 "+Station.stationNames2.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"2 "+Station.stationNames2.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 							  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -41,10 +35,10 @@ public class FileWriting {
 					System.out.println(e.getMessage());
 				}
 			}
-			for( j=0; j<beolv.stationNames3F.size();j++) {
+			for( j=0; j<Station.stationNames3F.size();j++) {
 				try(
-					FileWriter forth = new FileWriter("departure times\\"+"3F "+beolv.stationNames3F.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"3F "+beolv.stationNames3F.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"3F "+Station.stationNames3F.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"3F "+Station.stationNames3F.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 							
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -59,10 +53,10 @@ public class FileWriting {
 					}
 			}
 			
-			for( j=0; j<beolv.stationNames4.size();j++) {
+			for( j=0; j<Station.stationNames4.size();j++) {
 				try( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk				
-					FileWriter forth = new FileWriter("departure times\\"+"4 "+beolv.stationNames4.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"4 "+beolv.stationNames4.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"4 "+Station.stationNames4.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"4 "+Station.stationNames4.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 						
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -77,10 +71,10 @@ public class FileWriting {
 					}
 			}	
 			
-			for( j=0; j<beolv.stationNames70.size();j++) {
+			for( j=0; j<Station.stationNames70.size();j++) {
 				try( 
-					FileWriter forth = new FileWriter("departure times\\"+"70 "+beolv.stationNames70.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"70 "+beolv.stationNames70.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"70 "+Station.stationNames70.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"70 "+Station.stationNames70.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 							  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -94,10 +88,10 @@ public class FileWriting {
 					System.out.println(e.getMessage());
 				}
 			}
-			for( j=0; j<beolv.stationNames71A.size();j++) {
+			for( j=0; j<Station.stationNames71A.size();j++) {
 				try( 
-					FileWriter forth = new FileWriter("departure times\\"+"71A "+beolv.stationNames71A.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"71A "+beolv.stationNames71A.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"71A "+Station.stationNames71A.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"71A "+Station.stationNames71A.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 						  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -111,10 +105,10 @@ public class FileWriting {
 					System.out.println(e.getMessage());
 				}
 			}
-			for( j=0; j<beolv.stationNames90H.size();j++) {
+			for( j=0; j<Station.stationNames90H.size();j++) {
 				try( 
-					FileWriter forth = new FileWriter("departure times\\"+"90H "+beolv.stationNames90H.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"90H "+beolv.stationNames90H.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"90H "+Station.stationNames90H.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"90H "+Station.stationNames90H.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 						  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -128,10 +122,10 @@ public class FileWriting {
 					System.out.println(e.getMessage());
 				}
 			}
-			for( j=0; j<beolv.stationNames8.size();j++) {
+			for( j=0; j<Station.stationNames8.size();j++) {
 				try( 
-					FileWriter forth = new FileWriter("departure times\\"+"8 "+beolv.stationNames8.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"8 "+beolv.stationNames8.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+					FileWriter forth = new FileWriter("departure times\\"+"8 "+Station.stationNames8.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"8 "+Station.stationNames8.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 						  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -145,10 +139,10 @@ public class FileWriting {
 					System.out.println(e.getMessage());
 				}
 			}
-			for( j=0; j<beolv.stationNames10.size();j++) {
+			for( j=0; j<Station.stationNames10.size();j++) {
 				try( 
-					FileWriter forth = new FileWriter("departure times\\"+"10 "+beolv.stationNames10.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"10 "+beolv.stationNames10.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){	  
+					FileWriter forth = new FileWriter("departure times\\"+"10 "+Station.stationNames10.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"10 "+Station.stationNames10.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){	  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
 						forth.write("08:00\n");
@@ -161,10 +155,10 @@ public class FileWriting {
 					System.out.println(e.getMessage());
 				}
 			}
-			for( j=0; j<beolv.stationNames19.size();j++) {
-				try( //"departure times\\+"19 "+beolv.stationNames19.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt"
-					FileWriter forth = new FileWriter("departure times\\"+"19 "+beolv.stationNames19.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
-					FileWriter back = new FileWriter("departure times\\"+"19 "+beolv.stationNames19.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
+			for( j=0; j<Station.stationNames19.size();j++) {
+				try( //"departure times\\+"19 "+Station.stationNames19.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt"
+					FileWriter forth = new FileWriter("departure times\\"+"19 "+Station.stationNames19.get(j)+" "+DayTypes.dayTypes.get(i)+" forth.txt");
+					FileWriter back = new FileWriter("departure times\\"+"19 "+Station.stationNames19.get(j)+" "+DayTypes.dayTypes.get(i)+" back.txt")){
 						  
 						forth.write("06:00\n");
 						forth.write("07:00\n");
@@ -184,9 +178,9 @@ public class FileWriting {
 	
 	public static void main(String[]args) {
 		fileWriting();
-	/*	beolv.readIn2("stations\\stations for trams\\stations for 2.txt");
-		beolv.printStations2(beolv.stationNames2);
-		for(String stat2 : beolv.stationNames2) {
+	/*	Station.readIn2("stations\\stations for trams\\stations for 2.txt");
+		Station.printStations2(Station.stationNames2);
+		for(String stat2 : Station.stationNames2) {
 			System.out.println(stat2);
 		}*/
 	}
