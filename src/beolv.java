@@ -258,9 +258,9 @@ System.out.println(outer);
 				String parts[] = line90H.split(",");
 				stationNames90H.add(parts[0]);		
 			}
-			stationNamesList.add(stationNames70);
+		/*	stationNamesList.add(stationNames70);
 			stationNamesList.add(stationNames71A);
-			stationNamesList.add(stationNames90H);
+			stationNamesList.add(stationNames90H);*/
 			buffer70.close();
 			buffer71A.close();
 			buffer90H.close();
@@ -307,10 +307,10 @@ System.out.println(outer);
 				String parts[] = line19.split(",");
 				stationNames19.add(parts[0]);		
 			}
-
+/*
 			stationNamesList.add(stationNames8);
 			stationNamesList.add(stationNames10);
-			stationNamesList.add(stationNames19); 
+			stationNamesList.add(stationNames19); */
 
 			buffer8.close();
 			buffer10.close();
