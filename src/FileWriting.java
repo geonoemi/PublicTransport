@@ -12,13 +12,51 @@ public class FileWriting {
 		int k;
 		
 		DayTypes.readIn("classes files\\day types.txt");
-		Station.readInTrams();
-		Station.readInBuses();
-		Station.readInTrolleys();
+		beolv.readInTrams();
+		beolv.readInBuses();
+		beolv.readInTrolleys();
 		String[]way={"forth","back"};
 		
 		try{	
 			for(i=0;i<DayTypes.dayTypes.size();i++) {
+				for(k=0;k<way.length;k++) {
+					for ( i = 0; i < beolv.stationNamesList.size(); i++) { 
+			            for (int a = 0; a < beolv.stationNamesList.get(i).size(); a++) { 
+			               		
+						FileWriter file = new FileWriter("departure times\\"+ beolv.stationNamesList.get(i)+beolv.stationNamesList.get(a)+" "+DayTypes.dayTypes.get(i)+" "+way[k]+".txt");
+						for(int t=6; t<22;t++) {	
+							file.write(" "+t+":00\n");
+						}		
+						file.close();				
+					}
+				}
+			}
+		}
+		}catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static void main(String[]args) {
+		fileWriting();
+		//beolv.readIn();
+		beolv.readInTrams();
+		beolv.readInBuses();
+		beolv.readInTrolleys();
+		
+/*		for (int i = 0; i < beolv.stationNamesList.size(); i++) { 
+            for (int a = 0; a < beolv.stationNamesList.get(i).size(); a++) { 
+                System.out.print(beolv.stationNamesList.get(i).get(a) + " "); 
+            } 
+            System.out.println(); 
+        }
+	*/	
+		for(ArrayList<String> stationNamesList : beolv.stationNamesList) {
+			System.out.println(stationNamesList);
+		}
+	}
+}	
+		/*	for(i=0;i<DayTypes.dayTypes.size();i++) {
 				for(k=0;k<way.length;k++) {
 					for( j=0; j<Station.stationNames2.size();j++) {	//( //try with resource ->nem kell close-olgatni semmit, pontosvesszõvel felsoroljuk a fájlokat, amiket írni szeretnénk
 							
@@ -93,13 +131,5 @@ public class FileWriting {
 						file19.close();
 					}
 				}
-			}
-		}catch(IOException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
-	public static void main(String[]args) {
-		fileWriting();
-	}
-}	
+			}*/
+

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Locale;
 public class beolv {
 	
@@ -333,15 +334,23 @@ System.out.println(outer);
 		stationNamesList.add(stationNames10);
 		stationNamesList.add(stationNames19); 
 		
-		for(ArrayList<String> stationNamesList : stationNamesList) {
-		//	System.out.println(stationNamesList);
-		}
-		for (int i = 0; i < stationNamesList.size(); i++) { 
-            for (int j = 0; j < stationNamesList.get(i).size(); j++) { 
-                System.out.print(stationNamesList.get(i).get(j) + " "); 
+	/*	 Iterator iterator = stationNamesList.iterator(); 
+		 for (int i = 0; i < stationNamesList.size(); i++) { 
+			
+		          //  System.out.println(iterator.next() + " "); 
+			 System.out.println(stationNamesList.iterator()+": "+iterator.next() + " ");
+		       
+		 }*/
+		
+	      //  System.out.println(); 
+	  	for (int i = 0; i < stationNamesList.size(); i++) { 
+			System.out.print(stationNamesList.get(i)+": ");
+          for (int a = 0; a < stationNamesList.get(i).size(); a++) { 
+               System.out.print(stationNamesList.get(i).get(a) + " "); 
             } 
-            System.out.println(); 
-        } 
+  	  	System.out.println();
+
+     	}
 	
 	}	
 }
