@@ -11,8 +11,8 @@ public class Station {
 	private String coordinateX;
 	private String coordinateY;
 	private String stationName;
-	
 	private boolean hasCable;
+	
 	static ArrayList<Station> stations=new ArrayList<>();
 	static ArrayList<String> stationNames=new ArrayList<>();
 	static ArrayList<String> stationNames2=new ArrayList<>();
@@ -25,6 +25,9 @@ public class Station {
 	static ArrayList<String> stationNames10=new ArrayList<>();
 	static ArrayList<String> stationNames19=new ArrayList<>();
 
+	ArrayList<ArrayList<String>> outer = new ArrayList<ArrayList<String>>();
+    ArrayList<String> inner = new ArrayList<String>();       
+	
 	static ArrayList<String> x=new ArrayList<>();
 	static ArrayList<String> y=new ArrayList<>();
 	static ArrayList<Boolean> cables=new ArrayList<>();
@@ -38,7 +41,69 @@ public class Station {
 		this.hasCable=hasCable;
 
 	}
-	
+	/*  ArrayList<ArrayList<Integer>> outer = new ArrayList<ArrayList<Integer>>();
+    ArrayList<Integer> inner = new ArrayList<Integer>();        
+
+    inner.add(100);     
+    inner.add(200);
+    outer.add(inner); // add first list
+    inner = new ArrayList<Integer>(inner); // create a new inner list that has the same content as  
+                                           // the original inner list
+    outer.add(inner); // add second list
+
+    outer.get(0).add(300); // changes only the first inner list
+
+    System.out.println(outer);
+	 * 
+	 * 
+	 * 
+	 * List<List<Integer>> outer = new ArrayList<List<Integer>>();
+List<Integer> inner1 = new ArrayList<Integer>();
+List<Integer> inner2 = new ArrayList<Integer>();
+
+inner1.add(100);
+inner1.add(200);
+
+inner2.add(100);
+inner2.add(200);
+
+outer.add(inner1);
+outer.add(inner2);
+
+outer.get(0).add(300);
+
+System.out.println(outer);
+	 *        
+	 *        
+	 *        
+	 *        ArrayList<ArrayList<Integer> > aList =  
+                  new ArrayList<ArrayList<Integer> >(n); 
+  
+        // Create n lists one by one and append to the  
+        // master list (ArrayList of ArrayList) 
+        ArrayList<Integer> a1 = new ArrayList<Integer>(); 
+        a1.add(1); 
+        a1.add(2); 
+        aList.add(a1); 
+  
+        ArrayList<Integer> a2 = new ArrayList<Integer>(); 
+        a2.add(5); 
+        aList.add(a2); 
+  
+        ArrayList<Integer> a3 = new ArrayList<Integer>(); 
+        a3.add(10); 
+        a3.add(20); 
+        a3.add(30); 
+        aList.add(a3); 
+  
+        for (int i = 0; i < aList.size(); i++) { 
+            for (int j = 0; j < aList.get(i).size(); j++) { 
+                System.out.print(aList.get(i).get(j) + " "); 
+            } 
+            System.out.println(); 
+        } 
+    } 
+} */
 	public static void readIn(String fileName){
 		
 		try {
