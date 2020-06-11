@@ -111,6 +111,7 @@ System.out.println(outer);
     } 
 } */
 	public static void readIn(String fileName){
+	
 		
 		try {
 			
@@ -207,7 +208,9 @@ System.out.println(outer);
 				String parts[] = line4.split(",");				
 				stationNames4.add(parts[0]);			
 			}
-
+			stationNamesList.add(stationNames2);
+			stationNamesList.add(stationNames3F);
+			stationNamesList.add(stationNames4);
 			buffer2.close();
 			buffer3F.close();
 			buffer4.close();
@@ -255,6 +258,9 @@ System.out.println(outer);
 				String parts[] = line90H.split(",");
 				stationNames90H.add(parts[0]);		
 			}
+			stationNamesList.add(stationNames70);
+			stationNamesList.add(stationNames71A);
+			stationNamesList.add(stationNames90H);
 			buffer70.close();
 			buffer71A.close();
 			buffer90H.close();
@@ -301,6 +307,11 @@ System.out.println(outer);
 				String parts[] = line19.split(",");
 				stationNames19.add(parts[0]);		
 			}
+
+			stationNamesList.add(stationNames8);
+			stationNamesList.add(stationNames10);
+			stationNamesList.add(stationNames19); 
+
 			buffer8.close();
 			buffer10.close();
 			buffer19.close();
@@ -324,33 +335,24 @@ System.out.println(outer);
 		readInTrams();
 		readInTrolleys();
 		
-		stationNamesList.add(stationNames2);
-		stationNamesList.add(stationNames3F);
-		stationNamesList.add(stationNames4);
-		stationNamesList.add(stationNames70);
-		stationNamesList.add(stationNames71A);
-		stationNamesList.add(stationNames90H);
-		stationNamesList.add(stationNames8);
-		stationNamesList.add(stationNames10);
-		stationNamesList.add(stationNames19); 
 		
-	/*	 Iterator iterator = stationNamesList.iterator(); 
-		 for (int i = 0; i < stationNamesList.size(); i++) { 
-			
-		          //  System.out.println(iterator.next() + " "); 
-			 System.out.println(stationNamesList.iterator()+": "+iterator.next() + " ");
-		       
-		 }*/
-		
-	      //  System.out.println(); 
 	  	for (int i = 0; i < stationNamesList.size(); i++) { 
-			System.out.print(stationNamesList.get(i)+": ");
-          for (int a = 0; a < stationNamesList.get(i).size(); a++) { 
+	  		for (int a = 0; a < stationNamesList.get(i).size(); a++) { 
                System.out.print(stationNamesList.get(i).get(a) + " "); 
             } 
-  	  	System.out.println();
-
+	  		System.out.println();
      	}
 	
 	}	
 }
+
+
+/*	 Iterator iterator = stationNamesList.iterator(); 
+ for (int i = 0; i < stationNamesList.size(); i++) { 
+	
+          //  System.out.println(iterator.next() + " "); 
+	 System.out.println(stationNamesList.iterator()+": "+iterator.next() + " ");
+       
+ }*/
+
+  //  System.out.println(); 
