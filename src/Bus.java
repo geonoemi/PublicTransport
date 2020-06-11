@@ -7,18 +7,16 @@ import java.util.InputMismatchException;
 
 public class Bus extends Vehicle {
 
-		public Bus(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-					boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-					boolean hasWheel, String typeOfVehicle) {
-			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+		public Bus(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+					boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+				super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 		protected static ArrayList<Bus> buses=new ArrayList<>();
 		protected static ArrayList<String> busesLineNums=new ArrayList<>();
 		
 		private String plateNumber;
 		
-public static void readIn(String fileName){ 
+		public static void readIn(String fileName){ 
 			
 			try {
 				
@@ -44,11 +42,9 @@ public static void readIn(String fileName){
 						typeOfVehicles.add(parts[10]);
 								
 						Bus bus=new Bus(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
-								hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), 
-								hasWheels.get(i), typeOfVehicles.get(i));
+										hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
 
 						buses.add((Bus) bus);
-							
 				
 					i++;
 				}
@@ -63,20 +59,9 @@ public static void readIn(String fileName){
 				System.out.println("Not appropriate input type.");
 			}		
 		}
-		
-		
-	/*	public static void fillBus(){
-		}	
-		
-		public static void printBus() {
-			fillBus();
-			for(Busww bus:buses) {
-				System.out.println(bus);
-			}
-		}
-	*/	
+	
 		public static void fillBusLineNums() { //used in printBusLineNums()
-			//fillVehicles();
+			
 			for(Bus bus:buses) {
 				busesLineNums.add(bus.lineNum);
 			}
@@ -90,12 +75,5 @@ public static void readIn(String fileName){
 				System.out.println(linenum);
 			}
 		}
-		public static void main (String[]args) {
-			
-		//	readIn("classes files\\buses.txt");
-
-			//printBusLineNums();
-		}
 }
-
 

@@ -13,20 +13,13 @@ public class Route extends Vehicle {
 
 	protected static String userChoice;
 	
-	public Route(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+	public Route(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
+				 boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	
 	public static void getARoute() {
-		//in-memory kollekcióknak utánaolvasni
-		//menetrend class:tehát egy komplett menedtrend minkdeképp legyen egy ArrayList ami minden menetrend bejegyzést tartalmaz ilyen adattagokkal hogy Vehicle, egy indulás, Állomás objektum, érkezés
-		//mi megy a stackbe,mi a heapbe?
-		//git ignore?
-
 	
 		Scanner scanStation=new Scanner(System.in);
 		String station="";

@@ -10,11 +10,9 @@ public class Tram extends Vehicle {
 	protected static ArrayList<Tram> trams=new ArrayList<>();
 	protected static ArrayList<String> tramsLineNums=new ArrayList<>();
 	
-	public Tram(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+	public Tram(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, Boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+				boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	public static void readIn(String fileName){ 
@@ -41,10 +39,9 @@ public class Tram extends Vehicle {
 					fuelTypes.add(parts[8]);
 					hasWheels.add(Boolean.parseBoolean(parts[9]));
 					typeOfVehicles.add(parts[10]);
-				//villi feltöltés hova lett?
+					
 					Tram tram=new Tram(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
-												hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), 
-												hasWheels.get(i), typeOfVehicles.get(i));
+										hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
 					trams.add(tram);				
 			
 				i++;
@@ -60,18 +57,8 @@ public class Tram extends Vehicle {
 			System.out.println("Not appropriate input type.");
 		}		
 	}
-	
-	
-	
-	public static void printTram() {
-		
-		for(Tram tram:trams) {
-			System.out.println(tram);
-		}
-	}
-	
+
 	public static void fillTramLineNums() { //used in printTramLineNums()
-		//fillVehicles();
 		for(Tram tram:trams) {
 			tramsLineNums.add(tram.lineNum);
 		}
@@ -84,11 +71,6 @@ public class Tram extends Vehicle {
 			for(String linenum: tramsLineNums) {
 				System.out.println(linenum);
 			}
-	}
-	public static void main(String[] args) {
-		//readIn("classes files\\trams.txt");
-
-		//printTramLineNums();	
 	}
 }
 

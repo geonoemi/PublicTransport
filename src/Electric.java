@@ -2,11 +2,9 @@ import java.util.ArrayList;
 
 public class Electric extends Vehicle {
 	
-	public Electric(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+	public Electric(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces,
+					boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 	/*
 	boolean canRunAlongHere(Station station);
@@ -18,9 +16,8 @@ public class Electric extends Vehicle {
 			
 			if(vehicle.typeOfFuel.equals("electrical energy")){
 				
-				Electric electric=new Electric(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
-			 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
-			 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
+				Electric electric=new Electric(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor, vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, 
+											   vehicle.numOfDisabledPlaces, vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
 
 				electricVehicles.add((Electric) electric);
 				

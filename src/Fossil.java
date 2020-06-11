@@ -2,11 +2,9 @@ import java.util.ArrayList;
 
 public class Fossil extends Vehicle{
 	
-	public Fossil(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+	public Fossil(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+				  boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	protected static ArrayList<Fossil> fossilVehicles=new ArrayList<>();
@@ -16,9 +14,8 @@ public class Fossil extends Vehicle{
 			
 			if(vehicle.typeOfFuel.equals("petrol") || vehicle.typeOfFuel.equals("diesel oil")) {
 				
-				Fossil fossil=new Fossil(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor,
-			 			vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, vehicle.numOfDisabledPlaces,
-			 			vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
+				Fossil fossil=new Fossil(vehicle.lineNum,  vehicle.articulate, vehicle.lowFloor, vehicle.operationCost, vehicle.numOfSeats, vehicle.bicycleTransportOpp, 
+										 vehicle.numOfDisabledPlaces, vehicle.needToRepair, vehicle.typeOfFuel, vehicle.hasWheel, vehicle.typeOfVehicle);
 
 				fossilVehicles.add(fossil);
 			}

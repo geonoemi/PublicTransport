@@ -2,11 +2,9 @@ import java.util.ArrayList;
 
 public class Disabled extends Vehicle {
 
-	public Disabled(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+	public Disabled(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+					boolean needToRepair, String typeOfFuel,boolean hasWheel, String typeOfVehicle) {
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	
@@ -23,9 +21,8 @@ public class Disabled extends Vehicle {
 		
 			if(trams.lowFloor && trams.numOfDisabledPlaces>=1) {
 			
-				Disabled disabledTram=new Disabled(trams.lineNum,  trams.articulate, trams.lowFloor,
-			 			trams.operationCost, trams.numOfSeats, trams.bicycleTransportOpp, trams.numOfDisabledPlaces,
-			 			trams.needToRepair, trams.typeOfFuel, trams.hasWheel, trams.typeOfVehicle);
+				Disabled disabledTram=new Disabled(trams.lineNum,  trams.articulate, trams.lowFloor, trams.operationCost, trams.numOfSeats, trams.bicycleTransportOpp,
+												   trams.numOfDisabledPlaces, trams.needToRepair, trams.typeOfFuel, trams.hasWheel, trams.typeOfVehicle);
 				
 				disabledTrams.add(disabledTram);
 			}	
@@ -75,9 +72,9 @@ public class Disabled extends Vehicle {
 		
 			if(trolleys.lowFloor && trolleys.numOfDisabledPlaces>=1) {
 				
-				Disabled disabledTrolley=new Disabled(trolleys.lineNum,  trolleys.articulate, trolleys.lowFloor,
-			 			trolleys.operationCost, trolleys.numOfSeats, trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,
-			 			trolleys.needToRepair, trolleys.typeOfFuel, trolleys.hasWheel, trolleys.typeOfVehicle); 
+				Disabled disabledTrolley=new Disabled(trolleys.lineNum,  trolleys.articulate, trolleys.lowFloor, trolleys.operationCost, trolleys.numOfSeats, 
+													  trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,	trolleys.needToRepair, trolleys.typeOfFuel, 
+													  trolleys.hasWheel, trolleys.typeOfVehicle); 
 			
 				disabledTrolleys.add(disabledTrolley);
 			}	

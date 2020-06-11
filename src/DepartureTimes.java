@@ -12,11 +12,10 @@ public class DepartureTimes extends Route {
 	
 	private static ArrayList<String>departureTimes=new ArrayList<>();
 	
-	public DepartureTimes(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats,
-			boolean bicycleTransportOpp, int numOfDisabledPlaces, boolean needToRepair, String typeOfFuel,
-			boolean hasWheel, String typeOfVehicle) {
-		super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
-				typeOfFuel, hasWheel, typeOfVehicle);
+	public DepartureTimes(String lineNum, boolean articulated, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+						  boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+					super(lineNum, articulated, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,
+						  typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	public static void readIn(String fileName){ //used in readInDepartureTimes(String directoryName)
