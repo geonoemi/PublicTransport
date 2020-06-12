@@ -172,6 +172,7 @@ public class Station {
 		}	
 		
 	}	
+	//70 buszra
 		public static void printStations70(ArrayList<String> stationNames70) { //used in Route.getARoute()
 
 			stationNames70.clear(); //tüneti kezelés...
@@ -203,10 +204,107 @@ public class Station {
 		    }
 		}	
 		
+	//71A buszra
+		public static void printStations71A(ArrayList<String> stationNames71A) { //used in Route.getARoute()
+
+			stationNames71A.clear(); //tüneti kezelés...
+			readInBuses();
+			//readIn("stations\\stations for buses\\stations for 71A.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames71A(hu,stationNames71A);
+			
+			for (String stations:stationNames71A) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames71A(Collator collator, ArrayList <String> stationNames71A) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames71A.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames71A.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames71A.get(i), stationNames71A.get(j)) > 0) {
+		            	
+			              tmp = stationNames71A.get(i);
+			              stationNames71A.set(i,stationNames71A.get(j));
+			              stationNames71A.set(j,tmp);
+		            }
+		        }
+		    }
+		}	
+	
+		//90H buszra
+		public static void printStations90H(ArrayList<String> stationNames90H) { //used in Route.getARoute()
+
+			stationNames90H.clear(); //tüneti kezelés...
+			readInBuses();
+			//readIn("stations\\stations for buses\\stations for 90H.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames90H(hu,stationNames90H);
+			
+			for (String stations:stationNames90H) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames90H(Collator collator, ArrayList <String> stationNames90H) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames90H.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames90H.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames90H.get(i), stationNames90H.get(j)) > 0) {
+		            	
+			              tmp = stationNames90H.get(i);
+			              stationNames90H.set(i,stationNames90H.get(j));
+			              stationNames90H.set(j,tmp);
+		            }
+		        }
+		    }
+		}
+	
+	//2-ES VILLI
+		public static void printStations2(ArrayList<String> stationNames2) { //used in Route.getARoute()
+
+			stationNames2.clear(); //tüneti kezelés...
+			readInTrams();
+			//readIn("stations\\stations for buses\\stations for 2.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames2(hu,stationNames2);
+			
+			for (String stations:stationNames2) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames2(Collator collator, ArrayList <String> stationNames2) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames2.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames2.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames2.get(i), stationNames2.get(j)) > 0) {
+		            	
+			              tmp = stationNames2.get(i);
+			              stationNames2.set(i,stationNames2.get(j));
+			              stationNames2.set(j,tmp);
+		            }
+		        }
+		    }
+		}
+		
+		
 	public static void main(String[] args) {
 		//readIn("stations\\stations for buses\\stations for 70.txt");
-		printStations70(stationNames70);
-		for (String stations:stationNames70) {
+		printStations71A(stationNames71A);
+		for (String stations:stationNames71A) {
 		//	System.out.println(stations);
 		}
 	}

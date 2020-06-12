@@ -52,7 +52,6 @@ public class Route extends Line {
 			if (typeOfVehicle==1) { 
 				Bus.readIn("classes files\\buses.txt"); //ArrayLists from Vehicles
 				
-
 				do {
 					
 					System.out.println("Choose from the following buses:");
@@ -74,6 +73,31 @@ public class Route extends Line {
 						
 					}while(!Station.stationNames70.contains(station));	
 				}
+				
+				if(lineNumAndLetter.equals("71A")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations71A(Station.stationNames71A);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames71A.contains(station));	
+				}
+				
+				if(lineNumAndLetter.equals("90H")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations90H(Station.stationNames90H);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames90H.contains(station));	
+				}
+				
 				}
 //villamos ág			
 			else if (typeOfVehicle==2) { 
@@ -85,6 +109,21 @@ public class Route extends Line {
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
 				}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
+				
+				Station.readInTrams();
+				
+				if(lineNumAndLetter.equals("2")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations2(Station.stationNames2);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames2.contains(station));	
+				}
+				
 			}
 //troli ág			
 			else if (typeOfVehicle==3) { 	
