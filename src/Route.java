@@ -45,10 +45,14 @@ public class Route extends Line {
 		Scanner scanNumAndLetter=new Scanner(System.in);
 		String lineNumAndLetter="";
 		
+		Scanner scanStation=new Scanner(System.in);
+		String station="";
+		
+//busz ág		
 			if (typeOfVehicle==1) { 
 				Bus.readIn("classes files\\buses.txt"); //ArrayLists from Vehicles
+				
 
-				//Bus.fillBus();
 				do {
 					
 					System.out.println("Choose from the following buses:");
@@ -56,8 +60,22 @@ public class Route extends Line {
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
 				}while(!(Bus.busesLineNums.contains(lineNumAndLetter))); 
-			}
 			
+				Station.readInBuses();
+				
+				if(lineNumAndLetter.equals("70")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations70(Station.stationNames70);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames70.contains(station));	
+				}
+				}
+//villamos ág			
 			else if (typeOfVehicle==2) { 
 				Tram.readIn("classes files\\trams.txt");
 				//Tram.fillTram();
@@ -68,7 +86,7 @@ public class Route extends Line {
 					
 				}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
 			}
-			
+//troli ág			
 			else if (typeOfVehicle==3) { 	
 				Trolley.readIn("classes files\\trolleys.txt");
 				
@@ -81,7 +99,7 @@ public class Route extends Line {
 				}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
 			}
 		
-		Scanner scanStation=new Scanner(System.in);
+	/*	Scanner scanStation=new Scanner(System.in);
 		String station="";
 			do {
 				System.out.println("Choose station: ");
@@ -89,7 +107,7 @@ public class Route extends Line {
 				station=scanStation.nextLine();
 				
 			}while(!Station.stationNames.contains(station));		//station.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
-				
+	*/			
 			
 		Scanner scanWay=new Scanner(System.in);
 		String way="";

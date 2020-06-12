@@ -77,35 +77,7 @@ public class Station {
 		}		
 	}
 
-	public static void printStations(ArrayList<String> stationNames) { //used in Route.getARoute()
-
-		stationNames.clear(); //tüneti kezelés...
-		readIn("classes files\\stations.txt");
-		Collator hu = Collator.getInstance(new Locale("hu","HU"));
-		sortStationNames(hu,stationNames);
-		
-		for (String stations:stationNames) {
-			System.out.println(stations);
-		}
-	}
-	
-	public static void sortStationNames(Collator collator, ArrayList <String> stationNames) { //used in Station.printStations(ArrayList<String> stationNames)
-		
-	    String tmp;
-	    
-	    for (int i = 0; i < stationNames.size(); i++) {
-	    	
-	        for (int j = i + 1; j < stationNames.size(); j++) { 
-	        	
-	            if (collator.compare(stationNames.get(i), stationNames.get(j)) > 0) {
-	            	
-		              tmp = stationNames.get(i);
-		              stationNames.set(i,stationNames.get(j));
-		              stationNames.set(j,tmp);
-	            }
-	        }
-	    }
-	}			
+			
 
 	public static void readInTrams(){
 
@@ -197,8 +169,48 @@ public class Station {
 				System.out.println("e.getMessage()");
 		}catch (InputMismatchException exception) {
 				System.out.println("Not appropriate input type.");
-		}		
+		}	
+		
+	}	
+		public static void printStations70(ArrayList<String> stationNames70) { //used in Route.getARoute()
+
+			stationNames70.clear(); //tüneti kezelés...
+			readInBuses();
+			//readIn("stations\\stations for buses\\stations for 70.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames70(hu,stationNames70);
+			
+			for (String stations:stationNames70) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames70(Collator collator, ArrayList <String> stationNames70) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames70.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames70.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames70.get(i), stationNames70.get(j)) > 0) {
+		            	
+			              tmp = stationNames70.get(i);
+			              stationNames70.set(i,stationNames70.get(j));
+			              stationNames70.set(j,tmp);
+		            }
+		        }
+		    }
+		}	
+		
+	public static void main(String[] args) {
+		//readIn("stations\\stations for buses\\stations for 70.txt");
+		printStations70(stationNames70);
+		for (String stations:stationNames70) {
+		//	System.out.println(stations);
+		}
 	}
+	
 	public static void readInTrolleys(){
 
 		try {
