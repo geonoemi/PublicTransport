@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.util.InputMismatchException;
 	
 public abstract class Vehicle {
-	//láthatóságokat ellenőrizni	
+	//láthatóságokat ellenőrizni 
 		protected String lineNum;
 		protected boolean articulate;
 		protected boolean lowFloor;

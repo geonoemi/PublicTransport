@@ -258,9 +258,10 @@ System.out.println(outer);
 				String parts[] = line90H.split(",");
 				stationNames90H.add(parts[0]);		
 			}
-		/*	stationNamesList.add(stationNames70);
+			stationNamesList.add(stationNames70);
 			stationNamesList.add(stationNames71A);
-			stationNamesList.add(stationNames90H);*/
+			stationNamesList.add(stationNames90H);
+			
 			buffer70.close();
 			buffer71A.close();
 			buffer90H.close();
@@ -307,14 +308,15 @@ System.out.println(outer);
 				String parts[] = line19.split(",");
 				stationNames19.add(parts[0]);		
 			}
-/*
+
 			stationNamesList.add(stationNames8);
 			stationNamesList.add(stationNames10);
-			stationNamesList.add(stationNames19); */
+			stationNamesList.add(stationNames19); 
 
 			buffer8.close();
 			buffer10.close();
 			buffer19.close();
+			
 		}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
 		}catch(IOException e) {
@@ -335,24 +337,23 @@ System.out.println(outer);
 		readInTrams();
 		readInTrolleys();
 		
+		Iterator stationNames = stationNamesList.iterator(); 
 		
-	  	for (int i = 0; i < stationNamesList.size(); i++) { 
-	  		for (int a = 0; a < stationNamesList.get(i).size(); a++) { 
-               System.out.print(stationNamesList.get(i).get(a) + " "); 
-            } 
-	  		System.out.println();
-     	}
-	
-	}	
+		for (int i = 0; i < stationNamesList.size(); i++) { 
+		
+	            System.out.println(stationNames.next() + " "); 
+				//System.out.println(stationNamesList.iterator()+": "+iterator.next() + " ");
+	    }
+		
+		for(int i=0;i<stationNamesList.size(); i++) {
+			
+			for( int a=0; a<stationNamesList.get(i).size();a++){
+				System.out.print(stationNamesList.get(i).get(a)+" ");
+			}
+			System.out.println();
+		}	
+	}
+
+
 }
-
-
-/*	 Iterator iterator = stationNamesList.iterator(); 
- for (int i = 0; i < stationNamesList.size(); i++) { 
-	
-          //  System.out.println(iterator.next() + " "); 
-	 System.out.println(stationNamesList.iterator()+": "+iterator.next() + " ");
-       
- }*/
-
   //  System.out.println(); 

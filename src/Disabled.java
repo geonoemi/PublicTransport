@@ -46,9 +46,8 @@ public class Disabled extends Vehicle {
 			
 			if(buses.lowFloor && buses.numOfDisabledPlaces>=1) {
 				
-				Disabled disabledBus=new Disabled(buses.lineNum,  buses.articulate, buses.lowFloor,
-			 			buses.operationCost, buses.numOfSeats, buses.bicycleTransportOpp, buses.numOfDisabledPlaces,
-			 			buses.needToRepair, buses.typeOfFuel, buses.hasWheel, buses.typeOfVehicle);
+				Disabled disabledBus=new Disabled(buses.lineNum,  buses.articulate, buses.lowFloor, buses.operationCost, buses.numOfSeats, buses.bicycleTransportOpp, 
+												  buses.numOfDisabledPlaces, buses.needToRepair, buses.typeOfFuel, buses.hasWheel, buses.typeOfVehicle);
 			
 				disabledBuses.add(disabledBus);
 			}	
