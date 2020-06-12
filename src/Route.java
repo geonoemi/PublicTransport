@@ -50,7 +50,8 @@ public class Route extends Line {
 		
 //busz ág		
 			if (typeOfVehicle==1) { 
-				Bus.readIn("classes files\\buses.txt"); //ArrayLists from Vehicles
+				
+				Bus.readIn(); //ArrayLists from Vehicles
 				
 				do {
 					
@@ -74,7 +75,7 @@ public class Route extends Line {
 					}while(!Station.stationNames70.contains(station));	
 				}
 				
-				if(lineNumAndLetter.equals("71A")) {
+				else if(lineNumAndLetter.equals("71A")) {
 					do {
 						System.out.println("Choose station: ");
 						
@@ -86,7 +87,7 @@ public class Route extends Line {
 					}while(!Station.stationNames71A.contains(station));	
 				}
 				
-				if(lineNumAndLetter.equals("90H")) {
+				else if(lineNumAndLetter.equals("90H")) {
 					do {
 						System.out.println("Choose station: ");
 						
@@ -98,10 +99,10 @@ public class Route extends Line {
 					}while(!Station.stationNames90H.contains(station));	
 				}
 				
-				}
+			}
 //villamos ág			
 			else if (typeOfVehicle==2) { 
-				Tram.readIn("classes files\\trams.txt");
+				Tram.readIn();
 				//Tram.fillTram();
 				do {					
 					System.out.println("Choose from the following trams:");
@@ -124,10 +125,34 @@ public class Route extends Line {
 					}while(!Station.stationNames2.contains(station));	
 				}
 				
+				else if(lineNumAndLetter.equals("3F")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations3F(Station.stationNames3F);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames3F.contains(station));	
+				}
+				
+				else if(lineNumAndLetter.equals("4")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations4(Station.stationNames4);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames4.contains(station));	
+				}
+				
 			}
 //troli ág			
 			else if (typeOfVehicle==3) { 	
-				Trolley.readIn("classes files\\trolleys.txt");
+				Trolley.readIn();
 				
 				//Trolley.fillTrolley();
 				do {					
@@ -136,6 +161,44 @@ public class Route extends Line {
 					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
 					
 				}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
+				
+				Station.readInTrolleys();
+				
+				if(lineNumAndLetter.equals("8")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations8(Station.stationNames8);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames8.contains(station));	
+				}
+				
+				else if(lineNumAndLetter.equals("10")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations10(Station.stationNames10);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames10.contains(station));	
+				}
+				
+				else if(lineNumAndLetter.equals("19")) {
+					do {
+						System.out.println("Choose station: ");
+						
+						Station.printStations19(Station.stationNames19);
+						
+						
+						station=scanStation.nextLine();
+						
+					}while(!Station.stationNames19.contains(station));	
+				}
 			}
 		
 	/*	Scanner scanStation=new Scanner(System.in);

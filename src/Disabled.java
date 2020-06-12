@@ -15,7 +15,7 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledTrams() {
 		
-		Tram.readIn("classes files\\trams.txt");
+		Tram.readIn();
 		
 		for(Tram trams: Tram.trams) {
 		
@@ -40,7 +40,7 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledBuses() {	
 		
-		Bus.readIn("classes files\\buses.txt");
+		Bus.readIn();
 			
 		for(Bus buses: Bus.buses) {
 			
@@ -65,7 +65,7 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledTrolleys() {	
 		
-		Trolley.readIn("classes files\\trolleys.txt");
+		Trolley.readIn();
 		
 		for(Trolley trolleys: Trolley.trolleys) {
 		

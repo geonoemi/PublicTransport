@@ -17,11 +17,11 @@ public class Trolley extends Line  {
 				super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 		}
 
-		public static void readIn(String fileName){ 
+		public static void readIn(){ 
 			
 			try {
 				
-				FileReader reader=new FileReader(fileName);
+				FileReader reader=new FileReader("classes files\\trolleys.txt");
 				BufferedReader buffer=new BufferedReader(reader);
 				String line=null;
 				int i=0;

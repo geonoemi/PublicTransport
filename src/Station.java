@@ -46,7 +46,7 @@ public class Station {
 		
 		try {
 			
-			FileReader reader=new FileReader(fileName);
+			FileReader reader=new FileReader("classes files\\stations.txt");
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=0;
@@ -78,7 +78,55 @@ public class Station {
 	}
 
 			
+	public static void readInBuses(){
 
+		try {
+
+			FileReader reader70=new FileReader("stations\\stations for buses\\stations for 70.txt");
+			BufferedReader buffer70=new BufferedReader(reader70);
+			String line70=null;
+						
+			while((line70=buffer70.readLine())!=null) {
+				
+				String parts[] = line70.split(",");
+				stationNames70.add(parts[0]);		
+			}
+			buffer70.close();
+
+			FileReader reader71A=new FileReader("stations\\stations for buses\\stations for 71A.txt");
+			BufferedReader buffer71A=new BufferedReader(reader71A);
+			String line71A=null;
+						
+			while((line71A=buffer71A.readLine())!=null) {
+				
+				String parts[] = line71A.split(",");
+				stationNames71A.add(parts[0]);		
+			}
+			buffer71A.close();
+
+			FileReader reader90H=new FileReader("stations\\stations for buses\\stations for 90H.txt");
+			BufferedReader buffer90H=new BufferedReader(reader90H);
+			String line90H=null;
+						
+			while((line90H=buffer90H.readLine())!=null) {
+				
+				String parts[] = line90H.split(",");
+				stationNames90H.add(parts[0]);		
+			}
+			buffer90H.close();
+			
+		}catch(FileNotFoundException e) {
+				System.out.println("File not found.");
+		}catch(IOException e) {
+				System.out.println("e.getMessage()");
+		}catch (InputMismatchException exception) {
+				System.out.println("Not appropriate input type.");
+		}	
+		
+	}	
+	
+	
+	
 	public static void readInTrams(){
 
 		try {
@@ -126,42 +174,44 @@ public class Station {
 		}		
 	}
 	
-	public static void readInBuses(){
+	
+	
+	public static void readInTrolleys(){
 
 		try {
 
-			FileReader reader70=new FileReader("stations\\stations for buses\\stations for 70.txt");
-			BufferedReader buffer70=new BufferedReader(reader70);
-			String line70=null;
+			FileReader reader8=new FileReader("stations\\stations for trolleys\\stations for 8.txt");
+			BufferedReader buffer8=new BufferedReader(reader8);
+			String line8=null;
 						
-			while((line70=buffer70.readLine())!=null) {
+			while((line8=buffer8.readLine())!=null) {
 				
-				String parts[] = line70.split(",");
-				stationNames70.add(parts[0]);		
+				String parts[] = line8.split(",");
+				stationNames8.add(parts[0]);		
 			}
-			buffer70.close();
+			buffer8.close();
+			
+			FileReader reader10=new FileReader("stations\\stations for trolleys\\stations for 10.txt");
+			BufferedReader buffer10=new BufferedReader(reader10);
+			String line10=null;
+						
+			while((line10=buffer10.readLine())!=null) {
+				
+				String parts[] = line10.split(",");
+				stationNames10.add(parts[0]);		
+			}
+			buffer10.close();
 
-			FileReader reader71A=new FileReader("stations\\stations for buses\\stations for 71A.txt");
-			BufferedReader buffer71A=new BufferedReader(reader71A);
-			String line71A=null;
+			FileReader reader19=new FileReader("stations\\stations for trolleys\\stations for 19.txt");
+			BufferedReader buffer19=new BufferedReader(reader19);
+			String line19=null;
 						
-			while((line71A=buffer71A.readLine())!=null) {
+			while((line19=buffer19.readLine())!=null) {
 				
-				String parts[] = line71A.split(",");
-				stationNames71A.add(parts[0]);		
+				String parts[] = line19.split(",");
+				stationNames19.add(parts[0]);		
 			}
-			buffer71A.close();
-
-			FileReader reader90H=new FileReader("stations\\stations for buses\\stations for 90H.txt");
-			BufferedReader buffer90H=new BufferedReader(reader90H);
-			String line90H=null;
-						
-			while((line90H=buffer90H.readLine())!=null) {
-				
-				String parts[] = line90H.split(",");
-				stationNames90H.add(parts[0]);		
-			}
-			buffer90H.close();
+			buffer19.close();
 			
 		}catch(FileNotFoundException e) {
 				System.out.println("File not found.");
@@ -169,9 +219,9 @@ public class Station {
 				System.out.println("e.getMessage()");
 		}catch (InputMismatchException exception) {
 				System.out.println("Not appropriate input type.");
-		}	
-		
-	}	
+		}		
+	}
+	
 	//70 buszra
 		public static void printStations70(ArrayList<String> stationNames70) { //used in Route.getARoute()
 
@@ -300,61 +350,175 @@ public class Station {
 		    }
 		}
 		
+	//3f villi
+		public static void printStations3F(ArrayList<String> stationNames3F) { //used in Route.getARoute()
+
+			stationNames3F.clear(); //tüneti kezelés...
+			readInTrams();
+			//readIn("stations\\stations for buses\\stations for 3F.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames3F(hu,stationNames3F);
+			
+			for (String stations:stationNames3F) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames3F(Collator collator, ArrayList <String> stationNames3F) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames3F.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames3F.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames3F.get(i), stationNames3F.get(j)) > 0) {
+		            	
+			              tmp = stationNames3F.get(i);
+			              stationNames3F.set(i,stationNames3F.get(j));
+			              stationNames3F.set(j,tmp);
+		            }
+		        }
+		    }
+		}
+		
+	//4-ES VILLI
+		public static void printStations4(ArrayList<String> stationNames4) { //used in Route.getARoute()
+
+			stationNames4.clear(); //tüneti kezelés...
+			readInTrams();
+			//readIn("stations\\stations for buses\\stations for 4.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames4(hu,stationNames4);
+			
+			for (String stations:stationNames4) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames4(Collator collator, ArrayList <String> stationNames4) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames4.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames4.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames4.get(i), stationNames4.get(j)) > 0) {
+		            	
+			              tmp = stationNames4.get(i);
+			              stationNames4.set(i,stationNames4.get(j));
+			              stationNames4.set(j,tmp);
+		            }
+		        }
+		    }
+		}
+		
+		
+		
+	//8-AS TROLI
+		public static void printStations8(ArrayList<String> stationNames8) { //used in Route.getARoute()
+
+			stationNames8.clear(); //tüneti kezelés...
+			readInTrolleys();
+			//readIn("stations\\stations for buses\\stations for 8.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames8(hu,stationNames8);
+			
+			for (String stations:stationNames8) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames8(Collator collator, ArrayList <String> stationNames8) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames8.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames8.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames8.get(i), stationNames8.get(j)) > 0) {
+		            	
+			              tmp = stationNames8.get(i);
+			              stationNames8.set(i,stationNames8.get(j));
+			              stationNames8.set(j,tmp);
+		            }
+		        }
+		    }
+		}
+		
+		public static void printStations10(ArrayList<String> stationNames10) { //used in Route.getARoute()
+
+			stationNames10.clear(); //tüneti kezelés...
+			readInTrolleys();
+			//readIn("stations\\stations for buses\\stations for 10.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames10(hu,stationNames10);
+			
+			for (String stations:stationNames10) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames10(Collator collator, ArrayList <String> stationNames10) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames10.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames10.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames10.get(i), stationNames10.get(j)) > 0) {
+		            	
+			              tmp = stationNames10.get(i);
+			              stationNames10.set(i,stationNames10.get(j));
+			              stationNames10.set(j,tmp);
+		            }
+		        }
+		    }
+		}
+		
+		public static void printStations19(ArrayList<String> stationNames19) { //used in Route.getARoute()
+
+			stationNames19.clear(); //tüneti kezelés...
+			readInTrolleys();
+			//readIn("stations\\stations for buses\\stations for 19.txt");
+			Collator hu = Collator.getInstance(new Locale("hu","HU"));
+			sortStationNames19(hu,stationNames19);
+			
+			for (String stations:stationNames19) {
+				System.out.println(stations);
+			}
+		}
+		
+		public static void sortStationNames19(Collator collator, ArrayList <String> stationNames19) { //used in Station.printStations(ArrayList<String> stationNames)
+			
+		    String tmp;
+		    
+		    for (int i = 0; i < stationNames19.size(); i++) {
+		    	
+		        for (int j = i + 1; j < stationNames19.size(); j++) { 
+		        	
+		            if (collator.compare(stationNames19.get(i), stationNames19.get(j)) > 0) {
+		            	
+			              tmp = stationNames19.get(i);
+			              stationNames19.set(i,stationNames19.get(j));
+			              stationNames19.set(j,tmp);
+		            }
+		        }
+		    }
+		}
 		
 	public static void main(String[] args) {
 		//readIn("stations\\stations for buses\\stations for 70.txt");
-		printStations71A(stationNames71A);
-		for (String stations:stationNames71A) {
-		//	System.out.println(stations);
+	//	printStations71A(stationNames71A);
+		for (String stations:stationNames19) {
+			System.out.println(stations);
 		}
 	}
 	
-	public static void readInTrolleys(){
-
-		try {
-
-			FileReader reader8=new FileReader("stations\\stations for trolleys\\stations for 8.txt");
-			BufferedReader buffer8=new BufferedReader(reader8);
-			String line8=null;
-						
-			while((line8=buffer8.readLine())!=null) {
-				
-				String parts[] = line8.split(",");
-				stationNames8.add(parts[0]);		
-			}
-			
-			FileReader reader10=new FileReader("stations\\stations for trolleys\\stations for 10.txt");
-			BufferedReader buffer10=new BufferedReader(reader10);
-			String line10=null;
-						
-			while((line10=buffer10.readLine())!=null) {
-				
-				String parts[] = line10.split(",");
-				stationNames10.add(parts[0]);		
-			}
-			
-
-			FileReader reader19=new FileReader("stations\\stations for trolleys\\stations for 19.txt");
-			BufferedReader buffer19=new BufferedReader(reader19);
-			String line19=null;
-						
-			while((line19=buffer19.readLine())!=null) {
-				
-				String parts[] = line19.split(",");
-				stationNames19.add(parts[0]);		
-			}
-			buffer8.close();
-			buffer10.close();
-			buffer19.close();
-			
-		}catch(FileNotFoundException e) {
-				System.out.println("File not found.");
-		}catch(IOException e) {
-				System.out.println("e.getMessage()");
-		}catch (InputMismatchException exception) {
-				System.out.println("Not appropriate input type.");
-		}		
-	}
+	
 	
 	public String toString() {
 		return stationName+" "+x+" "+y+" "+hasCable;

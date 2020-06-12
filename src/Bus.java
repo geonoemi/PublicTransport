@@ -17,11 +17,11 @@ public class Bus extends Line {
 		
 		private String plateNumber;
 		
-		public static void readIn(String fileName){ 
+		public static void readIn(){ 
 			
 			try {
 				
-				FileReader reader=new FileReader(fileName);
+				FileReader reader=new FileReader("classes files\\buses.txt");
 				BufferedReader buffer=new BufferedReader(reader);
 				String line=null;
 				int i=0;
