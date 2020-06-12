@@ -5,12 +5,13 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class Bus extends Vehicle {
+public class Bus extends Line {
 
 		public Bus(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
-					boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
-				super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
+				   Boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
+				super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel, typeOfVehicle);
 	}
+
 		protected static ArrayList<Bus> buses=new ArrayList<>();
 		protected static ArrayList<String> busesLineNums=new ArrayList<>();
 		

@@ -14,11 +14,11 @@ public class Run {
 		//TODO: Route class scanning tram 3F debug
 		//TODO: Line class for what?
 		//TODO: Schedule class 
-		Tram.readIn("classes files\\trams.txt");
+	/*	Tram.readIn("classes files\\trams.txt");
 		for(Tram trams : Tram.trams) {
 			System.out.println(trams);
-		}
-		//Route.getARoute();
+		}*/
+		Route.getARoute();
 		//System.out.println(Route.userChoice);
 	}
 }

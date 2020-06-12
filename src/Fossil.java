@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Fossil extends Vehicle{
+public class Fossil extends Line{
 	
 	public Fossil(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 				  boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {

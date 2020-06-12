@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Electric extends Vehicle {
+public class Electric extends Line {
 	
 	public Electric(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces,
 					boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {

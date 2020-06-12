@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Disabled extends Vehicle {
+public class Disabled extends Line {
 
 	public Disabled(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 					boolean needToRepair, String typeOfFuel,boolean hasWheel, String typeOfVehicle) {

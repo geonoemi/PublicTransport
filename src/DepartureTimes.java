@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 
-public class DepartureTimes extends Route {
+public class DepartureTimes extends Route { // Is extends Route neccessary?
 	
 	private static ArrayList<String>departureTimes=new ArrayList<>();
 	

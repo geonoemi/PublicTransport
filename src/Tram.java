@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class Tram extends Vehicle {
+public class Tram extends Line {
 
 	protected static ArrayList<Tram> trams=new ArrayList<>();
 	protected static ArrayList<String> tramsLineNums=new ArrayList<>();
