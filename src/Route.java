@@ -24,6 +24,7 @@ public class Route extends Line {
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
 		int typeOfVehicle;
 		
+	
 			do{
 				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
 		
@@ -41,6 +42,27 @@ public class Route extends Line {
 				typeOfVehicle=scanTypeOfVehicle.nextInt(); 
 				
 			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
+		
+		/*	do{
+				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
+		
+				while(!scanTypeOfVehicle.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
+					
+					System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 : ");
+		            scanTypeOfVehicle.next(); 
+				} 
+				while(!(scanTypeOfVehicle.nextInt()==1 ||scanTypeOfVehicle.nextInt()==2 || scanTypeOfVehicle.nextInt()==3)){
+					System.out.println("Wrong number! Enter an integer of 1 / 2 / 3  :"); 
+					scanTypeOfVehicle.next(); 
+				}
+				typeOfVehicle=scanTypeOfVehicle.nextInt(); 
+		//	}while(!(typeOfVehicle==1 ||typeOfVehicle==2 || typeOfVehicle==3) ); 
+			
+			}while(!(scanTypeOfVehicle.nextInt()==1 ||scanTypeOfVehicle.nextInt()==2 || scanTypeOfVehicle.nextInt()==3) ); */
+							            
+			
+
+			
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
 		String lineNumAndLetter="";
@@ -200,37 +222,35 @@ public class Route extends Line {
 					}while(!Station.stationNames19.contains(station));	
 				}
 			}
-		
-	/*	Scanner scanStation=new Scanner(System.in);
-		String station="";
-			do {
-				System.out.println("Choose station: ");
-				Station.printStations(Station.stationNames);
-				station=scanStation.nextLine();
-				
-			}while(!Station.stationNames.contains(station));		//station.nextLine(); //Attila szerint 2 beolvasás közé -> nem kell új Scanner, de nem mûködik
-	*/			
 			
-		Scanner scanWay=new Scanner(System.in);
-		String way="";
-		
-			do {
-			//	try {
-				System.out.println("Way ( FORTH = 1 BACK = 2 ) : ");
+			Scanner scanWay=new Scanner(System.in);
+			String way="";
+			/*workingSystem.out.println("Way ( FORTH = 1 BACK = 2 ) : ");
+					
+						if(scanWay.nextLine().equals("1")){
+							way="forth";
+						}else if(scanWay.nextLine().equals("2")){
+							way="back";
+						}*/
+			
+			do{
+				System.out.println("Way (FORTH = 1 BACK = 2) : ");
 				
-					if(scanWay.nextLine().equals("1")){
-						way="forth";
-					}else if(scanWay.nextLine().equals("2")){
-						way="back";
-					}else {
-						System.out.println("Not appropriate input, please type 1 / 2 : ");
-					}
-			/*	}catch (InputMismatchException exception) {
-					System.out.println("Not appropriate input, please type 1 / 2 : ");
-				}	*/	
-			}while(!(scanWay.nextLine().equals("1") || (scanWay.nextLine().equals("2"))));
-		
-		
+				while(!scanWay.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
+					
+					System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 : ");
+					scanWay.next(); 
+				} 		
+			//	way=scanWay.nextLine(); 
+				if(scanWay.nextLine().equals("1")){
+					way="forth";
+				}else if(scanWay.nextLine().equals("2")){
+					way="back";
+				}
+			}while(!(way.equals("back") || way.equals("forth")));
+		//	}while(!(scanWay.nextLine().equals("1") || scanWay.nextLine().equals("2") || scanWay.nextLine().equals("3")) );
+			
+					
 	
 		Scanner scanDayType=new Scanner(System.in);
 		String dayType=" ";

@@ -116,9 +116,9 @@ public class FileWriting {
 }	
 	
 	public static void main(String[]args) {
-		beolv.readInBuses();
-		beolv.readInTrams();
-		beolv.readInTrolleys();
+		Station.readInBuses();
+		Station.readInTrams();
+		Station.readInTrolleys();
 		
 		fileWriting();
 	}
