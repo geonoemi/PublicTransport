@@ -19,6 +19,6 @@ public class Run {
 			System.out.println(trams);
 		}*/
 		Route.getARoute();
-		System.out.println(Route.userChoice);
+		//System.out.println(Route.userChoice);
 	}
 }

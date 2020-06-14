@@ -89,36 +89,36 @@ public class Route extends Line {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations70(Station.stationNames70);
+						beolv.printStations(beolv.stationNames70);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames70.contains(station));	
+					}while(!beolv.stationNames70.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("71A")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations71A(Station.stationNames71A);
+						beolv.printStations(beolv.stationNames71A);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames71A.contains(station));	
+					}while(!beolv.stationNames71A.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("90H")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations90H(Station.stationNames90H);
+						beolv.printStations(beolv.stationNames90H);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames90H.contains(station));	
+					}while(!beolv.stationNames90H.contains(station));	
 				}
 				
 			}
@@ -139,36 +139,36 @@ public class Route extends Line {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations2(Station.stationNames2);
+						beolv.printStations(beolv.stationNames2);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames2.contains(station));	
+					}while(!beolv.stationNames2.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("3F")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations3F(Station.stationNames3F);
+						beolv.printStations(beolv.stationNames3F);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames3F.contains(station));	
+					}while(!beolv.stationNames3F.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("4")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations4(Station.stationNames4);
+						beolv.printStations(beolv.stationNames4);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames4.contains(station));	
+					}while(!beolv.stationNames4.contains(station));	
 				}
 				
 			}
@@ -190,66 +190,68 @@ public class Route extends Line {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations8(Station.stationNames8);
+						beolv.printStations(beolv.stationNames8);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames8.contains(station));	
+					}while(!beolv.stationNames8.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("10")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations10(Station.stationNames10);
+						beolv.printStations(beolv.stationNames10);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames10.contains(station));	
+					}while(!beolv.stationNames10.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("19")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						Station.printStations19(Station.stationNames19);
+						beolv.printStations(beolv.stationNames19);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!Station.stationNames19.contains(station));	
+					}while(!beolv.stationNames19.contains(station));	
 				}
 			}
 			
 			Scanner scanWay=new Scanner(System.in);
 			String way="";
-			/*workingSystem.out.println("Way ( FORTH = 1 BACK = 2 ) : ");
-					
-						if(scanWay.nextLine().equals("1")){
-							way="forth";
-						}else if(scanWay.nextLine().equals("2")){
-							way="back";
-						}*/
-			
+
 			do{
-				System.out.println("Way (FORTH = 1 BACK = 2) : ");
+				System.out.println("Choose way ( FORTH = 1  BACK = 2 ) : ");
 				
-				while(!scanWay.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
+				while(!scanWay.hasNextInt()){ 												// && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
 					
-					System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 : ");
-					scanWay.next(); 
+					System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+					scanWay.nextLine(); 
 				} 		
-			//	way=scanWay.nextLine(); 
 				if(scanWay.nextLine().equals("1")){
 					way="forth";
 				}else if(scanWay.nextLine().equals("2")){
 					way="back";
+				}else {
+					System.out.println("Wrong number! Type an integer of 1 / 2  : ");
+					scanWay.nextLine(); 
 				}
-			}while(!(way.equals("back") || way.equals("forth")));
-		//	}while(!(scanWay.nextLine().equals("1") || scanWay.nextLine().equals("2") || scanWay.nextLine().equals("3")) );
+			//}while(!(way.equals("back") || way.equals("forth")));
 			
+			}while(!(scanWay.nextLine().equals("1") || scanWay.nextLine().equals("2")) );
+			/*workingSystem.out.println("Way ( FORTH = 1 BACK = 2 ) : ");
+			
+			if(scanWay.nextLine().equals("1")){
+				way="forth";
+			}else if(scanWay.nextLine().equals("2")){
+				way="back";
+			}*/
 					
 	
 		Scanner scanDayType=new Scanner(System.in);

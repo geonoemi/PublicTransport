@@ -78,7 +78,7 @@ public class Station {
 	}
 
 			
-	public static void readInBuses(){
+	public static void readInBuses(){	//used in printStations* , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
 
@@ -127,7 +127,7 @@ public class Station {
 	
 	
 	
-	public static void readInTrams(){
+	public static void readInTrams(){	//used in printStations* , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
 
@@ -176,7 +176,7 @@ public class Station {
 	
 	
 	
-	public static void readInTrolleys(){
+	public static void readInTrolleys(){	//used in printStations* , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
 
@@ -222,7 +222,7 @@ public class Station {
 		}		
 	}
 	
-	//70 buszra
+
 		public static void printStations70(ArrayList<String> stationNames70) { //used in Route.getARoute()
 
 			stationNames70.clear(); //tüneti kezelés...
@@ -254,7 +254,7 @@ public class Station {
 		    }
 		}	
 		
-	//71A buszra
+
 		public static void printStations71A(ArrayList<String> stationNames71A) { //used in Route.getARoute()
 
 			stationNames71A.clear(); //tüneti kezelés...
