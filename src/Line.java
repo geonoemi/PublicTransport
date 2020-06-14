@@ -55,7 +55,8 @@ public abstract class Line {
 			
 			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost +" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
 					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
-		}	
+		}		
+}	
 	/*	
 				
 		public static void fillNeedToRepairVehicles() {
@@ -172,4 +173,4 @@ public class Line{
 
 
 	
-}
+

@@ -23,8 +23,7 @@ public class Route extends Line {
 	
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
 		int typeOfVehicle;
-		
-	
+			
 			do{
 				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
 		
@@ -34,35 +33,10 @@ public class Route extends Line {
 		            scanTypeOfVehicle.next(); 
 				} 
 							
-			/*	while(!(scanTypeOfVehicle.nextInt()==1 || scanTypeOfVehicle.nextInt()==2 || scanTypeOfVehicle.nextInt()==3) ){
-					
-	            	System.out.println("Wrong number! Enter an integer of 1 / 2 / 3  :"); 
-	            	scanTypeOfVehicle.next(); 
-	            }*/
 				typeOfVehicle=scanTypeOfVehicle.nextInt(); 
 				
 			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
-		
-		/*	do{
-				System.out.println("Choose from the types of vehicles: BUS=1, TRAM=2, TROLLEY=3 : ");
-		
-				while(!scanTypeOfVehicle.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
-					
-					System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 : ");
-		            scanTypeOfVehicle.next(); 
-				} 
-				while(!(scanTypeOfVehicle.nextInt()==1 ||scanTypeOfVehicle.nextInt()==2 || scanTypeOfVehicle.nextInt()==3)){
-					System.out.println("Wrong number! Enter an integer of 1 / 2 / 3  :"); 
-					scanTypeOfVehicle.next(); 
-				}
-				typeOfVehicle=scanTypeOfVehicle.nextInt(); 
-		//	}while(!(typeOfVehicle==1 ||typeOfVehicle==2 || typeOfVehicle==3) ); 
-			
-			}while(!(scanTypeOfVehicle.nextInt()==1 ||scanTypeOfVehicle.nextInt()==2 || scanTypeOfVehicle.nextInt()==3) ); */
-							            
-			
-
-			
+				
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
 		String lineNumAndLetter="";
@@ -71,57 +45,53 @@ public class Route extends Line {
 		String station="";
 		
 //busz ág		
-			if (typeOfVehicle==1) { 
+		if (typeOfVehicle==1) { 
 				
-				Bus.readIn(); //ArrayLists from Vehicles
+			Bus.readIn(); //ArrayLists from Vehicles
 				
-				do {
+			do {
 					
-					System.out.println("Choose from the following buses:");
-					Bus.printBusLineNums();
-					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
-					
-				}while(!(Bus.busesLineNums.contains(lineNumAndLetter))); 
+				System.out.println("Choose from the following buses:");
+				Bus.printBusLineNums();
+				lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+		
+			}while(!(Bus.busesLineNums.contains(lineNumAndLetter))); 
 			
-				Station.readInBuses();
+			Station.readInBuses();
 				
-				if(lineNumAndLetter.equals("70")) {
-					do {
-						System.out.println("Choose station: ");
+			if(lineNumAndLetter.equals("70")) {
+				do {
+					System.out.println("Choose station: ");						
+					Station.printStations(Station.stationNames70);
+					
+					station=scanStation.nextLine();
 						
-						Station.printStations(Station.stationNames70);
-						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames70.contains(station));	
-				}
-				
-				else if(lineNumAndLetter.equals("71A")) {
-					do {
-						System.out.println("Choose station: ");
-						
-						Station.printStations(Station.stationNames71A);
-						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames71A.contains(station));	
-				}
-				
-				else if(lineNumAndLetter.equals("90H")) {
-					do {
-						System.out.println("Choose station: ");
-						
-						Station.printStations(Station.stationNames90H);
-						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames90H.contains(station));	
-				}
-				
+				}while(!Station.stationNames70.contains(station));	
 			}
+				
+			else if(lineNumAndLetter.equals("71A")) {
+				do {
+					System.out.println("Choose station: ");
+						
+					Station.printStations(Station.stationNames71A);
+					
+					station=scanStation.nextLine();
+						
+				}while(!Station.stationNames71A.contains(station));	
+			}
+				
+			else if(lineNumAndLetter.equals("90H")) {
+				do {
+					System.out.println("Choose station: ");
+						
+					Station.printStations(Station.stationNames90H);				
+					
+					station=scanStation.nextLine();
+						
+				}while(!Station.stationNames90H.contains(station));	
+			}
+				
+		}
 //villamos ág			
 			else if (typeOfVehicle==2) { 
 				Tram.readIn();
@@ -223,9 +193,8 @@ public class Route extends Line {
 				}
 			}
 			
-			Scanner scanWay=new Scanner(System.in);
-			String way="";
-
+		Scanner scanWay=new Scanner(System.in);
+		String way="";
 			do{
 				System.out.println("Choose way ( FORTH = 1  BACK = 2 ) : ");
 				
@@ -233,7 +202,8 @@ public class Route extends Line {
 					
 					System.out.println("Invalid input! Type an integer of 1 / 2  : ");
 					scanWay.nextLine(); 
-				} 		
+				} 	
+				
 				if(scanWay.nextLine().equals("1")){
 					way="forth";
 				}else if(scanWay.nextLine().equals("2")){
@@ -243,7 +213,6 @@ public class Route extends Line {
 					scanWay.nextLine(); 
 				}
 			//}while(!(way.equals("back") || way.equals("forth")));
-			
 			}while(!(scanWay.nextLine().equals("1") || scanWay.nextLine().equals("2")) );
 			/*workingSystem.out.println("Way ( FORTH = 1 BACK = 2 ) : ");
 			
@@ -273,10 +242,6 @@ public class Route extends Line {
 		scanNumAndLetter.close();
 		scanWay.close();
 		scanDayType.close();
-	
-	/*}catch (InputMismatchException exception) {
-		System.out.println("Not appropriate input type.");
-	}*/
 	}
 	
 	public static void getsOff(String userChoice) { //used in getARoute()

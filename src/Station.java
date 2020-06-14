@@ -234,7 +234,7 @@ public class Station {
 		stationNames.clear(); //tüneti kezelés...
 		readInBuses();
 		readInTrams();
-		readInTrolleys();
+		readInTrolleys();	
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
 		
