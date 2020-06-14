@@ -89,36 +89,36 @@ public class Route extends Line {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames70);
+						Station.printStations(Station.stationNames70);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames70.contains(station));	
+					}while(!Station.stationNames70.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("71A")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames71A);
+						Station.printStations(Station.stationNames71A);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames71A.contains(station));	
+					}while(!Station.stationNames71A.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("90H")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames90H);
+						Station.printStations(Station.stationNames90H);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames90H.contains(station));	
+					}while(!Station.stationNames90H.contains(station));	
 				}
 				
 			}
@@ -139,36 +139,36 @@ public class Route extends Line {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames2);
+						Station.printStations(Station.stationNames2);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames2.contains(station));	
+					}while(!Station.stationNames2.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("3F")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames3F);
+						Station.printStations(Station.stationNames3F);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames3F.contains(station));	
+					}while(!Station.stationNames3F.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("4")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames4);
+						Station.printStations(Station.stationNames4);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames4.contains(station));	
+					}while(!Station.stationNames4.contains(station));	
 				}
 				
 			}
@@ -190,36 +190,36 @@ public class Route extends Line {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames8);
+						Station.printStations(Station.stationNames8);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames8.contains(station));	
+					}while(!Station.stationNames8.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("10")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames10);
+						Station.printStations(Station.stationNames10);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames10.contains(station));	
+					}while(!Station.stationNames10.contains(station));	
 				}
 				
 				else if(lineNumAndLetter.equals("19")) {
 					do {
 						System.out.println("Choose station: ");
 						
-						beolv.printStations(beolv.stationNames19);
+						Station.printStations(Station.stationNames19);
 						
 						
 						station=scanStation.nextLine();
 						
-					}while(!beolv.stationNames19.contains(station));	
+					}while(!Station.stationNames19.contains(station));	
 				}
 			}
 			

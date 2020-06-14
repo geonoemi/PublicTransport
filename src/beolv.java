@@ -248,9 +248,7 @@ public class beolv {
 		}
 	}*/
 	
-	public static void main(String[] args) {
-		printStations(stationNames19);
-	}
+	
 	/*	public static void readIn(String stationsFile){
 	
 	try {
