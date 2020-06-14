@@ -26,23 +26,23 @@ public class Tram extends Line {
 			
 			while((line=buffer.readLine())!=null) {
 				
-					String parts[] = line.split(",");
+				String parts[] = line.split(",");
+				
+				lineNums.add(parts[0]);
+				isArticulate.add(Boolean.valueOf(parts[1]));
+				isLowFloor.add(Boolean.parseBoolean(parts[2]));
+				operationCosts.add(Double.parseDouble(parts[3]));
+				numberOfSeats.add(Integer.parseInt(parts[4]));
+				hasBicycleTransportOpp.add(Boolean.parseBoolean(parts[5]));
+				disabledPlaces.add(Integer.parseInt(parts[6]));
+				needsToRepair.add(Boolean.parseBoolean(parts[7]));
+				fuelTypes.add(parts[8]);
+				hasWheels.add(Boolean.parseBoolean(parts[9]));
+				typeOfVehicles.add(parts[10]);
 					
-					lineNums.add(parts[0]);
-					isArticulate.add(Boolean.valueOf(parts[1]));
-					isLowFloor.add(Boolean.parseBoolean(parts[2]));
-					operationCosts.add(Double.parseDouble(parts[3]));
-					numberOfSeats.add(Integer.parseInt(parts[4]));
-					hasBicycleTransportOpp.add(Boolean.parseBoolean(parts[5]));
-					disabledPlaces.add(Integer.parseInt(parts[6]));
-					needsToRepair.add(Boolean.parseBoolean(parts[7]));
-					fuelTypes.add(parts[8]);
-					hasWheels.add(Boolean.parseBoolean(parts[9]));
-					typeOfVehicles.add(parts[10]);
-					
-					Tram tram=new Tram(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
-										hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
-					trams.add(tram);				
+				Tram tram=new Tram(lineNums.get(i), isArticulate.get(i), isLowFloor.get(i), operationCosts.get(i),  numberOfSeats.get(i),
+									hasBicycleTransportOpp.get(i),  disabledPlaces.get(i), 	needsToRepair.get(i), fuelTypes.get(i), hasWheels.get(i), typeOfVehicles.get(i));
+				trams.add(tram);				
 			
 				i++;
 			}
@@ -59,6 +59,7 @@ public class Tram extends Line {
 	}
 
 	public static void fillTramLineNums() { //used in printTramLineNums()
+		
 		for(Tram tram:trams) {
 			tramsLineNums.add(tram.lineNum);
 		}
@@ -68,6 +69,7 @@ public class Tram extends Line {
 		
 		tramsLineNums.clear();
 		fillTramLineNums();
+		
 			for(String linenum: tramsLineNums) {
 				System.out.println(linenum);
 			}

@@ -51,6 +51,11 @@ public abstract class Line {
 		
 		}
 		
+		public  String toString() {
+			
+			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost +" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
+					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
+		}	
 	/*	
 				
 		public static void fillNeedToRepairVehicles() {
@@ -88,11 +93,7 @@ public abstract class Line {
 			}
 		}
 */
-		public  String toString() {
-			
-			return lineNum+" "+articulate+" "+ lowFloor+" "+  operationCost +" "+numOfSeats+" "+	bicycleTransportOpp+" "+numOfDisabledPlaces
-					+" "+needToRepair+" "+typeOfFuel+" "+hasWheel+" "+typeOfVehicle;
-		}	
+	
 	/*import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

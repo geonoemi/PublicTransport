@@ -8,8 +8,8 @@ public class beolv {
 	private String stationName;
 	private boolean hasCable;
 	
-/*	static ArrayList<Station> stations=new ArrayList<>();
-	static ArrayList<String> stationNames=new ArrayList<>();*/
+	static ArrayList<Station> stations=new ArrayList<>();
+	static ArrayList<String> stationNames=new ArrayList<>();
 	static ArrayList<String> stationNames2=new ArrayList<>();
 	static ArrayList<String> stationNames3F=new ArrayList<>();
 	static ArrayList<String> stationNames4=new ArrayList<>();
@@ -249,7 +249,7 @@ public class beolv {
 	}*/
 	
 	
-	/*	public static void readIn(String stationsFile){
+public static void readIn(String stationsFile){
 	
 	try {
 		
@@ -282,7 +282,7 @@ public class beolv {
 	}catch (InputMismatchException exception) {
 			System.out.println("Not appropriate input type.");
 	}		
-}*/
+}
 	
 	/*	public static void printStations70(ArrayList<String> stationNames70) { //used in Route.getARoute()
 
@@ -460,7 +460,7 @@ public class beolv {
 		
 		
 	//8-AS TROLI
-		public static void printStations8(ArrayList<String> stationNames8) { //used in Route.getARoute()
+/*		public static void printStations8(ArrayList<String> stationNames8) { //used in Route.getARoute()
 
 			stationNames8.clear(); //tüneti kezelés...
 			readInTrolleys();
@@ -471,7 +471,7 @@ public class beolv {
 			for (String stations:stationNames8) {
 				System.out.println(stations);
 			}
-		}
+		}*/
 		
 	/*	public static void sortStationNames8(Collator collator, ArrayList <String> stationNames8) { //used in Station.printStations(ArrayList<String> stationNames)
 			

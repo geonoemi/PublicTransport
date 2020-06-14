@@ -8,8 +8,8 @@ public class Station {
 	private String stationName;
 	private boolean hasCable;
 	
-/*	static ArrayList<Station> stations=new ArrayList<>();
-	static ArrayList<String> stationNames=new ArrayList<>();*/
+	static ArrayList<Station> stations=new ArrayList<>();
+	static ArrayList<String> stationNames=new ArrayList<>();
 	static ArrayList<String> stationNames2=new ArrayList<>();
 	static ArrayList<String> stationNames3F=new ArrayList<>();
 	static ArrayList<String> stationNames4=new ArrayList<>();
@@ -34,7 +34,42 @@ public class Station {
 
 	}
 
-	public static void readInBuses(){	//used in printBusStations , FileWriting.fileWriting() , Route.getARoute()
+	public static void readIn(String stationsFile){
+		
+		try {
+			
+			FileReader reader=new FileReader("classes files\\stations.txt");
+			BufferedReader buffer=new BufferedReader(reader);
+			String line=null;
+			int i=0;
+			
+			while((line=buffer.readLine())!=null) {
+
+				String parts[] = line.split(",");
+				stationNames.add(parts[0]);
+				
+				x.add(parts[1]);
+				y.add(parts[2]);
+				cables.add(Boolean.parseBoolean(parts[3]));
+				
+				Station station=new Station(stationNames.get(i),x.get(i),y.get(i),cables.get(i));
+				stations.add(station);
+
+				i++;				
+			}
+			
+			buffer.close();
+				
+		}catch(FileNotFoundException e) {
+				System.out.println("File not found.");
+		}catch(IOException e) {
+				System.out.println("e.getMessage()");
+		}catch (InputMismatchException exception) {
+				System.out.println("Not appropriate input type.");
+		}		
+	}
+	
+	public static void readInBuses(){	//used in Station.printStations , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
 
@@ -81,7 +116,7 @@ public class Station {
 		
 	}	
 	
-	public static void readInTrams(){	//used in printTramStations , FileWriting.fileWriting() , Route.getARoute()
+	public static void readInTrams(){	//used in Station.printStations , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
 
@@ -129,7 +164,7 @@ public class Station {
 	}
 	
 	
-	public static void readInTrolleys(){	//used in printTramStations , FileWriting.fileWriting() , Route.getARoute()
+	public static void readInTrolleys(){	//used in Station.printStations , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
 
@@ -175,7 +210,7 @@ public class Station {
 		}		
 	}
 	
-	public static void sortStationNames(Collator collator, ArrayList <String> stationName) { //used in Station.print*Stations(ArrayList<String> stationNames)
+	public static void sortStationNames(Collator collator, ArrayList <String> stationName) { //used in Station.printStations(ArrayList<String> stationNames)
 		
 	    String tmp;
 	    
@@ -200,7 +235,6 @@ public class Station {
 		readInBuses();
 		readInTrams();
 		readInTrolleys();
-		//readIn("stations\\stations for buses\\stations for 70.txt");
 		Collator hu = Collator.getInstance(new Locale("hu","HU"));
 		sortStationNames(hu,stationNames);
 		

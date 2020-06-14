@@ -6,17 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class DayTypes {
-	
-	public static String working_day;
-	public static String non_working_day;
-	public static String day_off;
-	public static String working_days_during_school_year;
-	public static String summer_break_working_days;
-	public static String on_public_holidays;
-	public static String during_school_holidays;
-	public static String daily_except_holiday;
-	public static String daily_except_on_public_holidays;
-	
+		
 	public static ArrayList<String>dayTypes=new ArrayList<>();
 	
 	public static void readIn(String fileName){ 

@@ -266,7 +266,7 @@ public class Route extends Line {
 		
 		userChoice =lineNumAndLetter+" "+station+" "+dayType+" "+way;
 	   
-		getsoff(userChoice); //prints deparure Times
+		getsOff(userChoice); //prints deparure Times
 		
 		scanStation.close();
 		scanTypeOfVehicle.close();
@@ -279,7 +279,7 @@ public class Route extends Line {
 	}*/
 	}
 	
-	public static void getsoff(String userChoice) { //used in getARoute()
+	public static void getsOff(String userChoice) { //used in getARoute()
 		
 		System.out.println("This route gets off at the following times from the chosen station: ");
 		DepartureTimes.readInDepartureTimes("departure times");
