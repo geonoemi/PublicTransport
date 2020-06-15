@@ -91,15 +91,4 @@ public class Disabled extends Line {
 			System.out.println(disabledTrolleys);
 		}
 	}
-	
-	public static void main (String[]args) {
-	
-		//printDisabledTrams();
-	//	printDisabledBuses();
-	//	printDisabledTrolleys();
-		fillDisabledTrolleys();
-		for(String disabledTrolleys: disabledTrolleys ) {
-			System.out.println("dsb "+disabledTrolleys);
-		}
-	}
 }

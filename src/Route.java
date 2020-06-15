@@ -10,7 +10,7 @@ public class Route extends Line {
 	}
 
 	
-	@SuppressWarnings("unlikely-arg-type")
+	
 	public static void getARoute() {
 	
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
@@ -19,7 +19,7 @@ public class Route extends Line {
 			do{
 				System.out.println("Choose from the types of vehicles: BUS = 1, TRAM = 2, TROLLEY = 3 : ");
 		
-				while(!scanTypeOfVehicle.hasNextInt()){ // && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
+				while(!scanTypeOfVehicle.hasNextInt()){ 
 					
 					System.out.println("Invalid input! Enter an integer of 1 / 2 / 3 : ");
 		            scanTypeOfVehicle.next(); 
@@ -39,20 +39,25 @@ public class Route extends Line {
 		Scanner scanDisabled=new Scanner(System.in);
 		int disabled=0;
 		
-		if (typeOfVehicle==1) { 	//busz ág
+		if (typeOfVehicle==1) { 	//if bus
 			do {
 				
 				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				
+				while(!scanDisabled.hasNextInt()){ 
+					
+					System.out.println("Invalid input! Enter an integer of 1 / 0 : ");
+					scanDisabled.next(); 
+				} 
 				disabled=scanDisabled.nextInt();
 				
-				if(disabled ==1) {
+				if(disabled==1) {
 					
 					do {
 						System.out.println("Choose from the following buses:");
 						Disabled.printDisabledBuses();
 						
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
-						System.out.println("lineNumAndLetter: "+lineNumAndLetter);
 						
 					}while(! (Disabled.disabledBuses.contains(lineNumAndLetter)) ); 
 					
@@ -68,7 +73,8 @@ public class Route extends Line {
 						}while(!Station.stationNames71A.contains(station));	
 					}
 					
-				}else {
+				}else if(disabled==2) {
+					
 					Bus.readIn(); //ArrayLists from Bus
 
 					do {
@@ -121,57 +127,18 @@ public class Route extends Line {
 				
 			}while(!(disabled==1 || disabled==0));
 		}	
-				/*		do {
-								
-							System.out.println("Choose from the following buses:");
-							Bus.printBusLineNums();
-							lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
-					
-						}while(! (Bus.busesLineNums.contains(lineNumAndLetter)) ); 
-						
-						Station.readInBuses();
-							
-						if(lineNumAndLetter.equals("70")) {
-							
-							do {
-								System.out.println("Choose station: ");						
-								Station.printStations(Station.stationNames70);
-								
-								station=scanStation.nextLine();
-									
-							}while(!Station.stationNames70.contains(station));	
-						}
-							
-						else if(lineNumAndLetter.equals("71A")) {
-							
-							do {
-								System.out.println("Choose station: ");
-									
-								Station.printStations(Station.stationNames71A);
-								
-								station=scanStation.nextLine();
-									
-							}while(!Station.stationNames71A.contains(station));	
-						}
-							
-						else if(lineNumAndLetter.equals("90H")) {
-							
-							do {
-								System.out.println("Choose station: ");
-									
-								Station.printStations(Station.stationNames90H);				
-								
-								station=scanStation.nextLine();
-									
-							}while(!Station.stationNames90H.contains(station));	
-						}
-							
-					}*/
-
-		else if (typeOfVehicle==2) { 	//villamos ág			
+		
+		else if (typeOfVehicle==2) { 	//if tram		
+			
 			do {
 				
 				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				
+				while(!scanDisabled.hasNextInt()){ 
+					
+					System.out.println("Invalid input! Enter an integer of 1 / 0 : ");
+					scanDisabled.next(); 
+				} 
 				disabled=scanDisabled.nextInt();
 				
 				if(disabled ==1) {
@@ -181,7 +148,6 @@ public class Route extends Line {
 						Disabled.printDisabledTrams();
 						
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
-						System.out.println("lineNumAndLetter: "+lineNumAndLetter);
 						
 					}while(! (Disabled.disabledTrams.contains(lineNumAndLetter)) ); 
 					
@@ -197,7 +163,8 @@ public class Route extends Line {
 						}while(!Station.stationNames3F.contains(station));	
 					}
 					
-				}else {
+				}else if(disabled ==2) {
+					
 					Tram.readIn();
 					
 					do {					
@@ -250,12 +217,19 @@ public class Route extends Line {
 				}
 			}while(!(disabled==1 || disabled==0));
 		}
-//troli ág			
-		else if (typeOfVehicle==3) { 
+			
+		else if (typeOfVehicle==3) { //if trolley
 			
 			do {
 				
 				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				
+				while(!scanDisabled.hasNextInt()){ 
+					
+					System.out.println("Invalid input! Enter an integer of 1 / 0 : ");
+					scanDisabled.next(); 
+				} 
+				
 				disabled=scanDisabled.nextInt();
 				
 				if(disabled ==1) {
@@ -265,7 +239,6 @@ public class Route extends Line {
 						Disabled.printDisabledTrolleys();
 						
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
-						System.out.println("lineNumAndLetter: "+lineNumAndLetter);
 						
 					}while(! (Disabled.disabledTrolleys.contains(lineNumAndLetter)) ); 
 					
@@ -281,60 +254,60 @@ public class Route extends Line {
 						}while(!Station.stationNames10.contains(station));	
 					}
 					
-				}else {
+				}else if(disabled ==2) {
 					
-				Trolley.readIn();
+					Trolley.readIn();
+							
+					do {					
+						System.out.println("Choose from the following trolleys:");			
+						Trolley.printTrolleyLineNums();
+						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-				do {					
-					System.out.println("Choose from the following trolleys:");			
-					Trolley.printTrolleyLineNums();
-					lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
+					}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
 					
-				}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
-				
-				Station.readInTrolleys();
-				
-				if(lineNumAndLetter.equals("8")) {
+					Station.readInTrolleys();
 					
-					do {
-						System.out.println("Choose station: ");
+					if(lineNumAndLetter.equals("8")) {
 						
-						Station.printStations(Station.stationNames8);
+						do {
+							System.out.println("Choose station: ");
+							
+							Station.printStations(Station.stationNames8);
+							
+							
+							station=scanStation.nextLine();
+							
+						}while(!Station.stationNames8.contains(station));	
+					}
+					
+					else if(lineNumAndLetter.equals("10")) {
 						
+						do {
+							System.out.println("Choose station: ");
+							
+							Station.printStations(Station.stationNames10);
+							
+							
+							station=scanStation.nextLine();
+							
+						}while(!Station.stationNames10.contains(station));	
+					}
+					
+					else if(lineNumAndLetter.equals("19")) {
 						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames8.contains(station));	
+						do {
+							System.out.println("Choose station: ");
+							
+							Station.printStations(Station.stationNames19);
+							
+							
+							station=scanStation.nextLine();
+							
+						}while(!Station.stationNames19.contains(station));	
+					}
 				}
-				
-				else if(lineNumAndLetter.equals("10")) {
-					
-					do {
-						System.out.println("Choose station: ");
-						
-						Station.printStations(Station.stationNames10);
-						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames10.contains(station));	
-				}
-				
-				else if(lineNumAndLetter.equals("19")) {
-					
-					do {
-						System.out.println("Choose station: ");
-						
-						Station.printStations(Station.stationNames19);
-						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames19.contains(station));	
-				}
-			}
-		}while(!(disabled==1 || disabled==0));
-	}
+			}while(!(disabled==1 || disabled==0));
+		}
 			
 		Scanner scanWay=new Scanner(System.in);
 		String way="";
@@ -368,7 +341,6 @@ public class Route extends Line {
 		}while(!(DayTypes.dayTypes.contains(dayType)));
 		
 		userChoice =lineNumAndLetter+" "+station+" "+dayType+" "+way;
-		//System.out.println(lineNumAndLetter+" "+station+" "+dayType+" "+way);
 		getsOff(userChoice); //prints deparure Times
 		
 		scanStation.close();
