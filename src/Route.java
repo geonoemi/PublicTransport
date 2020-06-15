@@ -1,13 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 public class Route extends Line {
 
@@ -19,6 +10,7 @@ public class Route extends Line {
 	}
 
 	
+	@SuppressWarnings("unlikely-arg-type")
 	public static void getARoute() {
 	
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
@@ -44,115 +36,255 @@ public class Route extends Line {
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
 		
+		Scanner scanDisabled=new Scanner(System.in);
+		int disabled=0;
 		
 		if (typeOfVehicle==1) { 	//busz ág
-				
-			Bus.readIn(); //ArrayLists from Bus
-				
 			do {
+				
+				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				disabled=scanDisabled.nextInt();
+				
+				if(disabled ==1) {
 					
-				System.out.println("Choose from the following buses:");
-				Bus.printBusLineNums();
-				lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
-		
-			}while(! (Bus.busesLineNums.contains(lineNumAndLetter)) ); 
-			
-			Station.readInBuses();
-				
-			if(lineNumAndLetter.equals("70")) {
-				
-				do {
-					System.out.println("Choose station: ");						
-					Station.printStations(Station.stationNames70);
+					do {
+						System.out.println("Choose from the following buses:");
+						Disabled.printDisabledBuses();
+						
+						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
+						System.out.println("lineNumAndLetter: "+lineNumAndLetter);
+						
+					}while(! (Disabled.disabledBuses.contains(lineNumAndLetter)) ); 
 					
-					station=scanStation.nextLine();
+					if(lineNumAndLetter.equals("71A")) {
 						
-				}while(!Station.stationNames70.contains(station));	
-			}
-				
-			else if(lineNumAndLetter.equals("71A")) {
-				
-				do {
-					System.out.println("Choose station: ");
-						
-					Station.printStations(Station.stationNames71A);
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.stationNames71A);
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.stationNames71A.contains(station));	
+					}
 					
-					station=scanStation.nextLine();
+				}else {
+					Bus.readIn(); //ArrayLists from Bus
+
+					do {
 						
-				}while(!Station.stationNames71A.contains(station));	
-			}
+						System.out.println("Choose from the following buses:");
+						Bus.printBusLineNums();
+						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 				
-			else if(lineNumAndLetter.equals("90H")) {
-				
-				do {
-					System.out.println("Choose station: ");
-						
-					Station.printStations(Station.stationNames90H);				
+					}while(! (Bus.busesLineNums.contains(lineNumAndLetter)) ); 
 					
-					station=scanStation.nextLine();
+					Station.readInBuses();
 						
-				}while(!Station.stationNames90H.contains(station));	
-			}
+					if(lineNumAndLetter.equals("70")) {
+						
+						do {
+							System.out.println("Choose station: ");						
+							Station.printStations(Station.stationNames70);
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.stationNames70.contains(station));	
+					}
+						
+					else if(lineNumAndLetter.equals("71A")) {
+						
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.stationNames71A);
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.stationNames71A.contains(station));	
+					}
+						
+					else if(lineNumAndLetter.equals("90H")) {
+						
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.stationNames90H);				
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.stationNames90H.contains(station));	
+					}
+						
+				}
 				
-		}
+				
+			}while(!(disabled==1 || disabled==0));
+		}	
+				/*		do {
+								
+							System.out.println("Choose from the following buses:");
+							Bus.printBusLineNums();
+							lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
+					
+						}while(! (Bus.busesLineNums.contains(lineNumAndLetter)) ); 
+						
+						Station.readInBuses();
+							
+						if(lineNumAndLetter.equals("70")) {
+							
+							do {
+								System.out.println("Choose station: ");						
+								Station.printStations(Station.stationNames70);
+								
+								station=scanStation.nextLine();
+									
+							}while(!Station.stationNames70.contains(station));	
+						}
+							
+						else if(lineNumAndLetter.equals("71A")) {
+							
+							do {
+								System.out.println("Choose station: ");
+									
+								Station.printStations(Station.stationNames71A);
+								
+								station=scanStation.nextLine();
+									
+							}while(!Station.stationNames71A.contains(station));	
+						}
+							
+						else if(lineNumAndLetter.equals("90H")) {
+							
+							do {
+								System.out.println("Choose station: ");
+									
+								Station.printStations(Station.stationNames90H);				
+								
+								station=scanStation.nextLine();
+									
+							}while(!Station.stationNames90H.contains(station));	
+						}
+							
+					}*/
 
 		else if (typeOfVehicle==2) { 	//villamos ág			
-
-				Tram.readIn();
+			do {
 				
-				do {					
-					System.out.println("Choose from the following trams:");
-					Tram.printTramLineNums();
-					lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
-					
-				}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
+				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				disabled=scanDisabled.nextInt();
 				
-				Station.readInTrams();
-				
-				if(lineNumAndLetter.equals("2")) {
+				if(disabled ==1) {
 					
 					do {
-						System.out.println("Choose station: ");
+						System.out.println("Choose from the following trams:");
+						Disabled.printDisabledTrams();
 						
-						Station.printStations(Station.stationNames2);
+						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
+						System.out.println("lineNumAndLetter: "+lineNumAndLetter);
 						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames2.contains(station));	
-				}
-				
-				else if(lineNumAndLetter.equals("3F")) {
+					}while(! (Disabled.disabledTrams.contains(lineNumAndLetter)) ); 
 					
-					do {
-						System.out.println("Choose station: ");
+					if(lineNumAndLetter.equals("3F")) {
 						
-						Station.printStations(Station.stationNames3F);
-						
-						
-						station=scanStation.nextLine();
-						
-					}while(!Station.stationNames3F.contains(station));	
-				}
-				
-				else if(lineNumAndLetter.equals("4")) {
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.stationNames3F);
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.stationNames3F.contains(station));	
+					}
 					
-					do {
-						System.out.println("Choose station: ");
+				}else {
+					Tram.readIn();
+					
+					do {					
+						System.out.println("Choose from the following trams:");
+						Tram.printTramLineNums();
+						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-						Station.printStations(Station.stationNames4);
+					}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
+					
+					Station.readInTrams();
+					
+					if(lineNumAndLetter.equals("2")) {
 						
+						do {
+							System.out.println("Choose station: ");
+							
+							Station.printStations(Station.stationNames2);
+							
+							
+							station=scanStation.nextLine();
+							
+						}while(!Station.stationNames2.contains(station));	
+					}
+					
+					else if(lineNumAndLetter.equals("3F")) {
 						
-						station=scanStation.nextLine();
+						do {
+							System.out.println("Choose station: ");
+							
+							Station.printStations(Station.stationNames3F);
+							
+							
+							station=scanStation.nextLine();
+							
+						}while(!Station.stationNames3F.contains(station));	
+					}
+					
+					else if(lineNumAndLetter.equals("4")) {
 						
-					}while(!Station.stationNames4.contains(station));	
+						do {
+							System.out.println("Choose station: ");
+							
+							Station.printStations(Station.stationNames4);
+							
+							
+							station=scanStation.nextLine();
+							
+						}while(!Station.stationNames4.contains(station));	
+					}
 				}
-				
-			}
+			}while(!(disabled==1 || disabled==0));
+		}
 //troli ág			
-			else if (typeOfVehicle==3) { 	
-				Trolley.readIn();
+		else if (typeOfVehicle==3) { 
+			
+			do {
 				
+				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				disabled=scanDisabled.nextInt();
+				
+				if(disabled ==1) {
+					
+					do {
+						System.out.println("Choose from the following trams:");
+						Disabled.printDisabledTrolleys();
+						
+						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
+						System.out.println("lineNumAndLetter: "+lineNumAndLetter);
+						
+					}while(! (Disabled.disabledTrolleys.contains(lineNumAndLetter)) ); 
+					
+					if(lineNumAndLetter.equals("10")) {
+						
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.stationNames10);
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.stationNames10.contains(station));	
+					}
+					
+				}else {
+					
+				Trolley.readIn();
+						
 				do {					
 					System.out.println("Choose from the following trolleys:");			
 					Trolley.printTrolleyLineNums();
@@ -201,6 +333,8 @@ public class Route extends Line {
 					}while(!Station.stationNames19.contains(station));	
 				}
 			}
+		}while(!(disabled==1 || disabled==0));
+	}
 			
 		Scanner scanWay=new Scanner(System.in);
 		String way="";
@@ -234,11 +368,12 @@ public class Route extends Line {
 		}while(!(DayTypes.dayTypes.contains(dayType)));
 		
 		userChoice =lineNumAndLetter+" "+station+" "+dayType+" "+way;
-	   
+		//System.out.println(lineNumAndLetter+" "+station+" "+dayType+" "+way);
 		getsOff(userChoice); //prints deparure Times
 		
 		scanStation.close();
 		scanTypeOfVehicle.close();
+		scanDisabled.close();
 		scanNumAndLetter.close();
 		scanWay.close();
 		scanDayType.close();

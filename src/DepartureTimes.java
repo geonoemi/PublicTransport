@@ -53,7 +53,7 @@ public class DepartureTimes{	// extends Route { // Is extends Route neccessary?
     
         for(String departureTimes: departureTimesList) {
         	
-        	if(departureTimes.equals(beolv.userChoice+".txt")) {
+        	if(departureTimes.equals(Route.userChoice+".txt")) {
         		readIn("departure times\\"+departureTimes);
         	}
         }

@@ -12,7 +12,7 @@ public class Run {
 		//TODO: make UML diagrams
 		//TODO: move bin into .gitignore
 		FileWriting.fileWriting();
-		beolv.getARoute();
-		System.out.println(beolv.userChoice);
+		Route.getARoute();
+		//System.out.println(beolv.userChoice);
 	}
 }
