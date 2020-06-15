@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 
-public class DepartureTimes{	// extends Route { // Is extends Route neccessary?
+public class DepartureTimes{	
 	
 	private static ArrayList<String>departureTimes=new ArrayList<>();
 	
@@ -53,7 +53,7 @@ public class DepartureTimes{	// extends Route { // Is extends Route neccessary?
     
         for(String departureTimes: departureTimesList) {
         	
-        	if(departureTimes.equals(Route.userChoice+".txt")) {
+        	if(departureTimes.equals(Route.getUserChoice()+".txt")) {
         		readIn("departure times\\"+departureTimes);
         	}
         }

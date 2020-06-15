@@ -2,16 +2,23 @@ import java.io.*;
 import java.util.*;
 
 public class Bus extends Line {
+	
+	private static ArrayList<Bus> buses=new ArrayList<>();
+	private static ArrayList<String> busesLineNums=new ArrayList<>();
+			
+	public static ArrayList<Bus> getBuses() {
+		return buses;
+	}
+
+	public static ArrayList<String> getBusesLineNums() {
+		return busesLineNums;
+	}
 
 	public Bus(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 			   Boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
 		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair, typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
-	protected static ArrayList<Bus> buses=new ArrayList<>();
-	protected static ArrayList<String> busesLineNums=new ArrayList<>();
-		
-		
 	public static void readIn(){ 
 			
 		try {

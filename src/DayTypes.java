@@ -7,8 +7,12 @@ import java.util.InputMismatchException;
 
 public class DayTypes {
 		
-	public static ArrayList<String>dayTypes=new ArrayList<>();
-	
+	private static ArrayList<String>dayTypes=new ArrayList<>();
+		
+	public static ArrayList<String> getDayTypes() {
+		return dayTypes;
+	}
+
 	public static void readIn(){ 
 		
 		try {

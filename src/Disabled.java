@@ -6,19 +6,34 @@ public class Disabled extends Line {
 					boolean needToRepair, String typeOfFuel,boolean hasWheel, String typeOfVehicle) {
 			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
-	static ArrayList<Disabled> disabledVehicles = new ArrayList<>();
+	private static ArrayList<Disabled> disabledVehicles = new ArrayList<>();
 	
-	static ArrayList<String> disabledTrams = new ArrayList<>();
-	static ArrayList<String> disabledBuses = new ArrayList<>();
-	static ArrayList<String> disabledTrolleys = new ArrayList<>();
+	private static ArrayList<String> disabledTrams = new ArrayList<>();
+	private static ArrayList<String> disabledBuses = new ArrayList<>();
+	private static ArrayList<String> disabledTrolleys = new ArrayList<>();
 
-	
+	public static ArrayList<Disabled> getDisabledVehicles() {
+		return disabledVehicles;
+	}
+
+	public static ArrayList<String> getDisabledTrams() {
+		return disabledTrams;
+	}
+
+	public static ArrayList<String> getDisabledBuses() {
+		return disabledBuses;
+	}
+
+	public static ArrayList<String> getDisabledTrolleys() {
+		return disabledTrolleys;
+	}
+
 	public static void fillDisabledTrams() {
 		
-		Tram.trams.clear();
+		Tram.getTrams().clear();
 		Tram.readIn();
 		
-		for(Tram trams: Tram.trams) {
+		for(Tram trams: Tram.getTrams()) {
 		
 			if(trams.lowFloor && trams.numOfDisabledPlaces>=1) {
 			
@@ -42,10 +57,10 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledBuses() {	
 		
-		Bus.buses.clear();
+		Bus.getBuses().clear();
 		Bus.readIn();
 			
-		for(Bus buses: Bus.buses) {
+		for(Bus buses: Bus.getBuses()) {
 			
 			if(buses.lowFloor && buses.numOfDisabledPlaces>=1) {
 				
@@ -69,16 +84,16 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledTrolleys() {	
 		
-		Trolley.trolleys.clear();
+		Trolley.getTrolleys().clear();
 		Trolley.readIn();
 		
-		for(Trolley trolleys: Trolley.trolleys) {
+		for(Trolley trolleys: Trolley.getTrolleys()) {
 		
 			if(trolleys.lowFloor && trolleys.numOfDisabledPlaces>=1) {
 				
 				Disabled disabledTrolley=new Disabled(trolleys.lineNum,  trolleys.articulate, trolleys.lowFloor, trolleys.operationCost, trolleys.numOfSeats, 
 													  trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,	trolleys.needToRepair, trolleys.typeOfFuel, 
-													  trolleys.hasWheel, trolleys.typeOfVehicle); 
+													  trolleys.isHasWheel(), trolleys.typeOfVehicle); 
 			
 				disabledTrolleys.add(disabledTrolley.lineNum);			
 			}	

@@ -2,8 +2,12 @@ import java.util.*;
 
 public class Route extends Line {
 
-	protected static String userChoice;
-	
+	private static String userChoice;
+		
+	public static String getUserChoice() {
+		return userChoice;
+	}
+
 	public Route(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces,
 				 boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
 			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
@@ -58,18 +62,18 @@ public class Route extends Line {
 						
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-					}while(! (Disabled.disabledBuses.contains(lineNumAndLetter)) ); 
+					}while(! (Disabled.getDisabledBuses().contains(lineNumAndLetter)) ); 
 					
 					if(lineNumAndLetter.equals("71A")) {
 						
 						do {
 							System.out.println("Choose station: ");
 								
-							Station.printStations(Station.stationNames71A);
+							Station.printStations(Station.getStationNames71A());
 							
 							station=scanStation.nextLine();
 								
-						}while(!Station.stationNames71A.contains(station));	
+						}while(!Station.getStationNames71A().contains(station));	
 					}
 					
 				}else if(disabled==2) {
@@ -82,7 +86,7 @@ public class Route extends Line {
 						Bus.printBusLineNums();
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 				
-					}while(! (Bus.busesLineNums.contains(lineNumAndLetter)) ); 
+					}while(! (Bus.getBusesLineNums().contains(lineNumAndLetter)) ); 
 					
 					Station.readInBuses();
 						
@@ -90,11 +94,11 @@ public class Route extends Line {
 						
 						do {
 							System.out.println("Choose station: ");						
-							Station.printStations(Station.stationNames70);
+							Station.printStations(Station.getStationNames70());
 							
 							station=scanStation.nextLine();
 								
-						}while(!Station.stationNames70.contains(station));	
+						}while(!Station.getStationNames70().contains(station));	
 					}
 						
 					else if(lineNumAndLetter.equals("71A")) {
@@ -102,11 +106,11 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 								
-							Station.printStations(Station.stationNames71A);
+							Station.printStations(Station.getStationNames71A());
 							
 							station=scanStation.nextLine();
 								
-						}while(!Station.stationNames71A.contains(station));	
+						}while(!Station.getStationNames71A().contains(station));	
 					}
 						
 					else if(lineNumAndLetter.equals("90H")) {
@@ -114,11 +118,11 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 								
-							Station.printStations(Station.stationNames90H);				
+							Station.printStations(Station.getStationNames90H());				
 							
 							station=scanStation.nextLine();
 								
-						}while(!Station.stationNames90H.contains(station));	
+						}while(!Station.getStationNames90H().contains(station));	
 					}
 						
 				}
@@ -148,18 +152,18 @@ public class Route extends Line {
 						
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-					}while(! (Disabled.disabledTrams.contains(lineNumAndLetter)) ); 
+					}while(! (Disabled.getDisabledTrams().contains(lineNumAndLetter)) ); 
 					
 					if(lineNumAndLetter.equals("3F")) {
 						
 						do {
 							System.out.println("Choose station: ");
 								
-							Station.printStations(Station.stationNames3F);
+							Station.printStations(Station.getStationNames3F());
 							
 							station=scanStation.nextLine();
 								
-						}while(!Station.stationNames3F.contains(station));	
+						}while(!Station.getStationNames3F().contains(station));	
 					}
 					
 				}else if(disabled ==0) {
@@ -171,7 +175,7 @@ public class Route extends Line {
 						Tram.printTramLineNums();
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-					}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
+					}while(!(Tram.getTramsLineNums().contains(lineNumAndLetter)));
 					
 					Station.readInTrams();
 					
@@ -180,12 +184,12 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 							
-							Station.printStations(Station.stationNames2);
+							Station.printStations(Station.getStationNames2());
 							
 							
 							station=scanStation.nextLine();
 							
-						}while(!Station.stationNames2.contains(station));	
+						}while(!Station.getStationNames2().contains(station));	
 					}
 					
 					else if(lineNumAndLetter.equals("3F")) {
@@ -193,12 +197,12 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 							
-							Station.printStations(Station.stationNames3F);
+							Station.printStations(Station.getStationNames3F());
 							
 							
 							station=scanStation.nextLine();
 							
-						}while(!Station.stationNames3F.contains(station));	
+						}while(!Station.getStationNames3F().contains(station));	
 					}
 					
 					else if(lineNumAndLetter.equals("4")) {
@@ -206,12 +210,12 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 							
-							Station.printStations(Station.stationNames4);
+							Station.printStations(Station.getStationNames4());
 							
 							
 							station=scanStation.nextLine();
 							
-						}while(!Station.stationNames4.contains(station));	
+						}while(!Station.getStationNames4().contains(station));	
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
@@ -239,18 +243,18 @@ public class Route extends Line {
 						
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-					}while(! (Disabled.disabledTrolleys.contains(lineNumAndLetter)) ); 
+					}while(! (Disabled.getDisabledTrolleys().contains(lineNumAndLetter)) ); 
 					
 					if(lineNumAndLetter.equals("10")) {
 						
 						do {
 							System.out.println("Choose station: ");
 								
-							Station.printStations(Station.stationNames10);
+							Station.printStations(Station.getStationNames10());
 							
 							station=scanStation.nextLine();
 								
-						}while(!Station.stationNames10.contains(station));	
+						}while(!Station.getStationNames10().contains(station));	
 					}
 					
 				}else if(disabled ==0) {
@@ -262,7 +266,7 @@ public class Route extends Line {
 						Trolley.printTrolleyLineNums();
 						lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 						
-					}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
+					}while(!(Trolley.getTrolleysLineNums().contains(lineNumAndLetter)));
 					
 					Station.readInTrolleys();
 					
@@ -271,12 +275,12 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 							
-							Station.printStations(Station.stationNames8);
+							Station.printStations(Station.getStationNames8());
 							
 							
 							station=scanStation.nextLine();
 							
-						}while(!Station.stationNames8.contains(station));	
+						}while(!Station.getStationNames8().contains(station));	
 					}
 					
 					else if(lineNumAndLetter.equals("10")) {
@@ -284,12 +288,12 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 							
-							Station.printStations(Station.stationNames10);
+							Station.printStations(Station.getStationNames10());
 							
 							
 							station=scanStation.nextLine();
 							
-						}while(!Station.stationNames10.contains(station));	
+						}while(!Station.getStationNames10().contains(station));	
 					}
 					
 					else if(lineNumAndLetter.equals("19")) {
@@ -297,12 +301,12 @@ public class Route extends Line {
 						do {
 							System.out.println("Choose station: ");
 							
-							Station.printStations(Station.stationNames19);
+							Station.printStations(Station.getStationNames19());
 							
 							
 							station=scanStation.nextLine();
 							
-						}while(!Station.stationNames19.contains(station));	
+						}while(!Station.getStationNames19().contains(station));	
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
@@ -337,7 +341,7 @@ public class Route extends Line {
 				DayTypes.printDayTypes();		
 				dayType  = scanDayType.nextLine(); 
 				
-		}while(!(DayTypes.dayTypes.contains(dayType)));
+		}while(!(DayTypes.getDayTypes().contains(dayType)));
 		
 		userChoice =lineNumAndLetter+" "+station+" "+dayType+" "+way;
 		getsOff(userChoice); //prints deparure Times

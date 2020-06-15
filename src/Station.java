@@ -8,22 +8,94 @@ public class Station {
 	private String stationName;
 	private boolean hasCable;
 	
-	static ArrayList<Station> stations=new ArrayList<>();
-	static ArrayList<String> stationNames=new ArrayList<>();
-	static ArrayList<String> stationNames2=new ArrayList<>();
-	static ArrayList<String> stationNames3F=new ArrayList<>();
-	static ArrayList<String> stationNames4=new ArrayList<>();
-	static ArrayList<String> stationNames70=new ArrayList<>();
-	static ArrayList<String> stationNames71A=new ArrayList<>();
-	static ArrayList<String> stationNames90H=new ArrayList<>();
-	static ArrayList<String> stationNames8=new ArrayList<>();
-	static ArrayList<String> stationNames10=new ArrayList<>();
-	static ArrayList<String> stationNames19=new ArrayList<>();
+	private static ArrayList<Station> stations=new ArrayList<>();
+	private static ArrayList<String> stationNames=new ArrayList<>();
+	private static ArrayList<String> stationNames2=new ArrayList<>();
+	private static ArrayList<String> stationNames3F=new ArrayList<>();
+	private static ArrayList<String> stationNames4=new ArrayList<>();
+	private static ArrayList<String> stationNames70=new ArrayList<>();
+	private static ArrayList<String> stationNames71A=new ArrayList<>();
+	private static ArrayList<String> stationNames90H=new ArrayList<>();
+	private static ArrayList<String> stationNames8=new ArrayList<>();
+	private static ArrayList<String> stationNames10=new ArrayList<>();
+	private static ArrayList<String> stationNames19=new ArrayList<>();
 	
-	static ArrayList<String> x=new ArrayList<>();
-	static ArrayList<String> y=new ArrayList<>();
-	static ArrayList<Boolean> cables=new ArrayList<>();
+	private static ArrayList<String> x=new ArrayList<>();
+	private static ArrayList<String> y=new ArrayList<>();
+	private static ArrayList<Boolean> cables=new ArrayList<>();
+	
+	
+	public String getCoordinateX() {
+		return coordinateX;
+	}
 
+	public String getCoordinateY() {
+		return coordinateY;
+	}
+
+	public String getStationName() {
+		return stationName;
+	}
+
+	public boolean isHasCable() {
+		return hasCable;
+	}
+
+	public static ArrayList<Station> getStations() {
+		return stations;
+	}
+
+	public static ArrayList<String> getStationNames() {
+		return stationNames;
+	}
+
+	public static ArrayList<String> getStationNames2() {
+		return stationNames2;
+	}
+
+	public static ArrayList<String> getStationNames3F() {
+		return stationNames3F;
+	}
+
+	public static ArrayList<String> getStationNames4() {
+		return stationNames4;
+	}
+
+	public static ArrayList<String> getStationNames70() {
+		return stationNames70;
+	}
+
+	public static ArrayList<String> getStationNames71A() {
+		return stationNames71A;
+	}
+
+	public static ArrayList<String> getStationNames90H() {
+		return stationNames90H;
+	}
+
+	public static ArrayList<String> getStationNames8() {
+		return stationNames8;
+	}
+
+	public static ArrayList<String> getStationNames10() {
+		return stationNames10;
+	}
+
+	public static ArrayList<String> getStationNames19() {
+		return stationNames19;
+	}
+
+	public static ArrayList<String> getX() {
+		return x;
+	}
+
+	public static ArrayList<String> getY() {
+		return y;
+	}
+
+	public static ArrayList<Boolean> getCables() {
+		return cables;
+	}
 
 	public Station(String stationName,String coordinateX, String coordinateY,boolean hasCable) {
 		

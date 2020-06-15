@@ -7,9 +7,17 @@ import java.util.InputMismatchException;
 
 public class Tram extends Line {
 
-	protected static ArrayList<Tram> trams=new ArrayList<>();
-	protected static ArrayList<String> tramsLineNums=new ArrayList<>();
-	
+	private static ArrayList<Tram> trams=new ArrayList<>();
+	private static ArrayList<String> tramsLineNums=new ArrayList<>();
+		
+	public static ArrayList<Tram> getTrams() {
+		return trams;
+	}
+
+	public static ArrayList<String> getTramsLineNums() {
+		return tramsLineNums;
+	}
+
 	public Tram(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, Boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 				boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
 			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);

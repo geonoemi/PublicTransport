@@ -7,15 +7,26 @@ import java.util.InputMismatchException;
 
 public class Trolley extends Line  {	
 	
-	boolean hasWheel=true;
-	protected static ArrayList<String> trolleysLineNums=new ArrayList<>();
-		
-	protected static ArrayList<Trolley> trolleys=new ArrayList<>();
-		
-		public Trolley(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+	private boolean hasWheel=true;
+	private static ArrayList<String> trolleysLineNums=new ArrayList<>();
+	private static ArrayList<Trolley> trolleys=new ArrayList<>();
+			
+	public boolean isHasWheel() {
+		return hasWheel;
+	}
+
+	public static ArrayList<String> getTrolleysLineNums() {
+		return trolleysLineNums;
+	}
+
+	public static ArrayList<Trolley> getTrolleys() {
+		return trolleys;
+	}
+
+	public Trolley(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 					   Boolean needToRepair, String typeOfFuel,	boolean hasWheel, String typeOfVehicle) {
-				super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
-		}
+			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
+	}
 
 	public static void readIn(){ 
 			
