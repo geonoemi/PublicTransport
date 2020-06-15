@@ -9,8 +9,6 @@ public class Route extends Line {
 			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
-	
-	
 	public static void getARoute() {
 	
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
@@ -40,6 +38,7 @@ public class Route extends Line {
 		int disabled=0;
 		
 		if (typeOfVehicle==1) { 	//if bus
+			
 			do {
 				
 				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
@@ -163,7 +162,7 @@ public class Route extends Line {
 						}while(!Station.stationNames3F.contains(station));	
 					}
 					
-				}else if(disabled ==2) {
+				}else if(disabled ==0) {
 					
 					Tram.readIn();
 					
@@ -254,7 +253,7 @@ public class Route extends Line {
 						}while(!Station.stationNames10.contains(station));	
 					}
 					
-				}else if(disabled ==2) {
+				}else if(disabled ==0) {
 					
 					Trolley.readIn();
 							

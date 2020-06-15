@@ -15,6 +15,7 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledTrams() {
 		
+		Tram.trams.clear();
 		Tram.readIn();
 		
 		for(Tram trams: Tram.trams) {
@@ -41,6 +42,7 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledBuses() {	
 		
+		Bus.buses.clear();
 		Bus.readIn();
 			
 		for(Bus buses: Bus.buses) {
@@ -67,6 +69,7 @@ public class Disabled extends Line {
 	
 	public static void fillDisabledTrolleys() {	
 		
+		Trolley.trolleys.clear();
 		Trolley.readIn();
 		
 		for(Trolley trolleys: Trolley.trolleys) {
