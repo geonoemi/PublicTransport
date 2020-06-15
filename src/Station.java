@@ -34,7 +34,7 @@ public class Station {
 
 	}
 
-	public static void readIn(String stationsFile){
+	public static void readIn(){
 		
 		try {
 			

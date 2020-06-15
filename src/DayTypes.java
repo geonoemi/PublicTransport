@@ -9,11 +9,11 @@ public class DayTypes {
 		
 	public static ArrayList<String>dayTypes=new ArrayList<>();
 	
-	public static void readIn(String fileName){ 
+	public static void readIn(){ 
 		
 		try {
 			
-			FileReader reader=new FileReader(fileName);
+			FileReader reader=new FileReader("classes files\\day types.txt");
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=1;
@@ -39,7 +39,7 @@ public class DayTypes {
 	public static void printDayTypes() { //used in Route.getARoute()
 		
 		dayTypes.clear();//tüneti kezelés
-		readIn("classes files\\day types.txt");
+		readIn();
 		
 		for (String daytypes: dayTypes) {
 			System.out.printf( "\t%s\n", daytypes);

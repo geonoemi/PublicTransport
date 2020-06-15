@@ -7,7 +7,7 @@ public class FileWriting {
 		int j;
 		int k;
 		
-		DayTypes.readIn("classes files\\day types.txt");
+		DayTypes.readIn();
 		Station.readInTrams();
 		Station.readInBuses();
 		Station.readInTrolleys();
@@ -115,12 +115,12 @@ public class FileWriting {
 	}
 }	
 	
-	public static void main(String[]args) {
+/*	public static void main(String[]args) {
 		Station.readInBuses();
 		Station.readInTrams();
 		Station.readInTrolleys();
 		
 		fileWriting();
-	}
+	}*/
 }	
 				

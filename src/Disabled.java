@@ -6,7 +6,7 @@ public class Disabled extends Line {
 					boolean needToRepair, String typeOfFuel,boolean hasWheel, String typeOfVehicle) {
 			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
-
+	static ArrayList<Disabled> disabledVehicles = new ArrayList<>();
 	
 	static ArrayList<Disabled> disabledTrams = new ArrayList<>();
 	static ArrayList<Disabled> disabledBuses = new ArrayList<>();
@@ -24,17 +24,18 @@ public class Disabled extends Line {
 				Disabled disabledTram=new Disabled(trams.lineNum,  trams.articulate, trams.lowFloor, trams.operationCost, trams.numOfSeats, trams.bicycleTransportOpp,
 												   trams.numOfDisabledPlaces, trams.needToRepair, trams.typeOfFuel, trams.hasWheel, trams.typeOfVehicle);
 				
-				disabledTrams.add(disabledTram);
+				disabledVehicles.add(disabledTram);
 			}	
 		}
 	}
 	
 	public static void printDisabledTrams() {
-		//disabledTrams.clear();
+		
+		disabledVehicles.clear();
 		fillDisabledTrams();
 		
-		for(Disabled disabledTrams: disabledTrams ) {
-			System.out.println(disabledTrams);
+		for(Disabled disabledTrams: disabledVehicles ) {
+			System.out.println(disabledTrams.lineNum);
 		}
 	}
 	
@@ -49,17 +50,18 @@ public class Disabled extends Line {
 				Disabled disabledBus=new Disabled(buses.lineNum,  buses.articulate, buses.lowFloor, buses.operationCost, buses.numOfSeats, buses.bicycleTransportOpp, 
 												  buses.numOfDisabledPlaces, buses.needToRepair, buses.typeOfFuel, buses.hasWheel, buses.typeOfVehicle);
 			
-				disabledBuses.add(disabledBus);
+				disabledVehicles.add(disabledBus);
 			}	
 		}
 	}
 	
 	public static void printDisabledBuses() {
-		//disabledBuses.clear();
+		
+		disabledVehicles.clear();
 		fillDisabledBuses();
 		
-		for(Disabled disabledBuses: disabledBuses ) {
-			System.out.println(disabledBuses);
+		for(Disabled disabledBuses: disabledVehicles ) {
+			System.out.println(disabledBuses.lineNum);
 		}
 	}
 	
@@ -75,25 +77,28 @@ public class Disabled extends Line {
 													  trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,	trolleys.needToRepair, trolleys.typeOfFuel, 
 													  trolleys.hasWheel, trolleys.typeOfVehicle); 
 			
-				disabledTrolleys.add(disabledTrolley);
+				disabledVehicles.add(disabledTrolley);
 			}	
 		}
 	}	
 
 	public static void printDisabledTrolleys() {
-		//disabledTrolleys.clear();
+		
+		disabledVehicles.clear();
 		fillDisabledTrolleys();
 		
-		for(Disabled disabledTrolleys: disabledTrolleys ) {
-			System.out.println(disabledTrolleys);
+		for(Disabled disabledTrolleys: disabledVehicles ) {
+			System.out.println(disabledTrolleys.lineNum);
 		}
 	}
 	
 	public static void main (String[]args) {
-			
+	
 		printDisabledTrams();
 		printDisabledBuses();
 		printDisabledTrolleys();
-
+	/*	for(Disabled disabled: disabledVehicles ) {
+			System.out.println(disabled.lineNum);
+		}*/
 	}
 }
