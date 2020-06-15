@@ -8,9 +8,9 @@ public class Disabled extends Line {
 	}
 	static ArrayList<Disabled> disabledVehicles = new ArrayList<>();
 	
-	static ArrayList<Disabled> disabledTrams = new ArrayList<>();
-	static ArrayList<Disabled> disabledBuses = new ArrayList<>();
-	static ArrayList<Disabled> disabledTrolleys = new ArrayList<>();
+	static ArrayList<String> disabledTrams = new ArrayList<>();
+	static ArrayList<String> disabledBuses = new ArrayList<>();
+	static ArrayList<String> disabledTrolleys = new ArrayList<>();
 
 	
 	public static void fillDisabledTrams() {
@@ -24,18 +24,18 @@ public class Disabled extends Line {
 				Disabled disabledTram=new Disabled(trams.lineNum,  trams.articulate, trams.lowFloor, trams.operationCost, trams.numOfSeats, trams.bicycleTransportOpp,
 												   trams.numOfDisabledPlaces, trams.needToRepair, trams.typeOfFuel, trams.hasWheel, trams.typeOfVehicle);
 				
-				disabledVehicles.add(disabledTram); //disabledTram into disabledVehicles ArrayList
+				disabledTrams.add(disabledTram.lineNum); //disabledTram into disabledVehicles ArrayList
 			}	
 		}
 	}
 	
 	public static void printDisabledTrams() {
 		
-		disabledVehicles.clear();
+		disabledTrams.clear();
 		fillDisabledTrams();
 		
-		for(Disabled disabledTrams: disabledVehicles ) {
-			System.out.println(disabledTrams.lineNum);
+		for(String disabledTrams: disabledTrams ) {
+			System.out.println(disabledTrams);
 		}
 	}
 	
@@ -50,18 +50,18 @@ public class Disabled extends Line {
 				Disabled disabledBus=new Disabled(buses.lineNum,  buses.articulate, buses.lowFloor, buses.operationCost, buses.numOfSeats, buses.bicycleTransportOpp, 
 												  buses.numOfDisabledPlaces, buses.needToRepair, buses.typeOfFuel, buses.hasWheel, buses.typeOfVehicle);
 			
-				disabledVehicles.add(disabledBus);
+				disabledBuses.add(disabledBus.lineNum);
 			}	
 		}
 	}
 	
 	public static void printDisabledBuses() {
 		
-		disabledVehicles.clear();
+		disabledBuses.clear();
 		fillDisabledBuses();
 		
-		for(Disabled disabledBuses: disabledVehicles ) {
-			System.out.println(disabledBuses.lineNum);
+		for(String disabledBuses: disabledBuses ) {
+			System.out.println(disabledBuses);
 		}
 	}
 	
@@ -77,29 +77,29 @@ public class Disabled extends Line {
 													  trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,	trolleys.needToRepair, trolleys.typeOfFuel, 
 													  trolleys.hasWheel, trolleys.typeOfVehicle); 
 			
-				disabledVehicles.add(disabledTrolley);			
+				disabledTrolleys.add(disabledTrolley.lineNum);			
 			}	
 		}
 	}	
 
 	public static void printDisabledTrolleys() {
 		
-		disabledVehicles.clear();
+		disabledTrolleys.clear();
 		fillDisabledTrolleys();
 		
-		for(Disabled disabledTrolleys: disabledVehicles ) {
-			System.out.println(disabledTrolleys.lineNum);
+		for(String disabledTrolleys: disabledTrolleys ) {
+			System.out.println(disabledTrolleys);
 		}
 	}
 	
 	public static void main (String[]args) {
 	
-		printDisabledTrams();
-		printDisabledBuses();
-		printDisabledTrolleys();
-		
-	/*	for(Disabled disabled: disabledVehicles ) {
-			System.out.println(disabled.lineNum);
-		}*/
+		//printDisabledTrams();
+	//	printDisabledBuses();
+	//	printDisabledTrolleys();
+		fillDisabledTrolleys();
+		for(String disabledTrolleys: disabledTrolleys ) {
+			System.out.println("dsb "+disabledTrolleys);
+		}
 	}
 }
