@@ -77,6 +77,7 @@ public class Trolley extends Line  {
 		
 		trolleysLineNums.clear();
 		fillTrolleyLineNums();
+		
 		for(String linenum: trolleysLineNums) {
 			System.out.println(linenum);
 		}

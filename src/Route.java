@@ -45,7 +45,7 @@ public class Route extends Line {
 			
 			do {
 				
-				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				System.out.println("Do you need disabled bus? YES : 1  NO : 0 ");
 				
 				while(!scanDisabled.hasNextInt()){ 
 					
@@ -74,6 +74,17 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames71A().contains(station));	
+					}
+					else if(lineNumAndLetter.equals("90H")) {
+						
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.getStationNames90H());
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.getStationNames90H().contains(station));	
 					}
 					
 				}else if(disabled==2) {
@@ -124,10 +135,7 @@ public class Route extends Line {
 								
 						}while(!Station.getStationNames90H().contains(station));	
 					}
-						
 				}
-				
-				
 			}while(!(disabled==1 || disabled==0));
 		}	
 		
@@ -135,7 +143,7 @@ public class Route extends Line {
 			
 			do {
 				
-				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				System.out.println("Do you need disabled tram? YES : 1  NO : 0 ");
 				
 				while(!scanDisabled.hasNextInt()){ 
 					
@@ -154,7 +162,19 @@ public class Route extends Line {
 						
 					}while(! (Disabled.getDisabledTrams().contains(lineNumAndLetter)) ); 
 					
-					if(lineNumAndLetter.equals("3F")) {
+					if(lineNumAndLetter.equals("2")) {
+						
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.getStationNames2());
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.getStationNames2().contains(station));	
+					}
+					
+					else if(lineNumAndLetter.equals("3F")) {
 						
 						do {
 							System.out.println("Choose station: ");
@@ -185,8 +205,7 @@ public class Route extends Line {
 							System.out.println("Choose station: ");
 							
 							Station.printStations(Station.getStationNames2());
-							
-							
+														
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames2().contains(station));	
@@ -199,7 +218,6 @@ public class Route extends Line {
 							
 							Station.printStations(Station.getStationNames3F());
 							
-							
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames3F().contains(station));	
@@ -211,8 +229,7 @@ public class Route extends Line {
 							System.out.println("Choose station: ");
 							
 							Station.printStations(Station.getStationNames4());
-							
-							
+														
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames4().contains(station));	
@@ -225,7 +242,7 @@ public class Route extends Line {
 			
 			do {
 				
-				System.out.println("Do you need disabled route? YES : 1  NO : 0 ");
+				System.out.println("Do you need disabled trolley? YES : 1  NO : 0 ");
 				
 				while(!scanDisabled.hasNextInt()){ 
 					
@@ -245,7 +262,19 @@ public class Route extends Line {
 						
 					}while(! (Disabled.getDisabledTrolleys().contains(lineNumAndLetter)) ); 
 					
-					if(lineNumAndLetter.equals("10")) {
+					if(lineNumAndLetter.equals("8")) {
+						
+						do {
+							System.out.println("Choose station: ");
+								
+							Station.printStations(Station.getStationNames8());
+							
+							station=scanStation.nextLine();
+								
+						}while(!Station.getStationNames8().contains(station));	
+					}
+					
+					else if(lineNumAndLetter.equals("10")) {
 						
 						do {
 							System.out.println("Choose station: ");
@@ -276,8 +305,7 @@ public class Route extends Line {
 							System.out.println("Choose station: ");
 							
 							Station.printStations(Station.getStationNames8());
-							
-							
+														
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames8().contains(station));	
@@ -290,7 +318,6 @@ public class Route extends Line {
 							
 							Station.printStations(Station.getStationNames10());
 							
-							
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames10().contains(station));	
@@ -302,8 +329,7 @@ public class Route extends Line {
 							System.out.println("Choose station: ");
 							
 							Station.printStations(Station.getStationNames19());
-							
-							
+														
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames19().contains(station));	
@@ -329,7 +355,6 @@ public class Route extends Line {
 				}else if(way.equals("2")) {
 					way="back";
 				}
-			
 			}while(!(way.equals("back") || way.equals("forth")));
 						
 	
@@ -337,9 +362,9 @@ public class Route extends Line {
 		String dayType=" ";
 		
 		do {
-				System.out.println("Choose from the following daytypes: ");
-				DayTypes.printDayTypes();		
-				dayType  = scanDayType.nextLine(); 
+			System.out.println("Choose from the following daytypes: ");
+			DayTypes.printDayTypes();		
+			dayType  = scanDayType.nextLine(); 
 				
 		}while(!(DayTypes.getDayTypes().contains(dayType)));
 		

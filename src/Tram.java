@@ -78,9 +78,9 @@ public class Tram extends Line {
 		tramsLineNums.clear();
 		fillTramLineNums();
 		
-			for(String linenum: tramsLineNums) {
-				System.out.println(linenum);
-			}
+		for(String linenum: tramsLineNums) {
+			System.out.println(linenum);
+		}
 	}
 }
 

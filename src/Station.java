@@ -106,41 +106,6 @@ public class Station {
 
 	}
 
-	public static void readIn(){
-		
-		try {
-			
-			FileReader reader=new FileReader("txt files of classes\\stations.txt");
-			BufferedReader buffer=new BufferedReader(reader);
-			String line=null;
-			int i=0;
-			
-			while((line=buffer.readLine())!=null) {
-
-				String parts[] = line.split(",");
-				stationNames.add(parts[0]);
-				
-				x.add(parts[1]);
-				y.add(parts[2]);
-				cables.add(Boolean.parseBoolean(parts[3]));
-				
-				Station station=new Station(stationNames.get(i),x.get(i),y.get(i),cables.get(i));
-				stations.add(station);
-
-				i++;				
-			}
-			
-			buffer.close();
-				
-		}catch(FileNotFoundException e) {
-				System.out.println("File not found.");
-		}catch(IOException e) {
-				System.out.println("e.getMessage()");
-		}catch (InputMismatchException exception) {
-				System.out.println("Not appropriate input type.");
-		}		
-	}
-	
 	public static void readInBuses(){	//used in Station.printStations , FileWriting.fileWriting() , Route.getARoute()
 
 		try {
@@ -303,7 +268,7 @@ public class Station {
 	
 	public static void printStations(ArrayList<String> stationNames) { //used in Route.getARoute()
 
-		stationNames.clear(); //tüneti kezelés...
+		stationNames.clear(); 
 		readInBuses();
 		readInTrams();
 		readInTrolleys();	
