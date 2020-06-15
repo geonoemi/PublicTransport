@@ -7,20 +7,15 @@ import java.util.InputMismatchException;
 
 public class Trolley extends Line  {	
 	
-	private boolean hasWheel=true;
-	private static ArrayList<String> trolleysLineNums=new ArrayList<>();
 	private static ArrayList<Trolley> trolleys=new ArrayList<>();
-			
-	public boolean isHasWheel() {
-		return hasWheel;
+	private static ArrayList<String> trolleysLineNums=new ArrayList<>();
+	
+	public static ArrayList<Trolley> getTrolleys() {
+		return trolleys;
 	}
 
 	public static ArrayList<String> getTrolleysLineNums() {
 		return trolleysLineNums;
-	}
-
-	public static ArrayList<Trolley> getTrolleys() {
-		return trolleys;
 	}
 
 	public Trolley(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 

@@ -7,7 +7,6 @@ public class Run {
 
 		//TODO: fossil, electric class debug
 		//TODO: Filewriting class shortening
-		//TODO: Schedule class 
 		//TODO: make UML diagrams
 		//TODO: move bin into .gitignore
 		//FileWriting.fileWriting();

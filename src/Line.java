@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.util.InputMismatchException;
 	
 public abstract class Line {
-	//láthatóságokat ellenõrizni	
+
 		protected String lineNum;
 		protected boolean articulate;
 		protected boolean lowFloor;
@@ -30,10 +30,7 @@ public abstract class Line {
 		protected static ArrayList<String> fuelTypes =new ArrayList<>();
 		protected static ArrayList<Boolean> hasWheels =new ArrayList<>();
 		protected static ArrayList<String> typeOfVehicles =new ArrayList<>();
-		
-		protected static ArrayList<Line> needsService = new ArrayList<>();
-		protected static ArrayList<Line> bicycleVehicles=new ArrayList<>();
-		
+			
 		public Line(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 					boolean needToRepair,String typeOfFuel,	boolean hasWheel, String typeOfVehicle) {
 

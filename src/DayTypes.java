@@ -42,7 +42,7 @@ public class DayTypes {
 	
 	public static void printDayTypes() { //used in Route.getARoute()
 		
-		dayTypes.clear();//tüneti kezelés
+		dayTypes.clear();
 		readIn();
 		
 		for (String daytypes: dayTypes) {

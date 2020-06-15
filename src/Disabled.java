@@ -1,20 +1,10 @@
 import java.util.ArrayList;
 
 public class Disabled extends Line {
-
-	public Disabled(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces, 
-					boolean needToRepair, String typeOfFuel,boolean hasWheel, String typeOfVehicle) {
-			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
-	}
-	private static ArrayList<Disabled> disabledVehicles = new ArrayList<>();
 	
 	private static ArrayList<String> disabledTrams = new ArrayList<>();
 	private static ArrayList<String> disabledBuses = new ArrayList<>();
 	private static ArrayList<String> disabledTrolleys = new ArrayList<>();
-
-	public static ArrayList<Disabled> getDisabledVehicles() {
-		return disabledVehicles;
-	}
 
 	public static ArrayList<String> getDisabledTrams() {
 		return disabledTrams;
@@ -28,6 +18,11 @@ public class Disabled extends Line {
 		return disabledTrolleys;
 	}
 
+	public Disabled(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats,	boolean bicycleTransportOpp, int numOfDisabledPlaces, 
+					boolean needToRepair, String typeOfFuel,boolean hasWheel, String typeOfVehicle) {
+		super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
+	}
+	
 	public static void fillDisabledTrams() {
 		
 		Tram.getTrams().clear();
@@ -93,7 +88,7 @@ public class Disabled extends Line {
 				
 				Disabled disabledTrolley=new Disabled(trolleys.lineNum,  trolleys.articulate, trolleys.lowFloor, trolleys.operationCost, trolleys.numOfSeats, 
 													  trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,	trolleys.needToRepair, trolleys.typeOfFuel, 
-													  trolleys.isHasWheel(), trolleys.typeOfVehicle); 
+													  trolleys.hasWheel, trolleys.typeOfVehicle); 
 			
 				disabledTrolleys.add(disabledTrolley.lineNum);			
 			}	

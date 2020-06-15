@@ -1,4 +1,5 @@
-import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
 public class FileWriting {
 	
 	public static void fileWriting() {
@@ -6,12 +7,14 @@ public class FileWriting {
 		int i;
 		int j;
 		int k;
+		int h;
+		int m;
 		
 		DayTypes.readIn();
 		Station.readInTrams();
 		Station.readInBuses();
 		Station.readInTrolleys();
-		String[]way={"forth","back"};
+		String [] way = {"forth","back"};
 
 	try {
 		
@@ -23,8 +26,10 @@ public class FileWriting {
 					
 					FileWriter file2 = new FileWriter("departure times\\"+"2 "+Station.getStationNames2().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 						
-					for(int o=6; o<22;o++) {	
-						file2.write(" "+o+":00\n");
+					for( h=6; h<22; h++) {	
+						for(m=10;m<60;m+=10) {
+							file2.write(" "+h+":"+m+"\n");
+						}	
 					}		
 					file2.close();		
 				}
@@ -33,8 +38,10 @@ public class FileWriting {
 					
 					FileWriter file3F = new FileWriter("departure times\\"+"3F "+Station.getStationNames3F().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");		
 					
-					for(int t=6; t<22;t++) {	
-						file3F.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {	
+						for(m=10;m<60;m+=15) {
+							file3F.write(" "+h+":"+m+"\n");
+						}
 					}
 					file3F.close();
 				}
@@ -43,8 +50,10 @@ public class FileWriting {
 					
 					FileWriter file4 = new FileWriter("departure times\\"+"4 "+Station.getStationNames4().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 					
-					for(int t=6; t<22;t++) {
-						file4.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=12) {
+							file4.write(" "+h+":"+m+"\n");
+						}
 					}
 					file4.close();
 				}
@@ -53,8 +62,10 @@ public class FileWriting {
 							
 					FileWriter file70 = new FileWriter("departure times\\"+"70 "+Station.getStationNames70().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 										
-					for(int t=6; t<22;t++) {
-						file70.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=14) {
+							file70.write(" "+h+":"+m+"\n");
+						}
 					}	
 					file70.close();
 				}
@@ -63,8 +74,10 @@ public class FileWriting {
 					
 					FileWriter file71A = new FileWriter("departure times\\"+"71A "+Station.getStationNames71A().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 					
-					for(int t=6; t<22;t++) {
-						file71A.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=20) {
+							file71A.write(" "+h+":"+m+"\n");
+						}
 					}					
 					file71A.close();
 				}
@@ -73,8 +86,10 @@ public class FileWriting {
 				
 					FileWriter file90H = new FileWriter("departure times\\"+"90H "+Station.getStationNames90H().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 					
-					for(int t=6; t<22;t++) {
-						file90H.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=10) {
+							file90H.write(" "+h+":"+m+"\n");
+						}
 					}	
 					file90H.close();
 				}
@@ -83,8 +98,10 @@ public class FileWriting {
 					
 					FileWriter file8 = new FileWriter("departure times\\"+"8 "+Station.getStationNames8().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 					
-					for(int t=6; t<22;t++) {
-						file8.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=5) {
+							file8.write(" "+h+":"+m+"\n");
+						}
 					}	
 					file8.close();
 				}
@@ -93,8 +110,10 @@ public class FileWriting {
 					
 					FileWriter file10 = new FileWriter("departure times\\"+"10 "+Station.getStationNames10().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 					
-					for(int t=6; t<22;t++) {
-						file10.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=8) {
+							file10.write(" "+h+":"+m+"\n");
+						}
 					}	
 					file10.close();
 				}
@@ -103,8 +122,10 @@ public class FileWriting {
 				
 					FileWriter file19 = new FileWriter("departure times\\"+"19 "+Station.getStationNames19().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 					
-					for(int t=6; t<22;t++) {
-						file19.write(" "+t+":00\n");
+					for(h=6; h<22; h++) {
+						for(m=10;m<60;m+=12) {
+							file19.write(" "+h+":"+m+"\n");
+						}
 					}		
 					file19.close();
 				}
@@ -115,12 +136,11 @@ public class FileWriting {
 	}
 }	
 	
-/*	public static void main(String[]args) {
+	public static void main(String[]args) {
 		Station.readInBuses();
 		Station.readInTrams();
 		Station.readInTrolleys();
 		
 		fileWriting();
-	}*/
+	}
 }	
-				
