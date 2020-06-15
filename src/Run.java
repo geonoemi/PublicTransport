@@ -13,7 +13,7 @@ public class Run {
 		//TODO: Route class way scanning debug
 		//TODO: Route class scanning tram 3F debug
 		//TODO: Schedule class 
-	
+		//TODO: make UML diagrams
 		Route.getARoute();
 		//System.out.println(Route.userChoice);
 	}
