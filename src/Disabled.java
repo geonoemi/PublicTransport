@@ -24,7 +24,7 @@ public class Disabled extends Line {
 				Disabled disabledTram=new Disabled(trams.lineNum,  trams.articulate, trams.lowFloor, trams.operationCost, trams.numOfSeats, trams.bicycleTransportOpp,
 												   trams.numOfDisabledPlaces, trams.needToRepair, trams.typeOfFuel, trams.hasWheel, trams.typeOfVehicle);
 				
-				disabledVehicles.add(disabledTram);
+				disabledVehicles.add(disabledTram); //disabledTram into disabledVehicles ArrayList
 			}	
 		}
 	}
@@ -77,7 +77,7 @@ public class Disabled extends Line {
 													  trolleys.bicycleTransportOpp, trolleys.numOfDisabledPlaces,	trolleys.needToRepair, trolleys.typeOfFuel, 
 													  trolleys.hasWheel, trolleys.typeOfVehicle); 
 			
-				disabledVehicles.add(disabledTrolley);
+				disabledVehicles.add(disabledTrolley);			
 			}	
 		}
 	}	
@@ -97,6 +97,7 @@ public class Disabled extends Line {
 		printDisabledTrams();
 		printDisabledBuses();
 		printDisabledTrolleys();
+		
 	/*	for(Disabled disabled: disabledVehicles ) {
 			System.out.println(disabled.lineNum);
 		}*/

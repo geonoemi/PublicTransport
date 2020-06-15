@@ -11,10 +11,7 @@ public class Run {
 		//TODO: private, protected, public checking
 		//TODO: Schedule class 
 		//TODO: make UML diagrams
-		Station.readInBuses();
-		Station.readInTrams();
-		Station.readInTrolleys();
-		
+			
 		FileWriting.fileWriting();
 		Route.getARoute();
 		//System.out.println(Route.userChoice);
