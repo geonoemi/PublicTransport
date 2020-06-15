@@ -10,8 +10,6 @@ public class Run {
 		//TODO: Disabled, fossil, electric class debug
 		//TODO: Filewriting class shortening
 		//TODO: private, protected, public checking
-		//TODO: Route class way scanning debug
-		//TODO: Route class scanning tram 3F debug
 		//TODO: Schedule class 
 		//TODO: make UML diagrams
 		Route.getARoute();

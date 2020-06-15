@@ -35,7 +35,7 @@ public class Route extends Line {
 							
 				typeOfVehicle=scanTypeOfVehicle.nextInt(); 
 				
-			}while(!(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
+			}while( !(typeOfVehicle==1 || typeOfVehicle==2 || typeOfVehicle==3) ); 
 				
 			
 		Scanner scanNumAndLetter=new Scanner(System.in);
@@ -47,15 +47,15 @@ public class Route extends Line {
 		
 		if (typeOfVehicle==1) { 	//busz ág
 				
-			Bus.readIn(); //ArrayLists from Vehicles
+			Bus.readIn(); //ArrayLists from Bus
 				
 			do {
 					
 				System.out.println("Choose from the following buses:");
 				Bus.printBusLineNums();
-				lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+				lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 		
-			}while(!(Bus.busesLineNums.contains(lineNumAndLetter))); 
+			}while(! (Bus.busesLineNums.contains(lineNumAndLetter)) ); 
 			
 			Station.readInBuses();
 				
@@ -103,7 +103,7 @@ public class Route extends Line {
 				do {					
 					System.out.println("Choose from the following trams:");
 					Tram.printTramLineNums();
-					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+					lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 					
 				}while(!(Tram.tramsLineNums.contains(lineNumAndLetter)));
 				
@@ -156,7 +156,7 @@ public class Route extends Line {
 				do {					
 					System.out.println("Choose from the following trolleys:");			
 					Trolley.printTrolleyLineNums();
-					lineNumAndLetter=scanNumAndLetter.nextLine().toLowerCase();
+					lineNumAndLetter=scanNumAndLetter.nextLine().toUpperCase();
 					
 				}while(!(Trolley.trolleysLineNums.contains(lineNumAndLetter)));
 				
@@ -207,12 +207,13 @@ public class Route extends Line {
 			do{
 				System.out.println("Choose way ( FORTH = 1  BACK = 2 ) : ");
 				
-				while(!scanWay.hasNextInt()){ 												// && !( scanTypeOfVehicle.nextInt()==1) ||  (scanTypeOfVehicle.nextInt()==2) ||  (scanTypeOfVehicle.nextInt()==3)
-					
+				while(!scanWay.hasNextInt()){ 												
+
 					System.out.println("Invalid input! Type an integer of 1 / 2  : ");
 					scanWay.nextLine(); 
 				} 	
 				way=scanWay.nextLine();
+				
 				if(way.equals("1")) {
 					way="forth";
 				}else if(way.equals("2")) {
@@ -225,7 +226,7 @@ public class Route extends Line {
 		Scanner scanDayType=new Scanner(System.in);
 		String dayType=" ";
 		
-		do{
+		do {
 				System.out.println("Choose from the following daytypes: ");
 				DayTypes.printDayTypes();		
 				dayType  = scanDayType.nextLine(); 
