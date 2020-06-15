@@ -110,7 +110,7 @@ public class Station {
 		
 		try {
 			
-			FileReader reader=new FileReader("classes files\\stations.txt");
+			FileReader reader=new FileReader("txt files of classes\\stations.txt");
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=0;

@@ -23,7 +23,7 @@ public class Bus extends Line {
 			
 		try {
 				
-			FileReader reader=new FileReader("classes files\\buses.txt");
+			FileReader reader=new FileReader("txt files of classes\\buses.txt");
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=0;

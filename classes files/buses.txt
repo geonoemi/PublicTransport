@@ -1,3 +1,0 @@
-70,true,false,203.95,50,false,1,true,petrol,true,bus
-71A,false,true,180,45,true,2,false,diesel oil,true,bus
-90H,true,false,200,50,false,0,true,petrol,true,bus

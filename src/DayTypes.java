@@ -17,7 +17,7 @@ public class DayTypes {
 		
 		try {
 			
-			FileReader reader=new FileReader("classes files\\day types.txt");
+			FileReader reader=new FileReader("txt files of classes\\day types.txt");
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=1;

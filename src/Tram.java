@@ -27,7 +27,7 @@ public class Tram extends Line {
 		
 		try {
 			
-			FileReader reader=new FileReader("classes files\\trams.txt");
+			FileReader reader=new FileReader("txt files of classes\\trams.txt");
 			BufferedReader buffer=new BufferedReader(reader);
 			String line=null;
 			int i=0;
