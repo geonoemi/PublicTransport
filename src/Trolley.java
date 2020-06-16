@@ -20,7 +20,7 @@ public class Trolley extends Line  {
 
 	public Trolley(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 					   Boolean needToRepair, String typeOfFuel,	boolean hasWheel, String typeOfVehicle) {
-			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
+			 super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	public static void readIn(){ 

@@ -27,7 +27,7 @@ public class FileWriting {
 						FileWriter file2 = new FileWriter("departure times\\"+"2 "+Station.getStationNames2().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
 							
 						for( h=6; h<22; h++) {	
-							for(m=10;m<60;m+=10) {
+							for(m=0;m<60;m+=10) {
 								file2.write(" "+h+":"+m+"\n");
 							}	
 						}		

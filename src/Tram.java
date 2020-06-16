@@ -20,7 +20,7 @@ public class Tram extends Line {
 
 	public Tram(String lineNum, boolean articulate, boolean lowFloor, double operationCost, int numOfSeats, Boolean bicycleTransportOpp, int numOfDisabledPlaces, 
 				boolean needToRepair, String typeOfFuel, boolean hasWheel, String typeOfVehicle) {
-			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
+		  super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
 	public static void readIn(){ 
