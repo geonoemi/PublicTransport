@@ -17,7 +17,6 @@ public class FileWriting {
 		String [] way = {"forth","back"};
 
 	try {
-		
 			for(i=0;i<DayTypes.getDayTypes().size();i++) {
 				
 				for(k=0;k<way.length;k++) {
