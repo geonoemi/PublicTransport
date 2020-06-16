@@ -13,7 +13,7 @@ public class DayTypes {
 		return dayTypes;
 	}
 
-	public static void readIn(){ 
+	public static void readIn(){ //used in FileWriting.fileWriting()
 		
 		try {
 			

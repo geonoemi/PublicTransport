@@ -69,7 +69,7 @@ public class Bus extends Line {
 		}
 	}
 		
-	public static void printBusLineNums() { //used in Route.getARoute
+	public static void printBusLineNums() { //used in Route.getARoute()
 			
 		busesLineNums.clear();
 		fillBusLineNums();

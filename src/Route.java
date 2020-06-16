@@ -13,7 +13,7 @@ public class Route extends Line {
 			super(lineNum, articulate, lowFloor, operationCost, numOfSeats, bicycleTransportOpp, numOfDisabledPlaces, needToRepair,	typeOfFuel, hasWheel, typeOfVehicle);
 	}
 
-	public static void getARoute() {
+	public static void getARoute() { //used in IsEmptyCheck.getStarted()
 	
 		Scanner scanTypeOfVehicle=new Scanner(System.in);
 		int typeOfVehicle;

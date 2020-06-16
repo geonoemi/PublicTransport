@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 public class FileWriting {
 	
-	public static void fileWriting() {
+	public static void fileWriting() { //used in IsEmptyCheck.getStarted()
 		
 		int i;
 		int j;
