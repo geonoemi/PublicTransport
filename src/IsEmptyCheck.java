@@ -14,7 +14,7 @@ public class IsEmptyCheck {
        }
 	}
     
-     public static void getStarted() {  //used in Run
+     public static void getStarted() {  //used in Run 
     	 
     	 readInDepartureTimesDirectory();
     	 boolean isEmpty= ( fileList.isEmpty() ? true : false);
