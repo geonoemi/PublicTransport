@@ -87,7 +87,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames90H().contains(station));	
 					}
 					
-				}else if(disabled==2) {
+				}else if(disabled==0) {
 					
 					Bus.readIn(); //ArrayLists from Bus
 
