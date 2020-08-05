@@ -6,7 +6,6 @@ public class FileWriting {
 		
 		int i;
 		int j;
-		int k;
 		int h;
 		int m;
 		
@@ -14,121 +13,249 @@ public class FileWriting {
 		Station.readInTrams();
 		Station.readInBuses();
 		Station.readInTrolleys();
-		String [] way = {"forth","back"};
+		
 
 	try {
 			for(i=0;i<DayTypes.getDayTypes().size();i++) {
 				
-				for(k=0;k<way.length;k++) {
+			//	for(k=0;k<way.length;k++) {
 					
 					for( j=0; j<Station.getStationNames2().size();j++) {	
 						
-						FileWriter file2 = new FileWriter("departure times\\"+"2 "+Station.getStationNames2().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
+						if(!(Station.getStationNames2().get(j).equals("Európa-liget"))) {
 							
-						for( h=6; h<22; h++) {	
-							for(m=0;m<60;m+=10) {
-								file2.write(" "+h+":"+m+"\n");
-							}	
-						}		
-						file2.close();		
+							FileWriter file2a = new FileWriter("departure times\\"+"2 "+Station.getStationNames2().get(j)+" "+DayTypes.getDayTypes().get(i)+" Európa-liget.txt");
+						
+							for( h=6; h<22; h++) {	
+								for(m=0;m<60;m+=10) {
+									file2a.write(" "+h+":"+m+"\n");
+								}
+							}
+							file2a.close();		
+						}
+						
+						if(!(Station.getStationNames2().get(j).equals("Személyi pályaudvar"))) {
+							
+							FileWriter file2b = new FileWriter("departure times\\"+"2 "+Station.getStationNames2().get(j)+" "+DayTypes.getDayTypes().get(i)+" Személyi pályaudvar.txt");
+
+							for( h=6; h<22; h++) {	
+								for(m=0;m<60;m+=10) {
+									file2b.write(" "+h+":"+m+"\n");
+								}	
+							}		
+							file2b.close();	
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames3F().size();j++) {
 						
-						FileWriter file3F = new FileWriter("departure times\\"+"3F "+Station.getStationNames3F().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");		
-						
-						for(h=6; h<22; h++) {	
-							for(m=10;m<60;m+=15) {
-								file3F.write(" "+h+":"+m+"\n");
+						if(!(Station.getStationNames3F().get(j).equals("Tarján"))) {
+							
+							FileWriter file3Fa = new FileWriter("departure times\\"+"3F "+Station.getStationNames3F().get(j)+" "+DayTypes.getDayTypes().get(i)+" Tarján.txt");		
+							for(h=6; h<22; h++) {	
+								for(m=10;m<60;m+=15) {
+									file3Fa.write(" "+h+":"+m+"\n");
+								}
 							}
+							file3Fa.close();
 						}
-						file3F.close();
+							
+						if(!(Station.getStationNames3F().get(j).equals("Fonógyári út"))) {
+							
+							FileWriter file3Fb = new FileWriter("departure times\\"+"3F "+Station.getStationNames3F().get(j)+" "+DayTypes.getDayTypes().get(i)+" Fonógyári út.txt");		
+							
+							for(h=6; h<22; h++) {	
+								for(m=10;m<60;m+=15) {
+									file3Fb.write(" "+h+":"+m+"\n");
+								}
+							}
+							file3Fb.close();
+						}
+
 					}
 					
 					for( j=0; j<Station.getStationNames4().size();j++) {
 						
-						FileWriter file4 = new FileWriter("departure times\\"+"4 "+Station.getStationNames4().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
-						
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=12) {
-								file4.write(" "+h+":"+m+"\n");
+						if(!(Station.getStationNames4().get(j).equals("Kecskés"))) {
+							
+							FileWriter file4a = new FileWriter("departure times\\"+"4 "+Station.getStationNames4().get(j)+" "+DayTypes.getDayTypes().get(i)+" Kecskés.txt");
+							
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=12) {
+									file4a.write(" "+h+":"+m+"\n");
+								}
 							}
+							file4a.close();
 						}
-						file4.close();
+						
+						if(!(Station.getStationNames4().get(j).equals("Tarján"))) {
+							
+							FileWriter file4b = new FileWriter("departure times\\"+"4 "+Station.getStationNames4().get(j)+" "+DayTypes.getDayTypes().get(i)+" Tarján.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=12) {
+									file4b.write(" "+h+":"+m+"\n");
+								}
+							}
+							file4b.close();
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames70().size();j++) {
 								
-						FileWriter file70 = new FileWriter("departure times\\"+"70 "+Station.getStationNames70().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
-											
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=14) {
-								file70.write(" "+h+":"+m+"\n");
-							}
-						}	
-						file70.close();
+						if(!(Station.getStationNames70().get(j).equals("Füvészkert"))) {
+							
+							FileWriter file70a = new FileWriter("departure times\\"+"70 "+Station.getStationNames70().get(j)+" "+DayTypes.getDayTypes().get(i)+" Füvészkert.txt");
+							
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=14) {
+									file70a.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file70a.close();
+						}
+
+						if(!(Station.getStationNames70().get(j).equals("Mars-tér"))) {
+							
+							FileWriter file70b = new FileWriter("departure times\\"+"70 "+Station.getStationNames70().get(j)+" "+DayTypes.getDayTypes().get(i)+" Mars-tér.txt");
+							
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=14) {
+									file70b.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file70b.close();
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames71A().size();j++) {	
 						
-						FileWriter file71A = new FileWriter("departure times\\"+"71A "+Station.getStationNames71A().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
+						if(!(Station.getStationNames71A().get(j).equals("Mars-tér"))) {
+							
+							FileWriter file71Aa = new FileWriter("departure times\\"+"71A "+Station.getStationNames71A().get(j)+" "+DayTypes.getDayTypes().get(i)+" Mars-tér.txt");
+							
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=20) {
+									file71Aa.write(" "+h+":"+m+"\n");
+								}
+							}					
+							file71Aa.close();
+						}
 						
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=20) {
-								file71A.write(" "+h+":"+m+"\n");
-							}
-						}					
-						file71A.close();
+						if(!(Station.getStationNames71A().get(j).equals("Napfényfürdõ"))) {
+							
+							FileWriter file71Ab = new FileWriter("departure times\\"+"71A "+Station.getStationNames71A().get(j)+" "+DayTypes.getDayTypes().get(i)+" Napfényfürdõ.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=20) {
+									file71Ab.write(" "+h+":"+m+"\n");
+								}
+							}					
+							file71Ab.close();
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames90H().size();j++) {
 					
-						FileWriter file90H = new FileWriter("departure times\\"+"90H "+Station.getStationNames90H().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
+						if(!(Station.getStationNames90H().get(j).equals("Szegedi Ipari Logisztikai Központ"))) {
+							
+							FileWriter file90Ha = new FileWriter("departure times\\"+"90H "+Station.getStationNames90H().get(j)+" "+DayTypes.getDayTypes().get(i)+" Szegedi Ipari Logisztikai Központ.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=10) {
+									file90Ha.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file90Ha.close();
+						}
 						
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=10) {
-								file90H.write(" "+h+":"+m+"\n");
-							}
-						}	
-						file90H.close();
+						if(!(Station.getStationNames90H().get(j).equals("Lugas utca"))) {
+
+							FileWriter file90Hb = new FileWriter("departure times\\"+"90H "+Station.getStationNames90H().get(j)+" "+DayTypes.getDayTypes().get(i)+" Lugas utca.txt");
+	
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=10) {
+									file90Hb.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file90Hb.close();
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames8().size();j++) {
 						
-						FileWriter file8 = new FileWriter("departure times\\"+"8 "+Station.getStationNames8().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
-						
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=5) {
-								file8.write(" "+h+":"+m+"\n");
-							}
-						}	
-						file8.close();
+						if(!(Station.getStationNames8().get(j).equals("Klinikák"))) {
+							FileWriter file8a = new FileWriter("departure times\\"+"8 "+Station.getStationNames8().get(j)+" "+DayTypes.getDayTypes().get(i)+" Klinikák.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=5) {
+									file8a.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file8a.close();
+						}
+						if(!(Station.getStationNames8().get(j).equals("Makkosház"))) {
+							FileWriter file8b = new FileWriter("departure times\\"+"8 "+Station.getStationNames8().get(j)+" "+DayTypes.getDayTypes().get(i)+" Makkosház.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=5) {
+									file8b.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file8b.close();
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames10().size();j++) {
 						
-						FileWriter file10 = new FileWriter("departure times\\"+"10 "+Station.getStationNames10().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
-						
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=8) {
-								file10.write(" "+h+":"+m+"\n");
-							}
-						}	
-						file10.close();
+						if(!(Station.getStationNames10().get(j).equals("Klinikák"))) {
+							FileWriter file10a = new FileWriter("departure times\\"+"10 "+Station.getStationNames10().get(j)+" "+DayTypes.getDayTypes().get(i)+" Klinikák.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=8) {
+									file10a.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file10a.close();
+						}
+						if(!(Station.getStationNames10().get(j).equals("Víztorony-tér"))) {
+							
+							FileWriter file10b = new FileWriter("departure times\\"+"10 "+Station.getStationNames10().get(j)+" "+DayTypes.getDayTypes().get(i)+" Víztorony-tér.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=8) {
+									file10b.write(" "+h+":"+m+"\n");
+								}
+							}	
+							file10b.close();
+						}
 					}
 					
 					for( j=0; j<Station.getStationNames19().size();j++) {
 					
-						FileWriter file19 = new FileWriter("departure times\\"+"19 "+Station.getStationNames19().get(j)+" "+DayTypes.getDayTypes().get(i)+" "+way[k]+".txt");
+						if(!(Station.getStationNames19().get(j).equals("Makkosház"))) {
+							FileWriter file19a = new FileWriter("departure times\\"+"19 "+Station.getStationNames19().get(j)+" "+DayTypes.getDayTypes().get(i)+" Makkosház.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=12) {
+									file19a.write(" "+h+":"+m+"\n");
+								}
+							}		
+							file19a.close();
+						}
+						if(!(Station.getStationNames19().get(j).equals("Víztorony-tér"))) {
+							FileWriter file19b = new FileWriter("departure times\\"+"19 "+Station.getStationNames19().get(j)+" "+DayTypes.getDayTypes().get(i)+" Víztorony-tér.txt");
+
+							for(h=6; h<22; h++) {
+								for(m=10;m<60;m+=12) {
+									file19b.write(" "+h+":"+m+"\n");
+								}
+							}		
+							file19b.close();
+						}
 						
-						for(h=6; h<22; h++) {
-							for(m=10;m<60;m+=12) {
-								file19.write(" "+h+":"+m+"\n");
-							}
-						}		
-						file19.close();
 					}
-				}
+				//}
 			}
 		}catch(IOException e) {
 			System.out.println(e.getMessage());

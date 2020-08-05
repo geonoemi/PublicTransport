@@ -37,7 +37,8 @@ public class Route extends Line {
 		
 		Scanner scanStation=new Scanner(System.in);
 		String station="";
-		
+		Scanner scanWay=new Scanner(System.in);
+		String way="";
 		Scanner scanDisabled=new Scanner(System.in);
 		int disabled=0;
 		
@@ -74,6 +75,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames71A().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Napfényfürdõ = 1  Mars-tér = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Napfényfürdõ";
+							}else if(way.equals("2")) {
+								way="Mars-tér";
+							}
+						}while(!(way.equals("Napfényfürdõ") || way.equals("Mars-tér")));
 					}
 					else if(lineNumAndLetter.equals("90H")) {
 						
@@ -85,6 +103,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames90H().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Szegedi Ipari Logisztikai Központ = 1  Lugas utca = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Szegedi Ipari Logisztikai Központ";
+							}else if(way.equals("2")) {
+								way="Lugas utca";
+							}
+						}while(!(way.equals("Szegedi Ipari Logisztikai Központ") || way.equals("Lugas utca")));
 					}
 					
 				}else if(disabled==0) {
@@ -110,6 +145,25 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames70().contains(station));	
+						
+						
+						do{
+							System.out.println("Choose way ( Füvészkert = 1  Mars-tér = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Füvészkert";
+							}else if(way.equals("2")) {
+								way="Mars-tér";
+							}
+						}while(!(way.equals("Füvészkert") || way.equals("Mars-tér")));
+						
 					}
 						
 					else if(lineNumAndLetter.equals("71A")) {
@@ -122,6 +176,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames71A().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Napfényfürdõ = 1  Mars-tér = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Napfényfürdõ";
+							}else if(way.equals("2")) {
+								way="Mars-tér";
+							}
+						}while(!(way.equals("Napfényfürdõ") || way.equals("Mars-tér")));
 					}
 						
 					else if(lineNumAndLetter.equals("90H")) {
@@ -134,6 +205,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames90H().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Szegedi Ipari Logisztikai Központ = 1  Lugas utca = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Szegedi Ipari Logisztikai Központ";
+							}else if(way.equals("2")) {
+								way="Lugas utca";
+							}
+						}while(!(way.equals("Szegedi Ipari Logisztikai Központ") || way.equals("Lugas utca")));
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
@@ -172,6 +260,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames2().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Személyi pályaudvar = 1  Európa-liget = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Személyi pályaudvar";
+							}else if(way.equals("2")) {
+								way="Európa-liget";
+							}
+						}while(!(way.equals("Személyi pályaudvar") || way.equals("Európa-liget")));
 					}
 					
 					else if(lineNumAndLetter.equals("3F")) {
@@ -184,6 +289,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames3F().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Tarján = 1  Fonógyári út = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Tarján";
+							}else if(way.equals("2")) {
+								way="Fonógyári út";
+							}
+						}while(!(way.equals("Tarján") || way.equals("Fonógyári út")));
 					}
 					
 				}else if(disabled ==0) {
@@ -209,6 +331,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames2().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Személyi pályaudvar = 1  Európa-liget = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Személyi pályaudvar";
+							}else if(way.equals("2")) {
+								way="Európa-liget";
+							}
+						}while(!(way.equals("Személyi pályaudvar") || way.equals("Európa-liget")));
 					}
 					
 					else if(lineNumAndLetter.equals("3F")) {
@@ -221,6 +360,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames3F().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Tarján = 1  Fonógyári út = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Tarján";
+							}else if(way.equals("2")) {
+								way="Fonógyári út";
+							}
+						}while(!(way.equals("Tarján") || way.equals("Fonógyári út")));
 					}
 					
 					else if(lineNumAndLetter.equals("4")) {
@@ -233,6 +389,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames4().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Tarján = 1  Kecskés = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Tarján";
+							}else if(way.equals("2")) {
+								way="Kecskés";
+							}
+						}while(!(way.equals("Tarján") || way.equals("Kecskés")));
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
@@ -272,6 +445,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames8().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Klinikák = 1  Makkosház = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Klinikák";
+							}else if(way.equals("2")) {
+								way="Makkosház";
+							}
+						}while(!(way.equals("Klinikák") || way.equals("Makkosház")));
 					}
 					
 					else if(lineNumAndLetter.equals("10")) {
@@ -284,6 +474,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 								
 						}while(!Station.getStationNames10().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Klinikák = 1  Víztorony tér = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Klinikák";
+							}else if(way.equals("2")) {
+								way="Víztorony tér";
+							}
+						}while(!(way.equals("Klinikák") || way.equals("Víztorony tér")));
 					}
 					
 				}else if(disabled ==0) {
@@ -309,6 +516,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames8().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Klinikák = 1  Makkosház = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Klinikák";
+							}else if(way.equals("2")) {
+								way="Makkosház";
+							}
+						}while(!(way.equals("Klinikák") || way.equals("Makkosház")));
 					}
 					
 					else if(lineNumAndLetter.equals("10")) {
@@ -321,6 +545,23 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames10().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Klinikák = 1  Víztorony tér = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Klinikák";
+							}else if(way.equals("2")) {
+								way="Víztorony tér";
+							}
+						}while(!(way.equals("Klinikák") || way.equals("Víztorony tér")));
 					}
 					
 					else if(lineNumAndLetter.equals("19")) {
@@ -333,12 +574,29 @@ public class Route extends Line {
 							station=scanStation.nextLine();
 							
 						}while(!Station.getStationNames19().contains(station));	
+						
+						do{
+							System.out.println("Choose way ( Makkosház = 1  Víztorony tér = 2 ) : ");
+							
+							while(!scanWay.hasNextInt()){ 												
+
+								System.out.println("Invalid input! Type an integer of 1 / 2  : ");
+								scanWay.nextLine(); 
+							} 	
+							way=scanWay.nextLine();
+							
+							if(way.equals("1")) {
+								way="Makkosház";
+							}else if(way.equals("2")) {
+								way="Víztorony tér";
+							}
+						}while(!(way.equals("Makkosház") || way.equals("Víztorony tér")));
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
 		}
 			
-		Scanner scanWay=new Scanner(System.in);
+		/*Scanner scanWay=new Scanner(System.in);
 		String way="";
 			do{
 				System.out.println("Choose way ( FORTH = 1  BACK = 2 ) : ");
@@ -355,7 +613,7 @@ public class Route extends Line {
 				}else if(way.equals("2")) {
 					way="back";
 				}
-			}while(!(way.equals("back") || way.equals("forth")));
+			}while(!(way.equals("back") || way.equals("forth")));	*/
 						
 	
 		Scanner scanDayType=new Scanner(System.in);
