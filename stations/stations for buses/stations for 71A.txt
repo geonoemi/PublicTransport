@@ -1,3 +1,3 @@
-﻿Mars-té46.258957,20.140791,true
+﻿Mars-tér,46.258957,20.140791,true
 Katalin utca,46.232201,20.190346,false
 Napfényfürdő,46.249663,20.159695,true
