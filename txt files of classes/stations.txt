@@ -1,19 +1,19 @@
-Európa-liget,46.273561,20.147113,true
-Anna-kút,46.256150,20.147643,true
-Személyi pályaudvar,46.239802,20.142629,false
-Tarján,46.275372,20.164449,true
-Kálvária-tér,46.253312,20.129755,true
-Fonógyári út,46.264005,20.109662,true
-Vitéz utca,46.248486,20.141120,true
-Dugonics-tér,46.250602,20.144552,true
-Kecskés,46.239502,20.117673,true
-Szegedi Ipari Logisztikai Központ,46.286540,20.085751,false
-Rókusi víztorony,46.268600,20.134706,false
-Vértó,46.272090,20.143056,true
-Széchenyi-tér,46.257777,20.131061,false
-Mars-tér,46.258957,20.140791,true
-Füvészkert,46.232890,20.155699,false
+ï»¿EurÃ³pa-liget,46.273561,20.147113,true
+Anna-kÃºt,46.256150,20.147643,true
+SzemÃ©lyi pÃ¡lyaudvar,46.239802,20.142629,false
+TarjÃ¡n,46.275372,20.164449,true
+KÃ¡lvÃ¡ria-tÃ©r,46.253312,20.129755,true
+FonÃ³gyÃ³ri Ãºt,46.264005,20.109662,true
+VitÃ©z utca,46.248486,20.141120,true
+Dugonics-tÃ©r,46.250602,20.144552,true
+KecskÃ©s,46.239502,20.117673,true
+Szegedi Ipari Logisztikai KÃ¶zpont,46.286540,20.085751,false
+RÃ³kusi vÃ­ztorony,46.268600,20.134706,false
+VÃ©rtÃ³,46.272090,20.143056,true
+SÃ©chenyi-tÃ©r,46.257777,20.131061,false
+Mars-tÃ©r,46.258957,20.140791,true
+FÃ¼vÃ©szkert,46.232890,20.155699,false
 Katalin utca,46.232201,20.190346,false
-Napfényfürdõ,46.249663,20.159695,true
-Klinikák,46.245988,20.147481,true
+NapfÃ©nyfÃ¼rdÅ‘,46.249663,20.159695,true
+KlinikÃ¡k,46.245988,20.147481,true
 Lugas utca,46.267031,20.170985,false

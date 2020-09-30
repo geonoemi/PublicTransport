@@ -1,3 +1,3 @@
-Mars-tér,46.258957,20.140791,true
+ï»¿Mars-tÃ©46.258957,20.140791,true
 Katalin utca,46.232201,20.190346,false
-Napfényfürdõ,46.249663,20.159695,true
+NapfÃ©nyfÃ¼rdÅ‘,46.249663,20.159695,true

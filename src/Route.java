@@ -77,7 +77,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames71A().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( NapfÈnyf¸rdı = 1  Mars-tÈr = 2 ) : ");
+							System.out.println("Choose way ( Napf√©nyf√ºrd≈ë = 1  Mars-t√©r = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -87,11 +87,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="NapfÈnyf¸rdı";
+								way="Napf√©nyf√ºrd≈ë";
 							}else if(way.equals("2")) {
-								way="Mars-tÈr";
+								way="Mars-t√©r";
 							}
-						}while(!(way.equals("NapfÈnyf¸rdı") || way.equals("Mars-tÈr")));
+						}while(!(way.equals("Napf√©nyf√ºrd≈ë") || way.equals("Mars-t√©r")));
 					}
 					else if(lineNumAndLetter.equals("90H")) {
 						
@@ -105,7 +105,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames90H().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Szegedi Ipari Logisztikai Kˆzpont = 1  Lugas utca = 2 ) : ");
+							System.out.println("Choose way ( Szegedi Ipari Logisztikai K√∂zpont = 1  Lugas utca = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -115,11 +115,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Szegedi Ipari Logisztikai Kˆzpont";
+								way="Szegedi Ipari Logisztikai K√∂zpont";
 							}else if(way.equals("2")) {
 								way="Lugas utca";
 							}
-						}while(!(way.equals("Szegedi Ipari Logisztikai Kˆzpont") || way.equals("Lugas utca")));
+						}while(!(way.equals("Szegedi Ipari Logisztikai K√∂zpont") || way.equals("Lugas utca")));
 					}
 					
 				}else if(disabled==0) {
@@ -148,7 +148,7 @@ public class Route extends Line {
 						
 						
 						do{
-							System.out.println("Choose way ( F¸vÈszkert = 1  Mars-tÈr = 2 ) : ");
+							System.out.println("Choose way ( F√ºv√©szkert = 1  Mars-t√©r = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -158,11 +158,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="F¸vÈszkert";
+								way="F√ºv√©szkert";
 							}else if(way.equals("2")) {
-								way="Mars-tÈr";
+								way="Mars-t√©r";
 							}
-						}while(!(way.equals("F¸vÈszkert") || way.equals("Mars-tÈr")));
+						}while(!(way.equals("F√ºv√©szkert") || way.equals("Mars-t√©r")));
 						
 					}
 						
@@ -178,7 +178,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames71A().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( NapfÈnyf¸rdı = 1  Mars-tÈr = 2 ) : ");
+							System.out.println("Choose way ( Napf√©nyf√ºrd≈ë = 1  Mars-t√©r = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -188,11 +188,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="NapfÈnyf¸rdı";
+								way="Napf√©nyf√ºrd≈ë";
 							}else if(way.equals("2")) {
-								way="Mars-tÈr";
+								way="Mars-t√©r";
 							}
-						}while(!(way.equals("NapfÈnyf¸rdı") || way.equals("Mars-tÈr")));
+						}while(!(way.equals("Napf√©nyf√ºrd≈ë") || way.equals("Mars-t√©r")));
 					}
 						
 					else if(lineNumAndLetter.equals("90H")) {
@@ -207,7 +207,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames90H().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Szegedi Ipari Logisztikai Kˆzpont = 1  Lugas utca = 2 ) : ");
+							System.out.println("Choose way ( Szegedi Ipari Logisztikai K√∂zpont = 1  Lugas utca = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -217,11 +217,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Szegedi Ipari Logisztikai Kˆzpont";
+								way="Szegedi Ipari Logisztikai K√∂zpont";
 							}else if(way.equals("2")) {
 								way="Lugas utca";
 							}
-						}while(!(way.equals("Szegedi Ipari Logisztikai Kˆzpont") || way.equals("Lugas utca")));
+						}while(!(way.equals("Szegedi Ipari Logisztikai K√∂zpont") || way.equals("Lugas utca")));
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
@@ -262,7 +262,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames2().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( SzemÈlyi p·lyaudvar = 1  EurÛpa-liget = 2 ) : ");
+							System.out.println("Choose way ( Szem√©lyi p√°lyaudvar = 1  Eur√≥pa-liget = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -272,11 +272,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="SzemÈlyi p·lyaudvar";
+								way="Szem√©lyi p√°lyaudvar";
 							}else if(way.equals("2")) {
-								way="EurÛpa-liget";
+								way="Eur√≥pa-liget";
 							}
-						}while(!(way.equals("SzemÈlyi p·lyaudvar") || way.equals("EurÛpa-liget")));
+						}while(!(way.equals("Szem√©lyi p√°lyaudvar") || way.equals("Eur√≥pa-liget")));
 					}
 					
 					else if(lineNumAndLetter.equals("3F")) {
@@ -291,7 +291,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames3F().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Tarj·n = 1  FonÛgy·ri ˙t = 2 ) : ");
+							System.out.println("Choose way ( Tarj√°n = 1  Fon√≥gy√°ri √∫t = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -301,11 +301,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Tarj·n";
+								way="Tarj√°n";
 							}else if(way.equals("2")) {
-								way="FonÛgy·ri ˙t";
+								way="Fon√≥gy√°ri √∫t";
 							}
-						}while(!(way.equals("Tarj·n") || way.equals("FonÛgy·ri ˙t")));
+						}while(!(way.equals("Tarj√°n") || way.equals("Fon√≥gy√°ri √∫t")));
 					}
 					
 				}else if(disabled ==0) {
@@ -333,7 +333,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames2().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( SzemÈlyi p·lyaudvar = 1  EurÛpa-liget = 2 ) : ");
+							System.out.println("Choose way ( Szem√©lyi p√°lyaudvar = 1  Eur√≥pa-liget = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -343,11 +343,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="SzemÈlyi p·lyaudvar";
+								way="Szem√©lyi p√°lyaudvar";
 							}else if(way.equals("2")) {
-								way="EurÛpa-liget";
+								way="Eur√≥pa-liget";
 							}
-						}while(!(way.equals("SzemÈlyi p·lyaudvar") || way.equals("EurÛpa-liget")));
+						}while(!(way.equals("Szem√©lyi p√°lyaudvar") || way.equals("Eur√≥pa-liget")));
 					}
 					
 					else if(lineNumAndLetter.equals("3F")) {
@@ -362,7 +362,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames3F().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Tarj·n = 1  FonÛgy·ri ˙t = 2 ) : ");
+							System.out.println("Choose way ( Tarj√°n = 1  Fon√≥gy√°ri √∫t = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -372,11 +372,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Tarj·n";
+								way="Tarj√°n";
 							}else if(way.equals("2")) {
-								way="FonÛgy·ri ˙t";
+								way="Fon√≥gy√°ri √∫t";
 							}
-						}while(!(way.equals("Tarj·n") || way.equals("FonÛgy·ri ˙t")));
+						}while(!(way.equals("Tarj√°n") || way.equals("Fon√≥gy√°ri √∫t")));
 					}
 					
 					else if(lineNumAndLetter.equals("4")) {
@@ -391,7 +391,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames4().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Tarj·n = 1  KecskÈs = 2 ) : ");
+							System.out.println("Choose way ( Tarj√°n = 1  Kecsk√©s = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -401,11 +401,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Tarj·n";
+								way="Tarj√°n";
 							}else if(way.equals("2")) {
-								way="KecskÈs";
+								way="Kecsk√©s";
 							}
-						}while(!(way.equals("Tarj·n") || way.equals("KecskÈs")));
+						}while(!(way.equals("Tarj√°n") || way.equals("KKecsk√©s")));
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
@@ -447,7 +447,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames8().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Klinik·k = 1  Makkosh·z = 2 ) : ");
+							System.out.println("Choose way ( Klinik√°k = 1  Makkosh√°z = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -457,11 +457,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Klinik·k";
+								way="Klinik√°k";
 							}else if(way.equals("2")) {
-								way="Makkosh·z";
+								way="Makkosh√°z";
 							}
-						}while(!(way.equals("Klinik·k") || way.equals("Makkosh·z")));
+						}while(!(way.equals("Klinik√°k") || way.equals("Makkosh√°z")));
 					}
 					
 					else if(lineNumAndLetter.equals("10")) {
@@ -476,7 +476,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames10().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Klinik·k = 1  VÌztorony tÈr = 2 ) : ");
+							System.out.println("Choose way ( Klinik√°k = 1  V√≠ztorony t√©r = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -486,11 +486,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Klinik·k";
+								way="Klinik√°k";
 							}else if(way.equals("2")) {
-								way="VÌztorony tÈr";
+								way="V√≠ztorony t√©r";
 							}
-						}while(!(way.equals("Klinik·k") || way.equals("VÌztorony tÈr")));
+						}while(!(way.equals("Klinik√°k") || way.equals("V√≠ztorony t√©r")));
 					}
 					
 				}else if(disabled ==0) {
@@ -518,7 +518,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames8().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Klinik·k = 1  Makkosh·z = 2 ) : ");
+							System.out.println("Choose way ( Klinik√°k = 1  Makkosh√°z = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -528,11 +528,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Klinik·k";
+								way="Klinik√°k";
 							}else if(way.equals("2")) {
-								way="Makkosh·z";
+								way="Makkosh√°z";
 							}
-						}while(!(way.equals("Klinik·k") || way.equals("Makkosh·z")));
+						}while(!(way.equals("Klinik√°k") || way.equals("Makkosh√°z")));
 					}
 					
 					else if(lineNumAndLetter.equals("10")) {
@@ -547,7 +547,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames10().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Klinik·k = 1  VÌztorony tÈr = 2 ) : ");
+							System.out.println("Choose way ( Klinik√°k = 1  V√≠ztorony t√©r = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -557,11 +557,11 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Klinik·k";
+								way="Klinik√°k";
 							}else if(way.equals("2")) {
-								way="VÌztorony tÈr";
+								way="V√≠ztorony t√©r";
 							}
-						}while(!(way.equals("Klinik·k") || way.equals("VÌztorony tÈr")));
+						}while(!(way.equals("Klinik√°k") || way.equals("V√≠ztorony t√©r")));
 					}
 					
 					else if(lineNumAndLetter.equals("19")) {
@@ -576,7 +576,7 @@ public class Route extends Line {
 						}while(!Station.getStationNames19().contains(station));	
 						
 						do{
-							System.out.println("Choose way ( Makkosh·z = 1  VÌztorony tÈr = 2 ) : ");
+							System.out.println("Choose way ( Makkosh√°z = 1  V√≠ztorony t√©r = 2 ) : ");
 							
 							while(!scanWay.hasNextInt()){ 												
 
@@ -586,36 +586,16 @@ public class Route extends Line {
 							way=scanWay.nextLine();
 							
 							if(way.equals("1")) {
-								way="Makkosh·z";
+								way="Makkosh√°z";
 							}else if(way.equals("2")) {
-								way="VÌztorony tÈr";
+								way="V√≠ztorony t√©r";
 							}
-						}while(!(way.equals("Makkosh·z") || way.equals("VÌztorony tÈr")));
+						}while(!(way.equals("Makkosh√°z") || way.equals("V√≠ztorony t√©r")));
 					}
 				}
 			}while(!(disabled==1 || disabled==0));
 		}
-			
-		/*Scanner scanWay=new Scanner(System.in);
-		String way="";
-			do{
-				System.out.println("Choose way ( FORTH = 1  BACK = 2 ) : ");
-				
-				while(!scanWay.hasNextInt()){ 												
 
-					System.out.println("Invalid input! Type an integer of 1 / 2  : ");
-					scanWay.nextLine(); 
-				} 	
-				way=scanWay.nextLine();
-				
-				if(way.equals("1")) {
-					way="forth";
-				}else if(way.equals("2")) {
-					way="back";
-				}
-			}while(!(way.equals("back") || way.equals("forth")));	*/
-						
-	
 		Scanner scanDayType=new Scanner(System.in);
 		String dayType=" ";
 		
@@ -627,7 +607,7 @@ public class Route extends Line {
 		}while(!(DayTypes.getDayTypes().contains(dayType)));
 		
 		userChoice =lineNumAndLetter+" "+station+" "+dayType+" "+way;
-		getsOff(userChoice); //prints deparure Times
+		getsOff(userChoice); //prints departure Times
 		
 		scanStation.close();
 		scanTypeOfVehicle.close();

@@ -1,5 +1,5 @@
-Európa-liget,46.273561,20.147113,true
-Anna-kút,46.256150,20.147643,true
-Személyi pályaudvar,46.239802,20.142629,false
-Széchenyi-tér,46.257777,20.131061,false
-Vértó,46.272090,20.143056,true
+ï»¿EurÃ³pa-liget,46.273561,20.147113,true
+Anna-kÃºt,46.256150,20.147643,true
+SzemÃ©lyi pÃ¡lyaudvar,46.239802,20.142629,false
+SzÃ©chenyi-tÃ©r,46.257777,20.131061,false
+VÃ©rtÃ³,46.272090,20.143056,true

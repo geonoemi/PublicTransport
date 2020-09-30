@@ -17,9 +17,7 @@ public class FileWriting {
 
 	try {
 			for(i=0;i<DayTypes.getDayTypes().size();i++) {
-				
-			//	for(k=0;k<way.length;k++) {
-					
+									
 					for( j=0; j<Station.getStationNames2().size();j++) {	
 						
 						if(!(Station.getStationNames2().get(j).equals("Európa-liget"))) {

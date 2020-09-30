@@ -1,4 +1,4 @@
-Tarján,46.275372,20.164449,true
-Vitéz utca,46.248486,20.141120,true
-Dugonics-tér,46.250602,20.144552,true
-Kecskés,46.239502,20.117673,true
+ï»¿TarjÃ¡n,46.275372,20.164449,true
+VitÃ©z utca,46.248486,20.141120,true
+Dugonics-tÃ©r,46.250602,20.144552,true
+KecskÃ©s,46.239502,20.117673,true

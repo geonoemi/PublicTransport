@@ -1,3 +1,3 @@
-Makkosház,46.272411,20.147274,true
-Berlini körút,46.261365,20.149744,true
-Víztorony tér,46.270331,20.163977,true
+ï»¿MakkoshÃ¡z,46.272411,20.147274,true
+Berlini kÃ¶rÃºt,46.261365,20.149744,true
+VÃ­ztorony tÃ©r,46.270331,20.163977,true

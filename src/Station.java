@@ -276,7 +276,7 @@ public class Station {
 		sortStationNames(hu,stationNames);
 		
 		for (String stations:stationNames) {
-			System.out.println(stations);
+			 System.out.println(stations);
 		}
 	}
 }
