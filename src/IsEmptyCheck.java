@@ -5,7 +5,7 @@ public class IsEmptyCheck {
 
 	public static ArrayList<File> fileList = new ArrayList<File>();
 
-	public static void readInDepartureTimesDirectory() { //used in getStarted()
+	public static void readInDepartureTimesDirectory() { //used in Run.getStarted()
  
        File directory = new File("departure times");
 

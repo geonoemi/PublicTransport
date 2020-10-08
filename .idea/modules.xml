@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Tömegközlekedés.iml" filepath="$PROJECT_DIR$/Tömegközlekedés.iml" />
+      <module fileurl="file://$PROJECT_DIR$/publicTransportNewVerison.iml" filepath="$PROJECT_DIR$/publicTransportNewVerison.iml" />
     </modules>
   </component>
 </project>

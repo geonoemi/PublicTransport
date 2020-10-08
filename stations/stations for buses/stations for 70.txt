@@ -1,3 +1,3 @@
 ﻿Füvészkert,46.232890,20.155699,false
 Mars-tér,46.258957,20.140791,true
-Széenyi-té46.257777,20.131061,false
+Széchenyi-tér,46.257777,20.131061,false
