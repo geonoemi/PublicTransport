@@ -17,16 +17,12 @@ public class Run {
     public static void getStarted() {  //used in Run
 
         readInDepartureTimesDirectory();
-        boolean isEmpty= ( fileList.isEmpty() ? true : false);
 
-        if(isEmpty) {
+        if(fileList.isEmpty()) {
 
             FileWriting.fileWriting() ;
-            Route.getARoute();
-
-        } else {
-            Route.getARoute();
         }
+        Route.getARoute();
     }
     public static void main(String[] args) {
 
